@@ -1,0 +1,159 @@
+\documentclass[a4paper, titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb}
+\geometry{margin=1.2in}
+\begin{document}
+\begin{titlepage}
+	\title{\textbf{Folytonos közegek mechanikája}\\
+	Tételkidolgozás\\
+	10. tétel\\
+	\textit{Hang terjedése gázban, hullámegyenlet}}
+	\author{Készítette Pesznyák Dávid\\
+	Dr. Groma István előadásai alapján (2018)}
+	\date{}
+\end{titlepage}
+\maketitle
+\newpage
+\subsection*{A hang mint nyomáshullám}
+A hangot nyomáshullámként értelmezhetjük, ahogy gázban vagy folyadékban halad. Éppen emiatt nem hanyagolhatjuk el ebben az esetben a közeg összenyomhatóságát. Összenyomhatatlan gázban vagy folyadékban a hang sebessége végtelennek adódna, ami közel sem felel meg a valóságnak.\\\\
+A probléma további vizsgálatához felhasználhatjuk a mozgásegyenletet és a kontinuitási egyenletet:
+\begin{equation}
+\rho\frac{\partial \vec{v}}{\partial t}\;+\;\rho(\vec{v}\;\vec{\nabla})\vec{v}=-grad(p),
+\end{equation}
+ahol $\rho$ a közeg sűrűsége, $\vec{v}$ az áramlási sebességet leíró vektor, $p$ a nyomás és $t$ pedig az időt jelöli. A mozgásegyenletből most elhagyjuk a súrlódási erőt tartalmazó tagokat.
+\begin{equation}
+\frac{\partial \rho}{\partial t}\;+\;div(\rho \vec{v})=0
+\end{equation}
+A kontinuitási egyenlet pedig továbbra is az anyagmegmaradást biztosítja. Ezen felül még feltételezünk valamilyen ismert kapcsolatot nyomás és sűrűség között ($p(\rho)$).\\\\
+A mozgásegyenlet továbbra sem lineáris a $(\vec{v}\;\vec{\nabla})\vec{v}$ tag miatt, így az egyenlet megoldása továbbra sem egyszerű.
+\subsection*{A hullámegyenlet}
+Triviális megoldásként adódik speciális esetben, ha a közeg áll, és a nyomás- és sűrűségértékek is időfüggetlen konstansok:
+$$
+\vec{v}=\vec{0}\qquad p=p_0\qquad\rho=\rho_0
+$$
+Ha megperturbáljuk a rendszert, és feltételezzük, hogy az is megoldás, akkor a következő mennyiségeket írhatjuk majd vissza az egyenleteinkbe:
+$$
+\vec{v}=\vec{0}\;+\;\vec{v}\qquad p(\vec{r},t)=p_0\;+\;\delta p(\vec{r},t)\qquad\rho(\vec{r},t)=\rho_0\;+\;\delta\rho(\vec{r},t)
+$$
+Visszaíráskor elhanyagolhatjuk a $(\vec{v}\;\vec{\nabla})\vec{v}$-s tagot, mivel a $\vec{v}$ perturbáció mértéke kicsi, így azt négyzetre emelve már az egész tag elhagyható, és a $\delta$-ban négyzetes tagokat is elhagyhatjuk hasonló indokok miatt. Az új egyenleteink tehát:
+\begin{equation}
+\label{eq:cont}
+\frac{\partial\delta\rho}{\partial t}\;+\;\rho_0 div(\vec{v})=0
+\end{equation}
+\begin{equation}
+\label{eq:rot}
+\rho_0\frac{\partial \vec{v}}{\partial t}=-grad(\delta p)
+\end{equation}
+Felhasználva a feltételezett és ismert $p(\rho)$ összefüggést \aref{eq:NS}. egyenlet tovább alakítható:
+$$
+\rho_0\frac{\partial \vec{v}}{\partial t}=-grad(\delta p)=-grad\bigg(\frac{dp}{d\rho}\bigg\vert_{\rho_0}\delta\rho\bigg)=-grad(c^2\delta\rho)=-c^2grad(\delta\rho),
+$$
+$\frac{dp}{d\rho}\big\vert_{\rho_0}=c^2$
+\begin{equation}
+\label{eq:NS}
+\rho_0\frac{\partial \vec{v}}{\partial t}=-c^2grad(\delta \rho)
+\end{equation}
+Ezek után vegyük \aref{eq:cont}. egyenlet időderiváltját:
+\begin{equation}
+\label{eq:(1)}
+\frac{\partial^2 \delta\rho}{\partial t^2}+\rho_0 div\bigg(\frac{\partial \vec{v}}{\partial t}\bigg)=0
+\end{equation}
+és \aref{eq:NS}. egyenlet divergenciáját:
+\begin{equation}
+\label{eq:(2)}
+\rho_0 div\bigg(\frac{\partial \vec{v}}{\partial t}\bigg)=-c^2divgrad(\delta \rho)=-c^2\bigtriangleup \delta \rho
+\end{equation}
+\newpage
+\noindent Észrevehető, hogy \aref{eq:(1)}. és \aref{eq:(2)}. egyenletben is megjelenik a $\rho_0 div\big(\frac{\partial \vec{v}}{\partial t}\big)$-s tag. A két egyenletet, ha kivonjuk egymásból és 0-ra rendezzük, akkor a következő összefüggéshez jutunk:
+\begin{equation}
+\frac{\partial^2 \delta\rho}{\partial t^2}-c^2\bigtriangleup\delta\rho=0
+\end{equation}
+Ugyanez felírható nyomás változóval is:
+\begin{equation}
+\frac{\partial^2 \delta p}{\partial t^2}-c^2\bigtriangleup\delta p=0
+\end{equation}
+Ezt nevezzük hullámegyenletnek, tehát a hang az valamilyen nyomás- vagy sűrűséghullám, és ez általánosan is felírható tetszőleges $\Phi$ terjedő mennyiségre:
+$$
+\frac{\partial^2 \Phi}{\partial t^2}-c^2\bigtriangleup\Phi=0
+$$
+Továbbá felismerhető, hogy ez az egyenlet a $c^2$-es szorzó nélkül egy homogén D'Alambert-egyenlet:
+$$
+\Box \Phi=0
+$$
+Visszatérve \aref{eq:rot}. egyenlethez, és véve mindkét oldalának rotációját, és felhasználva azt az azonosságot, hogy $rotgrad\Phi=0$, valamint a Young-tétel szerint felcserélhetőnek vesszük a parciális deriválások sorrendjét, a következő kifejezéshez jutunk:
+\begin{equation}
+\rho_0 \frac{\partial}{\partial t}(rot(\vec{v)})=\vec{0}
+\end{equation}
+Ebből látható, hogy a sebesség-vektormező rotációja időben állandó, tehát az áramlás örvényessége megmarad.
+\subsection*{Az egyenlet megoldása}
+Az egyenletek megoldása lehet egy síkhullám, amiről belátható, hogy longitudinálisnak kell lennie (a probléma gömbhullámként is kezelhető). A síkhullámot leíró összefüggések a következők:
+\begin{equation}
+\label{eq:long}
+\delta\rho=\delta\rho_0 e^{i(\omega t+\vec{k}\vec{r})}\qquad \vec{v}=\vec{v}_0e^{i(\omega t+\vec{k}\vec{r})},
+\end{equation}
+ahol $\omega$ a körfrekvencia, $t$ idő, $\vec{k}$ a hullámszámvektor és $\vec{r}$ pedig helyvektor, és ezeknek skaláris szorzatát vesszük a kitevőben. Síkhullám esetén az azonos fázisú felületek egy síkban vannak. Ezeket behelyettesíthetjük \aref{eq:cont}. (kontinuitási) egyenletbe:
+$$
+i\omega\delta\rho_0 e^{i(\omega t+\vec{k}\vec{r})}\;+\;i\rho_0(\vec{v}_0\vec{k})e^{i(\omega t+\vec{k}\vec{r})}=0
+$$
+Legyeszerűsíthetünk az exponenciális tényezővel és az imaginárius egységgel:
+$$
+\delta \rho_0\omega\;+\;\rho_0(\vec{v}_0\vec{k})=0
+$$
+A sebességvektor és a hullámszámvektor skaláris szorzata miatt a sebességnek csak a $\vec{k}$-irányú vetülete számítható.\\\\
+Ha \aref{eq:(1)}. egyenletbe is beírjuk a síkhullámot leíró összefüggéseket, akkor a következőkre jutunk:
+$$
+i\omega\rho_0 \vec{v}_0 e^{i(\omega t+\vec{k}\vec{r})}=-c^2i\vec{k}\delta\rho_0 e^{i(\omega t+\vec{k}\vec{r})}
+$$
+Ismét leegyszerűsíthetünk az exponenciális tényezővel és az imaginárius egységgel:
+$$
+\omega \rho_0 \vec{v}_0=-c^2\delta \rho_0 \vec{k}
+$$
+Látható, hogy az egyenlet két oldala csak akkor lehet egyenlő, ha $\vec{v}_0$ sebességvektor és $\vec{k}$ hullámszámvektor párhuzamos. Így mikor a sebesség $\vec{k}$-irányú vetületét számítjuk, akkor megkapjuk a teljes sebességvektort, mivel csak olyan irányú komponesei vannak. Így beláttuk, hogy a hullámnak longitudinálisnak kell lennie, mivel a hullám sebessége és terjedési iránya egybeesik.\newpage
+\noindent Ha behelyettesítünk a kapott hullámegyenletbe a síkhullám mennyiségeivel, akkor a körfrekvenciára az alábbi összegüggést kaphatjuk:
+$$
+\frac{\partial^2\delta \rho}{\partial t^2}-c^2\bigtriangleup \delta \rho=-\omega^2\delta\rho+c^2(k_x^2+k_y^2+k_z^2)\delta\rho=-\omega^2\delta\rho+c^2|\vec{k}|^2\delta\rho=0
+$$
+Ezt tovább egyszerűsítve:
+$$
+\omega^2=c^2|\vec{k}|^2
+$$
+\subsection*{Hangsebesség meghatározása}
+A hang sebességének meghatározásának feladatát kétfelé bonthatjuk: kis- és nagyfrekvenciás hullámokra.\\\\
+Kis frekvencia esetén a folyamat lassú, a hőmérséklet állandó marad, így a termodinamikában ismert kifejezés szerint izotermnek nevezzük. Felírható, hogy:
+\begin{equation}
+\frac{p}{\rho}=\frac{R}{M}T,
+\end{equation}
+ahol az újonnan bevezett mennyiségek: $R$ az egyetemes gázállandó ($\approx 8.314 \frac{J}{mol\,K}$), $M$ a moláris tömeg és $T$ a hőmérséklet. Ekkor a már korábban meghatározott $c^2=\frac{dp}{d\rho}\big\vert_{\rho_0}$ összefüggés alapján:
+\begin{equation}
+c^2=\frac{R}{M}T
+\end{equation}
+Nagy frekvenicaérték esetén azt feltételezzük, hogy olyan gyors a folyamat, hogy nincs hőcsere, így adiabatikus közelítést alkalmazhatunk:
+\begin{equation}
+\frac{p}{\rho^\kappa}=const.
+\end{equation}
+Ezt $p$-re rendezve és véve mindkét oldal $\rho$ szerinti deriváltját:
+$$
+\frac{dp}{d\rho}=\kappa\cdot const.\cdot \rho^{\kappa-1}=\kappa\frac{p}{\rho}=\kappa\frac{R}{M}T
+$$
+Ismét felhasználva az előbbi összefüggést $c^2$-re:
+\begin{equation}
+c^2=\kappa\frac{R}{M}T
+\end{equation}
+Ez a két vizsgált folyamat határerestnek tekinthetó, és látható, hogy csak egy $\kappa$ faktorban térnek el egymástól. Mivel $\kappa=\frac{c_p}{c_v}$, ez a különbség sem nagy.\\\\
+A kompresszibilitást ($\kappa_T$) vizsgálva is vonhatunk le következtetéseket. A kompresszibilitást a következőképpen számíthatjuk:
+\begin{equation}
+-\frac{1}{V}\frac{dV}{dp}=-\frac{1}{\rho}\frac{d\rho}{dp}=\kappa_T,
+\end{equation}
+ahol $V$ a térfogat. Ezt az egyenletet átalakítva a $c^2$ a következőnek adódik:
+\begin{equation}
+c^2=\frac{1}{\kappa_T \rho}
+\end{equation}
+Emiatt $c$ sebesség összenyomhatatlan közeg esetén végtelennek adódik, mivel ekkor $\kappa_T=0$. Valódi összenyomhatatlan közeg nem létezik, viszont azt tudjuk, hogy a folyadékok sokkal kevésbé összenyomhatók, mint a gázok, tehát folyékony közegben a hanghullámok is számotteveően gyosrabban terjednek.
+$$
+c_{folyadek}>>c_{gaz}
+$$
+\end{document}

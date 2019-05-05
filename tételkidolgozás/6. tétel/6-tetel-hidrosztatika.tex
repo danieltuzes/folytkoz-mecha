@@ -1,0 +1,172 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{mathabx}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{%
+  6.tétel \\
+  \large Hidrosztatika}
+
+\date{}
+\begin{document}
+\maketitle
+
+Mindeddig szilárd anyagok deformációjával és változásával foglalkoztunk, azonban a való életben nagyon sokszor kerülünk kapcsolatba folyadékokkal és gázokkal is. Fontos tudni hogyan hat a folyó vize a híd pilléreire, vagy épp a hajó testére de már az is érdekes lehet, hogy a lufi oldalát hogyan nyomja a benne levő gáz.
+\\
+\\
+A szilárd anyagoknál a deformációra bevezettünk egy $\underline{u}(\underline{r})$ vektorteret. Ez a folyadékoknál már nem egy célszerű leírási mód hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását.
+\\
+Jobban érdekel minket a következő két dolog: a $\underline{v}(\underline{r},t)$ sebességtér és a $\rho(\underline{r},t)$ sűrűségmező. Mostantól erre a két mennyiségre figyeljünk.
+\\
+\\
+\section{Pascal-törvény}
+
+A következőben vegyünk egy $\Delta A$ felületet, amire ható erő egy folyadék nyomásából ered. Mivel:
+\begin{equation}
+\Delta F=-p\Delta A
+\end{equation}
+és
+\begin{equation}
+F=\sigma A
+\end{equation}
+ezért:
+\begin{equation}
+\sigma=\begin{pmatrix}
+    -p & 0 & 0 \\
+    0 & -p & 0 \\
+    0 & 0 & -p
+\end{pmatrix}=-p\hat{I}
+\end{equation}
+\\
+Az, hogy a mátrix diagonális, azt jelenti, hogy a folyadékban nincsenek kitüntetett irányok. 
+\\
+\\
+Egy felületre ható erő (ami folyadék nyomásából származik) párhuzamos a felület normálisával és arányos a felület nagyságával.
+\\
+Vizsgáljuk az egyensúly esetét. Az egyensúly feltétele:
+\begin{equation}
+div\sigma+\underline{f}=0
+\end{equation}
+Ebből:
+\begin{equation}
+div\sigma=div\begin{pmatrix}
+    -p & 0 & 0 \\
+    0 & -p & 0 \\
+    0 & 0 & -p
+\end{pmatrix}=-gradp
+\end{equation}
+Tehát:
+\begin{equation}
+\underline{f}-gradp=0
+\end{equation}
+\\
+Ha gravitációs erőtérben nézzük, akkor $\underline{f}=\rho\underline{g}=-\rho grad\Phi$, ahol $\Phi$ a gravitációs potenciál. Így:
+\begin{equation}
+gradp+\rho grad\Phi=0
+\end{equation}
+\\
+Ha $\rho$ állandó:
+\begin{equation}
+grad(p+\rho\Phi)=0
+\end{equation}
+\\
+Tehát $p+\rho\Phi$ állandó. Ez azt jelenti, hogy az azonos nyomású és azonos potenciálú helyek egybeesnek. A gravitációs erőtérben a potenciál $gh$, innen láthatjuk, hogy
+\begin{equation}
+p=p_{0}+\rho gh
+\end{equation}
+\\
+Ahol $p_{0}$ a $h=0$-ban mért nyomás.
+\\
+\\
+\section{Felhajtóerő}
+Vizsgáljuk egy folyadékba merülő téglatestre ható erőket! A folyadék felszínével párhuzamos oldalak területe legyen $a\cdot a$, a harmadik él pedig legyen $b$. A téglatest felszíntől vett távolságát hívjuk $h$-nak.
+A nyomásból származó erő, a folyadék sűrűségének ismeretében:
+\begin{equation}
+F_{p}=p(z_{1})a^{2}-p(z_2)a^2=(\rho gh-\rho g(h+b))a^2=-\rho gba^2=-\rho gV
+\end{equation}
+Ezt nevezzük felhajtóerőnek.
+\\
+Szabálytalan test esetén:
+\begin{equation}
+F_f=\oint\hat{\sigma}dA=\int div\hat{\sigma}dV=-\int\rho gdV=-\rho gV
+\end{equation}
+Így látahatjuk hogy a test alakjától nam, csak a térfogatától függ a felhajtóerő.
+\\
+\\
+\section{Forgó folyadék}
+Forgassunk egy folyadékot és vizsgáljuk meg milyen alakot fog felvenni.
+Az egyensúly feltétele a következő:
+
+\begin{equation}
+\underline{f}-gradp=0
+\end{equation}
+\begin{equation}
+\underline{f}=\rho g+\rho\omega s
+\end{equation}
+\\
+Ahol $s=(x;y;0)$. A centrifugális erősűrűség ($\rho\omega s$) előáll $\Phi_c$ negatív gradienseként amennyiben $\Phi_c=-\frac{1}{2}\rho\omega^2(x^2+y^2)$ Így a potenciális energiasűrűség $\Phi=\rho gz-\frac{1}{2}\rho\omega^2(x^2+y^2)$. Tehát:
+\begin{equation}
+grad(p+\rho gz-\frac{1}{2}\rho\omega^2(x^2+y^2))=0 \rightarrow p+\rho gz-\frac{1}{2}\rho\omega^2(x^2+y^2)=p_0
+\end{equation}
+\\
+Ha megfelelően választjuk a koordinátarendszert, $p=p_0$ így amit kapunk
+\begin{equation}
+\rho gz=\frac{1}{2}\rho\omega^2(x^2+y^2)
+\end{equation}
+\\
+Ami egy forgási paraboloid képlete. Ezzel megkaptuk a forgó folyadák felszínének alakját.
+\\
+\section{Barometrikus magasságformula}
+
+Gravitációs erőtérben az egyensúly feltétele: $-gradp-\rho grad\Phi=0$. Megfigyelhetjük, hogy gázok esetén a hely függvényében $\rho$ nem lesz állandó. Ideális gázok esetén:
+\begin{equation}
+pV=\frac{m}{M}RT
+\end{equation}
+\begin{equation}
+\frac{p}{\rho}=\frac{1}{M}RT\rightarrow \rho=\frac{Mp}{RT}
+\end{equation}
+\\
+Használjunk izoterm közelítést, azaz tekintsük állandónak a hőmérsékletet.
+\\
+\begin{equation}
+gradp+\frac{M}{RT}pgrad\Phi=0
+\end{equation}
+\begin{equation}
+grad\Phi=-g
+\end{equation}
+\begin{equation}
+gradp-\frac{M}{RT}pg=0
+\end{equation}
+\\
+Csak z irányban változik a nyomás: $\frac{dp}{dz}+\frac{Mg}{RT}p=0$. Ezt megoldva megkapjuk, hogy
+\begin{equation}
+p=p_0+e^{-\frac{Mgz}{RT}}
+\end{equation}
+\\
+Mivel a sűrűség arányos a nyomással:
+\begin{equation}
+\rho=\rho_0+e^{-\frac{Mgz}{RT}}
+\end{equation}
+\\
+Tehát a nyomás és a sűrűség is exponenciálisan csökken a magassággal. Ha az $M=mA$ és az $\frac{R}{A}=k_b$ jelölést alkalmazzuk ($A$ az Avogadro-szám, $k_b$ pedig a Boltzmann-állandó):
+\begin{equation}
+\rho=\rho_0+e^{-\frac{mgz}{k_bT}}
+\end{equation}
+\\
+Ezt nevezzük barometrikus magasságformulának
+
+
+
+\end{document}

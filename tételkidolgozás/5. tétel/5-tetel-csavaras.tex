@@ -1,0 +1,147 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{mathabx}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{%
+  5.tétel \\
+  \large Csavarás, lehajlás}
+
+\date{}
+\begin{document}
+\maketitle
+
+\section{Csavarás}
+
+Sokszor fordul elő, hogy bizonyos testek megcsavarodnak. Ezt a fajta deformációt vizsgáljuk a következőkben:
+\\
+\\
+A csavarási deformációt vizsgáljuk egy hengeren, melynek alja rögzítve van. A henger legyen $l$ magasságú és $R$ sugarú. Tetejét csavarjuk el $\Delta\varphi$ szögógel!
+\\
+Vizsgáljunk egy pontpárt a hengeren. A két pontot jelöljük ki úgy, hogy eredetileg egymás alatt/felett voltak a henger két alapjának a szélén. Legyen a felső pont eredeti pozíciója $A$, az alsó pontté $B$. Csavarás után az alsó pont marad $B$-ben azonban a felső pont átkerül $A'$-be. Az $ABA'\sphericalangle$-et jelöljük $\gamma$-val.
+\\
+Ezeket a jelöléseket felhasználva adódik a következő egyenlet:
+
+\begin{equation}
+	\gamma(r)=\Delta\varphi\frac{r}{l}
+\end{equation}
+\\
+\\
+Mivel a csavarás a tiszta nyírás egy speciális fajtája (térfogatváltozás nélküli deformáció), ezért alkalmazható rá a nyírásoknál tanult egyenlet: 
+
+\begin{equation}
+\tau=\mu\gamma
+\end{equation}
+
+\begin{equation}
+\tau=\mu\frac{\Delta\varphi}{l}r
+\end{equation}
+\\
+Most nézzük meg a hengerre ható forgatónyomatékot. Mivel tudjuk, hogy a forgatónyomaték függ az erőkar nagyságától ($M=F\cdot r$), ezért láthatjuk, hogy a tengelytől azonos távolságokban a forgatónyomaték ugyan annyi. Vegyük tehát a henger keresztmetszetét és osszuk fel koncentrikus körgyűrűkre, melyeknek sugárirányú kiterjedése $\Delta r\rightarrow 0$. Egy körgyűrű területe így $2\pi r\Delta r$. Mivel $\tau=\frac{F}{A}$ ezért a forgatónyomatékot a következő módon kaphatjuk meg:
+
+\begin{equation}
+M=\int^{A}_{0}\tau(r)rdA=\int^{R}_{0}\tau(r)r2\pi rdr=\int^{R}_{0}\mu\frac{\Delta\varphi}{l}2r^{3}\pi dr=\frac{\pi\mu}{2l}R^{4}\Delta\varphi
+\end{equation}
+\\
+Tehát a forgatónyomaték arányos az elcsavarás szögével, a henger sugarának negyedik hatványával, valamint fordítottan arányos a henger magasságával.
+
+\newpage
+\section{Elhajlás}
+Az elhajlás a való életben talán még gyakrabban előforduló deformációtípus mint a csavarás. Vizsgáljuk meg ezt is egy példán keresztül!
+\\
+\\
+Rögzítsünk egy függőleges falhoz egyik lapjánál egy téglalap alapú hasábot. A gravitációs erő hatására a hasáb lehajlik, minél távolabb nézzük a faltól, annál nagyobb mértékben. A testnek lesz egy olyan része ami nem nyúlik meg, ezt nevezzük neutrális tartománynak. Illesszünk ehhez a neutrális tartományhoz egy
+$R$ sugarú érintő kört, amelynek illeszkedési szöge $\Delta\varphi$. Mivel itt nincs deformáció, ezért tudjuk, hogy $\varepsilon (R)=0$. $R$-től $\xi$ távolságban:
+
+\begin{equation}
+\varepsilon (\xi)=\frac{\Delta\varphi (R+\xi)-\Delta\varphi R}{\Delta\varphi R}=\frac{\xi}{R}
+\end{equation}
+\\
+A feszültség:
+\begin{equation}
+\sigma = E\varepsilon=E\frac{\xi}{R}
+\end{equation}
+\\
+Newton II. törvénye alapján tudjuk hogy az eredő erő 0 lesz egyensúlyban. Mivel a neutrális tartomány mellett a belső erők elletétes irányúak, ezért ezen a tartományon az eredő erő vízszintes komponense 0. Tehát:
+
+\begin{equation}
+F=\int\sigma dA=0
+\end{equation}
+\\
+Ebből az látszik, hogy a semleges tartomány a súlypontban helyezkedik el.
+\\
+Az összforgatónyomaték is 0 kell hogy legyen az egyensúly beálltához. A fedőlap vízszintes oldalának hosszúsága legyen $a$, magassága pedig $b$ Adjuk meg a forgatónyomatékot a neutrális zónától $\xi$ távolságra:
+\begin{equation}
+M=\int\sigma\xi dA
+\end{equation}
+\\
+$dA$-t átírhatjuk $ad\xi$-re, mivel $a$ konstans és a neutrális felülettől $\xi$ távolságban megegyeznek az erők. Így  a következő integrállá alakíthatjuk:
+\begin{equation}
+M=\int_{-\frac{b}{2}}^{\frac{b}{2}}E\frac{\xi}{R}\xi ad\xi=\frac{E}{R} I
+\end{equation}
+\\
+Itt $I$ egy általunk definiált új érték, amit hajlítási nyomatéknak nevezünk.
+\begin{equation}
+I=\int\xi^2ad\xi
+\end{equation}
+\begin{equation}
+\frac{E}{R}a\bigg[\frac{\xi^3}{12}\bigg]_{-\frac{b}{2}}^{\frac{b}{2}}=\frac{E}{R}\frac{ab^3}{12}
+\end{equation}
+\\
+A külső és belső erők forgatónyomatékának összege 0: $\frac{E}{R}I-F(l-x)=0$. Legyen a neutrális felület simulókörének középpntja $(x_0,0)$. A kör egyenlete így: $(x-x_0)^2+y^2=R^2\rightarrow y=\pm\sqrt[]{R^2-(x-x_0)^2}$
+\begin{equation}
+\frac{dy}{dx}=\pm\frac{1}{\sqrt[]{R^2-(x-x_0)^2}}(-2(x-x_0))
+\end{equation}
+\\
+Ha csak $x_0$ környezetét vizsgáljuk ($x\approx x_0$):
+\begin{equation}
+\frac{d^2y}{dx^2}=\pm\frac{1}{R}
+\end{equation}
+Forgatónyomateékra vonatkozó egyenlet:
+\begin{equation}
+EI\frac{d^2y}{dx^2}+F(l-x)=0
+\end{equation}
+A határfeltételek a következők: $y(0)=0, \frac{dy}{dx}(0)=0$
+Sejtés: keressük a megoldást $a+bx+\frac{c}{2}x^2+\frac{d}{4}x^3$ alakban.
+\\
+$y(0)=0\rightarrow a=0$ és $\frac{dy}{dx}(0)=0\rightarrow b=0$
+\begin{equation}
+\frac{dy}{dx}=cx+\frac{d}{2}x^2
+\end{equation}
+\begin{equation}
+\frac{d^2y}{dx^2}=c+dx
+\end{equation}
+\begin{equation}
+EI(c+dx)+F(l-x)=0
+\end{equation}
+\begin{equation}
+EIc=-Fl
+\end{equation}
+\begin{equation}
+EId=F
+\end{equation}
+Tehát:
+\begin{equation}
+c=-\frac{Fl}{IE}
+\end{equation}
+\begin{equation}
+d=\frac{F}{IE}
+\end{equation}
+Tehát a lehajlás egyenlete:
+\begin{equation}
+y(x)=\frac{F}{EI}\Big(\frac{1}{6}x^3-\frac{l}{2}x^2\Big)
+\end{equation}
+
+\end{document}
