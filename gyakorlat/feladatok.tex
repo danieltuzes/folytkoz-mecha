@@ -1,0 +1,198 @@
+\documentclass[12pt,a4paper]{scrartcl}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\let\mathbf\bm
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage{lmodern}
+
+\usepackage{placeins}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+\usepackage{xcolor}
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{cleveref}
+
+
+
+
+\begin{document}
+\title{Folytonos közegek mechanikája\\(emelt szint)}
+\author{folytkozef17ga, gyakorlat,\\Anyagfizikai Tanszék, Tüzes Dániel}
+\maketitle
+\tableofcontents
+
+\section{Sűrűséges feladatok}
+\subsection{Rúd sűrűsége}
+Egy rúd sűrűsége a hely függvényében legyen $\rho \left( x \right) = c/{x^2}$.
+\begin{enumerate}
+\item Milyen típusú sűrűségre gondolt az, aki egy ilyen példát kitűz?
+\item Mi lehet $c$ dimenziója?
+\item Mi a rúd tömege a
+\begin{itemize}
+\item $\left[ 1{\text{ m, }}2{\text{ m}} \right]$,
+\item $\left( 1{\text{ m, }}2{\text{ m}} \right)$,
+\item ${\left( {0{\text{ m, }}1{\text{ m}}} \right)}$ és
+\item ${\left[ {0{\text{ m, }}1{\text{ m}}} \right]}$ között?
+\end{itemize}
+\item Létezhet-e ilyen sűrűségű lemez?
+\end{enumerate}
+\subsection{Levegő sűrűsége}
+A levegő sűrűsége legyen a $h$ magasság függvényében $\rho \left( h \right) = {\rho _0} \cdot {e^{ - c \cdot h}}$.
+\begin{enumerate}
+\item Mi $c$ és $\rho_0$ dimenziója?
+\item Hanyad részére csökken adott térfogatú levegő tömege $L$-lel magasabban, ha a térfogat befoglaló gömbjének átmérője $ \ll \frac{1}{c}$?
+\end{enumerate}
+
+\subsection{Áramerősség}
+Legyen az áramsűrűség-mező ${\mathbf{j}}\left( {\mathbf{r}} \right) = c \cdot {\mathbf{r}}/{r^3}$.
+\begin{enumerate}
+\item Mi $c$ dimenziója?
+\item Mennyi töltés halad át az $1\text{ m}$ sugarú gömbön? És a $2\text{ m}$ sugarún?
+\item Mennyi töltés halad át azon a négyzeten, aminek a négy sarkának a koordinátái: ${{\mathbf{r}}_A} = \left( {1,0,0} \right)$, ${{\mathbf{r}}_B} = \left( {1,1,0} \right)$, ${{\mathbf{r}}_C} = \left( {1,1,1} \right)$ és ${{\mathbf{r}}_D} = \left( {1,0,1} \right)$?
+\end{enumerate}
+
+
+\section{Egyszerű transzformációk I}
+\subsection{Nem origó körüli}
+Hogyan változnak az egyes egyszerű transzformációk elmozdulástere, deformációs gradiense, disztorziója és deformációja, ha nem az origóban van a testek középpontja?
+
+\subsection{Forgatás}
+Mutassuk meg, hogy kicsi forgatásokra valóban felírható \begin{equation} \label{eq:inf_forgat}
+{{\mathbf{u}}^f}\left( {\mathbf{r}} \right) = \Delta {\mathbf{\varphi }} \times {\mathbf{r}},
+\end{equation}
+alak az elmozdulásmezőre! Mutassuk meg, hogy véges nagyságú forgatásra is $0$ a deformáció!
+
+\subsection{Konkrét számok}
+Írjuk fel az alábbi esetekre at elmozdulásmezőt, a disztorziót, a deformációs gradienst és a deformációt! Hogyan néznek ki ezek (első rendű közelítésben), ha az adott fajtájú egyszerű transzformációk kicsik?
+
+\begin{figure}[htb] 
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\includegraphics[scale=1]{figs/eltolas_feladat.eps}
+\caption{Eltolás.}
+\label{fig:eltolas_feladat}
+\end{subfigure} \hfill
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\includegraphics[scale=1]{figs/nyujtas_feladat.eps}
+\caption{Nyújtás.}
+\label{fig:nyujtas_feladat}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\includegraphics[scale=1]{figs/forgatas_feladat.eps}
+\caption{Forgatás.}
+\label{fig:forgatas_feladat}
+\end{subfigure}
+\label{fig:konret_szamos_feladat}
+\caption{Konkrét számos feladat.}
+\end{figure}
+\FloatBarrier
+
+\section{Egyszerű transzformációk II}
+\subsection{Egyenes képe egyenes}
+Mutassuk meg, hogy eltolás, nyújtás és forgatás során szakasz képe szakasz! Ehhez felhasználhatjuk, hogy az $A$ és $B$ pontok közötti $AB$ szakaszt a két pontba mutató ${{\mathbf{r}}_A}$ és ${{\mathbf{r}}_B}$ vektorokkal úgy írhatjuk fel, hogy 
+\[AB = \left\{ {\left. {{\lambda _A}{{\mathbf{r}}_A} + {\lambda _B}{{\mathbf{r}}_B}} \right|{\lambda _A} + {\lambda _B} = 1} \right\}.\]
+
+\subsection{Nyírós-számolós}
+\begin{enumerate}
+\item \Aref{fig:nyiras_feladat}.\ ábrán melyik fajta nyírás van ábrázolva? Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció?
+\item Általános és tiszta (véges) nyírás eseteiben leolvasható-e (radiános) szögmérő segítségével a disztorzió komponensei? És infinitezimális transzformáció esetén?
+\item Infinitezimális tiszta nyírásnál elsőrendig nézve hogyan néz ki az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció? Írjuk fel a mátrixokat abban a vonatkoztatási rendszerben, amelyben ${\mathbf{F}}$ diagonális, illetve ezzel $45^\circ$-os szöget bezáró koordinátarendszerben is!
+\end{enumerate}
+
+
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/nyiras_feladat.eps}
+\caption{Nyírós feladat.}
+\label{fig:nyiras_feladat}
+\end{figure}
+\FloatBarrier
+
+
+\section{Nemhomogén transzformációk}
+\subsection{Homokóra nyújtós}
+Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció \aref{fig:homokora_nyujtas_feladat}.\ ábrán?
+
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/homokora_nyujtas_feladat.eps}
+\caption{Homokóra nyújtós feladat.}
+\label{fig:homokora_nyujtas_feladat}
+\end{figure}
+\FloatBarrier
+
+\subsection{Csavarás}
+Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció csavarásra? Hogyan egyszerűsödik első rendben, ha a forgatás szöge véges $z_0$ mellett infinitezimálisan kicsi?
+
+\section{Összetett transzformációk}
+\subsection{Egymásután}
+\begin{enumerate}
+\item Milyen transzformációk ismerhetőek fel \aref{fig:egymasutan}.\ ábráról?
+\item Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció?
+\end{enumerate}
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/egymasutan_feladat.eps}
+\caption{Egymásután.}
+\label{fig:egymasutan}
+\end{figure}
+\FloatBarrier
+
+\subsection{Visszafejtés}
+Milyen transzformációkat takarnak az egyes deformációs gradiensek? Mekkora forgatást és milyen tengely irányú mekkora nyújtást vagy nyírást tartalmaznak? Rajzold le, mivé transzformálódik az egységnégyzetet, és jelöld be rajta a nyújtás tengelyeit és a forgatás szögét, ha van!
+
+\[{{\mathbf{F}}_1} = \left( {\begin{array}{*{20}{c}}
+  {\sqrt 2 }&-{\sqrt 2 } \\ 
+  {\sqrt {0,125} }&{ \sqrt {0,125} } 
+\end{array}} \right)\quad {{\mathbf{F}}_2} = \left( {\begin{array}{*{20}{c}}
+  {1,2}&0 \\ 
+  0&{1,5} 
+\end{array}} \right)\quad {{\mathbf{F}}_3} = \left( {\begin{array}{*{20}{c}}
+  2&{0,2} \\ 
+  {0,2}&{0,5} 
+\end{array}} \right)\]
+
+\section{Rugalmas testek egyensúlya}
+\subsection{Kocka és átlója}
+\Aref{fig:kocka_atloval}.\ ábrán látható, konstans $\rho$ sűrűségű rugalmas kocka egyensúlyi állapotában a feszültségtenzor alakja 
+\[{\mathbf{\sigma }}\left( {\mathbf{r}} \right) = c \left( {\begin{array}{*{20}{c}}
+  {{x}}&0&0 \\ 
+  0&{{y}}&0 \\ 
+  0&0&{{z}} 
+\end{array}} \right).\]
+A kocka minden pontjában a sűrűséggel arányos, a térben nem feltétlen homogén tömegerő hat. Hat valamint minden oldallapra külön-külön állandó nagyságú és irányú felületi erő. Mekkora nagyságú és irányú
+\begin{enumerate}
+\item tömegerő hat a kockára?
+\item erő hat a kocka egyes oldallapjaira?
+\item erő hat az $n = \left( {1,0,1} \right)/\sqrt 2 $ normálisú, a két lapátlóra illeszkedő $ABGH$ síkra?
+\end{enumerate}
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/kocka_atloval.eps}
+\caption{A kocka $BCGF$ és $ADHE$ lapátlóira, az $ABGH$ pontokra egy $n = \left( {1,0,1} \right)/\sqrt 2 $ normálisú síklapot fektetünk. }
+\label{fig:kocka_atloval}
+\end{figure}
+\FloatBarrier
+
+\subsection{Oszlopban állandó nyomás}
+Egy állandó $\rho$ sűrűségű oszlop felső lapja a felfüggesztéshez van rögzítve, alsó síklapjára egy $G$ súlyú test van rögzítve, keresztmetetszete minden magasságban kör. Milyen alakú legyen, hogy a nyomás minden keresztmetszetében állandó legyen?
+
+\end{document}
