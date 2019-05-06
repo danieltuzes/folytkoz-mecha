@@ -31,7 +31,7 @@
 
 
 \begin{document}
-\title{Folytonos közegek mechanikája\\(emelt szint), gyakorlat}
+\title{Folytonos közegek mechanikája\\(emelt szint)}
 \author{folytkozef17ga, gyakorlat,\\Anyagfizikai Tanszék, Tüzes Dániel}
 \maketitle
 \tableofcontents
@@ -107,7 +107,7 @@ akkor attól még
 \begin{equation} \label{eq:ugyanaz_a_tomeg}
 m{'_V} = \int_V {\rho '\left( {\mathbf{r}} \right){d^3}r}  = {m_V}
 \end{equation}
-marad. Igaz ez bármilyen $V$ térfogatra, még arra is, ami ${\mathbf{r}}$-re húzódik rá, hiszen abban az egyetlen pontban a tömeg 0, csak a sűrűség más. A sűrűség akkor tehát nem egyértelmű? Függvény értelmében nem, másképp szólva nem is függvény igazából. De ne lepődjünk meg. Általános iskolában a sűrűség egy konstans szám volt, később már függvénnyé avanzsált, felsőbb egyetemi szintem pedig ezen is tovább kell lépni, és valamiféle überfüggvény fogalomhoz kell eljutni. A helyes kifejezés, amit keresünk, az a disztribúció. A tömegpont és ponttöltés környékén eddig előforduló Dirac-delta objektum sem függvény, hanem egy ahhoz valamilyen értelemben hasonlító matematikai fogalom, egy disztribúció. Ezek a mennyiségek nem "önmagukban", hanem az integráljaikon keresztül definiálhatóak. Javaslom \href{http://physics.bme.hu/sites/physics.bme.hu/files/users/BMETE15AF31_kov/2012Gnadig_II.pdf}{Gnädig Péter: Bevezetés a disztribúcióelméletbe és fizikai alkalmazásaiba} c.\ művét, amely jól bemutatja, érzékelteti és elmagyarázza a kérdéskört fizikusoknak.
+marad. Igaz ez bármilyen $V$ térfogatra, még arra is, ami ${\mathbf{r}}$-re húzódik rá, hiszen abban az egyetlen pontban a tömeg 0, csak a sűrűség más. A sűrűség akkor tehát nem egyértelmű? Függvény értelmében nem, másképp szólva nem is függvény igazából. De ne lepődjünk meg. Általános iskolában a sűrűség egy konstans szám volt, később már függvénnyé avanzsált, felsőbb egyetemi szintem pedig ezen is tovább kell lépni, és valamiféle überfüggvény fogalomhoz kell eljutni. A helyes kifejezés, amit keresünk, az a disztribúció, avagy általánosított függvény. A tömegpont és ponttöltés környékén eddig előforduló Dirac-delta objektum sem függvény, hanem egy ahhoz valamilyen értelemben hasonlító matematikai fogalom, egy disztribúció. Ezek a mennyiségek nem "önmagukban", hanem az integráljaikon keresztül definiálhatóak. Javaslom \href{http://physics.bme.hu/sites/physics.bme.hu/files/users/BMETE15AF31_kov/2012Gnadig_II.pdf}{Gnädig Péter: Bevezetés a disztribúcióelméletbe és fizikai alkalmazásaiba} c.\ művét, amely jól bemutatja, érzékelteti és elmagyarázza a kérdéskört fizikusoknak.
 
 Tehát a sűrűséget azzal definiáljuk, hogy megadjuk pl.\ az integrálját:
 \[\int_V {{\rho _d}\left( {\mathbf{r}} \right){d^3}r}  = f\left( V \right).\]
@@ -228,35 +228,7 @@ Most végezzük el a deriválást!
 Tehát a rotáció mindenhol 0, ahol a függvény értelmezve van, mégsem konzervatív az erőtér. Hogyan lehet ez? A  tömegpont gravitációs erőtérnél ugyanez igaz: a rotáció mindenhol 0, ahol a függvény értelmezve van, de az meg mégis konzervatív. Mi akkor a különbség? A különbség abban rejlik, hogy ha a ponttöltésnél disztribúció értelemben vesszük a deriváltat, akkor tényleg kijön, hogy a rotáció 0, míg ${\mathbf{A}} \times {\mathbf{r}}/{r^2}$-nél ez nem jön ki.
 
 \subsection{Feladatok}
-\subsubsection*{Rúd sűrűsége}
-Egy rúd sűrűsége a hely függvényében legyen $\rho \left( x \right) = c/{x^2}$.
-\begin{enumerate}
-\item Milyen típusú sűrűségre gondolhat az, aki egy ilyen példát kitűz?
-\item Mi lehet $c$ dimenziója?
-\item Mi a rúd tömege a
-\begin{itemize}
-\item $\left[ 1{\text{ m, }}2{\text{ m}} \right]$,
-\item $\left( 1{\text{ m, }}2{\text{ m}} \right)$,
-\item ${\left( {0{\text{ m, }}1{\text{ m}}} \right)}$ és
-\item ${\left[ {0{\text{ m, }}1{\text{ m}}} \right]}$ között?
-\end{itemize}
-\item Létezhet-e ilyen sűrűségű lemez?
-\end{enumerate}
-\subsubsection*{Levegő sűrűsége}
-A levegő sűrűsége legyen a $h$ magasság függvényében $\rho \left( h \right) = {\rho _0} \cdot {e^{ - c \cdot h}}$.
-\begin{enumerate}
-\item Mi $c$ és $\rho_0$ dimenziója?
-\item Hanyad részére csökken adott térfogatú levegő tömege $L$-lel magasabban, ha a térfogat befoglaló gömbjének átmérője $ \ll \frac{1}{c}$?
-\end{enumerate}
-
-\subsubsection*{Áramerősség}
-Legyen az áramsűrűség-mező ${\mathbf{j}}\left( {\mathbf{r}} \right) = c \cdot {\mathbf{r}}/{r^3}$.
-\begin{enumerate}
-\item Mi $c$ dimenziója?
-\item Mennyi töltés halad át az $1\text{ m}$ sugarú gömbön? És a $2\text{ m}$ sugarún?
-\item Mennyi töltés halad át azon a négyzeten, aminek a négy sarkának a koordinátái: ${{\mathbf{r}}_A} = \left( {1,0,0} \right)$, ${{\mathbf{r}}_B} = \left( {1,1,0} \right)$, ${{\mathbf{r}}_C} = \left( {1,1,1} \right)$ és ${{\mathbf{r}}_D} = \left( {1,0,1} \right)$?
-\end{enumerate}
-
+Feladatok a feladatlapon.
 
 \section{Rugalmas szilárd testek}
 \subsection{Disztorzió}
@@ -266,7 +238,6 @@ Vezessük még be a \[\begin{gathered}
   \Delta {\mathbf{r}}' = {{\mathbf{r}}_2'} - {{\mathbf{r}}_1'} \hfill \\ 
 \end{gathered} \]
 jelöléseket. A jelölések áttekintéséhez tekintsük \aref{fig:u}. ábrát!
-
 \begin{figure}[htb] 
 \centering    
 \includegraphics[scale=1]{figs/u.eps}
@@ -280,20 +251,20 @@ Ekkor az ábráról leolvasható módon
 \end{aligned} \]
 így ha ${\Delta {\mathbf{r}}}$ elég kicsi, akkor írhatjuk ezt úgy, hogy 
 \begin{equation} \label{eq:disztrozio_def}
-\Delta {\mathbf{r}}' = \Delta {\mathbf{r}} + {\left. {\frac{{d{\mathbf{u}}\left( {\mathbf{r}} \right)}}{{d{\mathbf{r}}}}} \right|_{{{\mathbf{r}}_1}}} \cdot \Delta {\mathbf{r}} = \left( {1 + {{\left. {{{\mathbf{\beta }}^T}} \right|}_{{{\mathbf{r}}_1}}}} \right)\Delta {\mathbf{r}},
+\Delta {\mathbf{r}}' = \Delta {\mathbf{r}} + {\left. {\frac{{d{\mathbf{u}}\left( {\mathbf{r}} \right)}}{{d{\mathbf{r}}}}} \right|_{{{\mathbf{r}}_1}}} \cdot \Delta {\mathbf{r}} = \underbrace {\left( {{\mathbf{I}} + {{\left. {{{\mathbf{\beta }}^T}} \right|}_{{{\mathbf{r}}_1}}}} \right)}_{\mathbf{F}}\Delta {\mathbf{r}},
 \end{equation}
 ahol a bevezetett ${\mathbf{\beta }}$ a \textbf{disztorzió}, és ezen \eqref{eq:disztrozio_def}.\ képlet szerint a definíciója:
 \begin{equation} \label{eq:disztrozio_szamolas}
 {\beta _{ij}} = {\partial _i}{u_j} \Leftrightarrow {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right) = \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}},
 \end{equation}
 valamint bevezethetjük még a \textbf{deformációs gradienst}, amelyre
-\[{\mathbf{F}}\left( {\mathbf{r}} \right) = \frac{d}{{d{\mathbf{r}}}}\left( {{\mathbf{r}} + {\mathbf{u}}\left( {\mathbf{r}} \right)} \right) = 1 + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right).\]
+\[{\mathbf{F}}\left( {\mathbf{r}} \right) = \frac{d}{{d{\mathbf{r}}}}\left( {{\mathbf{r}} + {\mathbf{u}}\left( {\mathbf{r}} \right)} \right) = {\mathbf{I}} + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right).\]
 \subsection{Deformáció}
 Fejezzük ki az anyagban két pont távolságának a megváltozását, azaz $\left| {\Delta {\mathbf{r}}'} \right| - \left| {\Delta {\mathbf{r}}} \right|$ mennyiséget! Ehhez először fejezzük ki ${\left| {\Delta {\mathbf{r}}'} \right|^2}$-et:
 \[\begin{aligned}
   {\left| {\Delta {\mathbf{r}}'} \right|^2} =  & \Delta {\mathbf{r}}' \cdot \Delta {\mathbf{r}}' \\ 
-   =  & \left( {1 + {{\mathbf{\beta }}^T}} \right)\Delta {\mathbf{r}} \cdot \left( {1 + {{\mathbf{\beta }}^T}} \right)\Delta {\mathbf{r}} \\ 
-   =  & \Delta {\mathbf{r}}\underbrace {\left( {1 + {\mathbf{\beta }}} \right)\left( {1 + {{\mathbf{\beta }}^T}} \right)}_{\left( {1 + {\mathbf{\beta }} + {{\mathbf{\beta }}^T} + {\mathbf{\beta }}{{\mathbf{\beta }}^T}} \right)}\Delta {\mathbf{r}} \\ 
+   =  & \left( {{\mathbf{I}} + {{\mathbf{\beta }}^T}} \right)\Delta {\mathbf{r}} \cdot \left( {{\mathbf{I}} + {{\mathbf{\beta }}^T}} \right)\Delta {\mathbf{r}} \\ 
+   =  & \Delta {\mathbf{r}}\underbrace {\left( {{\mathbf{I}} + {\mathbf{\beta }}} \right)\left( {{\mathbf{I}} + {{\mathbf{\beta }}^T}} \right)}_{\left( {{\mathbf{I}} + {\mathbf{\beta }} + {{\mathbf{\beta }}^T} + {\mathbf{\beta }}{{\mathbf{\beta }}^T}} \right)}\Delta {\mathbf{r}} \\ 
    =  & {\left( {\Delta {\mathbf{r}}} \right)^2} + \Delta {\mathbf{r}}\left( {{\mathbf{\beta }} + {{\mathbf{\beta }}^T} + {\mathbf{\beta }}{{\mathbf{\beta }}^T}} \right)\Delta {\mathbf{r}} .\\ 
 \end{aligned} \]
 Ebből
@@ -309,7 +280,61 @@ Ha a disztorzió kicsi, akkor ${\mathbf{\beta }}\left( {\mathbf{r}} \right){{\ma
 \end{equation}
 Viszont ekkor ${\mathbf{\varepsilon }}$ is kicsi, így \az{\eqref{eq:deform_def}} egyenletben a gyököt 1 körül sorfejtve kapjuk, hogy
 \[\left| {\Delta {\mathbf{r}}'} \right| = \left| {\Delta {\mathbf{r}}} \right|\left( {1 + \frac{{{{\mathbf{e}}_{\Delta {\mathbf{r}}}}2{\mathbf{\varepsilon }}{{\mathbf{e}}_{\Delta {\mathbf{r}}}}}}{2}} \right) \Rightarrow \frac{{\left| {\Delta {\mathbf{r}}'} \right|}}{{\left| {\Delta {\mathbf{r}}} \right|}} - 1 = {{\mathbf{e}}_{\Delta {\mathbf{r}}}}{\mathbf{\varepsilon }}{{\mathbf{e}}_{\Delta {\mathbf{r}}}}.\]
-Itt megjelent a ${\Delta {\mathbf{r}}}$ irányú relatív hosszváltozás. Fontos, hogy ez a formula csak akkor igaz, ha a disztrozió kicsi volt. Ez nem csak, hogy egyszerűbb alakra hozta a deformációt a disztorzió függvényeként, de a relatív hosszváltozás is egyszerűbben kifejezhetővé vált.
+Itt megjelent a ${\Delta {\mathbf{r}}}$ (avagy vesszős?) irányú relatív hosszváltozás. Fontos, hogy ez a formula csak akkor igaz, ha a disztorzió kicsi volt. Ez nem csak, hogy egyszerűbb alakra hozta a deformációt a disztorzió függvényeként, de a relatív hosszváltozás is egyszerűbben kifejezhetővé vált.
+
+\subsubsection{Relatív térfogatváltozás}
+Nézzük meg, hogyan változik meg egy $V$ nagyságú térfogatelem, amelyet a
+\[{\mathbf{x}} = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right)x,\quad {\mathbf{y}} = \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  1 \\ 
+  0 
+\end{array}} \right)y,\quad {\mathbf{z}} = \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  0 \\ 
+  1 
+\end{array}} \right)z\]
+vektorok kijelölnek! Ez könnyedén kifejezhető a három vektor vegyesszorzatával, azaz
+\[V = \left( {{\mathbf{x}},{\mathbf{y}},{\mathbf{z}}} \right) = \left| {\begin{array}{*{20}{c}}
+  x&0&0 \\ 
+  0&y&0 \\ 
+  0&0&z 
+\end{array}} \right| = x \cdot y \cdot z.\]
+Legyenek ezek a vektorok elég kicsik abban az értelemben, hogy ${\mathbf{F}}$ legyen konstans a vektorok által kijelölt térfogatban, ${\mathbf{y}}' = {\mathbf{Fy}}$, ${\mathbf{x}}' = {\mathbf{Fx}}$ és ${\mathbf{z}}' = {\mathbf{Fz}}$. Ekkor a transzformáció után a vektorok alakja:
+\[{\mathbf{x}}' = \left( {\begin{array}{*{20}{c}}
+  {1 + {\partial _x}{u_x}} \\ 
+  {{\partial _x}{u_y}} \\ 
+  {{\partial _x}{u_z}} 
+\end{array}} \right)x,\quad {\mathbf{y}}' = \left( {\begin{array}{*{20}{c}}
+  {{\partial _y}{u_x}} \\ 
+  {1 + {\partial _y}{u_y}} \\ 
+  {{\partial _y}{u_z}} 
+\end{array}} \right)y,\quad {\mathbf{z}}' = \left( {\begin{array}{*{20}{c}}
+  {{\partial _z}{u_x}} \\ 
+  {{\partial _z}{u_y}} \\ 
+  {1 + {\partial _z}{u_z}} 
+\end{array}} \right)z,\]
+az új térfogatra pedig
+\begin{equation*}
+  V' = \left( {{\mathbf{x}}',{\mathbf{y}}',{\mathbf{z}}'} \right) = \left| {\begin{array}{*{20}{c}}
+  {1 + {\partial _x}{u_x}}&{{\partial _x}{u_y}}&{{\partial _x}{u_z}} \\ 
+  {{\partial _y}{u_x}}&{1 + {\partial _y}{u_y}}&{{\partial _y}{u_z}} \\ 
+  {{\partial _z}{u_x}}&{{\partial _z}{u_y}}&{1 + {\partial _z}{u_z}} 
+\end{array}} \right| x y z  = \det \left( {\mathbf{F}} \right)V. 
+\end{equation*}
+Az új térfogat a régihez viszonyítva, illetve a relatív térfogatváltozásra kapjuk, hogy
+\[\frac{{V'}}{V} = \det \left( {\mathbf{F}} \right) \Leftrightarrow \frac{{V' - V}}{V} = \frac{{\Delta V}}{V} = \det \underbrace {\left( {{\mathbf{I}} + {\mathbf{\beta^T }}} \right)}_{\mathbf{F}} - 1.\]
+Gyakori eset, hogy a deriváltak az $1$-hez képest kicsik, így elsőrendig megtartva a determináns tagjait, a másod- és magasabbrendű tagokat pedig elhanyagolva kapjuk, hogy 
+\begin{multline*}
+  V' \approx \left( {1 + {\partial _x}{u_x}} \right)\left( {1 + {\partial _y}{u_y}} \right)\left( {1 + {\partial _z}{u_z}} \right)V \approx \left( {1 + {\partial _x}{u_x} + {\partial _y}{u_y} + {\partial _z}{u_z}} \right)V =  \\
+   = \left( 1+{{\text{Tr}}\left( {\mathbf{\epsilon}} \right)} \right)V,
+\end{multline*}
+ahol megjelent a deformációs tenzor trace-e, avagy spúrja, amit a ${\text {Tr}}$ vagy ${\text {Sp}}$ operátor jelöl, ami megadja a főátlóbeli elemek összegét. Ekkor a relatív térfogatváltozás egyszerűen a deformációs tenzor trace-e, azaz
+\[\frac{{V' - V}}{V} = \frac{{\Delta V}}{V} = {\text{Tr}}\left( {\mathbf{\varepsilon }} \right).\]
+
 \subsubsection{Szimmetrikus, antiszimmetrikus rész}
 Vezessük be egy operátor szimmetrikus és nem szimmetrikus részének a definícióját:
 \[{{\mathbf{A}}^{{\text{sz}}}} = \frac{{{\mathbf{A}} + {{\mathbf{A}}^T}}}{2}\quad {{\mathbf{A}}^{\text{asz}}} = \frac{{{\mathbf{A}} - {{\mathbf{A}}^T}}}{2},\]
@@ -329,6 +354,14 @@ Eltolásnál minden régi helyvektorhoz egy ${{\mathbf{r}}_0}$ helyvektort adunk
 \caption{Az eltolás szemléltetése.}
 \label{fig:eltolas}
 \end{figure}
+Ekkor az elmozdulástér
+\[{\mathbf{u}} = {{\mathbf{r}}_0},\]
+a disztorziót pedig vagy számolhatjuk egyből ${\mathbf{u}}$ deriváltjából, vagy leolvashatjuk a $\Delta {\mathbf{r}}'$ értékéből,
+\[\Delta {{\mathbf{r}}^\prime } = {{\mathbf{r}}_2}^\prime  - {{\mathbf{r}}_1}^\prime  = \left( {{{\mathbf{r}}_2} + {{\mathbf{r}}_0}} \right) - \left( {{{\mathbf{r}}_1} + {{\mathbf{r}}_0}} \right) = \Delta {\mathbf{r}} = \left( {{\mathbf{I}} + {\mathbf{0}}} \right)\Delta {\mathbf{r}} \Rightarrow \left\{ {\begin{array}{*{20}{c}}
+  {{{\mathbf{\beta }}^T} = {\mathbf{0}}} \\ 
+  {{\mathbf{F}} = {\mathbf{I}}} 
+\end{array}} \right..\]
+Triviálisan látszik, hogy a deformáció ${\mathbf{0}}$.
 
 \subsubsection{Nyújtás}
 Nyújtásnál minden régi helyvektort (megfelelő koordináta rendszerben) komponensenként egy számmal szorzunk, amelyet \az{\ref{fig:nyujtas}}.\ ábra szemléltet. Ekkor
@@ -351,8 +384,25 @@ Nyújtásnál minden régi helyvektort (megfelelő koordináta rendszerben) komp
   z 
 \end{array}} \right) = \\ = \left[ {{\lambda _1}\left( {{{\mathbf{e}}_1} \circ {{\mathbf{e}}_1}} \right) + {\lambda _2}\left( {{{\mathbf{e}}_2} \circ {{\mathbf{e}}_2}} \right) + {\lambda _3}\left( {{{\mathbf{e}}_3} \circ {{\mathbf{e}}_3}} \right)} \right]{\mathbf{r}},
 \end{multline*}
-amelyben ${\lambda _i} \in \mathbb{R}$. Egy speciális eset, ha a  nyújtás iránytól független, azaz izotróp: ${\lambda _1} = {\lambda _2} = {\lambda _3}$, ekkor az ${\mathbf{I}}$ egységoperátorral
-\[{\mathbf{r}}'\left( {\mathbf{r}} \right) = {\lambda _1}{\mathbf{r}} = {\lambda _1}{\mathbf{Ir}}.\] Másik speciális eset a tiszta nyírás (lásd később).
+amelyben ${\lambda _i} \in \mathbb{R}$.
+
+Ekkor az elmozdulástér
+\[{\mathbf{u}}\left( {\mathbf{r}} \right) = {\mathbf{r}}' - {\mathbf{r}} = \underbrace {\left( {\begin{array}{*{20}{c}}
+  {{\lambda _1}}&0&0 \\ 
+  0&{{\lambda _2}}&0 \\ 
+  0&0&{{\lambda _3}} 
+\end{array}} \right)}_{\mathbf{\lambda }}{\mathbf{r}} - {\mathbf{r}} = \left( {{\mathbf{\lambda }} - {\mathbf{I}}} \right){\mathbf{r}} = \left( {\begin{array}{*{20}{c}}
+  {{\lambda _1} - 1}&0&0 \\ 
+  0&{{\lambda _2} - 1}&0 \\ 
+  0&0&{{\lambda _3} - 1} 
+\end{array}} \right){\mathbf{r}},\]
+amelyből deriválással megkapható a disztorzió, vagy kifejezhetjük $\Delta {\mathbf{r}}'$-t is,
+\[\Delta {\mathbf{r}}' = {{\mathbf{r}}_2}' - {{\mathbf{r}}_1}' = {\mathbf{\lambda }}{{\mathbf{r}}_2} - {\mathbf{\lambda }}{{\mathbf{r}}_1} = {\mathbf{\lambda }}\Delta {\mathbf{r}} = \underbrace {\left( {{\mathbf{I}} + \left( {{\mathbf{\lambda }} - {\mathbf{I}}} \right)} \right)}_{{\mathbf{F}} = {\mathbf{I}} + {{\mathbf{\beta }}^T}}\Delta {\mathbf{r}}\]
+amelyből egyszerűen leolvasható a disztorzió transzponáltja és a deformációs gradiens.
+
+
+Egy speciális eset, ha a  nyújtás iránytól független, azaz izotróp: ${\lambda _1} = {\lambda _2} = {\lambda _3}$, ekkor az ${\mathbf{I}}$ egységoperátorral
+\[{\mathbf{r}}'\left( {\mathbf{r}} \right) = {\lambda _1}{\mathbf{r}} = {\lambda _1}{\mathbf{Ir}}.\] Másik speciális eset a tiszta nyírás (lásd \ref{sec:tiszta_nyiras}).
 \begin{figure}[htb] 
 \centering    
 \includegraphics[scale=1]{figs/nyujtas.eps}
@@ -360,7 +410,7 @@ amelyben ${\lambda _i} \in \mathbb{R}$. Egy speciális eset, ha a  nyújtás ir�
 \label{fig:nyujtas}
 \end{figure}
 \subsubsection{Forgatás}
-Forgatásnál minden régi helyvektorhoz nagysága megmarad. A forgatást jellemezzük a szöggel és a forgatás tengelyének az irányával. Egy $z$ tengelyű, $\alpha$ szögű forgatásra
+Forgatásnál minden régi helyvektor nagysága megmarad, csak az irányuk változik meg. A forgatást jellemezzük a szöggel és a forgatás tengelyének az irányával. Egy $z$ tengelyű, $\alpha$ szögű forgatásra
 \[{\mathbf{r}}'\left( {\mathbf{r}} \right) = \left( {\begin{array}{*{20}{c}}
   {\cos \left( \alpha  \right)}&{ - \sin \left( \alpha  \right)}&0 \\ 
   { \sin \left( \alpha  \right)}&{\cos \left( \alpha  \right)}&0 \\ 
@@ -371,6 +421,7 @@ Forgatásnál minden régi helyvektorhoz nagysága megmarad. A forgatást jellem
   z 
 \end{array}} \right) = {{\mathbf{O}}_{z,\alpha }}{\mathbf{r}}.\]
 Egyezmény szerint a pozitív szögű forgatás óramutató járásával ellentétes irányt jelent, és a mátrixban az első sorban van a negatív előjel. Ezt \az{\ref{fig:eltolas}}.\ ábra szemlélteti. (A $z$ tengely a papír síkjából kifelé jön, így alkotnak a tengelyek jobbsodrású rendszert.) Általánosan számolással megmutatható, hogy akárhány forgatás együttes hatása szintén egyetlen forgatás egy jól megválasztott tengely körül, jól megválasztott szöggel.
+
 \begin{figure}[htb] 
 \centering    
 \includegraphics[scale=1]{figs/forgatas.eps}
@@ -378,6 +429,12 @@ Egyezmény szerint a pozitív szögű forgatás óramutató járásával ellent�
 \label{fig:forgat}
 \end{figure}
 
+Az elmozdulástér ekkor:
+\[{\mathbf{u}}\left( {\mathbf{r}} \right) = {\mathbf{r}}' - {\mathbf{r}} = {\mathbf{Or}} - {\mathbf{r}} = \left( {{\mathbf{O}} - {\mathbf{I}}} \right){\mathbf{r}}.\]
+Ennek deriváltjaként előáll a disztorzió, de megkaphatjuk abból is, ha kiszámoljuk $\Delta {\mathbf{r}}'$-t:
+\[\Delta {\mathbf{r}}' = {{\mathbf{r}}_2}' - {{\mathbf{r}}_1}' = {\mathbf{O}}{{\mathbf{r}}_2} - {\mathbf{O}}{{\mathbf{r}}_1} = {\mathbf{O}}\Delta {\mathbf{r}}.\]
+Ebből már látható a deformációs gradiensre és a disztorzióra, hogy 
+\[{\mathbf{F}} = {\mathbf{O}}\quad {{\mathbf{\beta }}^T} = {\mathbf{O}} - {\mathbf{I}}.\]
 \paragraph{Infinitezimális forgatás}
 Legyen az elmozdulásmezőnk
 \begin{equation} \label{eq:inf_forgat}
@@ -389,94 +446,439 @@ Vegyük észre, hogy
 \[\beta _{ji}^f = {\varepsilon _{jik}}\Delta {\varphi _k} =  - {\varepsilon _{ijk}}\Delta {\varphi _k} =  - \beta _{ij}^f,\]
 vagyis
 \[\left\{ {{{\left( {{{\mathbf{\beta }}^f}} \right)}^T} =  - {{\mathbf{\beta }}^f}} \right\} \Leftrightarrow \left\{ {{{\mathbf{\beta }}^{f,asz}} = {{\mathbf{\beta }}^f}} \right\} \Leftrightarrow \left\{ {{{\mathbf{\beta }}^{f,sz}} = 0} \right\}.\]
-Azt látjuk tehát, hogy egy homogén elforgatás disztroziója tisztán antiszimmetrikus, így a deformáció egzaktul 0, ha a forgatás kicsi. 
+Azt látjuk tehát, hogy egy homogén elforgatás disztorziója tisztán antiszimmetrikus, így a deformáció egzaktul 0, ha a forgatás kicsi. 
 
 Egy általános, infinitezimális disztorziónak sem a szimmetrikus, sem az antiszimmetrikus része nem 0. De a kettőhöz külön-külön definiálható egy infinitezimális transzformáció, amelyek közül az antiszimmetrikushoz egy tiszta forgatás tartozik.
 
 \paragraph{Véges nagyságú forgatás}
-Láthattuk az előző részben, hogy az infinitezimális forgatás deformációja egzaktul 0, hiszen a disztrozió szimmetrikus része 0. Egy véges forgatás előáll apró forgatások összegeként, ezért azt várjuk, hogy véges forgatásra is 0 legyen a deformáció.
+Láthattuk az előző részben, hogy az infinitezimális forgatás deformációja egzaktul 0, hiszen a disztorzió szimmetrikus része 0. Egy véges forgatás előáll apró forgatások összegeként, ezért azt várjuk, hogy véges forgatásra is 0 legyen a deformáció.
 
-\subsection*{Feladatok március 1-re}
-\subsubsection*{Nem origó körüli}
-Hogyan változnak az egyes egyszerű transzformációk elmozdulástere, deformációs gradiense, disztroziója és deformációja, ha nem az origóban van a testek középpontja?
-\subsubsection*{Forgatás}
-Mutassuk meg, hogy kicsi forgatásokra valóban felírható \atold{\ref{eq:inf_forgat}}+as{} alak az elmozdulásmezőre! Mutassuk meg, hogy véges nagyságú forgatásra is $0$ a deformáció!
+\subsection{Feladatok}
+Feladatok a feladatlapon.
 
-\subsubsection*{Konkrét számok}
-Írjuk fel az alábbi esetekre at elmozdulásmezőt, a disztorziót, a deformációs gradienst és a deformációt! Hogyan néznek ki ezek (első rendű közelítésben), ha az adott fajtájú egyszerű transzformációk kicsik?
-
-\begin{figure}[htb] 
-\centering
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[scale=1]{figs/eltolas_feladat.eps}
-\caption{Eltolás.}
-\label{fig:eltolas_feladat}
-\end{subfigure} \hfill
-\begin{subfigure}[b]{0.45\textwidth}
-\includegraphics[scale=1]{figs/nyujtas_feladat.eps}
-\caption{Nyújtás.}
-\label{fig:nyujtas_feladat}
-\end{subfigure}
-\begin{subfigure}[b]{0.45\textwidth}
-\centering    
-\includegraphics[scale=1]{figs/forgatas_feladat.eps}
-\caption{Forgatás.}
-\label{fig:forgatas_feladat}
-\end{subfigure}
-\label{fig:konret_szamos_feladat}
-\caption{Konkrét számos feladat.}
-\end{figure}
-\FloatBarrier
-
-\iffalse
 \subsection{Általános transzformációk}
+Végsősoron minden transzformáció előáll helyfüggő eltolási transzformációként, hiszen "csupán" a ${\mathbf{u}}\left( {\mathbf{r}} \right)$ eltolásvektort kell megadni a hely függvényében, ${\mathbf{r}}'\left( {\mathbf{r}} \right) = {\mathbf{r}} + {\mathbf{u}}\left( {\mathbf{r}} \right)$. Gondolhatunk egy forgatásra is úgy, mint egy olyan eltolásra, ami helyről helyre változik. Viszont egy ilyen eltolás deformációs gradiensének vagy deformációjának kiszámolásában feltettük, hogy az eltolás mértéke helyfüggetlen, így ha ki akarnánk ${\mathbf{F}}$-et vagy ${\mathbf{\varepsilon }}$-et számolni, újra el kéne végezni azokat a műveleteket, amiket a forgatásnál kiszámoltunk.
+
+Praktikus tehát a forgatást és nyújtást alapul vennünk, amelyekre már ismerjük ${\mathbf{F}}$-et és ${\mathbf{\varepsilon }}$. Azonban nem minden transzformáció állítható elő ebből a kettőből úgy, hogy azok értéke helytől független legyen.
+
 \subsubsection{Nyírás}
 \paragraph{Általános nyírás}
-Egy általános nyírást szemléltet \az{\ref{fig:nyiras}}.\ ábra. A deformációs gradiensre példa a
+Egy általános nyírást szemléltet \az{\ref{fig:nyiras}}.\ ábra. Ekkor van olyan vonatkoztatási rendszer, amelyben a főátló elemeinek az értéke $1$, és minden egyéb mátrixelem egyetlen elemet kivéve $0$-ák. A deformációs gradiensre példa a
 \[{\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
   1&{0,4} \\ 
   0&1 
 \end{array}} \right).\]
-Minden nyírás előáll tiszta nyírás és forgatás egymásutánjaként.
+A definíció értelmében a determináns mindig 1, így a térfogat (vagy $2D$-ban a felület) nem változik meg. A nyírást feloghatjuk úgy is, mint egy $x$ függő eltolás az $y$ irányba, ahol az eltolás mértéke lineáris függ a koordinátától.
+
+Később látni fogjuk, hogy minden transzformáció felírható tiszta nyújtás és forgatás egymásutánjaként. Egy általános nyírás is felírható úgy, mint egy megfelelő tengely körüli nyújtás, majd egy forgatás. (Lásd: \ref{sec:polaris_dekomp}.)
+
+
+\paragraph{Tiszta nyírás} \label{sec:tiszta_nyiras}
+A tiszta nyírás olyan nyújtás, ahol a térfogatváltozás 0, a deformációs gradiens szimmetrikus, tehát a megfelelő koordinátarendszerben a deformációs gradiens diagonális, és ${\lambda _1}{\lambda _2}{\lambda _3} = 1$. Egy tiszta nyírást szemléltet \az{\ref{fig:tiszta_nyiras}}.\ ábra. A deformációs gradiensre példa lehet a 
+\[{\mathbf{F}} = {{\mathbf{O}}_{z,45^\circ }}\left( {\begin{array}{*{20}{c}}
+  {1,25}&0 \\ 
+  0&{0,8} 
+\end{array}} \right){{\mathbf{O}}_{z, - 45^\circ }} = \left( {\begin{array}{*{20}{c}}
+  {1,025}&{0,225} \\ 
+  {0,225}&{1,025} 
+\end{array}} \right),\]
+amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix, de leolvasható a $45^\circ$-os koordináták melletti értéke is. Egy általános nyírás csak egy forgatással együtt írható le tiszta nyújtással, ekkor viszont a nyújtás épp egy tiszta nyírás. (Lásd: \ref{sec:polaris_dekomp}.)
+
 \begin{figure}[htb] 
-\centering    
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
 \includegraphics[scale=1]{figs/nyiras.eps}
 \caption{A nyírás szemléltetése.}
 \label{fig:nyiras}
-\end{figure}
-\paragraph{Tiszta nyírás}
-A tiszta nyírás során a felület (avagy térfogat) nagysága nem változik meg. Egy tiszta nyírást szemléltet \az{\ref{fig:tiszta_nyiras}}.\ ábra. A deformációs gradiensre példa lehet a 
-\[{\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
-  1&{0,2} \\ 
-  {0,2}&1 
-\end{array}} \right).\]
-A deformációs gradiens mindig szimmetrikus, mert nem tartalmaz forgatást. A tiszta nyírás egy speciális fajta nyújtás, ahol pl.\ $2D$-ban a nyújtási arányokra igaz, hogy ${\lambda _1} \cdot {\lambda _2} = 1$. A transzformáció deformációs gradiense a megfelelő koordinátarendszerben diagonális.
-\begin{figure}[htb] 
-\centering    
+\end{subfigure} \hfill
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
 \includegraphics[scale=1]{figs/tiszta_nyiras.eps}
 \caption{A tiszta nyírás szemléltetése.}
 \label{fig:tiszta_nyiras}
+\end{subfigure}
+\label{fig_nyujtasok}
+\caption{Nyírások szemléltetése.}
 \end{figure}
-\subsubsection{Transzformációk egymásutánja}
-Ha alkalmazunk egy transzformációt a mintán, majd az így kapotton újra, akkor az egyes transzformációhoz tartozó disztorziókat (ill.\ a transzponáltjaikat) össze kell szorozni \az{\eqref{eq:disztrozio_def}} egyenlet szerint:
+
+
+\paragraph{Infinitezimális nyírás}
+Infinitezimális nyírások során a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. Általános nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk. 
+
+\subsection{Feladatok}
+Feladatok a feladatlapon.
+
+
+\subsubsection{Homokóra nyújtás}
+Jobb kifejezés hiányában van ez a cím, lehetne még ferdítés. Ekkor a nyújtás mértéke lineárisan függ az egyik tengelytől, és arra merőleges. \Aref{fig:homokora_nyujtas_szamolos}.\ ábra egy ilyet szemléltet (a könnyebb ábrázolásért egy eltolással együtt), ahol a legkisebb $y$ értékű részét a térnek $0{,}75$ szorosára nyújtjuk, a legnagyobb $y$ értékű részt pedig $1{,}25$-szörösére nyújtottuk, a kettő között pedig lineáris az átmenet.
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/homokora_nyujtas_szamolos.eps}
+\caption{A homokóra nyújtás példájának szemléltetése.}
+\label{fig:homokora_nyujtas_szamolos}
+\end{figure}
+
+Az elmozdulástérre példa:
+\[{\mathbf{u}}\left( {\mathbf{r}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  {x \cdot y} \\ 
+  0 
+\end{array}} \right).\]
+Ekkor a disztorziót deriválással lehet legkönnyebben megkapni,
+\[\begin{gathered}
+  {\partial _x}{u_x} = y/4 \hfill \\
+  {\partial _y}{u_x} = x/4 \hfill \\
+  {\partial _x}{u_y} = {\partial _y}{u_y} = 0, \hfill \\ 
+\end{gathered} \]
+így a disztorzióra és a deformációs gradiensre:
+\[{{\mathbf{\beta }}^T} = \left( {\begin{array}{*{20}{c}}
+  {y/4}&{x/4} \\ 
+  0&0 
+\end{array}} \right)\quad {\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
+  {1 + y/4}&{x/4} \\ 
+  0&1 
+\end{array}} \right).\]
+\footnotesize
+Mi lenne, ha megint a $\Delta {\mathbf{r}}'$-ből szeretnénk számolni a disztorziót és a deformációs gradienst?
+\[\Delta {\mathbf{r}}' = {{\mathbf{r}}_2}' - {{\mathbf{r}}_1}' = \left( {{{\mathbf{r}}_2} + {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right)} \right) - \left( {{{\mathbf{r}}_1} + {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)} \right) = \Delta {\mathbf{r}} + {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)\]
+Most nem tudunk továbblépni, mert ${\mathbf{u}}\left( {\mathbf{r}} \right)$ nem lineáris, azaz ${\mathbf{u}}\left( {\lambda {\mathbf{r}}} \right) \ne \lambda {\mathbf{u}}\left( {\mathbf{r}} \right)$. Továbbhaladni csak akkor tudunk, ha elvégezzük a $\Delta {\mathbf{r}}' \to 0$ limeszt, hogy lehessen aszerint osztani, pontosabban szólva deriválni:
+\[d{\mathbf{r}}' = d{\mathbf{r}} + \frac{{{\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)}}{{d{\mathbf{r}}}} = \left( {{\mathbf{I}} + \frac{{d{\mathbf{u}}\left( {\mathbf{r}} \right)}}{{d{\mathbf{r}}}}} \right)d{\mathbf{r}},\]
+vagyis ezúttal is deriváláson keresztül tudunk csak számolni.
+\normalsize
+
+Nézzük meg, hogyan hat ez a transzformáció! Vegyünk egy négyzetet, amelynek a sarkainak a koordinátái legyenek 
+\[{{\mathbf{r}}_A} = \left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  { - 1} 
+\end{array}} \right)\quad {{\mathbf{r}}_B} = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  { - 1} 
+\end{array}} \right)\quad {{\mathbf{r}}_C} = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right)\quad {{\mathbf{r}}_D} = \left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  1 
+\end{array}} \right).\]
+Ekkor a transzformáció után a sarkok új koordinátáit az elmozdulástérből számolva:
+\begin{alignat*}{2}
+   & {\mathbf{u}}\left( {{{\mathbf{r}}_A}} \right) = {\mathbf{u}}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  { - 1} 
+\end{array}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right)\quad  && {{\mathbf{r}}_A}' = \left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  { - 1} 
+\end{array}} \right) + \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  { - 0,75} \\ 
+  { - 1} 
+\end{array}} \right), \\ 
+   & {\mathbf{u}}\left( {{{\mathbf{r}}_B}} \right) = {\mathbf{u}}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  { - 1} 
+\end{array}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  0 
+\end{array}} \right)\quad  && {{\mathbf{r}}_B}' = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  { - 1} 
+\end{array}} \right) + \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {0,75} \\ 
+  { - 1} 
+\end{array}} \right), \\ 
+   & {\mathbf{u}}\left( {{{\mathbf{r}}_C}} \right) = {\mathbf{u}}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right)\quad  && {{\mathbf{r}}_C}' = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) + \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {1,25} \\ 
+  { 1} 
+\end{array}} \right), \\ 
+   & {\mathbf{u}}\left( {{{\mathbf{r}}_D}} \right) = {\mathbf{u}}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  1 
+\end{array}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  0 
+\end{array}} \right)\quad  && {{\mathbf{r}}_D}' = \left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  1 
+\end{array}} \right) + \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1} \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  { - 1,25} \\ 
+  { 1} 
+\end{array}} \right).
+\end{alignat*}
+Ezeket az értékeket nem kaphattuk volna meg abból, hogyha megadjuk az ${\mathbf{F}}$ vagy a ${\mathbf{\beta }}$ értékeit a négy sarokban, mert ezek az operátorok az adott helyben definiált $\Delta {\mathbf{r}}$ vektorra hatnak. A deformációs gradiens értékei az egyes sarkokban:
+\[{{\mathbf{F}}_A} = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  3&{ - 1} \\ 
+  0&4 
+\end{array}} \right)\quad {{\mathbf{F}}_B} = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  3&1 \\ 
+  0&4 
+\end{array}} \right)\quad {{\mathbf{F}}_C} = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  5&1 \\ 
+  0&4 
+\end{array}} \right)\quad {{\mathbf{F}}_D} = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  5&{ - 1} \\ 
+  0&4 
+\end{array}} \right),\]
+illetve
+\[{\mathbf{\beta }}_A^T = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1}&{ - 1} \\ 
+  0&0 
+\end{array}} \right)\quad {\mathbf{\beta }}_B^T = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  { - 1}&1 \\ 
+  0&0 
+\end{array}} \right)\quad {\mathbf{\beta }}_C^T = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1&1 \\ 
+  0&0 
+\end{array}} \right)\quad {\mathbf{\beta }}_D^T = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
+  1&{ - 1} \\ 
+  0&0 
+\end{array}} \right),\]
+a négyzet közepén viszont \[{{\mathbf{F}}_0} = {\mathbf{I}}\quad {\mathbf{\beta_0 }} = 0,\]
+így itt nincs deformáció. Ha veszek egy olyan $\Delta {\mathbf{r}}$ vektort, ami az origóból indul és a négyzet sarkára mutat, akkor a különböző részein különböző volna a deformáció.
+
+
+\subsubsection{Csavarás}
+A csavarás $3D$-ban értelmezhető transzformáció, amelynek során egy tengely mentén ugyanazon tengely irányában forgatunk, és a forgatás mértéke az anyag tengely menti két vége között folytonosan változik, legegyszerűbb esetben lineárisan.
+
+Képzeljünk el egy $z$ tengelyű négyzetes hasábot, amely $z$-ben $-z_0$-tól $z_0$-ig terjed. Ekkor ennek minden $z$ síkbeli keresztmetszete négyzet. Forgassuk el a $-z_0$-ban lévő részét $z$ tengely mentén $-\alpha$ szöggel, azaz arra a síklapra alkalmazzunk egy ${{\mathbf{O}}_{z, - \alpha }}$ transzformációt. A $z_0$-ban lévő részét szintén $z$ tengely körül, de $\alpha$ szöggel. $-z_0$ és $z_0$ között pedig minden további keresztmetszetében lineárisan változzon a szög $-\alpha$ és $\alpha$ között, azaz pl.\ a $z^*$ keresztmetszeten egy 
+\begin{equation}
+\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  {{z^ * }} 
+\end{array}} \right)' = {{\mathbf{O}}_{z,\alpha  \cdot {z^ * }/z_0}} \left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  {{z^ * }} 
+\end{array}} \right)
+\end{equation}
+forgatást hajtunk végre.
+
+\subsubsection{Lineárisan interpolált transzformációk}
+Még megannyi más deformáció fajta is elképzelhető. Volna lehetőség arra, hogy megadjuk például, hogy a transzformáció mibe viszi át az egységnégyzetet. Ekkor megnézhetjük, hogy az egyes oldalakat mennyire nyújtotta meg a deformáció, majd minden pontra lineáris interpolációval meghatározhatnánk az abban a pontban érvényes elmozdulás értékét.
+
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/linearisan_interpolalt.eps}
+\caption{Az elmozdulásmezőt lineárisan interpolálhatjuk az oldalélek között.}
+\label{fig:linearis_interpolacios_traf}
+\end{figure}
+
+\subsection{Feladatok}
+Feladatok a feladatlapon.
+
+\subsection{Transzformációk egymásutánja}
+Ha alkalmazunk egy transzformációt a mintán, majd az így kapotton újra, akkor az egyes transzformációhoz deformációs gradienst (ill.\ a transzponáltjaikat) össze kell szorozni \az{\eqref{eq:disztrozio_def}} egyenlet szerint, hogy megkapjuk $\Delta {\mathbf{r}}''$-t:
 \[1 + {{\mathbf{\beta }}_{AB}} = \left( {1 + {{\mathbf{\beta }}_A}} \right)\left( {1 + {{\mathbf{\beta }}_B}} \right) = \left( {1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B} + {{\mathbf{\beta }}_A}{{\mathbf{\beta }}_B}} \right) \ne 1 + {{\mathbf{\beta }}_{BA}}.\]
-Láthatjuk, hogy ez nem kommutatív, a transzformációk egymással nem felcserélhetők. Azonban ha a disztrozió elég kicsi, és így a szorzatuk elhanyagolható, akkor már kummutatív, ugyanis 
+Láthatjuk, hogy ez nem kommutatív, a transzformációk egymással nem felcserélhetők. Azonban ha a disztorzió elég kicsi, és így a szorzatuk elhanyagolható, akkor már kummutatív, ugyanis 
 \begin{equation} \label{eq:deform_kommutatív}
 1 + {{\mathbf{\beta }}_{AB}} = \left( {1 + {{\mathbf{\beta }}_A}} \right)\left( {1 + {{\mathbf{\beta }}_B}} \right) = \left( {1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B}\underbrace { + {{\mathbf{\beta }}_A}{{\mathbf{\beta }}_B}}_{ \approx 0}} \right) = 1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B} = 1 + {{\mathbf{\beta }}_{BA}}.
 \end{equation}
 (Mit jelent ez a deformációs gradiensre és a deformációra nézve?)
 
-Ha a transzformáció nem tisztán forgatást ír le, akkor a tisztán forgatást leíró része nem hoz létre deformációt. Mi az, hogy része? Hogyan hattathatóak a transzformációk egymás után, és hogyan olvasható le, hogy mekkora az eredő deformáció?
+Egy forgatás nem hoz létre deformációt. Ha a transzformáció nem tisztán forgatást ír le, akkor a tisztán forgatást leíró része nem hoz létre deformációt, csak a maradék. Mi az, hogy része? Hogyan hattathatóak a transzformációk egymás után, és hogyan olvasható le, hogy mekkora az eredő deformáció?
 
-\Az{\eqref{eq:disztrozio_def}} egyenletből láthatóak az ${\mathbf{F}} = 1 + {{\mathbf{\beta }}^T}$ mennyiségek szorzódnak össze...
+\subsubsection{Poláris dekompozíció} \label{sec:polaris_dekomp}
+\Az{\eqref{eq:disztrozio_def}} egyenletből láthatóan az ${\mathbf{F}} = 1 + {{\mathbf{\beta }}^T}$ mennyiségek összeszorzódnak. Jelöljön ${\mathbf{O}}$ egy ortogonális mátrixot (ilyenek voltak a forgatás mátrix transzformációs mátrixai), ${\mathbf{U}}$ pedig egy szimmetrikus mátrxiot (ilyenek voltak a tiszta nyújtás mátrixai)! Megmutatjuk, hogyha ${\mathbf{F}}$ invertálható, akkor (egyértelműen) felírható ${\mathbf{F}} = {\mathbf{OU}}$ alakban!
+Legyen
+\[{{\mathbf{F}}^T}{\mathbf{F}} = {\mathbf{VD}}{{\mathbf{V}}^T},\]
+ahol ${\mathbf{V}}$ ortogonális, ${{\mathbf{D}}}$ pedig diagonális mátrix\footnote{Egy diagonális mátrixon értelmezett függvény az egyes mátrxikomponensek ugyanazon függvénye.} Ezt megtehetjük, hisz ${{\mathbf{F}}^T}{\mathbf{F}}$ szimmetrikus, mi több, pozitív definit, így nem csak diagonalizálható, de abból gyököt is vonhatunk, és az inverzét is vehetjük. Ekkor már felbonthatjuk a deformációs gradienst
+\[{\mathbf{F}} = \underbrace {{\mathbf{F}}{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{ - 1/2}}}_{\mathbf{O}}\underbrace {{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{1/2}}}_{\mathbf{U}}\]
+alakban, ahol most belátjuk, hogy ${\mathbf{U}}$ szimmetrikus, illetve, hogy ${\mathbf{O}}$ ortogonális.
+Vegyük észre először, hogy 
+\[\begin{aligned}
+  {\mathbf{V}}\overbrace {{{\mathbf{D}}^{1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{D}}{{\mathbf{V}}^T} = {\mathbf{VD}}{{\mathbf{V}}^T} = {{\mathbf{F}}^T}{\mathbf{F}} \Rightarrow  & {\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{1/2}} = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} \\ 
+  {\mathbf{V}}\overbrace {{{\mathbf{D}}^{ - 1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{I}}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{V}}^T} = {\mathbf{I}} \Rightarrow  & {\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}} = {\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}. \\ 
+\end{aligned} \]
+Ebből már látszik, hogy 
+\[{{\mathbf{U}}^T} = {\left( {{\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T}} \right)^T} = {\left( {{{\mathbf{V}}^T}} \right)^T}{\left( {{{\mathbf{D}}^{1/2}}} \right)^T}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} = {{\mathbf{U}}},\]
+azaz ${\mathbf{U}} = {{\mathbf{U}}^T}$, tehát ${\mathbf{U}}$ szimmetrikus. Másrészt pedig
+\begin{multline*}
+{\left( {{\mathbf{F}}{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{ - 1/2}}} \right)^T} \cdot {\mathbf{F}}{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}} = {\left( {{\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}} \right)^T}\underbrace {{{\mathbf{F}}^T} \cdot {\mathbf{F}}}_{{\mathbf{VD}}{{\mathbf{V}}^T}}{\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T} = \\ = {\mathbf{V}}\overbrace {{{\mathbf{D}}^{ - 1/2}}\underbrace {{{\mathbf{V}}^T}{\mathbf{V}}}_{\mathbf{I}}{\mathbf{D}}\underbrace {{{\mathbf{V}}^T}{\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{ - 1/2}}}^{\mathbf{I}}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{V}}^T} = {\mathbf{I}},
+\end{multline*}
+tehát ${{\mathbf{O}}^T}{\mathbf{O}} = {\mathbf{I}}$, azaz ${\mathbf{O}}$ ortogonális.
 
-\subsection*{Feladatok március 8-ra}
+Hogyan kaphatjuk tehát meg egy általános ${\mathbf{F}}$-ből, hogy milyen nyújtást és forgatást ír le? A lépések:
+\begin{enumerate}
+\item ${{{\mathbf{F}}^T}{\mathbf{F}}}$ kiszámolása.
+\item Az így kapott szimmetrikus mátrix diagonalizálása egy ${\mathbf{V}}$ és ${\mathbf{V^T}}$ mátrixokkal, ekkor megkapjuk ${\mathbf{D}}$-t.
+\item A diagonális mátrix gyökének és az inverzének a gyökének a kiszámítása ${{\mathbf{D}}^{1/2}}$ és ${{\mathbf{D}}^{ - 1/2}}$-hez. Ezt megtehetjük elemenként.
+\item Visszaforgatjuk ezeket a mátrixokat az eredeti vonatkoztatási rendszerbe, 
+\[\begin{aligned}
+  {\mathbf{U}} &  = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} \\ 
+  {\mathbf{O}} &  = {\mathbf{F}} \cdot {\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}. \\ 
+\end{aligned} \]
+\end{enumerate}
+
+\subsubsection{A nemkommutativitás szemléltetése}
+Felmerülhet a kérdés, hogy miért épp ${\mathbf{F}} = {\mathbf{OU}}$ alakban bontottuk fel egy általános trasznformációt és miért nem ${\mathbf{F}} = {\mathbf{UO}}$ alakban. Egyáltalán lehetséges egy ilyen felbontás is? És ha igen, mi a különbség?
+
+Még általánosabban felmerülhet a kérdés, hogy mi a szerepe a transzformációk sorrendjének. Nem mindegy, hogy először nyújtom, aztán forgatom, vagy először forgatom, aztán nyújtom?
+
+\paragraph{Példa}
+Tekintsük az $x$ irányban kétszeresre nyújtó ${{\mathbf{U}}_2}$, és $z$ tengely kürül $30^\circ$-kal forgató ${{\mathbf{O}}_{z,30^\circ }}$ transzformációt leíró deformációs gradienseket! Ha először nyújtok, aztán forgatok, akkor az eredő deformációs gradiens
+\[\begin{aligned}
+  {{\mathbf{F}}_{2{\text{ majd }}z,30^\circ }} &  = {{\mathbf{O}}_{z,30^\circ }}{{\mathbf{U}}_2} =  {{\mathbf{F}}_{{\mathbf{OU}}}} = \left( {\begin{array}{*{20}{c}}
+  {\cos \left( {30^\circ } \right)}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  2&0 \\ 
+  0&1 
+\end{array}} \right) \\ 
+   &  = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right)}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {2\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right). \\ 
+\end{aligned} \]
+
+Ezzel szenmben, ha először forgatok, aztán nyújtok:
+\[\begin{aligned}
+  {{\mathbf{F}}_{z,30^\circ {\text{ majd 2}}}} &  = {{\mathbf{U}}_2}{{\mathbf{O}}_{z,30^\circ }} = {{\mathbf{F}}_{{\mathbf{UO}}}} = \left( {\begin{array}{*{20}{c}}
+  2&0 \\ 
+  0&1 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  {\cos \left( {30^\circ } \right)}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right) \\ 
+   &  = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right)}&{ - 2\sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right). \\ 
+\end{aligned} \]
+Láthatjuk, hogy a két deformációs gradiens nem egyezik meg. Nézzük meg, hogy mibe viszi át az egyik, illetve másik transzformáció az  origóra tett négyzetet (legalábbis a jobb felső sarkát)! Ehhez először találjuk ki az elmozdulásmezőt az ${\mathbf{F}} = {\mathbf{I}} + \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}}$ összefüggésből:
+ \[\begin{gathered}
+  {{\mathbf{u}}_{{\mathbf{OU}}}} = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - 1}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {2\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right) - 1} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y 
+\end{array}} \right), \hfill \\
+  {{\mathbf{u}}_{{\mathbf{UO}}}} = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - 1}&{ - 2\sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right) - 1} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y 
+\end{array}} \right). \hfill \\ 
+\end{gathered} \]
+A négyzet új sarka:
+\[\begin{aligned}
+  \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right)' &  = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) + {{\mathbf{u}}_{{\mathbf{OU}}}}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) \\ 
+   &  = \left( {{{\mathbf{u}}_{{\mathbf{OU}}}} + {\mathbf{I}}} \right)\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) \\ 
+   &  = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right)}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {2\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - \sin \left( {30^\circ } \right)} \\ 
+  {2\sin \left( {30^\circ } \right) + \cos \left( {30^\circ } \right)} 
+\end{array}} \right). \\ 
+\end{aligned} \]
+Talán nem meglepő, hogy
+\[\underbrace {\left( {\begin{array}{*{20}{c}}
+  {\cos \left( {30^\circ } \right)}&{ - \sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right)}_{{{\mathbf{O}}_{z,30^\circ }}}\left( {\begin{array}{*{20}{c}}
+  2 \\ 
+  1 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - \sin \left( {30^\circ } \right)} \\ 
+  {2\sin \left( {30^\circ } \right) + \cos \left( {30^\circ } \right)} 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right)',\]
+vagyis azt kaptuk, az eredő transzformáció olyan, mintha a már megnyújtott teret elforgattuk volna.
+
+Ha a transzformációkatt felcserélem, akkor
+\[\begin{aligned}
+  \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right)' &  = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) + {{\mathbf{u}}_{{\mathbf{UO}}}}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) \\ 
+   &  = \left( {{{\mathbf{u}}_{{\mathbf{UO}}}} + {\mathbf{I}}} \right)\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) \\ 
+   &  = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right)}&{ - 2\sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right)}&{\cos \left( {30^\circ } \right)} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - 2\sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right) + \cos \left( {30^\circ } \right)} 
+\end{array}} \right), \\ 
+\end{aligned} \]
+amelyre pedig az igaz, hogy 
+\[\left( {\begin{array}{*{20}{c}}
+  2&0 \\ 
+  0&1 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  {\cos \left( {30^\circ } \right) - \sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right) + \cos \left( {30^\circ } \right)} 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {2\cos \left( {30^\circ } \right) - 2\sin \left( {30^\circ } \right)} \\ 
+  {\sin \left( {30^\circ } \right) + \cos \left( {30^\circ } \right)} 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  1 
+\end{array}} \right)',\]
+vagyis azt kaptuk, hogy egy eleve elforgatott teret nyújtottunk meg. A nyújtás iránya azonban nem a négyzet oldalainak irányába mutat. Ez egészen pontosan azt jelenti, hogy abban a vonatkoztatási rendszerben, amelyben a négyzet oldalainak az iránya határozzák meg a vonatkoztatási rendszert, a nyújtási mátrix nem diagonális. A kétfajta transzformációt szemlélteti \aref{fig:nem_kommutativ}.\ ábra.
 
 \begin{figure}[htb] 
 \centering    
-\includegraphics[scale=1]{figs/nyiras_feladat.eps}
-\caption{Nyírás.}
-\label{fig:nyiras_feladat}
+\includegraphics[scale=1]{figs/nem_kommutativ.eps}
+\caption[Nem kommutatív transzformációk]{A transzformációk nem felcserélhetőségének illusztációja. A forgatást és nyújtást megadó mátrixok az eredeti vonatkoztatási rendszerben vannak megadva, azonban a testet a 2.\ transzformáció előtt már transzformáltuk egyszer, ellenben a koordinátarendszer nem változott.}
+\label{fig:nem_kommutativ}
 \end{figure}
-\fi
+
+Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert így az alakzat emberek számára könnyebben felismerhető. Ha pedig felismerhető, azért szokták nyújtás, forgatás sorrendben megadni, mert az egyes transzformációk könnyebben leolvashatóak. \Aref{fig:nem_kommutativ}.\ ábra \textit{b} esetét előállíthatnánk egy forgatás és egy tiszta nyírás (amihez szintén egy ortogonális deformációs gradiens tartozik) egymásutánjaként, de ekkor a nyírás elemei nehezebben leolvashatók, az csak a $30^\circ$-os koordinátarendszerben diagonális.
+
+\subsection{Feladatok}
+Feladatok a feladatlapon.
+
 \end{document}
