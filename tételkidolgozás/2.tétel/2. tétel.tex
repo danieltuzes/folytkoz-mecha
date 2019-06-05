@@ -1,12 +1,12 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[magyar]{babel}
 \usepackage{graphicx}
-\usepackage[margin=65 pt]{geometry}
 \usepackage{amsmath}
 \usepackage{wrapfig}
-
+\usepackage{placeins}
 
 \begin{document}
 
@@ -17,11 +17,6 @@
 \LARGE \textbf{2. tétel}
 
 \LARGE A deformációs tenzor bevezetése
-
-
-~
-
-\LARGE Kidolgozta: Pollák Edina
 
 \vspace*{\fill}
 \end{titlepage}
@@ -35,10 +30,10 @@ Külső erők hatására a test alakváltozáson megy keresztül, ebben a tétel
 
 ~
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{tetel2_1.png}
-\caption{}
+\includegraphics[scale=1]{figs/tetel_02_abra_01}
+\caption{Egy test ${\mathbf{r}}$ pontjában lévő atom a deformációt követően az ${\mathbf{r}}'$ pontba kerül.}
 \end{figure}
 
 Vegyünk egy testet, melynek atomjait $\mathbf{r}$ helyvektorral jellemezhetjük. Deformáció hatására az atom elmozdul, módosult helyzetét egy $\mathbf{r'}$ helyvektor írja majd le. Bevezetjük az $\mathbf{u(r)}=\mathbf{r'}-\mathbf{r}$ vektormezőt a deformáció jellemzésére (1. ábra).
@@ -49,10 +44,10 @@ Az alakváltozás során kialakuló belső erők nem függhetnek direkten $\math
 
 Vizsgáljuk a relatív megnyúlást.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{tetel2_2.png}
-\caption{}
+\includegraphics[scale=1]{figs/tetel_02_abra_02}
+\caption{Deformáció során a pontok helyvektorainak különbsége megváltozik. Ennek a különbségnek a megváltozását írja le a deformáció.}
 \end{figure}
 
 Ehhez az $\mathbf{r}$ és $\mathbf{r}+\Delta\mathbf{r}$ helyvektorral jellemzett részecskék útját követjük. Az eredeti távolság ($\Delta\mathbf{r}$) és a megváltozott távolság ($\Delta\mathbf{s}$) vektorai közötti kapcsolat (a 2. ábra alapján):
@@ -172,6 +167,6 @@ $$\frac{\Delta V}{V}=\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}
 
 Látható, hogy a deformáció csak $\mathbf{\hat\varepsilon}$ tenzor diagonális elemeitől függ. A nem diagonális elemek ezek szerint a tiszta nyíráshoz tartoznak.
 
-
+Szerkesztették: Pollák Edina, Varkoly Márton
 
 \end{document}
