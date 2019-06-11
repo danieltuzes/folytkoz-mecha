@@ -1,7 +1,6 @@
-*.aux
+﻿*.aux
 *.out
 *.log
 *.gz
 *.pdf
 *.toc
-megoldások.*
