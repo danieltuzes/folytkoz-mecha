@@ -5,3 +5,4 @@
 *.pdf
 *.toc
 megoldások.*
+!figs/*.pdf
