@@ -32,11 +32,12 @@
 
 
 \begin{document}
-\title{Folytonos közegek mechanikája\\(emelt szint)}
-\author{folytkozef17ga, gyakorlat,\\Anyagfizikai Tanszék, Tüzes Dániel}
+\title{Hőtan és folytonos közegek mechanikája\\(emelt szint)}
+\author{hotanef19va, gyakorlat,\\Anyagfizikai Tanszék, Tüzes Dániel}
 \maketitle
 \tableofcontents
 
+\iffalse %csak akkor használd, ha nincs további if belül
 \section{Sűrűséges feladatok}
 \subsection{Rúd sűrűsége}
 Egy rúd sűrűsége a hely függvényében legyen $\rho \left( x \right) = c/{x^2}$.
@@ -66,17 +67,66 @@ Legyen az áramsűrűség-mező ${\mathbf{j}}\left( {\mathbf{r}} \right) = c \cd
 \item Mennyi töltés halad át az $1\text{ m}$ sugarú gömbön? És a $2\text{ m}$ sugarún?
 \item Mennyi töltés halad át azon a négyzeten, aminek a négy sarkának a koordinátái: ${{\mathbf{r}}_A} = \left( {1,0,0} \right)$, ${{\mathbf{r}}_B} = \left( {1,1,0} \right)$, ${{\mathbf{r}}_C} = \left( {1,1,1} \right)$ és ${{\mathbf{r}}_D} = \left( {1,0,1} \right)$?
 \end{enumerate}
+\fi
 
+\section{Merev testek}
+\subsection{Négyféle tenzor}
+\includegraphics[scale=0.8]{lusta/merev_test1pelda.png}
+
+A c) és d) alfeladatokhoz számold ki az egyik $M$ tömegű testbe helyezett origóra a tehetetlenségi nyomaték tenzort az a) és a b) esetekben párhuzamos tengelyekre!
+
+\subsection{Integrális rúd}
+\includegraphics[scale=0.8]{lusta/merev_test2pelda.png} 
+
+A rúd elég vékony, a hossztengelye mentén egy szakasszal modellezhető ebben a feladatban.
 
 \section{Egyszerű transzformációk I}
+\subsection{Eltolás otthon}
+Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 10, - 1} \right)$ és ${{\mathbf{r}}_B} = \left( { 3, 3} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Legyen az elmozdulásmező ${\mathbf{u}}\left( {\mathbf{r}} \right) = \left( { - 2, - 2} \right)$. Mennyi a disztorzió és annak szimmetrikus illetve antiszimmetrikus része, a deformációs gradiens, a deformáció és a relatív térfogatváltozás? Számold ki $\Delta {\mathbf{r}}'$ értékét is!
+\subsection{Nyújtás otthon}
+\begin{enumerate}
+\item Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 3, - 0.5} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Végezzünk el egy képlékeny deformációt, amelynek során
+\[\begin{aligned}
+  x' &  = 2 \cdot x \\ 
+  y' &  = \lambda \cdot y \\ 
+  z' &  = \lambda  \cdot z. \\ 
+\end{aligned} \]
+
+Mennyi a disztorzió és annak szimmetrikus illetve antiszimmetrikus része, a deformációs gradiens, a deformáció és a relatív térfogatváltozás? Add meg $\Delta {\mathbf{r}}'$ értékét is!
+
+Mennyi legyen $\lambda$, hogy a relatív térfogatváltozás 0 legyen? Mennyi ekkor a disztorzió és annak szimmetrikus illetve antiszimmetrikus része, a deformációs gradiens, a deformáció? Add meg $\Delta {\mathbf{r}}'$ értékét is és készíts rajzot!
+
+\item Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 3, - 0.5} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Legyenek az új koordináták
+\[\begin{aligned}
+  x' &  = 2 \cdot x \\ 
+  y' &  = 3 \cdot y \\ 
+  z' &  = 1 \cdot z. \\ 
+\end{aligned} \]
+
+Írd fel az elmozdulásmezőt vektoros alakban! Mire változik a $\Delta {\mathbf{r}}$ vektor? Mennyi a disztorzió, a deformációs gradiens és a relatív térfogatváltozás?
+
+Tegyük át az origót az $A$ pontba és írjuk le innen is a nyújtást! Legyenek a vektoraink a csillagosak, ${{\mathbf{r}}_A}^*$ és ${{\mathbf{r}}_B}^*$. Hogyan változnak transzformációra általánosan a vektorok? Azaz add meg az ${\mathbf{r}}{{^*}'}\left( {{{\mathbf{r}}^ * }} \right)$ függvényt! Mi az elmozdulástér, a disztorzió, a $\Delta {{\mathbf{r}}^ * }'$, a deformációs gradiens és a relatív térfogatváltozás? Készíts rajzot is!
+\end{enumerate}
+
+\iffalse
 \subsection{Nem origó körüli}
-Hogyan változnak az egyes egyszerű transzformációk elmozdulástere, deformációs gradiense, disztorziója és deformációja, ha nem az origóban van a testek középpontja?
+Adottak az alábbi transzformációk egy vonatkoztatási rendszerben, illetve  az $A$ és $B$ pontok, amelyekhez mutató vektorok ${{\mathbf{r}}_A} = \left( {1,0} \right)$ és ${{\mathbf{r}}_A} = \left( {0, - 1} \right)$. Add meg az eredeti, illetve az új vonatkoztatási rendszerben az elmozdulásmezőt, a $\Delta {{\mathbf{r}}_{AB}}$ vektort, a disztroziót, a deformációs gradienst és a deformációt!
+\begin{enumerate}
+\item Eltolás: ${\mathbf{u}}\left( {\mathbf{r}} \right) = {{\mathbf{r}}_0}$
+\item Nyújtás: ${\mathbf{r}}'\left( {\mathbf{r}} \right) = \left( {2 \cdot {{\mathbf{e}}_x} \circ {{\mathbf{e}}_x} + 1 \cdot {{\mathbf{e}}_y} \circ {{\mathbf{e}}_y} + {{\mathbf{e}}_z} \circ {{\mathbf{e}}_z}} \right){\mathbf{r}}$
+\item Forgatás: ${\mathbf{r}}'\left( {\mathbf{r}} \right) = {\mathbf{Or}}\quad {\mathbf{O}} = {{\mathbf{O}}_{z,45^\circ }} = \left( {\begin{array}{*{20}{c}}
+  {\cos \left( {45^\circ } \right)}&{ - \sin \left( {45^\circ } \right)}&0 \\ 
+  { - \sin \left( {45^\circ } \right)}&{\cos \left( {45^\circ } \right)}&0 \\ 
+  0&0&1 
+\end{array}} \right)$
+\end{enumerate}
 
 \subsection{Forgatás}
 Mutassuk meg, hogy kicsi forgatásokra valóban felírható \begin{equation} \label{eq:inf_forgat}
 {{\mathbf{u}}^f}\left( {\mathbf{r}} \right) = \Delta {\mathbf{\varphi }} \times {\mathbf{r}},
 \end{equation}
 alak az elmozdulásmezőre! Mutassuk meg, hogy véges nagyságú forgatásra is $0$ a deformáció!
+
 
 \subsection{Konkrét számok}
 Írjuk fel az alábbi esetekre at elmozdulásmezőt, a disztorziót, a deformációs gradienst és a deformációt! Hogyan néznek ki ezek (első rendű közelítésben), ha az adott fajtájú egyszerű transzformációk kicsik?
@@ -241,4 +291,6 @@ Egy U alakú, $d$ átmérű, kör keresztmetszetű nyitott csőben folyadék van
 \label{fig:ucsoves2}
 \end{figure}
 \FloatBarrier
+
+\fi
 \end{document}
