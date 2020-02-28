@@ -360,6 +360,7 @@ A b), c) és d) alrészek házi feladatok, a megoldások órán lesznek ismertet
 
 \subsubsection{Integrális rúd}
 \includegraphics[scale=0.8]{lusta/merev_test2pelda.png} 
+
 A rúd elég vékony, a hossztengelye mentén egy szakasszal modellezhető ebben a feladatban. Ez a feladat házi feladat, a megoldások órán lesznek ismertetve.
 
 \section{Rugalmas szilárd testek}
@@ -402,10 +403,10 @@ A jelölések áttekintéséhez tekintsük \aref{fig:u}. ábrát!
 \FloatBarrier
 
 Ekkor az ábráról leolvasható módon:
-\[\begin{aligned}
-  \underbrace {{{\mathbf{r}}_2}' - {{\mathbf{r}}_1}'}_{\Delta {\mathbf{r}}'} =  & {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) + \underbrace {{{\mathbf{r}}_2} - {{\mathbf{r}}_1}}_{\Delta {\mathbf{r}}} - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right) \\ 
-  \Delta {\mathbf{r}}' =  & \Delta {\mathbf{r}} + {\mathbf{u}}\left( {{{\mathbf{r}}_1} + \Delta {\mathbf{r}}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right), \\ 
-\end{aligned} \]
+\begin{align} \label{eq:kul_vektor}
+  \underbrace {{{\mathbf{r}}_2}' - {{\mathbf{r}}_1}'}_{\Delta {\mathbf{r}}'} =  & {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) + \underbrace {{{\mathbf{r}}_2} - {{\mathbf{r}}_1}}_{\Delta {\mathbf{r}}} - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right) \nonumber \\ 
+  \Delta {\mathbf{r}}' =  & \Delta {\mathbf{r}} + {\mathbf{u}}\left( {{{\mathbf{r}}_1} + \Delta {\mathbf{r}}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right),
+\end{align}
 így ha ${\Delta {\mathbf{r}}}$ elég kicsi, akkor írhatjuk ezt úgy, hogy 
 \begin{equation} \label{eq:disztrozio_def}
 \Delta {\mathbf{r}}' = \Delta {\mathbf{r}} + {\left. {\frac{{d{\mathbf{u}}\left( {\mathbf{r}} \right)}}{{d{\mathbf{r}}}}} \right|_{{{\mathbf{r}}_1}}} \cdot \Delta {\mathbf{r}} = \underbrace {\left( {{\mathbf{I}} + {{\left. {{{\mathbf{\beta }}^T}} \right|}_{{{\mathbf{r}}_1}}}} \right)}_{\mathbf{F}}\Delta {\mathbf{r}},
@@ -437,10 +438,75 @@ Ebből
    =  & \left| {\Delta {\mathbf{r}}} \right|\sqrt {1 + {{\mathbf{e}}_{\Delta {\mathbf{r}}}^T}2{\mathbf{\varepsilon }}{{\mathbf{e}}_{\Delta {\mathbf{r}}}}},
 \end{align}
 ahol bevezettük az ${\Delta {\mathbf{r}}}$ irányú egységvektort, ${{\mathbf{e}}_{\Delta {\mathbf{r}}}}$-t, illetve a deformációs tenzort,
-\[2{\mathbf{\varepsilon }}\left( {\mathbf{r}} \right) = {\mathbf{\beta }}\left( {\mathbf{r}} \right) + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right) + {\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right).\]
+\[\begin{aligned}
+  2{\mathbf{\varepsilon }}\left( {\mathbf{r}} \right) &  = {\mathbf{\beta }}\left( {\mathbf{r}} \right) + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right) + {\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right) \\ 
+  {\mathbf{\varepsilon }}\left( {\mathbf{r}} \right) &  = \frac{{{\mathbf{\beta }}\left( {\mathbf{r}} \right) + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)}}{2} + \frac{{{\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)}}{2} \\ 
+   &  = {{\mathbf{\beta }}^{{\text{sz}}}}\left( {\mathbf{r}} \right) + \frac{{{\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)}}{2}.\\ 
+\end{aligned} \]
 
-\subsection{Kicsi deformációk}
-Ha a disztorzió kicsi, akkor ${\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)$ elhanyagolható ${\mathbf{\beta }}\left( {\mathbf{r}} \right)$-hoz képest, és 
+Itt bevezettük a mátrix szimmetrikus részének a definícióját, ami \aref{sec:kicsi_def}.\ pontban található. Megjegyzendő még, hogy amennyiben egy deformáció kicsi, úgy a második tag, a disztorzióban másodrendű tag elhanyagolhatóvá válik.
+
+\subsection{Relatív térfogatváltozás}
+Nézzük meg, hogyan változik meg egy $V$ nagyságú térfogatelem, amelyet a
+\[{\mathbf{x}} = \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right)x,\quad {\mathbf{y}} = \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  1 \\ 
+  0 
+\end{array}} \right)y,\quad {\mathbf{z}} = \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  0 \\ 
+  1 
+\end{array}} \right)z\]
+vektorok kijelölnek! Ez könnyedén kifejezhető a három vektor vegyesszorzatával, azaz
+\[V = \left( {{\mathbf{x}},{\mathbf{y}},{\mathbf{z}}} \right) = \left| {\begin{array}{*{20}{c}}
+  x&0&0 \\ 
+  0&y&0 \\ 
+  0&0&z 
+\end{array}} \right| = x \cdot y \cdot z.\]
+
+Ha ${\mathbf{F}}$ nem lenne konstans, akkor legyenek ezek a vektorok elég kicsik abban az értelemben, hogy ${\mathbf{F}}$ már konstansnak tekinthető a vektorok által kijelölt térfogatban. \Aref{eq:kul_vektor}.\ egyenletben lévő $\Delta$-kat mániákusan kiírva, de fejben tartva, hogy a különbségvektorokat az origó nullváktorával képezzük, \aref{eq:disztrozio_def}.\ egyenletet így írhatjuk a három vektorra:
+\[\begin{aligned}
+  \Delta {\mathbf{x}}' =  & \Delta {\mathbf{x}} + {\mathbf{u}}\left( {\mathbf{x}} \right) - {\mathbf{u}}\left( 0 \right) = \underbrace {\left( {{\mathbf{I}} + \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}}} \right)}_{{\mathbf{F}} = {\text{konstans}}}\Delta {\mathbf{x}} \\ 
+  \Delta {\mathbf{y}}' =  & \Delta {\mathbf{y}} + {\mathbf{u}}\left( {\mathbf{y}} \right) - {\mathbf{u}}\left( 0 \right) = \left( {{\mathbf{I}} + \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}}} \right)\Delta {\mathbf{y}} \\ 
+  \Delta {\mathbf{z}}' =  & \Delta {\mathbf{z}} + {\mathbf{u}}\left( {\mathbf{z}} \right) - {\mathbf{u}}\left( 0 \right) = \left( {{\mathbf{I}} + \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}}} \right)\Delta {\mathbf{z}}. \\ 
+\end{aligned} \]
+Ekkor a transzformáció után a vektorok alakja:
+\[{\mathbf{x}}' = \left( {\begin{array}{*{20}{c}}
+  {1 + {\partial _x}{u_x}} \\ 
+  {{\partial _x}{u_y}} \\ 
+  {{\partial _x}{u_z}} 
+\end{array}} \right)x,\quad {\mathbf{y}}' = \left( {\begin{array}{*{20}{c}}
+  {{\partial _y}{u_x}} \\ 
+  {1 + {\partial _y}{u_y}} \\ 
+  {{\partial _y}{u_z}} 
+\end{array}} \right)y,\quad {\mathbf{z}}' = \left( {\begin{array}{*{20}{c}}
+  {{\partial _z}{u_x}} \\ 
+  {{\partial _z}{u_y}} \\ 
+  {1 + {\partial _z}{u_z}} 
+\end{array}} \right)z,\]
+az új térfogatra pedig
+\begin{equation*}
+  V' = \left( {{\mathbf{x}}',{\mathbf{y}}',{\mathbf{z}}'} \right) = \left| {\begin{array}{*{20}{c}}
+  {1 + {\partial _x}{u_x}}&{{\partial _x}{u_y}}&{{\partial _x}{u_z}} \\ 
+  {{\partial _y}{u_x}}&{1 + {\partial _y}{u_y}}&{{\partial _y}{u_z}} \\ 
+  {{\partial _z}{u_x}}&{{\partial _z}{u_y}}&{1 + {\partial _z}{u_z}} 
+\end{array}} \right| x y z  = \det \left( {\mathbf{F}} \right)V. 
+\end{equation*}
+Az új térfogat a régihez viszonyítva, illetve a relatív térfogatváltozásra kapjuk, hogy
+\begin{equation} \label{eq:rel_terfogatv}
+\frac{{V'}}{V} = \det \left( {\mathbf{F}} \right) \Leftrightarrow \frac{{V' - V}}{V} = \frac{{\Delta V}}{V} = \det \underbrace {\left( {{\mathbf{I}} + {\mathbf{\beta^T }}} \right)}_{\mathbf{F}} - 1.
+\end{equation}
+
+Infinitezimális deformáció esetét \aref{sec:kicsi_def}.\ fejezet tárgyalja.
+
+\subsection{Kicsi deformációk} \label{sec:kicsi_def}
+Nagy jelentősége van annak a határesetnek, amikor a transzformáció kicsi, mert ekkor a testben ébredő belső feszültségek a deformációval arányosak lesznek (a lineáris rugalmasságtan általánosított Hooke-törvénye). Továbbá gyakran könnyebb is az ebben az esetben kapott mennyiségekkel (deformációval, relatív térfogatváltozással) számolni, illetve elég kicsi időre nézve a transzformációk is elég kicsik. Milyen egyszerűbb formálkhoz juthatunk tehát a kis transzformációk esetén?
+
+Ha a disztorzió kicsi, akkor a deformáció \told\aref{eq:deform_def}+as{} egyenlet szerinti definíciójában elhanyagolható a ${\mathbf{\beta }}\left( {\mathbf{r}} \right){{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)$ tag a ${\mathbf{\beta}}\left( {\mathbf{r}} \right)$-hoz és ${\mathbf{\beta^T}}\left( {\mathbf{r}} \right)$-hoz képest, és 
 \begin{equation}
 {\mathbf{\varepsilon }}\left( {\mathbf{r}} \right) = \frac{{{\mathbf{\beta }}\left( {\mathbf{r}} \right) + {{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right)}}{2}.
 \end{equation}
@@ -464,53 +530,11 @@ További azonosság még, hogy \[\begin{aligned}
    =  & {\text{Tr}}\left( {{{\mathbf{\beta }}^{{\text{sz}}}}} \right), \\ 
 \end{aligned} \] így kicsi disztorziókra $Tr\left( {\mathbf{\beta }} \right) = Tr\left( {\mathbf{\varepsilon }} \right)$. Ez az összefüggés jól jön a relatív térfogatváltozás számolásánál \aref{section:rel_volume} pontban.
 
-\subsubsection{Relatív térfogatváltozás} \label{section:rel_volume}
-Nézzük meg, hogyan változik meg egy $V$ nagyságú térfogatelem, amelyet a
-\[{\mathbf{x}} = \left( {\begin{array}{*{20}{c}}
-  1 \\ 
-  0 \\ 
-  0 
-\end{array}} \right)x,\quad {\mathbf{y}} = \left( {\begin{array}{*{20}{c}}
-  0 \\ 
-  1 \\ 
-  0 
-\end{array}} \right)y,\quad {\mathbf{z}} = \left( {\begin{array}{*{20}{c}}
-  0 \\ 
-  0 \\ 
-  1 
-\end{array}} \right)z\]
-vektorok kijelölnek! Ez könnyedén kifejezhető a három vektor vegyesszorzatával, azaz
-\[V = \left( {{\mathbf{x}},{\mathbf{y}},{\mathbf{z}}} \right) = \left| {\begin{array}{*{20}{c}}
-  x&0&0 \\ 
-  0&y&0 \\ 
-  0&0&z 
-\end{array}} \right| = x \cdot y \cdot z.\]
 
-Ha ${\mathbf{F}}$ nem lenne konstans, akkor legyenek ezek a vektorok elég kicsik abban az értelemben, hogy ${\mathbf{F}}$ már konstansnak tekinthető a vektorok által kijelölt térfogatban, ${\mathbf{x}}' = {\mathbf{Fx}}$, ${\mathbf{y}}' = {\mathbf{Fy}}$ és ${\mathbf{z}}' = {\mathbf{Fz}}$. Ekkor a transzformáció után a vektorok alakja:
-\[{\mathbf{x}}' = \left( {\begin{array}{*{20}{c}}
-  {1 + {\partial _x}{u_x}} \\ 
-  {{\partial _x}{u_y}} \\ 
-  {{\partial _x}{u_z}} 
-\end{array}} \right)x,\quad {\mathbf{y}}' = \left( {\begin{array}{*{20}{c}}
-  {{\partial _y}{u_x}} \\ 
-  {1 + {\partial _y}{u_y}} \\ 
-  {{\partial _y}{u_z}} 
-\end{array}} \right)y,\quad {\mathbf{z}}' = \left( {\begin{array}{*{20}{c}}
-  {{\partial _z}{u_x}} \\ 
-  {{\partial _z}{u_y}} \\ 
-  {1 + {\partial _z}{u_z}} 
-\end{array}} \right)z,\]
-az új térfogatra pedig
-\begin{equation*}
-  V' = \left( {{\mathbf{x}}',{\mathbf{y}}',{\mathbf{z}}'} \right) = \left| {\begin{array}{*{20}{c}}
-  {1 + {\partial _x}{u_x}}&{{\partial _x}{u_y}}&{{\partial _x}{u_z}} \\ 
-  {{\partial _y}{u_x}}&{1 + {\partial _y}{u_y}}&{{\partial _y}{u_z}} \\ 
-  {{\partial _z}{u_x}}&{{\partial _z}{u_y}}&{1 + {\partial _z}{u_z}} 
-\end{array}} \right| x y z  = \det \left( {\mathbf{F}} \right)V. 
-\end{equation*}
-Az új térfogat a régihez viszonyítva, illetve a relatív térfogatváltozásra kapjuk, hogy
-\[\frac{{V'}}{V} = \det \left( {\mathbf{F}} \right) \Leftrightarrow \frac{{V' - V}}{V} = \frac{{\Delta V}}{V} = \det \underbrace {\left( {{\mathbf{I}} + {\mathbf{\beta^T }}} \right)}_{\mathbf{F}} - 1.\]
-Gyakori eset, hogy a deriváltak az $1$-hez képest kicsik, így elsőrendig megtartva a determináns tagjait, a másod- és magasabbrendű tagokat pedig elhanyagolva kapjuk, hogy 
+
+\subsubsection{Relatív térfogatváltozás} \label{section:rel_volume}
+
+Gyakori eset, hogy a disztorzióban a deriváltak az $1$-hez képest kicsik, így a relatív térfogatváltozás \ref{eq:rel_terfogatv}.\ egyenletében elsőrendig megtartva a $\det \left( {\mathbf{F}} \right)$ tagjait, a másod- és magasabbrendű tagokat pedig elhanyagolva kapjuk, hogy 
 \[\begin{aligned}
   V' \approx  & \left( {1 + {\partial _x}{u_x}} \right)\left( {1 + {\partial _y}{u_y}} \right)\left( {1 + {\partial _z}{u_z}} \right) \cdot V \\ 
    \approx  & \left( {1 + {\partial _x}{u_x} + {\partial _y}{u_y} + {\partial _z}{u_z}} \right) \cdot V =  \\ 
@@ -606,16 +630,16 @@ Minden szimmetrikus, de nem diagonális, térben konstans deformációs gradiens
 \end{figure}
 
 \paragraph{Példa}
-Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 3, - 0.5} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Legyenek az új koordináták
+Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 3, - 0.5, 0} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5, 0} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Végezzünk el a testünkön egy transzformációt, amelynek során minden régi ${\mathbf{r}} = \left( {x,y,z} \right)$ helyvektor az alábbi ${\mathbf{r}}' = \left( {x',y',z'} \right)$ helyvektorba megy át: 
 \[\begin{aligned}
   x' &  = 2 \cdot x \\ 
   y' &  = 3 \cdot y \\ 
-  z' &  = 1 \cdot z'. \\ 
+  z' &  = 1 \cdot z. \\ 
 \end{aligned} \]
 
 Írd fel az elmozdulásmezőt vektoros alakban! Mire változik a $\Delta {\mathbf{r}}$ vektor? Mennyi a disztorzió, a deformációs gradiens és a relatív térfogatváltozás?
 
-Tegyük át az origót az $A$ pontba és írjuk le innen is a nyújtást! Legyenek a vektoraink a csillagosak, ${{\mathbf{r}}_A}^*$ és ${{\mathbf{r}}_B}^*$. Hogyan változnak transzformációra általánosan a vektorok? Azaz add meg az ${\mathbf{r}}{{^*}'}\left( {{{\mathbf{r}}^ * }} \right)$ függvényt! Mi az elmozdulástér, a disztorzió, a $\Delta {{\mathbf{r}}^ * }'$, a deformációs gradiens és a relatív térfogatváltozás?
+Tegyük át és rögzítsük az origót az anyagon az $A$ ponton és írjuk le innen is a nyújtást! Legyenek a vektoraink a csillagosak, ${{\mathbf{r}}_A}^*$ és ${{\mathbf{r}}_B}^*$. Hogyan változnak transzformációra általánosan a vektorok? Azaz add meg az ${\mathbf{r}}{{^*}'}\left( {{{\mathbf{r}}^ * }} \right)$ függvényt! Mi az elmozdulástér, a disztorzió, a $\Delta {{\mathbf{r}}^ * }'$, a deformációs gradiens és a relatív térfogatváltozás?
 
 \subsubsection{Forgatás} \label{section:forgatas}
 Forgatásnál minden régi helyvektor nagysága megmarad, csak az irányuk változik meg. A forgatást jellemezzük a szöggel és a forgatás tengelyének az irányával. Egy $z$ tengelyű, $\alpha$ szögű forgatásra
@@ -641,8 +665,19 @@ Az elmozdulástér ekkor:
 \[{\mathbf{u}}\left( {\mathbf{r}} \right) = {\mathbf{r}}' - {\mathbf{r}} = {\mathbf{Or}} - {\mathbf{r}} = \left( {{\mathbf{O}} - {\mathbf{I}}} \right){\mathbf{r}}.\]
 Ennek deriváltjaként előáll a disztorzió, de megkaphatjuk abból is, ha kiszámoljuk $\Delta {\mathbf{r}}'$-t:
 \[\Delta {\mathbf{r}}' = {{\mathbf{r}}_2}' - {{\mathbf{r}}_1}' = {\mathbf{O}}{{\mathbf{r}}_2} - {\mathbf{O}}{{\mathbf{r}}_1} = {\mathbf{O}}\Delta {\mathbf{r}}.\]
-Ebből már látható a deformációs gradiensre és a disztorzióra, hogy 
-\[{\mathbf{F}} = {\mathbf{O}}\quad {{\mathbf{\beta }}^T} = {\mathbf{O}} - {\mathbf{I}}.\]
+Ebből már leolvasható a \textbf{deformációs gradiens} és kiszámolható \textbf{disztorzió}:
+\[\begin{aligned}
+  {\mathbf{F}} &  = {\mathbf{O}} = {\mathbf{I}} + {{\mathbf{\beta }}^T} \\ 
+  {{\mathbf{\beta }}^T} &  = {\mathbf{O}} - {\mathbf{I}}. \\ 
+\end{aligned} \]
+Megjegyzendő, hogy általános, véges nagyságú forgatásra nem tisztán antiszimmetrikus a disztorzió, annak szimmetrikus komponense is van. A \textbf{deformáció} kiszámolható a disztorzióból, illetve fel kell még használni, hogy a forgatás transzformációja ortogonális (vagyis a transzponáltja az inverze).
+\[\begin{aligned}
+  2{\mathbf{\varepsilon }} &  = {\mathbf{\beta }} + {{\mathbf{\beta }}^T} + {\mathbf{\beta }}{{\mathbf{\beta }}^T}\quad \quad {{\mathbf{\beta }}^T} = {\mathbf{O}} - {\mathbf{I}} \quad \quad {{\mathbf{\beta }}} = {\mathbf{O}^T} - {\mathbf{I}} \\ 
+   &  = {{\mathbf{O}}^T} - {\mathbf{I}} + {\mathbf{O}} - {\mathbf{I}} + \left( {{{\mathbf{O}}^T} - {\mathbf{I}}} \right)\left( {{\mathbf{O}} - {\mathbf{I}}} \right) \\ 
+   &  = {{\mathbf{O}}^T} - {\mathbf{I}} + {\mathbf{O}} - {\mathbf{I}} + {{\mathbf{O}}^T}{\mathbf{O}} - {\mathbf{O}} - {{\mathbf{O}}^T} + {\mathbf{I}} \\ 
+   &  =  - {\mathbf{I}} + {{\mathbf{O}}^T}{\mathbf{O}}\quad \quad {{\mathbf{O}}^T}{\mathbf{O}} = {\mathbf{I}} \\ 
+   &  = 0 \\ 
+\end{aligned} \]
 
 \paragraph{Infinitezimális forgatás}
 Ha a $z$ tengelyű forgatás kicsi, akkor az új vektorok értékeire
@@ -671,39 +706,82 @@ a megváltozásra a vektornak
   0&0&0 
 \end{array}} \right){\mathbf{r}},
 \end{equation}
-amely felírható egy vektoriális szorzásként,
+amely felírható egy vektoriális szorzásként\footnote{Ellenőrzésképp, hogy lássuk, valóban felírható, írjuk ki a mátrixszorzás és egy vektoriális szorzás eredményvektorait, és vessük össze, hogy mikor egyenlőek!
+
+\[\underbrace {\left( {\begin{array}{*{20}{c}}
+  0&{ - \alpha }&0 \\ 
+  \alpha &0&0 \\ 
+  0&0&0 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  z 
+\end{array}} \right)}_{\left( {\begin{array}{*{20}{c}}
+  { - \alpha y} \\ 
+  {x\alpha } \\ 
+  0 
+\end{array}} \right)} = \underbrace {\left( {\begin{array}{*{20}{c}}
+  a \\ 
+  b \\ 
+  c 
+\end{array}} \right) \times \left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  z 
+\end{array}} \right)}_{\left( {\begin{array}{*{20}{c}}
+  {bz - cy} \\ 
+  {cx - za} \\ 
+  {ay - xb} 
+\end{array}} \right)} \Leftrightarrow \left( {\begin{array}{*{20}{c}}
+  { - \alpha y} \\ 
+  {x\alpha } \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {bz - cy} \\ 
+  {cx - za} \\ 
+  {ay - xb} 
+\end{array}} \right)\]
+Az egyenlőség minden $x$, $y$ és $z$ értékre igaz kell, hogy legyen, így a vektoregyenlőség feltételei rendre az $x$, $y$ és $z$ komponens alapján
+\[\begin{aligned}
+   - \alpha y = bz - cy &  \Leftrightarrow b = 0\quad \alpha  = c \\ 
+  x\alpha  = cx - za &  \Leftrightarrow a = 0\quad \alpha  = c \\ 
+  0 = ay - xb &  \Leftrightarrow b = 0\quad a = 0. \\ 
+\end{aligned} \]
+Ezek a feltételek mind teljesíthetőek egyszerre, ha 
+\[\left( {\begin{array}{*{20}{c}}
+  a \\ 
+  b \\ 
+  c 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  0 \\ 
+  \alpha  
+\end{array}} \right).\]},
 \[{\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {\begin{array}{*{20}{c}}
   0 \\ 
   0 \\ 
   \Delta \varphi  
 \end{array}} \right) \times {\mathbf{r}}.\]
-
 Tehát az elmozdulásmezőnk kicsi forgatásra
 \begin{equation} \label{eq:inf_forgat}
 {{\mathbf{u}}^f}\left( {\mathbf{r}} \right) = \Delta {\mathbf{\varphi }} \times {\mathbf{r}},
 \end{equation}
-azaz egy infinitezimális forgatás (azaz $\Delta {\mathbf{\varphi }} = \left( {0,0,\Delta \varphi } \right)$ nagyon kicsi), ahol $\Delta {\mathbf{\varphi }}$ értéke helytől független. A hozzá tartozó disztorziót kifejezhetjük a disztrozió definíciójából és a vektoriális szorzás indexes alakjának felhasználásával:
+ha $\Delta {\mathbf{\varphi }} = \left( {0,0,\Delta \varphi } \right)$ nagyon kicsi és $\Delta {\mathbf{\varphi }}$ értéke helytől független. A hozzá tartozó disztorzió transzponáltját kifejezhetjük annak definíciójából és a vektoriális szorzás indexes alakjának felhasználásával:
 \[\beta _{ij}^f = {\partial _i}{\varepsilon _{jkl}}\Delta {\varphi _k}{x_l} = {\varepsilon _{jkl}}\Delta {\varphi _k}\underbrace {{\partial _i}{x_l}}_{{\delta _{il}}} = {\varepsilon _{jki}}\Delta {\varphi _k} = {\varepsilon _{ijk}}\Delta {\varphi _k}.\]
-Vegyük észre, hogy 
-\[\beta _{ji}^f = {\varepsilon _{jik}}\Delta {\varphi _k} =  - {\varepsilon _{ijk}}\Delta {\varphi _k} =  - \beta _{ij}^f,\]
-vagyis
-\[\left\{ {{{\left( {{{\mathbf{\beta }}^f}} \right)}^T} =  - {{\mathbf{\beta }}^f}} \right\} \Leftrightarrow \left\{ {{{\mathbf{\beta }}^{f,{\text{asz}}}} = {{\mathbf{\beta }}^f}} \right\} \Leftrightarrow \left\{ {{{\mathbf{\beta }}^{f,{\text{sz}}}} = 0} \right\}.\]
-Azt látjuk tehát, hogy egy homogén elforgatás disztorziója tisztán antiszimmetrikus, így a deformáció egzaktul 0, ha a forgatás kicsi. \Aref{eq:inf_forgat_u} egyenletből, annak deriváltjából egyből látható a disztorzió indexes izmozás nélkül is, és az is látszik belőle, hogy a szimmetrikus része 0.
+Ez tisztán antiszimmetrikus, mivel
+\[\beta _{ji}^f = {\varepsilon _{jik}}\Delta {\varphi _k} =  - {\varepsilon _{ijk}}\Delta {\varphi _k}.\]
+Azt látjuk tehát, hogy egy homogén infinitezimális elforgatás disztorziója  antiszimmetrikus, így a szimmetrikus része 0, a deformáció pedig szintén 0. Nem is vártunk mást, hiszen korábban megmutattuk, hogy általános, véges nagyságú forgatásra is 0 a deformáció. \Aref{eq:inf_forgat_u}.\ egyenletből, annak deriváltjából egyből látható lett volna a disztorzió értéke indexes izmozás nélkül is, és az is látszik belőle, hogy a szimmetrikus része 0.
 
-Egy általános, infinitezimális disztorziónak sem a szimmetrikus, sem az antiszimmetrikus része nem 0. De a kettőhöz külön-külön definiálható egy infinitezimális transzformáció, amelyek közül az antiszimmetrikushoz egy tiszta forgatás tartozik.
-
-\paragraph{Véges nagyságú forgatás}
-Láthattuk az előző részben, hogy az infinitezimális forgatás deformációja egzaktul 0, hiszen a disztorzió szimmetrikus része 0. Egy véges forgatás előáll apró forgatások összegeként, ezért azt várjuk, hogy véges forgatásra is 0 legyen a deformáció.
-
-\subsection{Feladatok}
-Feladatok a feladatlapon.
+Egy általános, infinitezimális disztorziónak sem a szimmetrikus, sem az antiszimmetrikus része nem 0. De a kettőhöz külön-külön definiálható egy-egy infinitezimális transzformáció, amelyek közül a szimmetrikushoz egy nyújtás, az antiszimmetrikushoz egy tiszta forgatás tartozik. Bővebben lásd a poláris dekompozíció részt \ref{sec:polaris_dekomp} részt.
 
 \subsection{Általános transzformációk}
 Végső soron minden transzformáció előáll helyfüggő eltolási transzformációként, hiszen "csupán" az ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulástér-vektort kell megadni a hely függvényében, ${\mathbf{r}}'\left( {\mathbf{r}} \right) = {\mathbf{r}} + {\mathbf{u}}\left( {\mathbf{r}} \right)$. Gondolhatunk egy forgatásra is úgy, mint egy olyan eltolásra, ami helyről helyre változik. A korábban kiszámolt eltolás deformációs gradiensének vagy deformációjának kiszámolásában feltettük, hogy az eltolást jellemző vektor helytől független, így ha ki akarnánk ${\mathbf{F}}$-et vagy ${\mathbf{\varepsilon }}$-et számolni, újra el kéne végezni azokat a műveleteket, amiket a forgatásnál kiszámoltunk.
 
-Később látni fogjuk, hogy minden konstans deformációs gradiensű transzformáció felírható egy nyújtás és egy forgatás egymásutánjaként. Praktikus tehát a forgatást és nyújtást alapul vennünk, amelyekre már ismerjük ${\mathbf{F}}$-et és ${\mathbf{\varepsilon }}$.
+Később látni fogjuk, hogy minden konstans deformációs gradiensű transzformáció felírható egy nyújtás és egy forgatás egymásutánjaként. Praktikus tehát a forgatást és nyújtást alapul vennünk, amelyekre már ismerjük ${\mathbf{F}}$-et és ${\mathbf{\varepsilon }}$-t.
 
 \subsubsection{Nyírások}
+A nyírások konstans deformációs gradiensű transzformációk. Két fajtáját szokták említeni és használni, azonban egyik sem ír le lényegesen új alakváltozást.
+
 \paragraph{Egytengelyű, egyszerű nyírás}
 Egy egytengelyű, egyszerű nyírást szemléltet \az{\ref{fig:nyiras}}.\ ábra. Ekkor van olyan vonatkoztatási rendszer, amelyben a főátló elemeinek az értéke $1$, és minden egyéb mátrixelem egyetlen elemet kivéve $0$-ák. A deformációs gradiensre példa a
 \[{\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
@@ -744,11 +822,10 @@ amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix,
 
 
 \paragraph{Infinitezimális nyírás}
-Infinitezimális nyírások során a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. A megfelelő koordinátarendszerben az egytengelyű, egyszerű nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk. 
+Infinitezimális nyírások során a megfelelő koordinátarendszerben a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. Az egytengelyű, egyszerű nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk.
 
 \subsection{Feladatok}
-Feladatok a feladatlapon.
-
+Házi feladatok a feladatlapon.
 
 \subsubsection{Homokóra nyújtás}
 Jobb kifejezés hiányában van ez a cím, lehetne még ferdítés. Ekkor a nyújtás mértéke lineárisan függ az egyik tengelytől, és arra merőleges. \Aref{fig:homokora_nyujtas_szamolos}.\ ábra egy ilyet szemléltet (a könnyebb ábrázolásért egy eltolással együtt), ahol a legkisebb $y$ értékű részét a térnek $0{,}75$ szorosára nyújtjuk, a legnagyobb $y$ értékű részt pedig $1{,}25$-szörösére nyújtottuk, a kettő között pedig lineáris az átmenet.
