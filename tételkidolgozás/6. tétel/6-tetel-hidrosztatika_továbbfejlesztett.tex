@@ -1,0 +1,198 @@
+
+
+\documentclass[12pt,a4paper]{scrartcl}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage{lmodern}
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\let\mathbf\bm
+
+\usepackage{placeins}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+\usepackage{xcolor}
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{cleveref}
+
+
+\title{Hidrosztatika\\{\small{6. tétel}}}
+\author{Tüzes Dániel}
+\date{\today}
+\begin{document}
+\maketitle
+
+Mindeddig szilárd anyagok deformációjával és változásával foglalkoztunk, azonban a való életben nagyon sokszor kerülünk kapcsolatba folyadékokkal és gázokkal is. Fontos tudni hogyan hat a folyó vize a híd pilléreire, vagy épp a hajó testére, de már az is érdekes lehet, hogy a lufi oldalát hogyan nyomja a benne levő gáz.
+
+A szilárd anyagokat jellemeztük az ott bevezetett ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulásvektor-mezővel. Ez a folyadékoknál már nem egy célszerű leírási mód, hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását.
+
+Jobban érdekel minket a következő két dolog. A ${\mathbf{v}}\left( {{\mathbf{r}},t} \right)$ sebességtér és a $\rho \left( {{\mathbf{r}},t} \right)$ sűrűségmező. Mostantól erre a két mennyiségre figyeljünk.
+
+\section{Pascal-törvény}
+
+A következőben vegyünk egy kicsiny ${\mathbf{A}}$ felületet, amit egy oldalról gáz vagy folyadék (fluidum) határol, és a folyadék által a felületre ható erőket egy $\sigma$ feszültségtenzor kelti, amely az kicsi ${\mathbf{A}}$ környékén állandó. Ekkor 
+\[{\mathbf{F}} = \sigma {\mathbf{A}}.\]
+Kísérleti úton megmutatható, hogy az felületre merőleges erő, amit könnyen mérhetünk egy kis gumihártyával is, független az ${\mathbf{A}}$ irányától, ez pedig csak úgy lehetséges, hogyha a feszültségtenzor az egységoperátor számszorosa\footnote{A feszültség tenzor szimmetrikus, így diagonalizálható. Abban a vonatkoztatási rendszerben, amelyben diagonális, ott az egyes komponensek egyenlők kell legyenek, mert az erő ${\mathbf{A}}$ irányától független. Az egységoperátor számszorosa viszont minden koordinátarendszerben ugyanolyan alakú.}, vagyis
+\begin{equation} \label{eq:pascal}
+\sigma  =  - \left( {\begin{array}{*{20}{c}}
+  p&0&0 \\ 
+  0&p&0 \\ 
+  0&0&p 
+\end{array}} \right) =  - p\hat I,
+\end{equation}
+ahol a $p$ egy skaláris mennyiség, a neve \textbf{nyomás}. Ez Pascal törvénye. A $p$ utalhatna Pascal nevére is, de nem arra vonatkozik, hanem az angol \textit{pressure} vagy latin \textit{pressura} szavakra utal. A törvény szavakkal kifejezve azt mondja, hogy egy folyadék vagy gáz által egy kicsiny felületre kifejtett erő párhuzamos a felület normálisával és arányos a felület nagyságával, továbbá nem függ a felület irányától. Ez az állítás sztatikában érvényes, amikor a folyadék vagy gáz sebességtere a konstans 0.
+
+Középiskolában gyakran elhangzik a Pascal törvény abban a formában, hogy a nyomás a folyadékokban az iránytól függetlenül gyengítetlenül továbbterjed. Ez a megfogalmazás ebben a formában félrevezető, vagy egyenesen nem is igaz. A terjed szó egyfajta dinamikát sejtet, időbeli fejlődést, haladást, márpedig a Pascal törvény stacionárius esetre vonatkozik. A Pascal törvény ilyesfajta megfogalmazásának szemléltetésére szolgál a vizibuzogány, amelyben azt láthatjuk, hogy egy gömbszerű üreget -- egy buzogányt -- vízzel megtöltve, és abban nyomást keltve, a víz a gömbön ejtett lyukak mindegyikén azonos intenzitással spriccel ki, és nem függ attól, hogy a buzogány nyele milyen irányú a buzogány gömbjének a lyukaihoz képest. Ez a demonstráció úgy szolgálja a Pascal törvény igazolását, hogy úgy tekintjük, hogy a kispriccelés során a buzogányban a folyadék jóformán áll, annak ellenére, hogy spriccel ki belőle a víz. Ez akkor lehetséges, hogy a lyukakon kifolyó víz mennyisége elenyésző a teljes térfogathoz képest. A kispriccelő víz pedig szemlélteti a lyuk helyén lévő nyomást. Tehát stacionárius esetben a buzogány falán mindenütt ugyanakkor a nyomás, és ez a nyomás akkora, mint amekkorát a buzogány nyelében keltünk (ha a buzogány mérete kicsi).
+
+\subsection{A víz felülete vízszintes}
+Vizsgáljuk a sztatikus egyensúly esetét gázokra és folyadékokra! Az egyensúly feltétele:
+\[{\text{div}}\left( \hat \sigma  \right) + {\mathbf{f}} = 0\]
+Felhasználva a Pascal-törvényt a \aref{eq:pascal}.\ egyenletből:
+\[0 =  - {\text{div}}\left( {\begin{array}{*{20}{c}}
+  p&0&0 \\ 
+  0&p&0 \\ 
+  0&0&p 
+\end{array}} \right) + {\mathbf{f}}\]
+Kiírva a divergencia tagjait, majd felhasználva a gradiens definícióját, ${\partial _x}p\left( {{\mathbf{r}},t} \right) + {\partial _y}p\left( {{\mathbf{r}},t} \right) + {\partial _z}p\left( {{\mathbf{r}},t} \right) = {\text{grad}}\left( {p\left( {{\mathbf{r}},t} \right)} \right)$, így 
+\begin{equation} \label{eq:stacionarius}
+ - {\text{grad}}\left( p \right) + {\mathbf{f}} = 0
+\end{equation}
+Ha az erősűrűséget a gravitációs erőtér adja, akkor ${\mathbf{f}} = \rho {\mathbf{g}}$. Ismeretes, hogy ${\mathbf{g}}$ előáll egy potenciál gradienseként, mert a gravitációs erőtér konzervatív, így ${\mathbf{f}}\left( {\mathbf{r}} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)$. Ezt visszaírva \aref{eq:stacionarius}.\ egyenletbe kapjuk, hogy
+\begin{equation} \label{eq:stac_pot}
+ {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) + \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right) = 0.
+\end{equation}
+Sztatika esetében általánosan eddig tudunk eljutni. Azt láthatjuk ebből, hogy nem elég megadni a potenciált (pl.\ hogy gravitációs terünk van), ha a nyomásra vagyunk kíváncsiak. Meg kell adni a sűrűség helyfüggését is ahhoz, hogy a nyomást ki tudjuk számítani, vagy a sűrűség nyomásfüggését, követett függvényként.
+
+\footnotesize
+Milyen lehet a $\rho \left( {p\left( {\mathbf{r}} \right)} \right)$ függvény? Ideális gázt véve
+\[\begin{aligned}
+  pV =  & nRT \\ 
+   =  & \frac{m}{M}RT \Leftrightarrow p\frac{V}{m} = \frac{1}{M}RT. \\ 
+\end{aligned} \]
+Itt megjelenik a sűrűség reciproka, és azt kapjuk, hogy
+\[\frac{p}{\rho } = \frac{{RT}}{M}.\]
+Itt a hőmérséklet ugyanúgy függhet a helytől, és továbbra is szükség van a $T\left( {\mathbf{r}} \right)$ függvény megadására ahhoz, hogy a problémát meg tudjuk oldani. Problémát jelent, hogy nem kell feltétlen hőt közölni a rendszerrel ahhoz, hogy változzon a hőmérséklete. Egy termodinamikai folyamat végére (izochor, adiabatikus, izobár, stb\ldots), vagy ha a folyamat lassú, alkalmazható a stacionárius közelítés, és a hőmérséklet helyfüggése nem lesz triviális.
+
+Egy másik lehetőség a sűrűség nyomásfüggésére, ha azt mondjuk, hogy kicsi a közeg kompresszibilitása (avagy nagy a kompresszió modulusza), azaz $\kappa  =  - \frac{1}{V}{\left. {\frac{{\partial p}}{{\partial V}}} \right|_T}$ egy jó nagy szám. Ez azt mondja, hogy a nyomást nagyon meg kell változtatni ahhoz, hogy a térfogat is változzon. Azokat a folyadékokat, amelyek a vizsgált nyomástartományon belül érdemben nem változtatják a sűrűségüket, összenyomhatatlan folyadékoknak nevezzük. Összenyomhatatlan folyadék pl.\ a víz normál légköri nyomáson, a kompresszió modulusza $2 \cdot 10^9\text{ Pa}$, ami sok nagyságrenddel nagyobb, mint maga a légköri nyomás. Ez azt jelenti, hogy a légköri nyomás sokszorosát kell kifejteni a vízre ahhoz, hogy a térfogata érdemben változzon. Ha a folyadék nem nyomható össze, akkor a sűrűsége is állandó.
+\normalsize
+
+Ha a sűrűség helytől független (márpedig a víznél ez gyakran használt közelítés), akkor a sűrűség bevihető a gradiens argumentumába, és 
+\[\begin{aligned}
+  0 =  & {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) +   {\text{grad}}\left( {\rho  \cdot \phi \left( {\mathbf{r}} \right)} \right) \\ 
+   =  & {\text{grad}}\left( {p\left( {\mathbf{r}} \right) + \rho  \cdot \phi \left( {\mathbf{r}} \right)} \right), \\ 
+\end{aligned} \]
+tehát $p+\rho\phi$ állandó. Ez azt jelenti, hogy az azonos nyomású és azonos potenciálú helyek egybeesnek. A gravitációs erőtérben (egy adott magasság környékén sorfejtve) a potenciál $\phi = gh$, innen láthatjuk, hogy
+\begin{equation}
+p=p_{0}+\rho gh,
+\end{equation}
+ahol $p_{0}$ a $h=0$-ban mért nyomás. Ebből következik, hogy az egyensúlyban lévő víz felülete ekvipotenciális felület mentén helyezkedik el.
+\footnotesize
+\paragraph{Kérdés:} a víz alatt úszik egy könnyűbúvár, a feje felett pedig lassan áthalad egy vitorláshajó. Hogyan változik a búvár által érzett nyomás? Nagyobb-e, avagy kisebb-e akkor, amikor a feje fölött van ahhoz képest, amikor már messze jár a hajó?
+
+\paragraph{Pascal} megélhetési költségeit pályázati forrásokból finanszírozta. Ez akkor azt jelentette, hogy a gazdagoknál (pl.\ királyánál) kellett pénzt kérni valami akkoriban dologra (pl.\ aranyat csinálni), vagy látványos bemutató csinálni udvari bohóc szerepében. Pascal egy hordót robbantott fel néhány liter folyadék (bor) használatával, csupán egy vékony cső segítségével, amelyet magasra felemelt, és úgy töltötte bele a folyadékot. A hordóban a nyomás nagyon megnőhet, mert nem a csőben lévő folyadék mennyiségétől, hanem a magasságától függ, hogy mekkora a hordóban a nyomás.
+
+\paragraph{Demonstráció} Egy mérleg egyik serpenyőjében súlyok vannak, a másik pedig egy palacknak az alját képzi úgy, hogy egy fölé elhelyezett és a mérlegtől függetlenül rögzített palack-oldalfalhoz csak csekély súrlódással ér hozzá. Ilyen módon a palackba töltött víz a palack alján egy olyan lemezt nyom, amire a nyomóerőt a mérleg másik perselyében lévő súlyok egyensúlyozzák ki. A palack alja el tud mozdulni, amennyiben arra nagyobb erő hat, mint a persely másik oldalán, és az elmozduló palackalj miatt a palackból a víz kifolyik.
+
+A függőleges oldalú palackba elég sok vizet töltve a palack alja kinyit. Ezt a magasságot megjegyezzük. Most lecseréljük a függőleges oldalú palackot egy összetartó és széttartú falúra. Mindkét esetben a palack alja ugyanolyan magasságú víznél nyit ki, tehát nem a víznek a mennyiségétől függ a nyitás, hanem a vízoszlop magasságától. A lemez aljára ható nyomás tehát csak a magasságnak a függvénye, a felette lévő vízmennyiségnek közvetlenül nem függvénye.
+\normalsize
+
+\section{Arkhimédész törvénye}
+Vizsgáljuk egy folyadékba merülő téglatestre ható erőket! A folyadék felszínével párhuzamos oldalak hossza legyen $a$ és $b$, a harmadik él pedig legyen $c$. A téglatest felszíntől vett távolságát hívjuk $h$-nak. A nyomásból származó erő a folyadék sűrűségének ismeretében:
+\[\begin{aligned}
+  F_f &  = {F_{\text{alsó}}} + \underbrace {{F_{\text{oldalsó},ca}}}_0 + \underbrace {{F_{\text{oldalsó},cb}}}_0 + {F_{\text{felső}}} \\ 
+   &  = - p\left( {h + c} \right)ab + p\left( h \right)ab \\ 
+   &  = - p \cdot \underbrace {cab}_V \\
+   &  = - \rho gV. \\ 
+\end{aligned} \]
+Ezt nevezzük felhajtóerőnek. Általános alakú test esetén:
+\[\begin{aligned}
+  {{\mathbf{F}}_f} &  = \int_{\partial V} {\hat \sigma d{\mathbf{A}}}  \\ 
+   &  = \int_V {{\text{div}}\left( {\hat \sigma } \right)dV}  \\ 
+   &  =  - \int_V {\rho {\mathbf{g}}dV}  \\ 
+   &  =  - \rho {\mathbf{g}}V,
+\end{aligned} \]
+ahol felhasználtuk a Gauss-Ostrogradsky-tételt, a divergencia tételt.
+Így látahatjuk hogy a test alakjától nem, csak a térfogatától függ a felhajtóerő, és értéke pedig akkora, mint amekkora annak a folyadéknak a súlya, amit a test elfoglal. Ez Arkhimédész törvénye. Fontos, hogy a folyadék alulról körülölelje a testet. Egy káddugóra a kád alján nem hat felhajtóerő, mert a folyadék alulról nem éri.
+
+\footnotesize
+\paragraph{Storytime} Arkhimédész a törvényét állítólag úgy találta ki, hogy megbízta őt Hiero, Siracusa görög zsarnoka, hogy állapítsa meg, hogy a korona, amit kapott az ötvös mestertől, az tiszta arany-e, avagy sem, de anélkül, hogy a koronában, ami a görög isteneknek is kegyes, kárt tegyen.
+
+Arkhimédész fürdőzés közben, ahelyett, hogy megtalálta volna a mobilján a róla elnevezett törvényt, azt nézegette, hogy ahogy beül a színültig telt kádba, kifolyik a víz belőle. Mind jobban merül bele, annál több folyik ki, és ő maga is annyival lesz könnyebb. Ekkor kipattant a kádból és meztelenül átrohant a városon, kiáltozva, hogy Heuréka! A zsarnoknak előadta a megoldását, és annak segítségével megmutatta, hogy a korona nem színtiszta arany.
+
+Erre a zsarnok bepöccent és leölte az ötvös mestert. Pedig az ötvös nem becsapni akarta, hanem hallgatta az anyagtudfXXea tárgykódú előadást, ahol elmondták neki, hogy a fémek tiszta állapotban noha jól megmunkálhatóak, nem eléggé kemények és szívósak. Ellenben az ötvözetek már rengeteg jó tulajdonsággal rendelkezhetnek, amikkel az egyes összetevők külön-külön nem, és bizony, ezt már a bronz korban is nagyon jól tudták. A bronz, ami cink és réz ötvözete, már i.e.\ 3500 körül is ismeretes volt, mint jól megmunkálható, és jó anyagi tulajdonságú ötvözet. Az arannyal sincs másképp, a színtiszta arany magában nagyon puha és könnyen kopó anyag, amin réz vagy ezüst (fehérarany ötvözet) hozzáötvözésével javítanak. Éppen ezért nem lehet kapni színtiszta aranyból készült ékszereket. Nem csóróságból, hanem egyszerűen nem praktikus ékszert készíteni belőle.
+\normalsize
+
+\section{Forgó folyadék}
+Forgassunk egy folyadékot és vizsgáljuk meg, milyen alakot fog felvenni! Üljünk be a forgó rendszerbe, onnan nézve az egyensúly feltétele \aref{eq:stac_pot}.\ egyenlet szerint, hogy
+\begin{equation} \label{eq:forgo_foly_alapegyenlet}
+{\mathbf{f}} - {\text{grad}}\left( p \right) = 0,
+\end{equation}
+ahol az erősűrűséget most a gravitációs erőn felül a centrifugális erő adja, és
+\[{\mathbf{f}} = \rho {\mathbf{g}} + \rho \omega {\mathbf{s}}\quad\text{ahol } {\mathbf{s}} = \left( {x,y,0} \right).\]
+Ismert, illetve számolással ellenőrizhető, hogy a centrifugális erőtér konzervatív, a potenciálja pedig
+\[{\phi _c} =  - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right) \Rightarrow {\text{grad}}\left( {{\phi _c}} \right) = \rho \omega {\mathbf{s}}.\]
+Ezeket beírva \aref{eq:forgo_foly_alapegyenlet}.\ egyenletbe, kapjuk, hogy
+\begin{gather*}
+  {\text{grad}}\left( \rho gz + {p\left( {\mathbf{r}} \right) - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right)} \right) = 0 \hfill \\
+   \Updownarrow  \hfill \\
+  \rho gz  + p\left( {\mathbf{r}} \right) - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right) = {p_0} = \text{konstans.} \hfill \\ 
+\end{gather*}
+
+Nézzük meg azokat a pontokat, amelyre $p\left( {{\mathbf{r}} = 0} \right)$ állandó! Ekkor $p\left( {\mathbf{r}} \right) = {p_0}$ és 
+\begin{align}
+  \rho gz =  & \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right) \nonumber \\ 
+  z =  & \frac{{{\omega ^2}}}{{2g}}\left( {{x^2} + {y^2}} \right),
+\end{align} 
+ami épp egy paraboloid (forgási parabola) egyenlete, adott $x$ vagy $y$ érték mellett egy parabola.
+
+\section{Barometrikus magasságformula}
+Gravitációs erőtérben az egyensúly feltétele \[ - {\text{grad}}\left( p \right) - \rho  \cdot {\text{grad}}\left( \phi  \right) = 0.\]
+Megfigyelhetjük, hogy gázok esetén a hely függvényében $\rho$ nem lesz állandó. Ideális gázok esetén:
+\[pV = \frac{m}{M}RT\]
+\begin{equation} \label{eq:rho_p_prop}
+\frac{p}{\rho } = \frac{1}{M}RT \Rightarrow \rho  = \frac{{Mp}}{{RT}}
+\end{equation}
+
+Használjunk izoterm közelítést, azaz tekintsük állandónak a hőmérsékletet.
+\[\begin{aligned}
+  {\text{grad}}\left( p \right) + \frac{M}{{RT}}p \cdot \underbrace {{\text{grad}}\left( \phi  \right)}_{ - {\mathbf{g}}} &  = 0 \\ 
+  {\text{grad}}\left( p \right) - \frac{M}{{RT}}p \cdot {\mathbf{g}} &  = 0.\\ 
+\end{aligned} \]
+Ebből kifejezve a nyomás $z$ szerinti parciális deriváltját,
+\[{\partial _z}p\left( z \right) = \frac{M}{{RT}}g \cdot p\left( z \right) \Rightarrow p = {p_0} \cdot {e^{ - \frac{{Mg}}{{RT}}z}}.\]
+Állandó hőmérsékleten ideális gázokra \aref{eq:rho_p_prop}.\ egyenlet szerint a nyomás és a sűrűség egymással arányos, ezért
+\begin{equation}
+\rho \left( z \right) = {\rho _0} \cdot {e^{ - \frac{{Mgz}}{{RT}}}} \Leftrightarrow p\left( z \right) = {p_0} \cdot {e^{ - \frac{{Mgz}}{{RT}}}}.
+\end{equation}
+Tehát a nyomás és a sűrűség is exponenciálisan csökken a magassággal. Ha az $M=mA$ és az $R/A=k_b$ jelölést alkalmazzuk ($A$ az Avogadro-szám, $k_B$ pedig a Boltzmann-állandó):
+\begin{equation} \label{eq:barometrikus_magassagformula}
+\rho \left( z \right) = {\rho _0} \cdot {e^{ - \frac{{mgz}}{{{k_B}T}}}}.
+\end{equation}
+Ez a barometrikus magasságformula, ami igaz a nyomásra is. Továbbgondolva, igaz ez arra a $P$ valószínűségre is, hogy mekkora a valószínűsége, hogy egy nagyon kicsi dobozban (amiben átlagosan 1-nél sokkal kevesebb részecske van) van-e részecske. Ez a valószínűség exponenciálisan csökken a részecske helyzeti energiájával, azaz
+\[P\left( {{E_h}} \right) = {P_0} \cdot {e^{ - {E_h}/{E_T}}},\] ahol ${{E_T}}$ a hőmérséklet által definiált energia-lépték. Ilyen összefüggés a statisztikus és kvantumfizikában fizikában gyakran adódik különféle megfontolásokból, de itt az ideális gázra írta fel Boltzmann évszázadokkal ezelőtt.
+
+\Aref{eq:barometrikus_magassagformula}.\ egyenlet nézzük meg, mit jelent különféle anyagi minőségű gázra! Ha nagyobb egy molekula tömege, akkor az kitevő értéke is nagyobb, azaz a nyomás gyorsabban csökken a magasság függvényében. Viszont ha kicsi -- mint pl.\ a hidrogén gázra --, akkor lassan csökken a magasság függvényében, nagy távolságokon át állandó a nyomás és a sűrűség értéke. Ez azt jelenti, hogy nagy magasságig eljut a hidrogén gáz, egészen távol is a Földtől, ahol a gravitációs erőtér is kisebb, és ezek a molekulák el is szökhetnek a légkörből. Ezért nem található a földi légkörben számottevő mennyiségű hidrogéngáz vagy hélium.
+
+\footnotesize
+\paragraph{Demonstráció}
+Fontos-e ez a különbség a különféle gázokra? Van-e lényeges eltérés a gázok nyomásában normál, szobai körülmények között, van-e ennek relevanciája a hétköznapokban? Vezessünk egy két végén lyukas csőbe földgázt, vízszintezzük ki, és gyújtsuk meg a kiáramló gázt a cső két végén! A két oldalt a láng egyforma nagyságú, ha a lyukak is. Most fordítsuk el a csövet. Ekkor láthatjuk, hogy az egyik oldalt a láng lényegesen nagyobb, mint a másik oldalt. Ennek oka, hogy a cső olyan magasság-különbséget hidal át, ahol a levegő nyomásában már van különbség, és ez a nyomáskülönbség nyomja vissza a gázt az egyik oldalon, és nem nyomja annyira vissza a másik oldalon.
+
+Ez fontos volt régen pl.\ a gáztűzhelyek beüzemelésénél. Egy gáztűzhely ugyanolyan beállításokkal nem tudott jól üzemelni az 1.\ emeleten és a 10.\ emeleten is. Ennek megoldására a tűzhelyen folytószelepek voltak, amelynek az erősségét egy gázszerelő a megfelelő értékűre beállította a gáztűzhely házhozszállítását követően. Ha a tűzhelyet más emeletre vitték a folytószelepet újra be kellett állítani. Ma már egy automatikus, passzív mechanika végzi ezt a beállítást.
+\normalsize
+\end{document}

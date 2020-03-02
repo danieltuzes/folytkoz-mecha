@@ -566,11 +566,12 @@ a disztorziót pedig számolhatjuk egyből ${\mathbf{u}}$ deriváltjából, vagy
 \end{array}} \right..\]
 Triviálisan látszik, hogy a deformációra ${\mathbf{\varepsilon}} = {\mathbf{0}}$.
 
+\footnotesize
 \paragraph{Példa}
-Legyen a testünk $A$ és $B$ pontjainak koordinátái ${{\mathbf{r}}_A} = \left( { - 3, - 0.5} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Legyen az elmozdulásmező a térben helytől független állandó, ${\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {2, - 1} \right)$. 
+Legyen a testünk $A$ és $B$ pontjainak koordinátái ${{\mathbf{r}}_A} = \left( { - 3, - 0.5, 0} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5, 0} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Legyen az elmozdulásmező a térben helytől független állandó, ${\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {2, - 1} \right)$. 
 Mire módosul a transzformáció után a $\Delta {\mathbf{r}}$ vektor? Mennyi ekkor a disztorzió és a deformációs gradiens?
 
-\textbf{Megoldás:} Felírva az új koordinátákat, illetve a különbségvektort:
+\textbf{Megoldás:} Felírva az új koordinátákat, illetve a különbségvektort (a $z$ koordináta, és az abban vett különbségek mindig 0-k):
 \[\begin{gathered}
   {{\mathbf{r}}_A}' = {{\mathbf{r}}_A} + {\mathbf{u}} = \left( { - 3, - 0.5} \right) + \left( {2, - 1} \right) = \left( { - 1, - 1.5} \right), \hfill \\
   {{\mathbf{r}}_B}' = {{\mathbf{r}}_B} + {\mathbf{u}} = \left( { - 0.5, - 0.5} \right) + \left( {2, - 1} \right) = \left( {1.5, - 1.5} \right), \hfill \\
@@ -580,6 +581,7 @@ Mire módosul a transzformáció után a $\Delta {\mathbf{r}}$ vektor? Mennyi ek
 Felírva a definícióját a disztorziónak:
 \[{{\mathbf{\beta }}^T}\left( {\mathbf{r}} \right) = \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}} = 0.\]
 Ebből a deformációs gradiens \[{\mathbf{F}} = {\mathbf{I}} + {{\mathbf{\beta }}^T} = {\mathbf{I}}.\] Ez utóbbit abból is láthattuk volna most, hogy ${\mathbf{F}}$-et a $\Delta {\mathbf{r}}' = {\mathbf{F}}\Delta {\mathbf{r}}$ összefüggés adja meg, és most fenn állt a $\Delta {\mathbf{r}}' = \Delta {\mathbf{r}}$ összefüggés.
+\normalsize
 
 \subsubsection{Nyújtás}
 Nyújtásnál minden régi helyvektort (megfelelő koordináta rendszerben) komponensenként egy számmal szorzunk, amelyet \az{\ref{fig:nyujtas}}.\ ábra szemléltet. Ekkor
@@ -622,6 +624,9 @@ Egy speciális eset az, amikor a mátrix minden koordinátarendszerben diagonál
 \[{\mathbf{r}}'\left( {\mathbf{r}} \right) = {\lambda _1}{\mathbf{r}} = {\lambda _1}{\mathbf{Ir}}.\]
 
 Minden szimmetrikus, de nem diagonális, térben konstans deformációs gradiens nyújtást ír le, mert a szimmetrikus mátrixok diagonalizálhatók. Egy speciális eset a tiszta nyírás (lásd \ref{sec:tiszta_nyiras}), amikor a deformációs gradiens mátrix determinánsa 1 (vagy éppen $-1$, ha megengedjük).
+
+Másik speciális eset, ha csak egyetlen $\lambda$ értéke nem 1, ekkor a nyújtást egytengelyűnek nevezzük. Belátható, hogy minden nem egytengelyű nyújtás legfeljebb három egytengelyű nyújtás egymásutánjaként is előáll.
+
 \begin{figure}[htb] 
 \centering    
 \includegraphics[scale=1]{figs/nyujtas.eps}
@@ -629,6 +634,7 @@ Minden szimmetrikus, de nem diagonális, térben konstans deformációs gradiens
 \label{fig:nyujtas}
 \end{figure}
 
+\footnotesize
 \paragraph{Példa}
 Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \left( { - 3, - 0.5, 0} \right)$ és ${{\mathbf{r}}_B} = \left( { - 0.5, - 0.5, 0} \right)$, valamint $\Delta {\mathbf{r}} = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}$! Végezzünk el a testünkön egy transzformációt, amelynek során minden régi ${\mathbf{r}} = \left( {x,y,z} \right)$ helyvektor az alábbi ${\mathbf{r}}' = \left( {x',y',z'} \right)$ helyvektorba megy át: 
 \[\begin{aligned}
@@ -640,6 +646,144 @@ Legyen a testünk $A$ és $B$ pontjainak koordinátáira ${{\mathbf{r}}_A} = \le
 Írd fel az elmozdulásmezőt vektoros alakban! Mire változik a $\Delta {\mathbf{r}}$ vektor? Mennyi a disztorzió, a deformációs gradiens és a relatív térfogatváltozás?
 
 Tegyük át és rögzítsük az origót az anyagon az $A$ ponton és írjuk le innen is a nyújtást! Legyenek a vektoraink a csillagosak, ${{\mathbf{r}}_A}^*$ és ${{\mathbf{r}}_B}^*$. Hogyan változnak transzformációra általánosan a vektorok? Azaz add meg az ${\mathbf{r}}{{^*}'}\left( {{{\mathbf{r}}^ * }} \right)$ függvényt! Mi az elmozdulástér, a disztorzió, a $\Delta {{\mathbf{r}}^ * }'$, a deformációs gradiens és a relatív térfogatváltozás?
+
+\paragraph{Megoldás}
+Az új helyvektorok és abból az elmozdulástér:
+\[{\mathbf{r}}' = \left( {\begin{array}{*{20}{c}}
+  2&0&0 \\ 
+  0&3&0 \\ 
+  0&0&1 
+\end{array}} \right){\mathbf{r}}\quad {\mathbf{r}}' = {\mathbf{r}} + {\mathbf{u}}\left( {\mathbf{r}} \right) \Rightarrow {\mathbf{u}}\left( {\mathbf{r}} \right) = {\mathbf{r}}'\left( {\mathbf{r}} \right) - {\mathbf{r}} = \left( {\begin{array}{*{20}{c}}
+  x \\ 
+  {2 \cdot y} \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  1&0&0 \\ 
+  0&2&0 \\ 
+  0&0&0 
+\end{array}} \right){\mathbf{r}}\]
+
+A két új vektor
+\[\begin{aligned}
+  {{\mathbf{r}}_A}' = \left( {\begin{array}{*{20}{c}}
+  2&0&0 \\ 
+  0&3&0 \\ 
+  0&0&1 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  { - 3} \\ 
+  { - 0.5} \\ 
+  0 
+\end{array}} \right) =  - \left( {\begin{array}{*{20}{c}}
+  6 \\ 
+  {1.5} \\ 
+  0 
+\end{array}} \right) \\ 
+  {{\mathbf{r}}_B}' = \left( {\begin{array}{*{20}{c}}
+  2&0&0 \\ 
+  0&3&0 \\ 
+  0&0&1 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  { - 0.5} \\ 
+  { - 0.5} \\ 
+  0 
+\end{array}} \right) =  - \left( {\begin{array}{*{20}{c}}
+  2 \\ 
+  3 \\ 
+  0 
+\end{array}} \right)/2 \\ 
+\end{aligned} \]
+
+A különbségvektorok
+\[\begin{aligned}
+  \Delta {\mathbf{r}} &  = \left( {\begin{array}{*{20}{c}}
+  { - 0.5} \\ 
+  { - 0.5} \\ 
+  0 
+\end{array}} \right) - \left( {\begin{array}{*{20}{c}}
+  { - 3} \\ 
+  { - 0.5} \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {2.5} \\ 
+  0 \\ 
+  0 
+\end{array}} \right) \\ 
+  \Delta {\mathbf{r}}' &  =  - \left( {\begin{array}{*{20}{c}}
+  2 \\ 
+  3 \\ 
+  0 
+\end{array}} \right)/2 + \left( {\begin{array}{*{20}{c}}
+  6 \\ 
+  {1.5} \\ 
+  0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  5 \\ 
+  0 \\ 
+  0 
+\end{array}} \right) \\ 
+\end{aligned} \]
+
+A disztorzió
+\[{{\mathbf{\beta }}^T} = \frac{{d{\mathbf{u}}}}{{d{\mathbf{r}}}} = \left( {\begin{array}{*{20}{c}}
+  1&0&0 \\ 
+  0&2&0 \\ 
+  0&0&0 
+\end{array}} \right) \Rightarrow {\mathbf{\beta }} = {{\mathbf{\beta }}^T}\]
+
+A deformációs gradiens 
+\[{\mathbf{F}} = {\mathbf{I}} + {{\mathbf{\beta }}^T} = \left( {\begin{array}{*{20}{c}}
+  2&0&0 \\ 
+  0&3&0 \\ 
+  0&0&1 
+\end{array}} \right)\]
+
+A deformáció
+\[{\mathbf{\varepsilon }} = \frac{{{\mathbf{\beta }} + {{\mathbf{\beta }}^T}}}{2} + \frac{{{\mathbf{\beta }}{{\mathbf{\beta }}^T}}}{2} = \left( {\begin{array}{*{20}{c}}
+  1&0&0 \\ 
+  0&2&0 \\ 
+  0&0&0 
+\end{array}} \right) + \left( {\begin{array}{*{20}{c}}
+  1&0&0 \\ 
+  0&4&0 \\ 
+  0&0&0 
+\end{array}} \right)/2 = \left( {\begin{array}{*{20}{c}}
+  {3/2}&0&0 \\ 
+  0&4&0 \\ 
+  0&0&0 
+\end{array}} \right)\]
+
+A relatív térfogatváltozás
+\[\frac{{\Delta V}}{V} = \det \left( {\mathbf{F}} \right) - 16 - 1 = 5\]
+
+Miután áttettük az origót az $A$ pontra, az új vektorokra
+\[{\mathbf{r}}_A^* = 0 = \left( {{\mathbf{r}}_A^ * } \right)'\]
+és
+\[{\mathbf{r}}_B^ *  = {{\mathbf{r}}_B} - {{\mathbf{r}}_A}\]
+általában pedig
+\[{{\mathbf{r}}^ * } = {\mathbf{r}} - {{\mathbf{r}}_A}.\]
+
+Az eltranszformált vektorok a csillagos rendszerben:
+\[\begin{aligned}
+  \left( {\left( {{{\mathbf{r}}^ * }} \right)'} \right)\underbrace {\left( {{{\mathbf{r}}^ * }} \right)}_{{\text{arg}}} &  = \left( {{\mathbf{r}} - {{\mathbf{r}}_A}} \right)'\left( {{{\mathbf{r}}^ * }} \right) \\ 
+   &  = {\mathbf{r}}'\underbrace {\left( {{{\mathbf{r}}^ * }} \right)}_{{\text{arg}}} - {{\mathbf{r}}_A}' \\ 
+   &  = {\mathbf{r}}{'^ * } \\ 
+\end{aligned} \]
+
+A vesszőzést (transzformálást) azért lehet elvégezni tagonként, mert a transzformáció lineáris. Az eredmény szerint pl.\ az új $B$ pontot a csillagos rendszerből úgy adhatjuk meg, ha a csillagtalanból eltranszformáljuk, majd utána ülünk át a csillagosba,
+\[\left( {{\mathbf{r}}_B^ * } \right)' = {\left( {{{\mathbf{r}}_B}'} \right)^*} = {{\mathbf{r}}_B}' - {{\mathbf{r}}_A}' = \Delta {\mathbf{r}}'\]
+
+Így a csillagos eltranszformált különbségvektor ugyanaz, mint a csillagtalan eltranszformált,
+\[\Delta {{\mathbf{r}}^ * }' = \left( {{\mathbf{r}}_B^ * } \right)' - \left( {{\mathbf{r}}_A^ * } \right)' = \Delta {\mathbf{r}}' - 0 = \Delta {\mathbf{r}}'\]
+
+Az új koordinátákkal az elmozdulástér
+\[\begin{aligned}
+  {{\mathbf{u}}^ * }\left( {{{\mathbf{r}}^ * }} \right) &  = {{\mathbf{r}}^ * }' - {{\mathbf{r}}^ * } \\ 
+   &  = {\left( {{\mathbf{r}}'} \right)^ * } - {\mathbf{r}} + {{\mathbf{r}}_A} \\ 
+   &  = {\mathbf{r}}' - {{\mathbf{r}}_A} - {\mathbf{r}} + {{\mathbf{r}}_A} \\ 
+   &  = {\mathbf{r}}' - {\mathbf{r}} = {\mathbf{u}}\left( {\mathbf{r}} \right) \\ 
+\end{aligned} \]
+Ebből pedig tudható, hogy mind a disztorzió, a deformáció, a deformációs gradiens és a relatív térfogatváltozás is ugyanaz lesz, mint eddig. Tehát a nyújtás során nem kell azt gondolni, hogy a testnek a középpontjában vagyunk, mert minden pontból a nyújtás ugyanúgy írható lesz. Más szóval a nyújtásnak nincsen egy kitüntetett középpontja.
+\normalsize
 
 \subsubsection{Forgatás} \label{section:forgatas}
 Forgatásnál minden régi helyvektor nagysága megmarad, csak az irányuk változik meg. A forgatást jellemezzük a szöggel és a forgatás tengelyének az irányával. Egy $z$ tengelyű, $\alpha$ szögű forgatásra
@@ -836,7 +980,8 @@ Jobb kifejezés hiányában van ez a cím, lehetne még ferdítés. Ekkor a nyú
 \label{fig:homokora_nyujtas_szamolos}
 \end{figure}
 
-Az elmozdulástérre példa:
+\footnotesize
+\paragraph{Példa} az elmozdulástérre:
 \[{\mathbf{u}}\left( {\mathbf{r}} \right) = \frac{1}{4}\left( {\begin{array}{*{20}{c}}
   {x \cdot y} \\ 
   0 
@@ -855,13 +1000,12 @@ Ekkor a disztorziót deriválással lehet legkönnyebben megkapni,
   {1 + y/4}&{x/4} \\ 
   0&1 
 \end{array}} \right).\]
-\footnotesize
+
 Mi lenne, ha megint a $\Delta {\mathbf{r}}'$-ből szeretnénk számolni a disztorziót és a deformációs gradienst?
 \[\Delta {\mathbf{r}}' = {{\mathbf{r}}_2}' - {{\mathbf{r}}_1}' = \left( {{{\mathbf{r}}_2} + {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right)} \right) - \left( {{{\mathbf{r}}_1} + {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)} \right) = \Delta {\mathbf{r}} + {\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)\]
 Most nem tudunk továbblépni, mert ${\mathbf{u}}\left( {\mathbf{r}} \right)$ nem lineáris, azaz ${\mathbf{u}}\left( {\lambda {\mathbf{r}}} \right) \ne \lambda {\mathbf{u}}\left( {\mathbf{r}} \right)$. Továbbhaladni csak akkor tudunk, ha elvégezzük a $\Delta {\mathbf{r}}' \to 0$ limeszt, hogy lehessen aszerint osztani, pontosabban szólva deriválni:
 \[d{\mathbf{r}}' = d{\mathbf{r}} + \frac{{{\mathbf{u}}\left( {{{\mathbf{r}}_2}} \right) - {\mathbf{u}}\left( {{{\mathbf{r}}_1}} \right)}}{{d{\mathbf{r}}}} = \left( {{\mathbf{I}} + \frac{{d{\mathbf{u}}\left( {\mathbf{r}} \right)}}{{d{\mathbf{r}}}}} \right)d{\mathbf{r}},\]
 vagyis ezúttal is deriváláson keresztül tudunk csak számolni.
-\normalsize
 
 Nézzük meg, hogyan hat ez a transzformáció! Vegyünk egy négyzetet, amelynek a sarkainak a koordinátái legyenek 
 \[{{\mathbf{r}}_A} = \left( {\begin{array}{*{20}{c}}
@@ -974,7 +1118,7 @@ illetve
 \end{array}} \right),\]
 a négyzet közepén viszont \[{{\mathbf{F}}_0} = {\mathbf{I}}\quad {\mathbf{\beta_0 }} = 0,\]
 így itt nincs deformáció. Ha veszek egy olyan $\Delta {\mathbf{r}}$ vektort, ami az origóból indul és a négyzet sarkára mutat, akkor a különböző részein különböző volna a deformáció.
-
+\normalsize
 
 \subsubsection{Csavarás}
 A csavarás $3D$-ban értelmezhető transzformáció, amelynek során egy tengely mentén ugyanazon tengely irányában forgatunk, és a forgatás mértéke az anyag tengely menti két vége között folytonosan változik, legegyszerűbb esetben lineárisan.

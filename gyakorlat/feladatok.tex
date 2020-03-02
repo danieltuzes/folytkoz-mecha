@@ -109,28 +109,10 @@ Mennyi legyen $\lambda$, hogy a relatív térfogatváltozás 0 legyen? Mennyi ek
 Tegyük át és rögzítsük az origót az anyagon az $A$ ponton és írjuk le innen is a nyújtást! Legyenek a vektoraink a csillagosak, ${{\mathbf{r}}_A}^*$ és ${{\mathbf{r}}_B}^*$. Hogyan változnak transzformációra általánosan a vektorok? Azaz add meg az ${\mathbf{r}}{{^*}'}\left( {{{\mathbf{r}}^ * }} \right)$ függvényt! Mi az elmozdulástér, a disztorzió, a $\Delta {{\mathbf{r}}^ * }'$, a deformációs gradiens, a deformáció és a relatív térfogatváltozás? Készíts rajzot is!
 \end{enumerate}
 
-\iffalse
-\subsection{Nem origó körüli}
-Adottak az alábbi transzformációk egy vonatkoztatási rendszerben, illetve  az $A$ és $B$ pontok, amelyekhez mutató vektorok ${{\mathbf{r}}_A} = \left( {1,0} \right)$ és ${{\mathbf{r}}_A} = \left( {0, - 1} \right)$. Add meg az eredeti, illetve az új vonatkoztatási rendszerben az elmozdulásmezőt, a $\Delta {{\mathbf{r}}_{AB}}$ vektort, a disztroziót, a deformációs gradienst és a deformációt!
-\begin{enumerate}
-\item Eltolás: ${\mathbf{u}}\left( {\mathbf{r}} \right) = {{\mathbf{r}}_0}$
-\item Nyújtás: ${\mathbf{r}}'\left( {\mathbf{r}} \right) = \left( {2 \cdot {{\mathbf{e}}_x} \circ {{\mathbf{e}}_x} + 1 \cdot {{\mathbf{e}}_y} \circ {{\mathbf{e}}_y} + {{\mathbf{e}}_z} \circ {{\mathbf{e}}_z}} \right){\mathbf{r}}$
-\item Forgatás: ${\mathbf{r}}'\left( {\mathbf{r}} \right) = {\mathbf{Or}}\quad {\mathbf{O}} = {{\mathbf{O}}_{z,45^\circ }} = \left( {\begin{array}{*{20}{c}}
-  {\cos \left( {45^\circ } \right)}&{ - \sin \left( {45^\circ } \right)}&0 \\ 
-  { - \sin \left( {45^\circ } \right)}&{\cos \left( {45^\circ } \right)}&0 \\ 
-  0&0&1 
-\end{array}} \right)$
-\end{enumerate}
 
-\subsection{Forgatás}
-Mutassuk meg, hogy kicsi forgatásokra valóban felírható \begin{equation} \label{eq:inf_forgat}
-{{\mathbf{u}}^f}\left( {\mathbf{r}} \right) = \Delta {\mathbf{\varphi }} \times {\mathbf{r}},
-\end{equation}
-alak az elmozdulásmezőre! Mutassuk meg, hogy véges nagyságú forgatásra is $0$ a deformáció!
-
-
+\section{Egyszerű transzformációk II}
 \subsection{Konkrét számok}
-Írjuk fel az alábbi esetekre at elmozdulásmezőt, a disztorziót, a deformációs gradienst és a deformációt! Hogyan néznek ki ezek (első rendű közelítésben), ha az adott fajtájú egyszerű transzformációk kicsik?
+Írd fel az alábbi esetekre az elmozdulásmezőt, a disztorziót, a deformációs gradienst és a deformációt! Hogyan néznek ki ezek (első rendű közelítésben), ha az adott fajtájú egyszerű transzformációk kicsik?
 
 \begin{figure}[htb] 
 \centering
@@ -157,7 +139,6 @@ alak az elmozdulásmezőre! Mutassuk meg, hogy véges nagyságú forgatásra is 
 \end{figure}
 \FloatBarrier
 
-\section{Egyszerű transzformációk II}
 \subsection{Egyenes képe egyenes}
 Mutassuk meg, hogy eltolás, nyújtás és forgatás során szakasz képe szakasz! Ehhez felhasználhatjuk, hogy az $A$ és $B$ pontok közötti $AB$ szakaszt a két pontba mutató ${{\mathbf{r}}_A}$ és ${{\mathbf{r}}_B}$ vektorokkal úgy írhatjuk fel, hogy 
 \[AB = \left\{ {\left. {{\lambda _A}{{\mathbf{r}}_A} + {\lambda _B}{{\mathbf{r}}_B}} \right|{\lambda _A} + {\lambda _B} = 1} \right\}.\]
@@ -165,8 +146,8 @@ Mutassuk meg, hogy eltolás, nyújtás és forgatás során szakasz képe szakas
 \subsection{Nyírós-számolós}
 \begin{enumerate}
 \item \Aref{fig:nyiras_feladat}.\ ábrán melyik fajta nyírás van ábrázolva? Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció?
-\item Általános és tiszta (véges) nyírás eseteiben leolvasható-e (radiános) szögmérő segítségével a disztorzió komponensei? És infinitezimális transzformáció esetén?
-\item Infinitezimális tiszta nyírásnál elsőrendig nézve hogyan néz ki az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció? Írjuk fel a mátrixokat abban a vonatkoztatási rendszerben, amelyben ${\mathbf{F}}$ diagonális, illetve ezzel $45^\circ$-os szöget bezáró koordinátarendszerben is!
+\item Egy négyzet egytengelyű, egyszerű nyírásánál leolvasható-e (radiános) szögmérő segítségével a disztorzió komponensei? És és tiszta nyírás esetén? (Mindkét esetben a négyzet oldalai legyenek párhuzamosak a vonatkoztatási rendszerrel.) És infinitezimális transzformáció esetén?
+\item Infinitezimális, tiszta nyírásnál elsőrendig nézve hogyan néz ki az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció? Írjuk fel a mátrixokat abban a vonatkoztatási rendszerben, amelyben ${\mathbf{F}}$ diagonális, illetve ezzel $45^\circ$-os szöget bezáró koordinátarendszerben is! Milyen transzformációt ír le ez a mátrix?
 \end{enumerate}
 
 
@@ -177,6 +158,10 @@ Mutassuk meg, hogy eltolás, nyújtás és forgatás során szakasz képe szakas
 \label{fig:nyiras_feladat}
 \end{figure}
 \FloatBarrier
+
+\iffalse
+
+
 
 
 \section{Nemhomogén transzformációk}
