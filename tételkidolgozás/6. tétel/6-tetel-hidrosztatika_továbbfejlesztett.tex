@@ -40,17 +40,15 @@
 
 Mindeddig szilárd anyagok deformációjával és változásával foglalkoztunk, azonban a való életben nagyon sokszor kerülünk kapcsolatba folyadékokkal és gázokkal is. Fontos tudni hogyan hat a folyó vize a híd pilléreire, vagy épp a hajó testére, de már az is érdekes lehet, hogy a lufi oldalát hogyan nyomja a benne levő gáz.
 
-A szilárd anyagokat jellemeztük az ott bevezetett ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulásvektor-mezővel. Ez a folyadékoknál már nem egy célszerű leírási mód, hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását.
-
-Jobban érdekel minket a következő két dolog. A ${\mathbf{v}}\left( {{\mathbf{r}},t} \right)$ sebességtér és a $\rho \left( {{\mathbf{r}},t} \right)$ sűrűségmező. Mostantól erre a két mennyiségre figyeljünk.
+A szilárd anyagokat jellemeztük az ott bevezetett ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulásvektor-mezővel. Ez a folyadékoknál már nem egy célszerű leírási mód, hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását. Jobban érdekel minket a következő két dolog. A ${\mathbf{v}}\left( {{\mathbf{r}},t} \right)$ sebességtér és a $\rho \left( {{\mathbf{r}},t} \right)$ sűrűségmező. Mostantól erre a két mennyiségre figyeljünk.
 
 \section{Pascal-törvény}
 
-A következőben vegyünk egy kicsiny ${\mathbf{A}}$ felületet, amit egy oldalról gáz vagy folyadék (fluidum) határol, és a folyadék által a felületre ható erőket egy $\sigma$ feszültségtenzor kelti, amely az kicsi ${\mathbf{A}}$ környékén állandó. Ekkor 
-\[{\mathbf{F}} = \sigma {\mathbf{A}}.\]
-Kísérleti úton megmutatható, hogy az felületre merőleges erő, amit könnyen mérhetünk egy kis gumihártyával is, független az ${\mathbf{A}}$ irányától, ez pedig csak úgy lehetséges, hogyha a feszültségtenzor az egységoperátor számszorosa\footnote{A feszültség tenzor szimmetrikus, így diagonalizálható. Abban a vonatkoztatási rendszerben, amelyben diagonális, ott az egyes komponensek egyenlők kell legyenek, mert az erő ${\mathbf{A}}$ irányától független. Az egységoperátor számszorosa viszont minden koordinátarendszerben ugyanolyan alakú.}, vagyis
+A következőben vegyünk egy kicsiny ${\mathbf{A}}$ felületet, amit egy oldalról gáz vagy folyadék (fluidum) határol, és a folyadék által a felületre ható erőket egy $\hat \sigma$ feszültségtenzor kelti, amely az kicsi ${\mathbf{A}}$ környékén állandó. Ekkor 
+\[{\mathbf{F}} = \hat \sigma {\mathbf{A}}.\]
+Kísérleti úton megmutatható, hogy a felületre ható erő nagysága -- amit könnyen mérhetünk egy kis gumihártyával is -- független az ${\mathbf{A}}$ irányától, ez pedig csak úgy lehetséges, hogyha a feszültségtenzor az egységoperátor számszorosa\footnote{A feszültség tenzor szimmetrikus, így diagonalizálható. Abban a vonatkoztatási rendszerben, amelyben diagonális, ott az egyes komponensek egyenlők kell legyenek, mert az erő ${\mathbf{A}}$ irányától független. Az egységoperátor számszorosa viszont minden koordinátarendszerben ugyanolyan alakú.}, vagyis
 \begin{equation} \label{eq:pascal}
-\sigma  =  - \left( {\begin{array}{*{20}{c}}
+\hat \sigma  =  - \left( {\begin{array}{*{20}{c}}
   p&0&0 \\ 
   0&p&0 \\ 
   0&0&p 
@@ -58,7 +56,12 @@ Kísérleti úton megmutatható, hogy az felületre merőleges erő, amit könny
 \end{equation}
 ahol a $p$ egy skaláris mennyiség, a neve \textbf{nyomás}. Ez Pascal törvénye. A $p$ utalhatna Pascal nevére is, de nem arra vonatkozik, hanem az angol \textit{pressure} vagy latin \textit{pressura} szavakra utal. A törvény szavakkal kifejezve azt mondja, hogy egy folyadék vagy gáz által egy kicsiny felületre kifejtett erő párhuzamos a felület normálisával és arányos a felület nagyságával, továbbá nem függ a felület irányától. Ez az állítás sztatikában érvényes, amikor a folyadék vagy gáz sebességtere a konstans 0.
 
-Középiskolában gyakran elhangzik a Pascal törvény abban a formában, hogy a nyomás a folyadékokban az iránytól függetlenül gyengítetlenül továbbterjed. Ez a megfogalmazás ebben a formában félrevezető, vagy egyenesen nem is igaz. A terjed szó egyfajta dinamikát sejtet, időbeli fejlődést, haladást, márpedig a Pascal törvény stacionárius esetre vonatkozik. A Pascal törvény ilyesfajta megfogalmazásának szemléltetésére szolgál a vizibuzogány, amelyben azt láthatjuk, hogy egy gömbszerű üreget -- egy buzogányt -- vízzel megtöltve, és abban nyomást keltve, a víz a gömbön ejtett lyukak mindegyikén azonos intenzitással spriccel ki, és nem függ attól, hogy a buzogány nyele milyen irányú a buzogány gömbjének a lyukaihoz képest. Ez a demonstráció úgy szolgálja a Pascal törvény igazolását, hogy úgy tekintjük, hogy a kispriccelés során a buzogányban a folyadék jóformán áll, annak ellenére, hogy spriccel ki belőle a víz. Ez akkor lehetséges, hogy a lyukakon kifolyó víz mennyisége elenyésző a teljes térfogathoz képest. A kispriccelő víz pedig szemlélteti a lyuk helyén lévő nyomást. Tehát stacionárius esetben a buzogány falán mindenütt ugyanakkor a nyomás, és ez a nyomás akkora, mint amekkorát a buzogány nyelében keltünk (ha a buzogány mérete kicsi).
+Ebből az is látszik, hogy a folyadék vagy gáz által kifejtett erő stacionárius esetben nem tartalmazhat nyíró komponenst.
+
+\footnotesize
+\paragraph{Demonstráció és storytime}
+Középiskolában gyakran elhangzik a Pascal törvény abban a formában, hogy \textit{a nyomás a folyadékokban az iránytól függetlenül gyengítetlenül továbbterjed}. Ez a megfogalmazás ebben a formában félrevezető, vagy egyenesen nem is igaz. A terjed szó egyfajta dinamikát sejtet, időbeli fejlődést, haladást, márpedig a Pascal törvény stacionárius esetre vonatkozik. A Pascal törvény ilyesfajta megfogalmazásának szemléltetésére szolgál a vizibuzogány, amelyben azt láthatjuk, hogy egy gömbszerű üreget -- egy buzogányt -- vízzel megtöltve, és abban nyomást keltve, a víz a gömbön ejtett lyukak mindegyikén azonos intenzitással spriccel ki, és nem függ attól, hogy a buzogány nyele milyen irányú a buzogány gömbjének a lyukaihoz képest. Ez a demonstráció úgy szolgálja a Pascal törvény igazolását, hogy úgy tekintjük, hogy a kispriccelés során a buzogányban a folyadék jóformán áll, annak ellenére, hogy spriccel ki belőle a víz. Ez akkor lehetséges, hogy a lyukakon kifolyó víz mennyisége elenyésző a teljes térfogathoz képest. A kispriccelő víz pedig szemlélteti a lyuk helyén lévő nyomást. Tehát stacionárius esetben a buzogány falán mindenütt ugyanakkor a nyomás, és ez a nyomás akkora, mint amekkorát a buzogány nyelében keltünk (ha a buzogány mérete kicsi).
+\normalsize
 
 \subsection{A víz felülete vízszintes}
 Vizsgáljuk a sztatikus egyensúly esetét gázokra és folyadékokra! Az egyensúly feltétele:
@@ -74,9 +77,11 @@ Kiírva a divergencia tagjait, majd felhasználva a gradiens definícióját, ${
  - {\text{grad}}\left( p \right) + {\mathbf{f}} = 0
 \end{equation}
 Ha az erősűrűséget a gravitációs erőtér adja, akkor ${\mathbf{f}} = \rho {\mathbf{g}}$. Ismeretes, hogy ${\mathbf{g}}$ előáll egy potenciál gradienseként, mert a gravitációs erőtér konzervatív, így ${\mathbf{f}}\left( {\mathbf{r}} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)$. Ezt visszaírva \aref{eq:stacionarius}.\ egyenletbe kapjuk, hogy
-\begin{equation} \label{eq:stac_pot}
- {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) + \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right) = 0.
-\end{equation}
+\begin{gather} \label{eq:stac_pot}
+  {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) + \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right) = 0 \hfill \\
+   \Updownarrow  \hfill \nonumber \\
+  {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right) \hfill \label{eq:stac_pot_gradp}
+\end{gather}
 Sztatika esetében általánosan eddig tudunk eljutni. Azt láthatjuk ebből, hogy nem elég megadni a potenciált (pl.\ hogy gravitációs terünk van), ha a nyomásra vagyunk kíváncsiak. Meg kell adni a sűrűség helyfüggését is ahhoz, hogy a nyomást ki tudjuk számítani, vagy a sűrűség nyomásfüggését, követett függvényként.
 
 \footnotesize
@@ -105,7 +110,7 @@ ahol $p_{0}$ a $h=0$-ban mért nyomás. Ebből következik, hogy az egyensúlyba
 \footnotesize
 \paragraph{Kérdés:} a víz alatt úszik egy könnyűbúvár, a feje felett pedig lassan áthalad egy vitorláshajó. Hogyan változik a búvár által érzett nyomás? Nagyobb-e, avagy kisebb-e akkor, amikor a feje fölött van ahhoz képest, amikor már messze jár a hajó?
 
-\paragraph{Pascal} megélhetési költségeit pályázati forrásokból finanszírozta. Ez akkor azt jelentette, hogy a gazdagoknál (pl.\ királyánál) kellett pénzt kérni valami akkoriban dologra (pl.\ aranyat csinálni), vagy látványos bemutató csinálni udvari bohóc szerepében. Pascal egy hordót robbantott fel néhány liter folyadék (bor) használatával, csupán egy vékony cső segítségével, amelyet magasra felemelt, és úgy töltötte bele a folyadékot. A hordóban a nyomás nagyon megnőhet, mert nem a csőben lévő folyadék mennyiségétől, hanem a magasságától függ, hogy mekkora a hordóban a nyomás.
+\paragraph{Storytime} Pascal megélhetési költségeit pályázati forrásokból finanszírozta. Ez akkor azt jelentette, hogy a gazdagoknál (pl.\ királyánál) kellett pénzt kérni valami akkoriban dologra (pl.\ aranyat csinálni), vagy látványos bemutató csinálni udvari bohóc szerepében. Pascal egy hordót robbantott fel néhány liter folyadék (bor) használatával, csupán egy vékony cső segítségével, amelyet magasra felemelt, és úgy töltötte bele a folyadékot. A hordóban a nyomás nagyon megnőhet, mert nem a csőben lévő folyadék mennyiségétől, hanem a magasságától függ, hogy mekkora a hordóban a nyomás.
 
 \paragraph{Demonstráció} Egy mérleg egyik serpenyőjében súlyok vannak, a másik pedig egy palacknak az alját képzi úgy, hogy egy fölé elhelyezett és a mérlegtől függetlenül rögzített palack-oldalfalhoz csak csekély súrlódással ér hozzá. Ilyen módon a palackba töltött víz a palack alján egy olyan lemezt nyom, amire a nyomóerőt a mérleg másik perselyében lévő súlyok egyensúlyozzák ki. A palack alja el tud mozdulni, amennyiben arra nagyobb erő hat, mint a persely másik oldalán, és az elmozduló palackalj miatt a palackból a víz kifolyik.
 
@@ -115,20 +120,21 @@ A függőleges oldalú palackba elég sok vizet töltve a palack alja kinyit. Ez
 \section{Arkhimédész törvénye}
 Vizsgáljuk egy folyadékba merülő téglatestre ható erőket! A folyadék felszínével párhuzamos oldalak hossza legyen $a$ és $b$, a harmadik él pedig legyen $c$. A téglatest felszíntől vett távolságát hívjuk $h$-nak. A nyomásból származó erő a folyadék sűrűségének ismeretében:
 \[\begin{aligned}
-  F_f &  = {F_{\text{alsó}}} + \underbrace {{F_{\text{oldalsó},ca}}}_0 + \underbrace {{F_{\text{oldalsó},cb}}}_0 + {F_{\text{felső}}} \\ 
-   &  = - p\left( {h + c} \right)ab + p\left( h \right)ab \\ 
+  F_f &  = {F_{\text{alsó}}} + \underbrace {{F_{\text{oldalsó},ca}}}_0 + \underbrace {{F_{\text{oldalsó},cb}}}_0 && + {F_{\text{felső}}} \\ 
+   & =  - {p_0} - p\left( {h + c} \right)ab  && + {p_0} + p\left( h \right)ab \\ 
    &  = - p \cdot \underbrace {cab}_V \\
    &  = - \rho gV. \\ 
 \end{aligned} \]
-Ezt nevezzük felhajtóerőnek. Általános alakú test esetén:
+Ezt nevezzük felhajtóerőnek. Általános alakú test esetén \aref{eq:stac_pot_gradp}.\ és $-{\text{grad}}\left( \phi  \right) = {\mathbf{g}}$ egyenlet segítségével
 \[\begin{aligned}
   {{\mathbf{F}}_f} &  = \int_{\partial V} {\hat \sigma d{\mathbf{A}}}  \\ 
-   &  = \int_V {{\text{div}}\left( {\hat \sigma } \right)dV}  \\ 
-   &  =  - \int_V {\rho {\mathbf{g}}dV}  \\ 
-   &  =  - \rho {\mathbf{g}}V,
+   &  = \int_V {{\text{div}}\left( {\hat \sigma } \right)dV} \quad {\text{div}}\left( {\hat \sigma } \right) = {\text{grad}}\left( { - p} \right)  \\ 
+   &  =  - \int_V {\rho_f {\mathbf{g}}dV}  \\ 
+   &  =  - \rho_f {\mathbf{g}}V,
 \end{aligned} \]
-ahol felhasználtuk a Gauss-Ostrogradsky-tételt, a divergencia tételt.
-Így látahatjuk hogy a test alakjától nem, csak a térfogatától függ a felhajtóerő, és értéke pedig akkora, mint amekkora annak a folyadéknak a súlya, amit a test elfoglal. Ez Arkhimédész törvénye. Fontos, hogy a folyadék alulról körülölelje a testet. Egy káddugóra a kád alján nem hat felhajtóerő, mert a folyadék alulról nem éri.
+ahol felhasználtuk a Gauss-Ostrogradsky-tételt, a divergencia tételt. A térfogatra vett integrálnál az integrál mennyisége nem változik, ha az integrálást a kijelölt térfogatnál egy infinitezimálisan nagyobb térfogatra jelöljük ki. Ennek segítségével látható, hogy a megjelenő sűrűség a folyadék tulajdonsága kell, hogy legyen. Ez érthető is, hogy a felhajtóerő, ami a folyadék által kifejtett erő, nem függhet attól, hogy a kijelölt térfogaton belül az anyagi minőséget megváltoztatjuk.
+
+Az egyenletből azt láthatjuk, hogy a test alakjától nem, csak a térfogatától függ a felhajtóerő, és értéke pedig akkora, mint amekkora annak a folyadéknak a súlya, amit a test elfoglal. Ez Arkhimédész törvénye. Fontos, hogy a folyadék alulról körülölelje a testet. Egy káddugóra a kád alján nem hat felhajtóerő, mert a folyadék alulról nem éri.
 
 \footnotesize
 \paragraph{Storytime} Arkhimédész a törvényét állítólag úgy találta ki, hogy megbízta őt Hiero, Siracusa görög zsarnoka, hogy állapítsa meg, hogy a korona, amit kapott az ötvös mestertől, az tiszta arany-e, avagy sem, de anélkül, hogy a koronában, ami a görög isteneknek is kegyes, kárt tegyen.
@@ -139,14 +145,14 @@ Erre a zsarnok bepöccent és leölte az ötvös mestert. Pedig az ötvös nem b
 \normalsize
 
 \section{Forgó folyadék}
-Forgassunk egy folyadékot és vizsgáljuk meg, milyen alakot fog felvenni! Üljünk be a forgó rendszerbe, onnan nézve az egyensúly feltétele \aref{eq:stac_pot}.\ egyenlet szerint, hogy
+Forgassunk egy folyadékot és vizsgáljuk meg, milyen alakot fog felvenni! Üljünk be a forgó rendszerbe, onnan nézve az egyensúly feltétele \aref{eq:stacionarius}.\ egyenlet szerint, hogy
 \begin{equation} \label{eq:forgo_foly_alapegyenlet}
 {\mathbf{f}} - {\text{grad}}\left( p \right) = 0,
 \end{equation}
 ahol az erősűrűséget most a gravitációs erőn felül a centrifugális erő adja, és
-\[{\mathbf{f}} = \rho {\mathbf{g}} + \rho \omega {\mathbf{s}}\quad\text{ahol } {\mathbf{s}} = \left( {x,y,0} \right).\]
+\[{\mathbf{f}} = \rho {\mathbf{g}} + \rho \omega^2 {\mathbf{s}}\quad\text{ahol } {\mathbf{s}} = \left( {x,y,0} \right).\]
 Ismert, illetve számolással ellenőrizhető, hogy a centrifugális erőtér konzervatív, a potenciálja pedig
-\[{\phi _c} =  - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right) \Rightarrow {\text{grad}}\left( {{\phi _c}} \right) = \rho \omega {\mathbf{s}}.\]
+\[{\phi _c} =  - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right) \Rightarrow {\text{grad}}\left( {{\phi _c}} \right) = \rho \omega^2 {\mathbf{s}}.\]
 Ezeket beírva \aref{eq:forgo_foly_alapegyenlet}.\ egyenletbe, kapjuk, hogy
 \begin{gather*}
   {\text{grad}}\left( \rho gz + {p\left( {\mathbf{r}} \right) - \frac{1}{2}\rho {\omega ^2}\left( {{x^2} + {y^2}} \right)} \right) = 0 \hfill \\
