@@ -968,9 +968,6 @@ amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix,
 \paragraph{Infinitezimális nyírás}
 Infinitezimális nyírások során a megfelelő koordinátarendszerben a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. Az egytengelyű, egyszerű nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk.
 
-\subsection{Feladatok}
-Házi feladatok a feladatlapon.
-
 \subsubsection{Homokóra nyújtás}
 Jobb kifejezés hiányában van ez a cím, lehetne még ferdítés. Ekkor a nyújtás mértéke lineárisan függ az egyik tengelytől, és arra merőleges. \Aref{fig:homokora_nyujtas_szamolos}.\ ábra egy ilyet szemléltet (a könnyebb ábrázolásért egy eltolással együtt), ahol a legkisebb $y$ értékű részét a térnek $0{,}75$ szorosára nyújtjuk, a legnagyobb $y$ értékű részt pedig $1{,}25$-szörösére nyújtottuk, a kettő között pedig lineáris az átmenet.
 \begin{figure}[htb] 
@@ -1135,10 +1132,100 @@ Képzeljünk el egy $z$ tengelyű négyzetes hasábot, amely $z$-ben $-z_0$-tól
   {{z^ * }} 
 \end{array}} \right)
 \end{equation}
-forgatást hajtunk végre.
+forgatást hajtunk végre. Ez az egytengelyű csavarás.
+
+Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció?
+
+A koordináta rendszert úgy veszem fel, hogy a $z$ tengely a forgatás tengelye legyen, a minta tartománya pedig $-z_0$-tól $z_0$-ig tartson. Ekkor a ${\mathbf{r}} = \left( {\begin{array}{*{20}{c}}
+  x&y&z 
+\end{array}} \right)$ helyvektor $z$ koordinátája nem változik, csupán az $x$ és $y$ koordinátája, ${\mathbf{r}}' = \left( {\begin{array}{*{20}{c}}
+  {x'}&{y'}&z 
+\end{array}} \right)$. A vesszősök között a ${{\mathbf{O}}_{z,\alpha z/{z_0}}}$ hat, 
+\[\left( {\begin{array}{*{20}{c}}
+  {x'} \\ 
+  {y'} 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  {\cos \left( {\alpha z/{z_0}} \right)}&{ - \sin \left( {\alpha z/{z_0}} \right)} \\ 
+  {\sin \left( {\alpha z/{z_0}} \right)}&{\cos \left( {\alpha z/{z_0}} \right)} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y 
+\end{array}} \right).\]
+Ennek 3D-s kiterjesztése:
+\[\left( {\begin{array}{*{20}{c}}
+  {x'} \\ 
+  {y'} \\ 
+  z 
+\end{array}} \right) = \underbrace {\left( {\begin{array}{*{20}{c}}
+  {\cos \left( {\alpha z/{z_0}} \right)}&{ - \sin \left( {\alpha z/{z_0}} \right)}&0 \\ 
+  {\sin \left( {\alpha z/{z_0}} \right)}&{\cos \left( {\alpha z/{z_0}} \right)}&0 \\ 
+  0&0&1 
+\end{array}} \right)}_{{\mathbf{O}}_{z,\alpha z/{z_0}}^{3D}}\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  z 
+\end{array}} \right)\]
+Az elmozdulástér tehát:
+\[{\mathbf{r}}' = {\mathbf{O}}_{z,\alpha z/{z_0}}^{3D}\left( {\mathbf{r}} \right){\mathbf{r}} = {\mathbf{u}}\left( {\mathbf{r}} \right) + {\mathbf{r}} \Rightarrow {\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {{\mathbf{O}}_{z,\alpha z/{z_0}}^{3D}\left( {\mathbf{r}} \right) - {{\mathbf{I}}^{3D}}} \right){\mathbf{r}},\]
+a komponensei kiírva:
+\[\begin{aligned}
+  \left( {{\mathbf{O}}_{z,\alpha z/{z_0}}^{3D}\left( {\mathbf{r}} \right) - {{\mathbf{I}}^{3D}}} \right){\mathbf{r}} &  = \left( {\begin{array}{*{20}{c}}
+  {\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1}&{ - \sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}&0 \\ 
+  {\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}&{\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1}&0 \\ 
+  0&0&{1 - 1} 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  z 
+\end{array}} \right) \\ 
+   &  = \left( {\begin{array}{*{20}{c}}
+  {x\left[ {\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1} \right] - y\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)} \\ 
+  {y\left[ {\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1} \right] + x\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)} \\ 
+  0 
+\end{array}} \right) = {\mathbf{u}}\left( {\mathbf{r}} \right) \\ 
+\end{aligned} .\]
+Irány derviálni! ${\beta^T _{ij}} = {\partial _j}{u_i}$
+\begin{equation} \label{eq:csavaras_disztorzio}
+\left( {\begin{array}{*{20}{c}}
+  {\underbrace {\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1}_{{\partial _x}{u_x}}}&{\underbrace { - \sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}_{{\partial _y}{u_x}}}&{\underbrace { - y\frac{\alpha }{{{z_0}}}\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - x\frac{\alpha }{{{z_0}}}\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}_{{\partial _z}{u_x}}} \\ 
+  {\underbrace {\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}_{{\partial _x}{u_y}}}&{\underbrace {\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - 1}_{{\partial _y}{u_y}}}&{\underbrace {x\frac{\alpha }{{{z_0}}}\cos \left( {\frac{{z\alpha }}{{{z_0}}}} \right) - y\frac{\alpha }{{{z_0}}}\sin \left( {\frac{{z\alpha }}{{{z_0}}}} \right)}_{{\partial _z}{u_y}}} \\ 
+  0&0&0 
+\end{array}} \right) = {{\mathbf{\beta }}^T}
+\end{equation}
+
+Innen fáradtságos számolással megkapható a deformáció,
+\[2{\mathbf{\varepsilon }} = {\mathbf{\beta }} + {{\mathbf{\beta }}^T} + {\mathbf{\beta }}{{\mathbf{\beta }}^T}.\]
+
+\paragraph{Infinitezimális csavarás}
+Infinitezimális csavarás esetén a szögelfordulás $\alpha$ értéke kicsi. Egyszerűsödik a disztrozió \aref{eq:csavaras_disztorzio}.\ kifejezése is, ha ${\mathbf{\beta }^T}$ kicsi, mert akkor egyrészt a disztrozió is egyszerűbb, határértékben
+
+\[{{\mathbf{\beta }}^T} = \left( {\begin{array}{*{20}{c}}
+  0&{ - \frac{{z\alpha }}{{{z_0}}}}&{ - y\frac{\alpha }{{{z_0}}} - x\frac{\alpha }{{{z_0}}}\frac{{z\alpha }}{{{z_0}}}} \\ 
+  {\frac{{z\alpha }}{{{z_0}}}}&0&{x\frac{\alpha }{{{z_0}}} - y\frac{\alpha }{{{z_0}}}\frac{{z\alpha }}{{{z_0}}}} \\ 
+  0&0&0 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  0&{ - \frac{{z\alpha }}{{{z_0}}}}&{ - y\frac{\alpha }{{{z_0}}}} \\ 
+  {\frac{{z\alpha }}{{{z_0}}}}&0&{x\frac{\alpha }{{{z_0}}}} \\ 
+  0&0&0 
+\end{array}} \right),\]
+másrészt a deformációban nincs meg a csúnya ${\mathbf{\beta }}{{\mathbf{\beta }}^T}$ szorzat, 
+\[2{\mathbf{\varepsilon }} = {\mathbf{\beta }} + {{\mathbf{\beta }}^T}.\]
+Kiszámolva:
+\[{\mathbf{\varepsilon }} = \left( {\begin{array}{*{20}{c}}
+  0&0&{ - y\frac{\alpha }{{2{z_0}}}} \\ 
+  0&0&{x\frac{\alpha }{{2{z_0}}}} \\ 
+  { - y\frac{\alpha }{{2{z_0}}}}&{x\frac{\alpha }{{2{z_0}}}}&0 
+\end{array}} \right).\]
+Ekkor egyébként az elmozdulástér határértékben:
+\[{\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {\begin{array}{*{20}{c}}
+  { - yz \cdot \alpha /{z_0}} \\ 
+  {xz \cdot \alpha /{z_0}} \\ 
+  0 
+\end{array}} \right).\]
+Persze egyszerűbb lett volna ezt deriválni.
 
 \subsubsection{Lineárisan interpolált transzformációk}
-Még megannyi más deformáció fajta is elképzelhető. Volna lehetőség arra, hogy megadjuk például, hogy a transzformáció mibe viszi át az egységnégyzetet. Ekkor megnézhetjük, hogy az egyes oldalakat mennyire nyújtotta meg a deformáció, majd minden pontra lineáris interpolációval meghatározhatnánk az abban a pontban érvényes elmozdulás értékét.
+Még megannyi más deformáció fajta is elképzelhető. Volna lehetőség arra, hogy megadjuk például, hogy a transzformáció mibe viszi át az egységnégyzetet. Ez jóval szemléletesebb, mint az ${\mathbf{F}}\left( {\mathbf{r}} \right)$ vagy az ${\mathbf{\varepsilon }}\left( {\mathbf{r}} \right)$ függvény megadása, viszont nem következik belőle a transzformáció pontos alakja. Amennyiben a transzformációt mégis ilyen vizuális úton adjuk meg, akkor arra egyszerű esetekben egy lehetőség, hogy megadjuk, hogy az egyes oldalakat mennyire nyújtotta meg a transzformáció, majd minden pontra lineáris interpolációval meghatározhatnánk az abban a pontban érvényes elmozdulás értékét.
 
 \begin{figure}[htb] 
 \centering    
@@ -1147,13 +1234,15 @@ Még megannyi más deformáció fajta is elképzelhető. Volna lehetőség arra,
 \label{fig:linearis_interpolacios_traf}
 \end{figure}
 
-\subsection{Feladatok}
-Feladatok a feladatlapon.
+\subsubsection{Általános transzformációk}
+Mint ahogy egy függvény közelíthetünk szakaszonként egy konstans értékkel, egy transzformációt is közelíthetünk helyről helyre konstans térben konstans transzformációval, mondjuk az ${\mathbf{F}}$ deformációs gradiens megadásával, így helyről helyre különböző mértékű, többtengelyű nyújtással és forgatással írhatjuk le a transzformációt.
+
+Érezhető, hogy amennyiben egy függvényt konstans értékek halmazával akarunk leírni, akkor sok pont kell. Kevesebb adattal leírható egy függvény, ha egyeneseket használunk a leírására, és abból állítjuk elő a függvényt (a megfelelő szempontból, ha a függvény elég jól viselkedik). Hasonlóképp egy fokkal magasabb szinten írjuk le a transzformációt, ha nem konstans értékű transzformációkkal közelítjük, hanem lineárissal. Ekkor a homokóra nyújtás kéttengelyű esetét használják. 
 
 \subsection{Transzformációk egymásutánja}
-Ha alkalmazunk egy transzformációt a mintán, majd az így kapotton újra, akkor az egyes transzformációhoz deformációs gradienst (ill.\ a transzponáltjaikat) össze kell szorozni \az{\eqref{eq:disztrozio_def}} egyenlet szerint, hogy megkapjuk $\Delta {\mathbf{r}}''$-t:
-\[1 + {{\mathbf{\beta }}_{AB}} = \left( {1 + {{\mathbf{\beta }}_A}} \right)\left( {1 + {{\mathbf{\beta }}_B}} \right) = \left( {1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B} + {{\mathbf{\beta }}_A}{{\mathbf{\beta }}_B}} \right) \ne 1 + {{\mathbf{\beta }}_{BA}}.\]
-Láthatjuk, hogy ez nem kommutatív, a transzformációk egymással nem felcserélhetők. Azonban ha a disztorzió elég kicsi, és így a szorzatuk elhanyagolható, akkor már kummutatív, ugyanis 
+Ha alkalmazunk egy transzformációt a mintán, majd az így kapotton újra, akkor az egyes transzformációhoz tartozó deformációs gradienst (ill.\ a transzponáltjaikat) össze kell szorozni \az{\eqref{eq:disztrozio_def}} egyenlet szerint, hogy megkapjuk $\Delta {\mathbf{r}}''$-t:
+\[1 + {{\mathbf{\beta }}_{AB}} = \left( {1 + {{\mathbf{\beta }}_B}} \right)\left( {1 + {{\mathbf{\beta }}_A}} \right) = \left( {1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B} + {{\mathbf{\beta }}_B}{{\mathbf{\beta }}_A}} \right) \ne 1 + {{\mathbf{\beta }}_{BA}}.\]
+Láthatjuk, hogy ez nem kommutatív, a transzformációk egymással nem felcserélhetők. Azonban ha a disztorzió elég kicsi, és így a szorzatuk elhanyagolható, akkor már kommutatív, ugyanis 
 \begin{equation} \label{eq:deform_kommutatív}
 1 + {{\mathbf{\beta }}_{AB}} = \left( {1 + {{\mathbf{\beta }}_A}} \right)\left( {1 + {{\mathbf{\beta }}_B}} \right) = \left( {1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B}\underbrace { + {{\mathbf{\beta }}_A}{{\mathbf{\beta }}_B}}_{ \approx 0}} \right) = 1 + {{\mathbf{\beta }}_A} + {{\mathbf{\beta }}_B} = 1 + {{\mathbf{\beta }}_{BA}}.
 \end{equation}
@@ -1338,7 +1427,29 @@ vagyis azt kaptuk, hogy egy eleve elforgatott teret nyújtottunk meg. A nyújtá
 \label{fig:nem_kommutativ}
 \end{figure}
 
-Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert így az alakzat emberek számára könnyebben felismerhető. Ha pedig felismerhető, azért szokták nyújtás, forgatás sorrendben megadni, mert az egyes transzformációk könnyebben leolvashatóak. \Aref{fig:nem_kommutativ}.\ ábra \textit{b} esetét előállíthatnánk egy forgatás és egy tiszta nyírás (amihez szintén egy ortogonális deformációs gradiens tartozik) egymásutánjaként, de ekkor a nyírás elemei nehezebben leolvashatók, az csak a $30^\circ$-os koordinátarendszerben diagonális.
+Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert így az alakzat emberek számára könnyebben felismerhető, illetve vizuálisan az egyes transzformációk könnyebben leolvashatóak. \Aref{fig:nem_kommutativ}.\ ábra \textit{b} esetét előállíthatnánk egy forgatás és egy tiszta nyírás (amihez szintén egy ortogonális deformációs gradiens tartozik) egymásutánjaként, de ekkor a nyírás elemei nehezebben leolvashatók, az csak a $30^\circ$-os koordinátarendszerben diagonális.
+
+\footnotesize
+\paragraph{Példa}
+\begin{enumerate}
+\item Milyen transzformációk ismerhetőek fel \aref{fig:egymasutan}.\ ábráról?
+\item Mi az elmozdulásmező, a deformációs gradiens, a disztorzió és a deformáció?
+\end{enumerate}
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/egymasutan_feladat.eps}
+\caption{Egymásután.}
+\label{fig:egymasutan}
+\end{figure}
+\FloatBarrier
+
+\paragraph{Megoldás}
+\begin{enumerate}
+\item Az $x$ tengely mentén $4/3$-ad, $y$ tengely mentén $2/3$ szorosra nyújtás, $45^\circ $-kal való forgatás, majd eltolás $\left( {3,5;\;2,5} \right)$ vektorral.
+\item Felírjuk a nyújtás majd forgatás deformációs gradienseinek a szorzatát. Ebből számolható az elmozdulásmező lineáris része, a konstans részét pedig úgy választjuk meg, hogy pl.\ az alakzat közepét jó helyre tegye.
+\end{enumerate}
+\normalsize
+
 
 \subsection{Feladatok}
 Feladatok a feladatlapon.
