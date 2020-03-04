@@ -10,3 +10,6 @@ A gyakorlat célja, hogy az előadás anyagát elsajátítsák a hallgatók. Enn
 2020-as évtől a hőtan és a folytonos közegek mechanikája egyesült, így jó volna, ha hőtanos tételkidolgozások is szerepelnének majd itt.
 ## Gyakorlat
 A gyakorlat órai anyagai és feladott házi feladatok forrásai találhatóak meg itt. A házi feladatok megoldásai nem láthatóak, mert az azokat mindenki maga kell megoldja és beadja.
+
+## Fejlesztés és együttműködés
+Bíztatok mindenkit, hogy készítsen saját branch-et, egészítse ki bármelyik tételkidolgozást, és rajzolja újra az ábrákat még szebben, és küldje el a változatát git-en keresztül egy merge requestben.

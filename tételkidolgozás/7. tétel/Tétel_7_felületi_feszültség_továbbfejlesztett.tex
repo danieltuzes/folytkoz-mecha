@@ -83,7 +83,7 @@ Egy üveglapra vízcseppet ejtünk. Legyen $\alpha$ a $\Delta l$ egységnyi hoss
 Ebből az illeszkedési szögre az egyenlet:
 \[\cos{\varphi}=\frac{\alpha_{\text{l,ü}}-\alpha_{\text{ü,v}}}{\alpha_{\text{vl}}}.\]
 
-Az egyenlet jobb oldalán külön-külön jól mérhető fizikai mennyiségek vannak, amelyek egy tágabb tartományon belül tetszőleges értékűek lehetnek. Nincs garancia arra, hogy a jobb oldal értéke a koszinusz függvény értékkészletébe essen. Ha az egyenlet jobb oldala nagyobb, mint 1, akkor nem létezik illeszkedési szög, és nem alakul ki \aref{fig:fig:illeszkedesi_szog}.\ ábrán vázolt állapot. Két különféle eset következhet ekkor be. Egyik esetében energetikailag kedvezőbb a mind nagyobb folyadék-szilárd anyag határfelület, és ekkor a folyadék szétterül a felületen. Ez az eset fordul elő a tinta és a papírlap között, illetve a víz és a érdes vagy rozsdás felületű főzőlap között. A másik lehetőség, amikor energetikailag nem kedvező a folyadék-szilárd anyag határfelület. Ekkor a folyadék nem tapad hozzá szilárd anyag felületéhez, a kettő között egy vékony levegő határfelület marad, és a folyadék nagyon könnyen el tud a szilárd anyagon mozdulni. Ez utóbbira példa bizonyos biológiai felületek (levelek), szabadalmaztatott vízlepergető műanyag bevonatok (Gore-tex), de akár a forró főzőlap-víz felületek is.
+Az egyenlet jobb oldalán külön-külön jól mérhető fizikai mennyiségek vannak, amelyek egy tágabb tartományon belül tetszőleges értékűek lehetnek. Nincs garancia arra, hogy a jobb oldal értéke a koszinusz függvény értékkészletébe essen. Ha az egyenlet jobb oldala nagyobb, mint 1, akkor nem létezik illeszkedési szög, és nem alakul ki \aref{fig:illeszkedesi_szog}.\ ábrán vázolt állapot. Két különféle eset következhet ekkor be. Egyik esetében energetikailag kedvezőbb a mind nagyobb folyadék-szilárd anyag határfelület, és ekkor a folyadék szétterül a felületen. Ez az eset fordul elő a tinta és a papírlap között, illetve a víz és a érdes vagy rozsdás felületű főzőlap között. A másik lehetőség, amikor energetikailag nem kedvező a folyadék-szilárd anyag határfelület. Ekkor a folyadék nem tapad hozzá szilárd anyag felületéhez, a kettő között egy vékony levegő határfelület marad, és a folyadék nagyon könnyen el tud a szilárd anyagon mozdulni. Ez utóbbira példa bizonyos biológiai felületek (levelek), szabadalmaztatott vízlepergető műanyag bevonatok (Gore-tex), de akár a forró főzőlap-víz felületek is.
 
 A felületi feszültségek függnek a hőmérséklettől, előfordulhat, hogy bizonyos tartományokon van megoldás, más tartományokon nincs. A forró vas vagy üveg főzőlap és víz esetét ezzel meg lehet magyarázni. A mind forróbb főzőlapra cseppentett víz egyre gyorsabban elpárolog, illetve felforr, de egy megfelelő hőmérséklet után olyan felületi feszültségek jelennek meg, amire már nem létezik illeszkedési szög. Ekkor a vízcsepp nem lesz közvetlen érintkezéses kapcsolatban a főzőlappal, lassabban melegszik fel, lassabban párolog, sőt gyakran még a felforrás előtt lefolyik a kicsit is nem vízszintes főzőlapról.
 
@@ -96,6 +96,12 @@ A felületi feszültségek függnek a hőmérséklettől, előfordulhat, hogy bi
 
 \section{Görbített határfelület}
 
+\footnotesize
+\paragraph{Demonstráció} Egy \textit{y} alakú cső mindhárom vége lyukas. Az \textit{y} tején lévő végeit a csőnek szappanos vízzel bevonjuk, majd az \textit{y} szárába levegőt fújunk, majd a szárát befogjuk, hogy levegő nem mehessen se ki, se be. Ekkor az \textit{y} két szárán két buborék lesz, közel azonos mérettel. Az idő múlásával azonban az egyik leeresztődik, a másik pedig nagyobbra fújódik úgy, hogy a két buborék össztérfogata nagyjából állandó. Mi áll a jelenség mögött?
+\normalsize
+
+Tekintsük egy kicsiny görbült felületet, amelyet 4 oldalvonal, $\Delta {s_1}$, $\Delta {s_2}$, $\Delta {s_1}$ és $\Delta {s_2}$, továbbá egy belső és egy külső oldal határol. Ekkor az oldalai a felületnek egy körívvel közelíthetőek, $\Delta {s_1}$ mentén $R_1$, $\Delta {s_2}$ mentén $R_2$ görbületi sugárral\footnote{$R_1$ és $R_2$ kellően simán görbülő felületekre mindig egyértelműen meghatározható, gömbre pedig a felület mentén állandó és értéke a gömb sugara.}. A hártya ekkor egy vékony ellipszoidhéjjal van közelítve. Legyen a felület egyensúlyban!
+
 \begin{figure}[htbp]
 	\begin{center}
 		\includegraphics[width=0.4\textwidth]{tetel73.png}
@@ -103,22 +109,38 @@ A felületi feszültségek függnek a hőmérséklettől, előfordulhat, hogy bi
 	\end{center}
 \end{figure}
 
-\noindent
-A felület szélein fellépő $\Delta F_{2}$ erők függőleges komponense: $$ \Delta F_{2_{f}} =2\alpha\Delta S_{2}\cdot\sin{\frac{\Delta\varphi}{2}}=\alpha\Delta S_{2}\cdot\Delta\varphi=\alpha\Delta S_{2}\Delta S_{1} \frac{1}{R_2} $$
+\[\begin{aligned}
+  \Delta F =  & \Delta {F_2} &  &  + \Delta {F_1} \\ 
+   =  & 2 \cdot \alpha \Delta {s_2}\sin \left( {\Delta {\phi _{\Delta {s_1}}}/2} \right) &  &  + 2 \cdot \alpha \Delta {s_1}\sin \left( {\Delta {\phi _{\Delta {s_2}}}/2} \right)\quad \sin \left( x \right) \to x \\ 
+   =  & 2\alpha \Delta {s_2}\frac{{\Delta {s_1}}}{{2{R_1}}} &  &  + 2\alpha \Delta {s_1}\frac{{\Delta {s_2}}}{{2{R_2}}} \\ 
+   =  & \Delta {s_2}\Delta {s_1} \cdot \underbrace {\alpha \left( {\frac{1}{{{R_1}}} + \frac{1}{{{R_2}}}} \right)}_{{p_g}} \\ 
+   =  & \Delta A \cdot {p_g} \\ 
+\end{aligned} \]
 
-\noindent
-Mivel a másik szélnél is lép fel erő, így a teljes függőleges erőre az alábbi képlet adódik: $$ \Delta F_{f}=\alpha(\frac{1}{R_{1}}+\frac{1}{R_{2}})\Delta S_{1}\Delta S_{2} $$
+Itt már bevezetésre került a $p_g$ görbület nyomás, amit a 
+\[{p_g} = \alpha \left( {\frac{1}{{{R_1}}} + \frac{1}{{{R_2}}}} \right)\]
+összefüggésből számolhatunk. Ebből is látszik, hogy kisebb sugarú gömb esetén a gömbfelületi nyomás nagyobb, ezért fújja fel a kisebb buborék a nagyobbat. Ha egy buborék egyensúlyban van, akkor a belső oldalán a nyomás a görbületi nyomással lesz nagyobb, mint kívül. Felírva a nyomást a sugár függvényében, a nyomásnak a gömbhéj mentén $p_g$ ugrása van (csökken).
 
-\noindent
-A $\Delta F_{f}$-et kompenzálhatja a nyomáskülönbség. $$ \Delta F_{f}=p\Delta A=p\Delta S_{1}\Delta S_{2}$$
+Ezzel a levezetéssel ekvivalens, ha felírjuk a felületi energiát, és megvizsgáljuk, hogyan változik az energia, ha megváltozik a térfogat.
+\footnotesize
+\paragraph{Storytime}
+Ez a jelenség nem csak szappanhártyáknál jelentkezik, hanem minden anyagnál, ahol a határfelület léte magasabb energiaszintet képvisel. Továbbra is a szén és vas példánál maradva, az acélban jelen lévő szén kiválások közötti is hasonló folyamat mehet végbe. Ha olyan a hőmérséklete az ötvözetnek, hogy benne az szén atomok könnyen eldiffundálhatnak egyik helyről a másikra, és az ötvözetben különböző méretű kiválások vannak, akkor a kisebb szén-kiválásokból átdiffundálnak a szén atomok a nagyobb kiválásokba, mert ez csökkenti a felületi energiát. A folyamat mikroszkóppal nyomon követhető, jellemző időskálája a hőmérséklettől függ, de kb.\ órás nagyságrendű, és a sebességéből lehet következtetni a határfelület energiájára. A folyamat neve Ostwald-érés.
 
-\noindent
-A gömbfelületi nyomásra így a következő egyenletet kapjuk: $$p_{g}=\alpha(\frac{1}{R_{1}}+\frac{1}{R_{2}}) $$
+Szilárd anyagokban a leíráshoz azt használjuk fel, hogy felírjuk a felületre ható erőket, amelyeket a felület külső oldalán $\sigma_1$, a belső oldalán $\sigma_2$ kelt. Ezek a kicsiny erők tartalmaznak nyírókomponenst, de a felületre merőleges erők eredője
+\[\Delta {{\mathbf{F}}_{ \bot ,1}} + \Delta {{\mathbf{F}}_{ \bot ,2}} = {\mathbf{n}}{\hat \sigma _1}{\mathbf{n}} \cdot \Delta A - {\mathbf{n}}{\hat \sigma _2}{\mathbf{n}} \cdot \Delta A = {\mathbf{n}}\left( {{{\hat \sigma }_1} - {{\hat \sigma }_2}} \right){\mathbf{n}} \cdot \Delta A = \alpha \left( {\frac{1}{{{R_1}}} + \frac{1}{{{R_2}}}} \right) \ne 0.\]
+Ha $\hat \sigma$ diagonális, akkor a megjelenő diád a nyomás, de általánosan, szilárd testekre $\hat \sigma$ nem diagonális.
+\normalsize
 
-\noindent
-Ebből is látszik, hogy kisebb sugarú gömb esetén a gömbfelületi nyomás nagyobb. Szilárd anyagok esetén a nyomás helyett a feszültségtenzor használata a célszerű. A feszültségtenzor a határon ugrik.
+\section{Kapilláris emelkedés}
 
-\part*{Kapilláris emelkedés }
+\footnotesize
+\paragraph{Demonstráció}
+Egy kádba két, mindkét végén nyitott üvegcsövet teszünk. Egy ujjnyi vastagot és egy hajszálvékony üregűt. Azt láthatjuk, hogy a vékony csőben a folyadék szintje magasabb, mint a vastagabb csőben.
+
+Ha megismételjük a kísérletet higannyal, akkor ennek ellenkezőjét láthatjuk. A vékony csőben a higanyszál alacsonyabban van, mint a vastag csőben.
+
+Mi okozza ezt a jelenséget?
+\normalsize
 
 \begin{figure}[htbp]
 	\begin{center}
@@ -127,29 +149,25 @@ Ebből is látszik, hogy kisebb sugarú gömb esetén a gömbfelületi nyomás n
 	\end{center}
 \end{figure}
 
-\noindent
-Az emelkedés energetikai leírása: $$ W(h)=r^{2}h\varrho g \frac{h}{2}+2r\pi h\alpha_{uv}-2r\pi h\alpha_{ul}$$
+Írjuk fel az energiáját a vízoszlopnak, ami a víz felszíne felett van! Ez származik egyrészt a potenciális energiájából, a víz-üveg felületi energiából, illetve az elveszített levegő-üveg felületi energiából,
+\[E\left( h \right) = {r^2}\pi h\varrho g\frac{h}{2} + 2r\pi h{\alpha _{{\text{ü,v}}}} - 2r\pi h{\alpha _{{\text{ü,l}}}},\]
+ahol $h/2$ a tömegközéppont emelkedése. Ez akkor lesz egyensúlyban, ha a $E\left( h \right)$ függvénynek minimuma van, azaz
+\[\frac{{dE\left( h \right)}}{{dh}} = 0 = {r^2}\pi h\varrho g + 2r\pi \left( {{\alpha _{{\text{ü,v}}}} - {\alpha _{{\text{ü,l}}}}} \right).\] 
+Ebből
+\begin{equation} \label{eq:kapillaris_emelkedes}
+h = \frac{{2}}{{r \varrho g}}\left( {{\alpha _{{\text{ü,l}}}} - {\alpha _{{\text{ü,v}}}}} \right).
+\end{equation}
+Ez az összefüggés megmutatja, hogy minél vékonyabb a cső, a folyadék emelkedése annál nagyobb. A jelenség neve kapilláris emelkedés. Az $\alpha$ felületi feszültség értéke nélkül nem tudható, hogy milyen méretskálán látható a jelenség, de a konkrét anyagi minőség mellett, azaz víz, üveg és levegő esetén a milliméter alatti skálán figyelhető meg jól a kapilláris emelkedés. Higany esetére a számok viszonyai fordítottak, az argumentumban negatív érték van, így a $h$ emelkedési magasságra negatív értéket kapunk.
+\footnotesize
+\paragraph{Storytime} Ha a kapilláris mérete a sejtek nagyságrendjébe esik, mint pl.\ a fánál, akkor az emelkedés mértéke több méter is lehet. Hasznos ez a jelenség még a vízvezeték csövek szerelésénél is, amikor a vizet szállító réz csöveket illesztenek össze. Az illesztésnél az egyik rézcső átmérője kisebb, mint a hozzá toldotté, és a két cső egymásba csúsztatható, de ettől még nem zár tökéletesen a vízzel szemben, mi több, a csőben a légköri nyomást akár néhányszor meghaladó nyomás is lehet. A két cső közötti kis részt forrasztóónnnal hézagolják ki. Ehhez felmelegítik a két csövet a forrasztóón olvadási hőmérséklete fölé (megfelelő ötvözetek használatával $230{,}^\circ$C-tól felfelé, folytonosan állítható olvadásponttal). A megolvadt forrasztóón pedig a két cső közötti vékony rétegbe a kapilláris emelkedés jelensége segítségével bejut és tökéletesen zárja a vizet nyomás ellenében is. A technológiát kapilláris forrasztásnak nevezik.
 
-\noindent
-Ahol $\frac{h}{2}$ a tömegközéppont emelkedése.
+Hasonló a jelenség a kerámia anyagoknál is, pl.\ párologtatókkal is. A kiégetett kerámiában kapilláris hálózatok vannak, így a mázatlan kerámiára cseppentett víz az egész kerámiában szét tud terjedni, lefele és felfele is. A tárcsafékek kerámia fém betétei pedig éppen ezért érzékenyek az olajokra, amelyek a fékhatást gyengítik. A fékbetétre jutó olaj a kapillárisrendszerben könnyen szétterül és tárolódik, ezért hiába tisztítják le a féktárcsa és fékbetét felületét az olajos szennyeződések eltávolításáért, a kerámia betétben az olaj benne marad, és fékezésnél apránként újra bekeni a féktárcsát.
+\normalsize
 
-\noindent
-Ez akkor lesz egyensúlyban, ha a $W(h)$ függvénynek minimuma van, azaz: $$\frac{dW}{dh}=0=r^2\pi\varrho gh+(\alpha_{uv}-\alpha_{ul})2r\pi=0 $$ 
+\subsection{Illeszkedési szög}
+A folyadék felszínét vízszintessel közelíteni nem rossz feltételezés, ha a csőben tárolt folyadék mennyiségét adjuk meg. Azonban a csövet nagy nagyításban nézve látható, hogy annak felülete ívelt, mert van egy illeszkedési szög a hármas határfelületen, mint ahogy azt \aref{fig:illeszkedesi_szog}.\ ábrán láthatjuk. Ebben az esetben a határfelület egyensúlyára azt írhatjuk fel, hogy a kerületre ható, felületi feszültségből származó erő a gravitációs erőnek tart ellen. Ezzel a megfontolással \aref{eq:kapillaris_emelkedes}.\ egyenlet szintén megkapható, illetve a $\varphi$ illeszkedés szöggel kifejezve
+\[h =  - \frac{{{\alpha _{{\text{v,l}}}}\cos \left( \varphi  \right)}}{{\varrho gr}}.\]
 
-\noindent
-Amit egyszerűsítve és átrendezve az alábi képletet kapjuk: $$h=\frac{2(\alpha_{ul}-\alpha_{uv})}{\varrho gr}=-\frac{\alpha_{vl}\cos{\varphi}}{\varrho gr}$$
-
-\noindent
-Ahol $\varphi$ az illeszkedési szög.
-
-\noindent
-Valójában a kialakuló folyadék felülete nem vízszintes, de ez a $\Delta h$ elhanyagolható a h-hoz képest.
-
-\noindent
-A $h$ lehet negatív is, például a higanynál.
-
-\noindent
-A képletben is látszik az, amit már tapasztalatból megfigyelhettünk, azaz hogy az emelkedés vastag csőben elhanyagolható.
-
-
+\section{Felületek tulajdonságai}
+Mint láthattuk, a megjelenő felületek egy új fizikát hoznak be, amelyek nem írhatóak le a térfogati tulajdonságokkal, azok mellett új empirikus jelenségként kezelhetőek. Valójában persze mind a térfogati, mind a felületi tulajdonságok kiszámolhatóak a mikroszkopikus, atomi szintű viselkedésekből, de ezek kvantitatív kiszámolása túl időigényes és bonyolult, ellenben könnyen leírhatóak makroszkopikus szinten, kontinuum közelítésben, ahol a térfogati és felületi tulajdonságokat különválasztva írjuk le.
 \end{document}
