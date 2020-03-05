@@ -168,11 +168,26 @@ Hasonló a jelenség a kerámia anyagoknál is, pl.\ párologtatókkal is. A ki�
 \normalsize
 
 \subsection{Illeszkedési szög}
-A folyadék felszínét vízszintessel közelíteni nem rossz feltételezés, ha a csőben tárolt folyadék mennyiségét adjuk meg. Azonban a csövet nagy nagyításban nézve látható, hogy annak felülete ívelt, mert van egy illeszkedési szög a hármas határfelületen, mint ahogy azt \aref{fig:illeszkedesi_szog}.\ ábrán láthatjuk. Ebben az esetben a határfelület egyensúlyára azt írhatjuk fel, hogy a kerületre ható, felületi feszültségből származó erő a gravitációs erőnek tart ellen. Ezzel a megfontolással \az{\eqref{eq:kapillaris_emelkedes}}.\ egyenlet szintén megkapható, illetve a $\varphi$ illeszkedés szöggel kifejezve
-\[\left. \begin{gathered}
-  h = \frac{2}{{r\varrho g}}\left( {{\alpha _{{\text{ü ,l}}}} - {\alpha _{{\text{ü ,v}}}}} \right) \hfill \\
-  \cos {\left( \varphi  \right)}  = \frac{{{\alpha _{{\text{l,ü }}}} - {\alpha _{{\text{ü ,v}}}}}}{{{\alpha _{{\text{v,l}}}}}} \hfill \\ 
-\end{gathered}  \right\}h = 2\frac{{{\alpha _{{\text{v,l}}}}\cos \left( \varphi  \right)}}{{\varrho gr}}.\]
+A folyadék felszínét vízszintessel közelíteni nem rossz feltételezés, ha a csőben tárolt folyadék mennyiségét adjuk meg. Azonban a csövet nagy nagyításban nézve látható, hogy annak felülete ívelt, mert van egy illeszkedési szög a hármas határfelületen, mint ahogy azt \aref{fig:illeszkedesi_szog}.\ ábrán láthattuk, amit a \aref{fig:kapillaris_illeszkedesi_szog}.\ ábra szemléltet.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=1]{kapillaris_emelkedes_illeszkedesi_szog.eps}
+		\caption{A kapillárisban a vízfelszín ívelt, $R$ görbületi sugárral. }
+		\label{fig:kapillaris_illeszkedesi_szog}
+	\end{center}
+\end{figure}
+\FloatBarrier
+
+Ebben az esetben a határfelület egyensúlyára azt írhatjuk fel, hogy a kerületre ható, felületi feszültségből származó erő a gravitációs erőnek tart ellen. Ezzel a megfontolással \az{\eqref{eq:kapillaris_emelkedes}}.\ egyenlet szintén megkapható, illetve a $\varphi  = \arccos \left( {r/R} \right)$ illeszkedés szöggel kifejezve (amelyre fennáll \az{\eqref{eq:illeszkedesi_szog}}.\ egyenlet)
+\begin{equation}
+\left. \begin{gathered}
+  h = \frac{2}{{r\varrho g}}\left( {{\alpha _{{\text{ü,l}}}} - {\alpha _{{\text{ü,v}}}}} \right) \hfill \\
+  \cos {\left( \varphi  \right)}  = \frac{{{\alpha _{{\text{l,ü }}}} - {\alpha _{{\text{ü,v}}}}}}{{{\alpha _{{\text{v,l}}}}}} \hfill \\ 
+\end{gathered}  \right\}h = 2\frac{{{\alpha _{{\text{v,l}}}}\cos \left( \varphi  \right)}}{{\varrho gr}} = 2\frac{{{\alpha _{{\text{v,l}}}}}}{{\varrho gR}}.
+\end{equation}
+
+
 
 \section{Felületek tulajdonságai}
 Mint láthattuk, a megjelenő felületek egy új fizikát hoznak be, amelyek nem írhatóak le a térfogati tulajdonságokkal, azok mellett új empirikus jelenségként kezelhetőek. Valójában persze mind a térfogati, mind a felületi tulajdonságok kiszámolhatóak a mikroszkopikus, atomi szintű viselkedésekből, de ezek kvantitatív kiszámolása túl időigényes és bonyolult, ellenben könnyen leírhatóak makroszkopikus szinten, kontinuum közelítésben, ahol a térfogati és felületi tulajdonságokat különválasztva írjuk le.
