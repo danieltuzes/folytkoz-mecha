@@ -81,7 +81,10 @@ Mi a felületi feszültség mikroszkopikus forrása? Tekintsünk egy folyadékot
 Egy üveglapra vízcseppet ejtünk. Legyen $\alpha$ a $\Delta l$ egységnyi hosszra ható erő, $\alpha_{\text{ü,v}}$ az üveg-víz határfelületből származó, $\alpha_{\text{v,l}}$ a víz-levegő határfelületből származó, illetve $\alpha_{\text{l,ü}}$ a levegő-üveg határfelületből származó erő! A levegő-víz-üveglap hármas érintkezési pont -- az $A$ pont -- egyensúlyban van, és ennek a feltétele, hogy a levegő-üveg, üveg-víz, víz-levegő felületi erők eredője 0. A függőleges irányban az egyensúlyt a kényszererők biztosítják, vízszintes irányban pedig az egyensúly feltétele, hogy 
 \[{\alpha _{{\text{ü,v}}}}\Delta l + {\alpha _{{\text{v,l}}}} \cdot \cos \left( \varphi  \right) \cdot \Delta l - {\alpha _{{\text{l,ü }}}} \cdot \Delta l = 0.\]
 Ebből az illeszkedési szögre az egyenlet:
-\[\cos{\varphi}=\frac{\alpha_{\text{l,ü}}-\alpha_{\text{ü,v}}}{\alpha_{\text{vl}}}.\]
+\begin{equation} \label{eq:illeszkedesi_szog}
+\cos{{\left( \varphi  \right)}}=\frac{\alpha_{\text{l,ü}}-\alpha_{\text{ü,v}}}{\alpha_{\text{vl}}}.
+\end{equation}
+
 
 Az egyenlet jobb oldalán külön-külön jól mérhető fizikai mennyiségek vannak, amelyek egy tágabb tartományon belül tetszőleges értékűek lehetnek. Nincs garancia arra, hogy a jobb oldal értéke a koszinusz függvény értékkészletébe essen. Ha az egyenlet jobb oldala nagyobb, mint 1, akkor nem létezik illeszkedési szög, és nem alakul ki \aref{fig:illeszkedesi_szog}.\ ábrán vázolt állapot. Két különféle eset következhet ekkor be. Egyik esetében energetikailag kedvezőbb a mind nagyobb folyadék-szilárd anyag határfelület, és ekkor a folyadék szétterül a felületen. Ez az eset fordul elő a tinta és a papírlap között, illetve a víz és a érdes vagy rozsdás felületű főzőlap között. A másik lehetőség, amikor energetikailag nem kedvező a folyadék-szilárd anyag határfelület. Ekkor a folyadék nem tapad hozzá szilárd anyag felületéhez, a kettő között egy vékony levegő határfelület marad, és a folyadék nagyon könnyen el tud a szilárd anyagon mozdulni. Ez utóbbira példa bizonyos biológiai felületek (levelek), szabadalmaztatott vízlepergető műanyag bevonatok (Gore-tex), de akár a forró főzőlap-víz felületek is.
 
@@ -165,8 +168,11 @@ Hasonló a jelenség a kerámia anyagoknál is, pl.\ párologtatókkal is. A ki�
 \normalsize
 
 \subsection{Illeszkedési szög}
-A folyadék felszínét vízszintessel közelíteni nem rossz feltételezés, ha a csőben tárolt folyadék mennyiségét adjuk meg. Azonban a csövet nagy nagyításban nézve látható, hogy annak felülete ívelt, mert van egy illeszkedési szög a hármas határfelületen, mint ahogy azt \aref{fig:illeszkedesi_szog}.\ ábrán láthatjuk. Ebben az esetben a határfelület egyensúlyára azt írhatjuk fel, hogy a kerületre ható, felületi feszültségből származó erő a gravitációs erőnek tart ellen. Ezzel a megfontolással \aref{eq:kapillaris_emelkedes}.\ egyenlet szintén megkapható, illetve a $\varphi$ illeszkedés szöggel kifejezve
-\[h =  - \frac{{{\alpha _{{\text{v,l}}}}\cos \left( \varphi  \right)}}{{\varrho gr}}.\]
+A folyadék felszínét vízszintessel közelíteni nem rossz feltételezés, ha a csőben tárolt folyadék mennyiségét adjuk meg. Azonban a csövet nagy nagyításban nézve látható, hogy annak felülete ívelt, mert van egy illeszkedési szög a hármas határfelületen, mint ahogy azt \aref{fig:illeszkedesi_szog}.\ ábrán láthatjuk. Ebben az esetben a határfelület egyensúlyára azt írhatjuk fel, hogy a kerületre ható, felületi feszültségből származó erő a gravitációs erőnek tart ellen. Ezzel a megfontolással \az{\eqref{eq:kapillaris_emelkedes}}.\ egyenlet szintén megkapható, illetve a $\varphi$ illeszkedés szöggel kifejezve
+\[\left. \begin{gathered}
+  h = \frac{2}{{r\varrho g}}\left( {{\alpha _{{\text{ü ,l}}}} - {\alpha _{{\text{ü ,v}}}}} \right) \hfill \\
+  \cos {\left( \varphi  \right)}  = \frac{{{\alpha _{{\text{l,ü }}}} - {\alpha _{{\text{ü ,v}}}}}}{{{\alpha _{{\text{v,l}}}}}} \hfill \\ 
+\end{gathered}  \right\}h = 2\frac{{{\alpha _{{\text{v,l}}}}\cos \left( \varphi  \right)}}{{\varrho gr}}.\]
 
 \section{Felületek tulajdonságai}
 Mint láthattuk, a megjelenő felületek egy új fizikát hoznak be, amelyek nem írhatóak le a térfogati tulajdonságokkal, azok mellett új empirikus jelenségként kezelhetőek. Valójában persze mind a térfogati, mind a felületi tulajdonságok kiszámolhatóak a mikroszkopikus, atomi szintű viselkedésekből, de ezek kvantitatív kiszámolása túl időigényes és bonyolult, ellenben könnyen leírhatóak makroszkopikus szinten, kontinuum közelítésben, ahol a térfogati és felületi tulajdonságokat különválasztva írjuk le.
