@@ -1001,6 +1001,7 @@ amelyet fel is rajzolhatunk:
 \caption{Tiszta nyírás, a nyújtás tengelyeinek a szöge nem nevezetes szög.}
 \label{fig:nyiras_pelda2}
 \end{figure}
+\FloatBarrier
 \normalsize
 
 \paragraph{Infinitezimális nyírás}
@@ -1351,6 +1352,36 @@ Hogyan kaphatjuk tehát meg egy általános ${\mathbf{F}}$-ből, hogy milyen ny�
   { - 2} 
 \end{array}} \right).\]
 Ezek $x$ tengellyel bezárt szögei $\arctan \left( {2/\left( {\sqrt 5  - 1} \right)} \right) \approx 58^\circ $, illetve az ezzel  $90^\circ$-ot bezáró, $-32^\circ$-ot bezáró tengelyek. A megoldás szemléltetéséhez tekintsük \aref{fig:nyiras_pelda2}.\ ábrát! Ha a transzformáció tartalmazott volna forgatást is, akkor nem lett volna ${\mathbf{F}}$ szimmetrikus, és így nem lett volna diagonalizálható sem, így nem ${\mathbf{F}}$-nek, hanem ${{\mathbf{F}}^T}{\mathbf{F}}$ szorzatnak kellett volna megkeresni a sajátértékeit és sajátvektorait.
+\paragraph{Példa} Tekintsünk egy egytengelyű nyírást, amelyet a ${\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
+  1&a  \\ 
+  0&1 
+\end{array}} \right)$ deformációs gradiens jellemez, amelyben $a$ egy másodrendben kicsi paraméter. Fejezzük ki, hogy mekkora nyújtást és forgatást tartalmaz ez a transzformáció annak segítségével, hogy felírjuk a nyújtást leíró mátrixot abban a vonatkoztatási rendszerben, amelyben az diagonális, majd adjuk meg a forgatást leíró részét, elsőrendig közelítve. \textbf{Tipp:} minden lépésben elhanyagolhatjuk az $a$-ban magasabbrendű tagokat.
+\paragraph{Megoldás} Felírva ${{\mathbf{F}}^T}{\mathbf{F}}$-et, annak sajátvektorai (elsőrendig közelítve) a
+\[{{\mathbf{v}}_\alpha } = \frac{1}{{\sqrt 2 }}\left( {\begin{array}{*{20}{c}}
+  { - 1 - a/4} \\ 
+  {1 - a/4} 
+\end{array}} \right)\quad \quad {{\mathbf{v}}_\beta } = \frac{1}{{\sqrt 2 }}\left( {\begin{array}{*{20}{c}}
+  {1 - a/4} \\ 
+  {1 + a/4} 
+\end{array}} \right)\]
+vektorok. Azonban ha már ${{\mathbf{F}}^T}{\mathbf{F}}$-et linearizáljuk, akkor a sajátvektorok elsőrendben $a$-tól függetlenek lesznek ($a=0$ helyettesítést kell beírni az előbbi összefüggésbe). Így a transzformáció ${{\mathbf{F}}^T}{\mathbf{F}}$ diagonális alakjára kapjuk, hogy
+\[{\mathbf{D}} = \frac{1}{2}\left( {\begin{array}{*{20}{c}}
+  {2 + a\left( {a - \sqrt {4 + {a^2}} } \right)}&0 \\ 
+  0&{2 + a\left( {a + \sqrt {4 + {a^2}} } \right)} 
+\end{array}} \right) \approx \left( {\begin{array}{*{20}{c}}
+  {1 - a}&0 \\ 
+  0&{1 + a} 
+\end{array}} \right).\]
+Ennek a gyökét tagonként vehetjük, majd $a \approx 0$ körül 1.\ rendben sorfejtve, azaz a lineáris tagokat megtartva kapjuk, hogy
+\[{{\mathbf{D}}^{1/2}} \approx \left( {\begin{array}{*{20}{c}}
+  {1 - a/2}&0 \\ 
+  0&{1 + a/2} 
+\end{array}} \right).\]
+A forgatás operátor tagjait kifejezve első rendig pedig azt kapjuk, hogy 
+\[{\mathbf{O}} = \left( {\begin{array}{*{20}{c}}
+  1&{a/2} \\ 
+  { - a/2}&1 
+\end{array}} \right).\]
 \normalsize
 
 \subsubsection{A nemkommutativitás szemléltetése}
@@ -1549,7 +1580,7 @@ a térfogati pedig a térfogat nagyságával,
 \[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} ,\]
 amely a Gauss-Ostrogradsky-féle divergencia tétel segítségével
 \[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} .\]
-Ha ez igaz minden térfogategységre, akkor az integrálást elhagyhatjuk, és igaz magára az argumentumokra is,
+Mivel ez igaz minden térfogategységre, az integrálást elhagyhatjuk, és az összefüggés igaz magára az argumentumokra is,
 \begin{equation}
 {\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}.
 \end{equation}
