@@ -1251,31 +1251,47 @@ Láthatjuk, hogy ez nem kommutatív, a transzformációk egymással nem felcser�
 Egy forgatás nem hoz létre deformációt. Ha a transzformáció nem tisztán forgatást ír le, akkor a tisztán forgatást leíró része nem hoz létre deformációt, csak a maradék. Mi az, hogy része? Hogyan hattathatóak a transzformációk egymás után, és hogyan olvasható le, hogy mekkora az eredő deformáció?
 
 \subsubsection{Poláris dekompozíció} \label{sec:polaris_dekomp}
-\Az{\eqref{eq:disztrozio_def}} egyenletből láthatóan az ${\mathbf{F}} = 1 + {{\mathbf{\beta }}^T}$ mennyiségek összeszorzódnak. Jelöljön ${\mathbf{O}}$ egy ortogonális mátrixot (ilyenek voltak a forgatás mátrix transzformációs mátrixai), ${\mathbf{U}}$ pedig egy szimmetrikus mátrixot (ilyenek voltak a tiszta nyújtás mátrixai)! Megmutatjuk, hogyha ${\mathbf{F}}$ invertálható, akkor (egyértelműen) felírható ${\mathbf{F}} = {\mathbf{OU}}$ alakban!
+\Az{\eqref{eq:disztrozio_def}} egyenletből láthatóan az ${\mathbf{F}} = 1 + {{\mathbf{\beta }}^T}$ mennyiségek összeszorzódnak. Jelöljön ${\mathbf{O}}$ egy ortogonális mátrixot (ilyenek voltak a forgatásnak a transzformációs mátrixai), ${\mathbf{U}}$ pedig egy szimmetrikus mátrixot (ilyenek voltak a tiszta nyújtás mátrixai)! Megmutatjuk, hogyha ${\mathbf{F}}$ invertálható, akkor (egyértelműen) felírható ${\mathbf{F}} = {\mathbf{OU}}$ alakban!
 Legyen
-\[{{\mathbf{F}}^T}{\mathbf{F}} = {\mathbf{VD}}{{\mathbf{V}}^T},\]
-ahol ${\mathbf{V}}$ ortogonális, ${{\mathbf{D}}}$ pedig diagonális mátrix\footnote{Egy diagonális mátrixon értelmezett függvény az egyes mátrixkomponensek ugyanazon függvénye.} Ezt megtehetjük, hisz ${{\mathbf{F}}^T}{\mathbf{F}}$ szimmetrikus, mi több, pozitív definit, így nem csak diagonalizálható, de abból gyököt is vonhatunk, és az inverzét is vehetjük. Ekkor már felbonthatjuk a deformációs gradienst
-\[{\mathbf{F}} = \underbrace {{\mathbf{F}}{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{ - 1/2}}}_{\mathbf{O}}\underbrace {{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{1/2}}}_{\mathbf{U}}\]
-alakban, ahol most belátjuk, hogy ${\mathbf{U}}$ szimmetrikus, illetve, hogy ${\mathbf{O}}$ ortogonális.
-Vegyük észre először, hogy 
-\[\begin{aligned}
-  {\mathbf{V}}\overbrace {{{\mathbf{D}}^{1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{D}}{{\mathbf{V}}^T} = {\mathbf{VD}}{{\mathbf{V}}^T} = {{\mathbf{F}}^T}{\mathbf{F}} \Rightarrow  & {\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{1/2}} = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} \\ 
-  {\mathbf{V}}\overbrace {{{\mathbf{D}}^{ - 1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{I}}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{V}}^T} = {\mathbf{I}} \Rightarrow  & {\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}} = {\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}. \\ 
-\end{aligned} \]
-Ebből már látszik, hogy 
+\begin{equation} \label{eq:szimm_def_grad}
+{{\mathbf{F}}^T}{\mathbf{F}} = {\mathbf{VD}}{{\mathbf{V}}^T},
+\end{equation}
+ahol ${\mathbf{V}}$ ortogonális, ${{\mathbf{D}}}$ pedig diagonális mátrix\footnote{Egy diagonális mátrixon értelmezett függvény az egyes mátrixkomponensek ugyanazon függvénye.} Ezt megtehetjük, hisz ${{\mathbf{F}}^T}{\mathbf{F}}$ szimmetrikus, mi több, pozitív definit, így nem csak diagonalizálható, de abból gyököt is vonhatunk, és az inverzét is vehetjük. Így van értelme és igaz az alábbi azonosság:
+\[{\mathbf{F}} = \underbrace {{\mathbf{F}}{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{ - 1/2}}}_{\mathbf{O}}\underbrace {{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{1/2}}}_{\mathbf{U}},\]
+ahol bevezettünk két mátrixot, ${\mathbf{O}}$-t és ${\mathbf{U}}$-t. Most pedig belátjuk, hogy ${\mathbf{U}}$ szimmetrikus, illetve, hogy ${\mathbf{O}}$ ortogonális.
+
+Az ${\mathbf{U}}$ szimmetrikusságának megmutatásához először el kell végeznünk \az{\eqref{eq:szimm_def_grad}}.\ egyenlet mindkét oldalán egy gyökvonást, mert
+\begin{equation} \label{eq:Udef}
+{\mathbf{U}} = {\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{1/2}} = {\left( {{\mathbf{VD}}{{\mathbf{V}}^T}} \right)^{1/2}}.
+\end{equation}
+Ezt úgy tehetjük meg, hogyha a gyököt csak a diagonális mátrixra hattatjuk, azaz
+\begin{equation} \label{eq:diag_m_fgv}
+{\left( {{\mathbf{VD}}{{\mathbf{V}}^T}} \right)^{1/2}} = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T}.
+\end{equation}
+Ellenőrzésképp nézzük meg, hogy mit ad ennek a mátrixnak az önmagával vett szorzata!
+\[
+  {\mathbf{V}}\overbrace {{{\mathbf{D}}^{1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{D}}{{\mathbf{V}}^T} = {\mathbf{VD}}{{\mathbf{V}}^T} = {{\mathbf{F}}^T}{\mathbf{F}}.
+\]
+Tehát ez valóban a négyzetgyöke, mert a négyzete épp ${{{\mathbf{F}}^T}{\mathbf{F}}}$. Most számítsuk ki ${{\mathbf{U}}^T}$-t \told{\aref({eq:Udef})}+as{} definíció és \told{\aref({eq:diag_m_fgv})}+as{} eredmény felhasználásával!
 \[{{\mathbf{U}}^T} = {\left( {{\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T}} \right)^T} = {\left( {{{\mathbf{V}}^T}} \right)^T}{\left( {{{\mathbf{D}}^{1/2}}} \right)^T}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} = {{\mathbf{U}}},\]
-azaz ${\mathbf{U}} = {{\mathbf{U}}^T}$, tehát ${\mathbf{U}}$ szimmetrikus. Másrészt pedig
+azaz ${\mathbf{U}} = {{\mathbf{U}}^T}$, tehát ${\mathbf{U}}$ szimmetrikus.
+
+Most belátjuk, hogy ${\mathbf{O}}$ ortogonális! \Az{\eqref{eq:diag_m_fgv}}.\ egyenlethez hasonlóan, az inverz gyökét \az{\eqref{eq:szimm_def_grad}}.\ egyenletnek úgy vehetjük, hogyha a diagonális mátrixnak vesszük az inverzének a gyökét, vagyis
+\[{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}} = {\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}.\]
+Ellenőrzésképp nézzük meg, hogy mit ad ennek a mátrixnak a szorzata az inverzével, vagyis!
+\[{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}}{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{1/2}} = {\mathbf{V}}\overbrace {{{\mathbf{D}}^{ - 1/2}}\underbrace {{{\mathbf{V}}^T} \cdot {\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{1/2}}}^{\mathbf{I}}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{V}}^T} = {\mathbf{I}}.\]
+Tehát valóban jól írtuk fel az inverz gyökét. Már csak be kell látni, hogy ${\mathbf{O}}$ ortogonális. Ehhez ${\mathbf{O}}$-t balról megszorozva a transzponáltjával kapjuk, hogy
 \begin{multline*}
 {\left( {{\mathbf{F}}{{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)}^{ - 1/2}}} \right)^T} \cdot {\mathbf{F}}{\left( {{{\mathbf{F}}^T}{\mathbf{F}}} \right)^{ - 1/2}} = {\left( {{\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}} \right)^T}\underbrace {{{\mathbf{F}}^T} \cdot {\mathbf{F}}}_{{\mathbf{VD}}{{\mathbf{V}}^T}}{\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T} = \\ = {\mathbf{V}}\overbrace {{{\mathbf{D}}^{ - 1/2}}\underbrace {{{\mathbf{V}}^T}{\mathbf{V}}}_{\mathbf{I}}{\mathbf{D}}\underbrace {{{\mathbf{V}}^T}{\mathbf{V}}}_{\mathbf{I}}{{\mathbf{D}}^{ - 1/2}}}^{\mathbf{I}}{{\mathbf{V}}^T} = {\mathbf{V}}{{\mathbf{V}}^T} = {\mathbf{I}},
 \end{multline*}
-tehát ${{\mathbf{O}}^T}{\mathbf{O}} = {\mathbf{I}}$, azaz ${\mathbf{O}}$ ortogonális.
+vagyis ${{\mathbf{O}}^T}{\mathbf{O}} = {\mathbf{I}}$, azaz ${\mathbf{O}}$ ortogonális.
 
 Hogyan kaphatjuk tehát meg egy általános ${\mathbf{F}}$-ből, hogy milyen nyújtást és forgatást ír le? A lépések:
 \begin{enumerate}
 \item ${{{\mathbf{F}}^T}{\mathbf{F}}}$ kiszámolása.
 \item Az így kapott szimmetrikus mátrix diagonalizálása egy ${\mathbf{V}}$ és ${\mathbf{V^T}}$ mátrixokkal, ekkor megkapjuk ${\mathbf{D}}$-t.
 \item A diagonális mátrix gyökének és az inverzének a gyökének a kiszámítása ${{\mathbf{D}}^{1/2}}$ és ${{\mathbf{D}}^{ - 1/2}}$-hez. Ezt megtehetjük elemenként.
-\item Visszaforgatjuk ezeket a mátrixokat az eredeti vonatkoztatási rendszerbe, 
+\item Visszaforgatjuk ezeket a mátrixokat az eredeti vonatkoztatási rendszerbe, ebből ${\mathbf{U}}$-t egyből, ${\mathbf{O}}$-t pedig egy balról vett ${\mathbf{F}}$-fel való szorzással kapjuk meg,
 \[\begin{aligned}
   {\mathbf{U}} &  = {\mathbf{V}}{{\mathbf{D}}^{1/2}}{{\mathbf{V}}^T} \\ 
   {\mathbf{O}} &  = {\mathbf{F}} \cdot {\mathbf{V}}{{\mathbf{D}}^{ - 1/2}}{{\mathbf{V}}^T}. \\ 
@@ -1287,6 +1303,7 @@ Felmerülhet a kérdés, hogy miért épp ${\mathbf{F}} = {\mathbf{OU}}$ alakban
 
 Még általánosabban felmerülhet a kérdés, hogy mi a szerepe a transzformációk sorrendjének. Nem mindegy, hogy először nyújtom, aztán forgatom, vagy először forgatom, aztán nyújtom?
 
+\footnotesize
 \paragraph{Példa}
 Tekintsük az $x$ irányban kétszeresre nyújtó ${{\mathbf{U}}_2}$, és $z$ tengely kürül $30^\circ$-kal forgató ${{\mathbf{O}}_{z,30^\circ }}$ transzformációt leíró deformációs gradienseket! Ha először nyújtok, aztán forgatok, akkor az eredő deformációs gradiens
 \[\begin{aligned}
@@ -1419,6 +1436,7 @@ amelyre pedig az igaz, hogy
   1 
 \end{array}} \right)',\]
 vagyis azt kaptuk, hogy egy eleve elforgatott teret nyújtottunk meg. A nyújtás iránya azonban nem a négyzet oldalainak irányába mutat. Ez egészen pontosan azt jelenti, hogy abban a vonatkoztatási rendszerben, amelyben a négyzet oldalainak az iránya határozzák meg a vonatkoztatási rendszert, a nyújtási mátrix nem diagonális. A kétfajta transzformációt szemlélteti \aref{fig:nem_kommutativ}.\ ábra.
+\normalsize
 
 \begin{figure}[htb] 
 \centering    
@@ -1445,7 +1463,7 @@ Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert
 
 \paragraph{Megoldás}
 \begin{enumerate}
-\item Az $x$ tengely mentén $4/3$-ad, $y$ tengely mentén $2/3$ szorosra nyújtás, $45^\circ $-kal való forgatás, majd eltolás $\left( {3,5;\;2,5} \right)$ vektorral.
+\item Az $x$ tengely mentén $4/3$-ad, $y$ tengely mentén $2/3$ szorosra nyújtás, $45^\circ $-kal való forgatás, majd eltolás $\left( {3{,}5;\;2{,}5} \right)$ vektorral.
 \item Felírjuk a nyújtás majd forgatás deformációs gradienseinek a szorzatát. Ebből számolható az elmozdulásmező lineáris része, a konstans részét pedig úgy választjuk meg, hogy pl.\ az alakzat közepét jó helyre tegye.
 \end{enumerate}
 \normalsize
