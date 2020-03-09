@@ -231,7 +231,7 @@ Tehát a rotáció mindenhol 0, ahol a függvény értelmezve van, mégsem konze
 \subsection{Feladatok}
 Feladatok a feladatlapon.
 
-\section{Merev testek}
+\section{Merev testek forgómozgása}
 \subsection{Tehetetlenségi nyomaték tenzor}
 A Newton-törvényt alkalmazva egy pontrendszerre megkapjuk, hogy az ${\mathbf{N}}$ az impulzusmomentum (perdület, vagy angolul angular moment), amit a 
 \begin{equation}
@@ -945,25 +945,63 @@ A tiszta nyírás olyan nyújtás, ahol a térfogatváltozás 0, és a deformác
   {1,025}&{0,225} \\ 
   {0,225}&{1,025} 
 \end{array}} \right),\]
-amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix, de leolvasható a $45^\circ$-os koordináták melletti értéke is. Egy egytengelyű, egyszerű nyírás csak egy forgatással együtt írható le tiszta nyújtással, ekkor viszont a nyújtás épp egy tiszta nyírás. (Lásd: \ref{sec:polaris_dekomp}.)
+amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix, de leolvasható a $45^\circ$-os koordináták melletti értéke is. Egy egytengelyű, egyszerű nyírás csak egy forgatással együtt írható le tiszta nyújtással, ekkor viszont a nyújtás épp egy tiszta nyírás. (Lásd: \ref{sec:polaris_dekomp}.) A főátló értékei nem feltétlenül azonosak.
 
 \begin{figure}[htb] 
 \begin{subfigure}[b]{0.45\textwidth}
 \centering
 \includegraphics[scale=1]{figs/nyiras.eps}
-\caption{Egytengelyű, egyszerű nyírás}
+\caption{Egytengelyű, egyszerű nyírás, az $y$ koordinátában az eltolás arányos $x$-szel}
 \label{fig:nyiras}
 \end{subfigure} \hfill
 \begin{subfigure}[b]{0.45\textwidth}
 \centering
 \includegraphics[scale=1]{figs/tiszta_nyiras.eps}
-\caption{Tiszta nyírás}
+\caption{Tiszta nyírás, amely egy elforgatott, $45^\circ$-os koordináta-rendszerben nyújtás}
 \label{fig:tiszta_nyiras}
 \end{subfigure}
 \label{fig_nyujtasok}
 \caption{Nyírások szemléltetése.}
 \end{figure}
+\FloatBarrier
 
+\footnotesize
+\paragraph{Példa} Tekintsünk egy transzformációt, amit a ${\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
+  1&1 \\ 
+  1&2 
+\end{array}} \right)$ deformációs gradiens ad meg! Nyírás-e ez, és ha igen, milyen fajta? Rajzoljuk fel, hogy mibe viszi át az $ABCD$ négyzetet, aminek a sarkainak az $x$ és $y$ koordinátái a $\pm 1$-ben vannak!
+
+\paragraph{Megoldás} Tiszta nyírás, mert a deformációs gradiens konstans és determinánsa 1. Az elmozdulásteret a
+\[{{\mathbf{\beta }}^T} = {\mathbf{F}} - {\mathbf{I}} = \left( {\begin{array}{*{20}{c}}
+  0&1 \\ 
+  1&1 
+\end{array}} \right)\]
+disztorzióból kapjuk,
+\[{\mathbf{u}}\left( {\mathbf{r}} \right) = \left( {\begin{array}{*{20}{c}}
+  0&1 \\ 
+  1&1 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y 
+\end{array}} \right) = \left( {\begin{array}{*{20}{c}}
+  y \\ 
+  {x + y} 
+\end{array}} \right).\]
+Így
+\[\begin{gathered}
+  \left( {\phantom{-}1,\phantom{-}1} \right) \mapsto \left( {2,3} \right) \hfill \\
+  \left( { - 1,\phantom{-}1} \right) \mapsto \left( {0,1} \right) \hfill \\
+  \left( { - 1, - 1} \right) \mapsto \left( { - 2, - 3} \right) \hfill \\
+  \left( {\phantom{-}1, - 1} \right) \mapsto \left( {0, - 1} \right), \hfill \\ 
+\end{gathered} \]
+amelyet fel is rajzolhatunk:
+\begin{figure}[htb] 
+\centering
+\includegraphics[scale=1]{figs/nyiras_feladat2.eps}
+\caption{Tiszta nyírás, a nyújtás tengelyeinek a szöge nem nevezetes szög.}
+\label{fig:nyiras_pelda2}
+\end{figure}
+\normalsize
 
 \paragraph{Infinitezimális nyírás}
 Infinitezimális nyírások során a megfelelő koordinátarendszerben a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. Az egytengelyű, egyszerű nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk.
@@ -1282,6 +1320,23 @@ Hogyan kaphatjuk tehát meg egy általános ${\mathbf{F}}$-ből, hogy milyen ny�
 \end{aligned} \]
 \end{enumerate}
 
+\footnotesize
+\paragraph{Példa} Tekintsünk egy transzformációt, amit a ${\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
+  1&1 \\ 
+  1&2 
+\end{array}} \right)$ deformációs gradiens ad meg! Milyen fajta transzformáció ez? Rajzoljuk fel, hogy mibe viszi át az $ABCD$ négyzetet, aminek a sarkainak az $x$ és $y$ koordinátái a $\pm 1$-ben vannak! Tartalmaz-e forgatást vagy nyújtást a transzformáció, és ha igen, adjuk meg ezeket! Mekkora a nyújtás tengelyeinek $x$ tengellyel bezárt szöge?
+
+\paragraph{Megoldás} A deformációs gradiens szimmetrikus és 1 determinánsú, így tiszta nyírás, avagy nyújtás, forgatást nem tartalmaz, avagy a forgatáshoz tartozó operátor az identitás operátor. A deformációs gradiens sajátértékei a $\lambda_a = \left( {3 + \sqrt 5 } \right)/2$ és a $\lambda_b = \left( {3 - \sqrt 5 } \right)/2$, a hozzájuk tartozó sajátvektorok pedig
+\[{{\mathbf{v}}_a} = \frac{1}{{\sqrt {4 + {{\left( {\sqrt 5  - 1} \right)}^2}} }} \cdot \left( {\begin{array}{*{20}{c}}
+  {\sqrt 5  - 1} \\ 
+  2 
+\end{array}} \right)\quad \quad {{\mathbf{v}}_b} = \frac{1}{{\sqrt {4 + {{\left( {\sqrt 5  + 1} \right)}^2}} }} \cdot \left( {\begin{array}{*{20}{c}}
+  {\sqrt 5  + 1} \\ 
+  { - 2} 
+\end{array}} \right).\]
+Ezek $x$ tengellyel bezárt szögei $\arctan \left( {2/\left( {\sqrt 5  - 1} \right)} \right) \approx 58^\circ $, illetve az ezzel  $90^\circ$-ot bezáró, $-32^\circ$-ot bezáró tengelyek. A megoldás szemléltetéséhez tekintsük \aref{fig:nyiras_pelda2}.\ ábrát! Ha a transzformáció tartalmazott volna forgatást is, akkor nem lett volna ${\mathbf{F}}$ szimmetrikus, és így nem lett volna diagonalizálható sem, így nem ${\mathbf{F}}$-nek, hanem ${{\mathbf{F}}^T}{\mathbf{F}}$ szorzatnak kellett volna megkeresni a sajátértékeit és sajátvektorait.
+\normalsize
+
 \subsubsection{A nemkommutativitás szemléltetése}
 Felmerülhet a kérdés, hogy miért épp ${\mathbf{F}} = {\mathbf{OU}}$ alakban bontottuk fel egy általános trasznformációt és miért nem ${\mathbf{F}} = {\mathbf{UO}}$ alakban. Egyáltalán lehetséges egy ilyen felbontás is? És ha igen, mi a különbség?
 
@@ -1454,4 +1509,32 @@ Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert
 \subsection{Feladatok}
 Feladatok a feladatlapon.
 
+\section{Merev testek egyensúlya}
+Newton-tétele szerint egy pontszerű test gyorsulását a rá ható erők összessége adja meg. A tétel nagysága abban rejlik, hogy megadja, hogy az erők mitől függhetnek, több test esetén hogyan kezelendők, illetve hogyan összegezendők. A
+\begin{equation} \label{eq:newton}
+{\mathbf{F}} = m{\mathbf{a}}
+\end{equation}
+összefüggést írjuk kicsiny részek összegére, amelyben a tömeget valamilyen tömegsűrűség integrálja adja, illetve csoportosítsuk az erőket aszerint, hogy a pontszerű testre azon
+\begin{itemize}
+\item térfogatában hat, azaz nem a felülettel való érintkezés folyamán, hanem távolba hatás által (mint pl.\ gravitációs erő, elektrosztatikus erő), vagy
+\item felületén keresztül hat, valamilyen kontakterő folyamán (Van der Waals erő, súrlódás, atomok közti vonzó vagy taszító erő, bár ezek mind ugyanolyan mikroszkopikus eredettel rendelkeznek).
+\end{itemize}
+Így a kicsiny testre ható eredő erő e kettő fajta erőnek az összege, az egyiket a felületre, a másikat a térfogatra kell összegezni,
+\begin{equation} \label{eq:erok_csop}
+{\mathbf{F}} = \underbrace {\int_{\partial V} {d{{\mathbf{F}}_f}} }_{{\text{felületi}}} + \underbrace {\int_V {d{{\mathbf{F}}_t}} }_{\text{térfogati}},
+\end{equation}
+amelyek közül a felületi arányos a kicsi felületi elemmel,
+\[d{{\mathbf{F}}_f} \sim d{\mathbf{A}} \Leftrightarrow d{{\mathbf{F}}_f} = \hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}} \Rightarrow \int_{\partial V} {d{{\mathbf{F}}_f}}  = \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}},\]
+a térfogati pedig a térfogat nagyságával,
+\[d{{\mathbf{F}}_t} \sim dV \Leftrightarrow d{{\mathbf{F}}_f} = {\mathbf{f}}\left( {\mathbf{r}} \right)dV \Rightarrow \int_V {d{{\mathbf{F}}_t}}  = \int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV},\]
+így \az{\eqref{eq:newton}}.\ egyenletet \az{\eqref{eq:erok_csop}}.\ egyenlet segítségével így írhatjuk:
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} ,\]
+amely a Gauss-Ostrogradsky-féle divergencia tétel segítségével
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} .\]
+Ha ez igaz minden térfogategységre, akkor az integrálást elhagyhatjuk, és igaz magára az argumentumokra is,
+\begin{equation}
+{\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}.
+\end{equation}
+\subsection{Lehajlás}
+Négyzet keresztmetszetű gerenda lehajlásához határozzuk meg a másodrendű nyomatékát, ha az oldalak párhuzamosak az erővel, illetve ha azzal $45^\circ$-os szöget zárnak be! Mekkora egy üreges négyzetes hasábra, tömör hengerre és mekkora egy csőre?
 \end{document}
