@@ -228,9 +228,6 @@ Most végezzük el a deriválást!
 
 Tehát a rotáció mindenhol 0, ahol a függvény értelmezve van, mégsem konzervatív az erőtér. Hogyan lehet ez? A  tömegpont gravitációs erőtérnél ugyanez igaz: a rotáció mindenhol 0, ahol a függvény értelmezve van, de az meg mégis konzervatív. Mi akkor a különbség? A különbség abban rejlik, hogy ha a ponttöltésnél disztribúció értelemben vesszük a deriváltat, akkor tényleg kijön, hogy a rotáció 0, míg ${\mathbf{A}} \times {\mathbf{r}}/{r^2}$-nél ez nem jön ki.
 
-\subsection{Feladatok}
-Feladatok a feladatlapon.
-
 \section{Merev testek forgómozgása}
 \subsection{Tehetetlenségi nyomaték tenzor}
 A Newton-törvényt alkalmazva egy pontrendszerre megkapjuk, hogy az ${\mathbf{N}}$ az impulzusmomentum (perdület, vagy angolul angular moment), amit a 
@@ -1555,9 +1552,6 @@ Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert
 \normalsize
 
 
-\subsection{Feladatok}
-Feladatok a feladatlapon.
-
 \section{Merev testek egyensúlya}
 Newton-tétele szerint egy pontszerű test gyorsulását a rá ható erők összessége adja meg. A tétel nagysága abban rejlik, hogy megadja, hogy az erők mitől függhetnek, több test esetén hogyan kezelendők, illetve hogyan összegezendők. A
 \begin{equation} \label{eq:newton}
@@ -1568,22 +1562,300 @@ Newton-tétele szerint egy pontszerű test gyorsulását a rá ható erők össz
 \item térfogatában hat, azaz nem a felülettel való érintkezés folyamán, hanem távolba hatás által (mint pl.\ gravitációs erő, elektrosztatikus erő), vagy
 \item felületén keresztül hat, valamilyen kontakterő folyamán (Van der Waals erő, súrlódás, atomok közti vonzó vagy taszító erő, bár ezek mind ugyanolyan mikroszkopikus eredettel rendelkeznek).
 \end{itemize}
-Így a kicsiny testre ható eredő erő e kettő fajta erőnek az összege, az egyiket a felületre, a másikat a térfogatra kell összegezni,
+Így egy, akár nagyobb testben lévő, általunk kijelölt kisebb testre ható eredő erő e kettő fajta erőnek az összege, az egyiket a felületre, a másikat a térfogatra kell összegezni,
 \begin{equation} \label{eq:erok_csop}
 {\mathbf{F}} = \underbrace {\int_{\partial V} {d{{\mathbf{F}}_f}} }_{{\text{felületi}}} + \underbrace {\int_V {d{{\mathbf{F}}_t}} }_{\text{térfogati}},
 \end{equation}
-amelyek közül a felületi arányos a kicsi felületi elemmel,
+amelyek közül a felületi erő arányos a kicsi felületi elemmel,
 \[d{{\mathbf{F}}_f} \sim d{\mathbf{A}} \Leftrightarrow d{{\mathbf{F}}_f} = \hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}} \Rightarrow \int_{\partial V} {d{{\mathbf{F}}_f}}  = \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}},\]
-a térfogati pedig a térfogat nagyságával,
+a térfogati erő pedig a térfogat nagyságával,
 \[d{{\mathbf{F}}_t} \sim dV \Leftrightarrow d{{\mathbf{F}}_f} = {\mathbf{f}}\left( {\mathbf{r}} \right)dV \Rightarrow \int_V {d{{\mathbf{F}}_t}}  = \int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV},\]
 így \az{\eqref{eq:newton}}.\ egyenletet \az{\eqref{eq:erok_csop}}.\ egyenlet segítségével így írhatjuk:
-\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} ,\]
-amely a Gauss-Ostrogradsky-féle divergencia tétel segítségével
-\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}dV} .\]
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} ,\]
+amelyben ${\mathbf{\ddot u\left({\mathbf{r}}\right)}}$ az elmozdulás-vektor második időderiváltja. Ez Gauss-Ostrogradsky-féle divergencia tétel segítségével
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} .\]
 Mivel ez igaz minden térfogategységre, az integrálást elhagyhatjuk, és az összefüggés igaz magára az argumentumokra is,
 \begin{equation}
-{\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \rho \left( {\mathbf{r}} \right){\mathbf{\ddot r}}.
+{\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}.
 \end{equation}
+
+\footnotesize
+\paragraph{Példa}
+\Aref{fig:kocka_atloval}.\ ábrán látható, konstans $\rho$ sűrűségű rugalmas kocka egyensúlyi állapotában a feszültségtenzor alakja 
+\[{\mathbf{\sigma }}\left( {\mathbf{r}} \right) = c \left( {\begin{array}{*{20}{c}}
+  {{x}}&0&0 \\ 
+  0&{{y}}&0 \\ 
+  0&0&{{z}} 
+\end{array}} \right).\]
+A kocka minden pontjában a sűrűséggel arányos, a térben nem feltétlen homogén erő, azaz tömegerő hat. Hat valamint minden oldallapra külön-külön állandó nagyságú és irányú felületi erősűrűség. Mekkora nagyságú és irányú
+\begin{enumerate}
+\item tömegerő hat a kocka egyes pontjaira?
+\item erő hat a kocka egyes oldallapjaira?
+\item erő hat az $n = \left( {1,0,1} \right)/\sqrt 2 $ normálisú, a két lapátlóra illeszkedő $ABGH$ síkra?
+\end{enumerate}
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/kocka_atloval.eps}
+\caption{A kocka $BCGF$ és $ADHE$ lapátlóira, az $ABGH$ pontokra egy $n = \left( {1,0,1} \right)/\sqrt 2 $ normálisú síklapot fektetünk. }
+\label{fig:kocka_atloval}
+\end{figure}
+\FloatBarrier
+
+\paragraph{Megoldás}
+\begin{enumerate}
+\item 
+Az egyensúly feltétele, hogy minden pontban az erők eredője 0. A kocka belsejében ez azt jelenti, hogy
+\[\nabla {\mathbf{\sigma }} + \rho {\mathbf{g}} = 0.\]
+Kiírva a feszültségtenzor divergenciájának a definícióját kapjuk, hogy
+\[\nabla {\mathbf{\sigma }} = \left( {\begin{array}{*{20}{c}}
+  {{\partial _x}}&{{\partial _y}}&{{\partial _z}} 
+\end{array}} \right)\left( {c\left( {\begin{array}{*{20}{c}}
+  x&0&0 \\ 
+  0&y&0 \\ 
+  0&0&z 
+\end{array}} \right)} \right) = c \cdot \left( {\begin{array}{*{20}{c}}
+  1&1&1 
+\end{array}} \right).\]
+Visszahelyettesítve az előző egyenletbe:
+\[{\mathbf{g}} =  - c \cdot /\rho  \cdot \left( {\begin{array}{*{20}{c}}
+  1&1&1 
+\end{array}} \right).\] 
+Ez egy konstans, $F$-ből $D$-felé mutató tömegerő, nagysága $g =  - c/\rho  \cdot \sqrt 3 $.
+\item A kocka oldallapjaira ható erő a feszültségtenzorból számolható.
+\begin{enumerate}
+\item Az $ABFE$ oldallap normálisa ${{\mathbf{n}}_{ABFE}} = \left( {1,0,0} \right)$, a felületi erősűrűség 
+\[{{\mathbf{f}}_{ABFE}}\left( {\mathbf{r}} \right) = {\left. {{\mathbf{\sigma }}\left( {\mathbf{r}} \right)} \right|_{ABFE}} \cdot {{\mathbf{n}}_{ABFE}} = c\left( {\begin{array}{*{20}{c}}
+  a&0&0 \\ 
+  0&y&0 \\ 
+  0&0&z 
+\end{array}} \right)\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right) = ca\cdot \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right).\]
+A teljes oldallapra ható erő:
+\[\begin{aligned}
+  {{\mathbf{F}}_{ABFE}} &  = \int_{ABFE} {{{\left. {{\mathbf{\sigma }}\left( {\mathbf{r}} \right)} \right|}_{ABFE}}} d{\mathbf{A}} \\ 
+   &  = \int_{ABFE} {\underbrace {{{\left. {{\mathbf{\sigma }}\left( {\mathbf{r}} \right)} \right|}_{ABFE}}{{\mathbf{n}}_{ABFE}}}_{{{\mathbf{f}}_{ABFE}}\left( {\mathbf{r}} \right)}} dA \\ 
+   &  = \int_{ABFE} {ca\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right)dA}  \\ 
+   &  = \int\limits_0^a {\int\limits_0^a 1 dy} dz \cdot ca\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right) \\ 
+   &  = c{a^3}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  0 
+\end{array}} \right) \\ 
+\end{aligned} \]
+
+\item A $DCGH$ oldallapon a feszültségtenzor releváns, $1,1$ komponense 0, így ott az erősűrűség és az erő is 0.
+\item A $BCGF$ oldalon az $ABFE$ oldalhoz hasonlóan megmtutatható, hogy 
+\[{{\mathbf{f}}_{BCGF}} = ca \cdot \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  1 \\ 
+  0 
+\end{array}} \right).\]
+\item Az $ADHE$ oldalon a feszültségtenzor $2,2$ komponense 0, így ott a $DCGH$-hoz hasonlóan 0 az erősűrűség és az erő is.
+\item Az $EFGH$ oldalon az $ABFE$ oldalhoz hasonlóan megmtutatható, hogy 
+\[{{\mathbf{f}}_{EFGH}} = ca \cdot \left( {\begin{array}{*{20}{c}}
+  0 \\ 
+  0 \\ 
+  1 
+\end{array}} \right).\]
+\item Az $ABCD$ oldalon a feszültségtenzor $3,3$ komponense 0, így ott a $DCGH$ oldalhoz hasonlóan 0 az erősűrűség és az erő is.
+\end{enumerate}
+\item Az $ABGH$ síkot olyan helyvektorok alkotják, amelyekre \[ABGH = \left\{ {{\mathbf{r}} = \left( {\begin{array}{*{20}{c}}
+  x \\ 
+  y \\ 
+  z 
+\end{array}} \right)|x + z = a;\;y} \right\}.\]
+Erre a pontokra kell kiintegrálni ${\mathbf{\sigma }}$-t.
+\[\begin{aligned}
+  {{\mathbf{F}}_{ABGH}} &  = \int_{ABGH} {{{\left. {{\mathbf{\sigma }}\left( {\mathbf{r}} \right)} \right|}_{ABGH}}} d{\mathbf{A}} \\ 
+   &  = \int_{ABGH} {c \cdot \left( {\begin{array}{*{20}{c}}
+  x&0&0 \\ 
+  0&y&0 \\ 
+  0&0&{a - x} 
+\end{array}} \right)} \left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  1 
+\end{array}} \right)/\sqrt 2 dA \\ 
+   &  = \frac{c}{{\sqrt 2 }}\int_{ABGH} {\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  0 \\ 
+  {a - x} 
+\end{array}} \right)} dA \\ 
+   &  = \frac{c}{{\sqrt 2 }}\int\limits_0^a {\int\limits_0^a {\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  0 \\ 
+  {a - x} 
+\end{array}} \right)} dx\sqrt 2  \cdot } dy \\ 
+   &  = ca\int\limits_0^a {\left( {\begin{array}{*{20}{c}}
+  x \\ 
+  0 \\ 
+  {a - x} 
+\end{array}} \right)} dx \\ 
+   &  = ca \cdot \frac{{{a^2}}}{2}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  1 
+\end{array}} \right) \\ 
+   &  = \frac{{c{a^3}}}{2}\left( {\begin{array}{*{20}{c}}
+  1 \\ 
+  0 \\ 
+  1 
+\end{array}} \right) \\ 
+\end{aligned} \]
+Az integrál értékét meg is érezhetjük \aref{fig:ferde_int}.\ ábra alapján.
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/ferde_int.eps}
+\caption{Az átló mentén a hossz szerint kell integrálnunk egy vektor mennyiséget, amelynek komponensei úgy függenek mind az $x$, mind a $z$ tengelytől, hogy összegük állandó.}
+\label{fig:ferde_int}
+\end{figure}
+\FloatBarrier
+\end{enumerate}
+\normalsize
+
 \subsection{Lehajlás}
-Négyzet keresztmetszetű gerenda lehajlásához határozzuk meg a másodrendű nyomatékát, ha az oldalak párhuzamosak az erővel, illetve ha azzal $45^\circ$-os szöget zárnak be! Mekkora egy üreges négyzetes hasábra, tömör hengerre és mekkora egy csőre?
+Az előadáson bemutatták, hogyan hajlik le egy súlytalan rúd, amit egyik oldalán vízszintesen befognak, a másik, szabad oldalára pedig súlyt akasztanak.
+
+A lehajlás vizsgálata során felírjuk a lehajló merev test egy kis részére az erőket azzal a közelítéssel, hogy a lehajlás a hosszhoz képest másodrendben kicsi, a rúd függőlegessel bezárt szögének koszinusza továbbra is 1 (azaz merőleges a függőlegesre), így az erők vízszintes vetületének kifejezéséhez nem kell figyelembe venni a lehajlást. A számolás során felhasználjuk, hogy a kicsiny darabra ható erők és forgatónyomatékok eredője 0. Az erőkre vonatkozó feltételből adódik a neutrális zóna helye, vagyis azon pontok helye, ahol 0 a deformáció. A forgatónyomatékra vonatkozó feltételben pedig megjelenik a 
+\begin{equation} \label{eq:masodrendu_nyomatek}
+{I_\Omega } = \int_\Omega  {{\xi ^2}dA}
+\end{equation}
+mennyiség, amelynek a neve \textbf{másodrendű nyomaték}, amelyben a $\xi$ a neutrális zónától vett távolság, az integrálást pedig arra a keresztmetszetre kell felírni, ami a merev test kis részét határolja.
+
+Az egyik végén vízszintesen befogott rúd, amelynek szabad végére $F$ erő hat lefelé, $\Delta y$-nyit lehajlik, mégpedig a
+\[\Delta y =  - \frac{F}{{EI}}\frac{{{l^3}}}{3}\]
+összefüggés szerint, amelyben $E$ a Young-modulusz, $I$ a rúdra jellemző másodrendű nyomaték, $l$ pedig a rúd hossza.
+
+\footnotesize
+\paragraph{Példa}
+Négyzet keresztmetszetű gerenda lehajlásához határozzuk meg a másodrendű nyomatékát, ha az oldalak függőleges és vízszintesek, illetve ha azzal $45^\circ$-os szöget zárnak be! Mekkora a másodrendű nyomatékok aránya?
+\paragraph{Megoldás}
+A neutrális zóna a négyzet közepén megy át, párhuzamosan az $x$ tengellyel. A másodrendű nyomatékot a
+\[{I_\Omega } = \int_{\left[ { - a/2,a/2} \right] \times \left[ { - a/2,a/2} \right]} {{y^2}dA} \]
+összefüggés adja. A 2D-s integrált felbontjuk 2 db 1D-s integrálra,
+\[{I_\Omega } = \int\limits_{ - a/2}^{a/2} {\int\limits_{ - a/2}^{a/2} {{y^2}dx} dy} .\]
+Az integrandus $x$-től független, ezért
+\[{I_\Omega } = \int\limits_{ - a/2}^{a/2} {a{y^2}dy} .\]
+Kiintegrálva a polinomot kapjuk, hogy 
+\[{I_\Omega } = a\left. {\frac{1}{3}{y^3}} \right|_{ - a/2}^{a/2} = a\frac{1}{3}\left( {\frac{{{a^3}}}{8} - \frac{{ - {a^3}}}{8}} \right) = a\frac{1}{3}\frac{1}{4}{a^3} = \frac{{{a^4}}}{{12}}.\]
+
+Elforgatott négyzet esetén a neutrális zóna a négyzet átlójában fut át. Bontsuk fel a négyzetet 4 db egybevágó derékszögű háromszögre, amelyek egyik befogója az $x$ tengelyen van, és végezzük el az integrálást csak erre arra az $\Omega_4$ tartományra, amelyet a bal alsó háromszög meghatároz! Az integrál értéke a négy háromszögön mind ugyanazt adják, így
+\[{I_\Omega } = 4{I_{{\Omega _4}}} = 4\int_{{\Omega _4}} {{y^2}dA}.\]
+A négyzet átlójának hossza $a\sqrt 2 $, így $x$-ben az integrál tartománya $\left[ { - a\sqrt 2 ,0} \right]$. Az $y$-ban vett integrálási tartomány felső határa a 0, az alsóé pedig $x$ értékétől függ, $y =  - x - a\sqrt 2 $. Kiírva az integrált:
+\[{I_\Omega } = 4\int\limits_{ - a\sqrt 2 }^0 {\int\limits_{ - x - a\sqrt 2 }^0 {{y^2}} dy} dx.\]
+A belső integrandus $x$-től független, így az integrál értéke
+\[{I_\Omega } = 4\int\limits_{ - a\sqrt 2 }^0 {\left. {\frac{1}{3}{y^3}} \right|_{ - x - a\sqrt 2 }^0} dx = 4\frac{1}{3}\int\limits_{ - a\sqrt 2 }^0 {0 - {{\left( { - x - a\sqrt 2 } \right)}^3}} dx = \frac{4}{3}\int\limits_{ - a\sqrt 2 }^0 {{{\left( {x + a\sqrt 2 } \right)}^3}dx} .\]
+Nem bontjuk ki a zárójelet csak azért, hogy tagonként integrálhassunk, hanem beírjuk egyből ${\left( {x + c} \right)^n}$ integrálját, hiszen ezt deriválni is könnyű, így nagy kő esik le a szívünkről:
+\[{I_\Omega } = \frac{4}{3} \cdot \left. {\frac{1}{4}{{\left( {x + a\sqrt 2 /2} \right)}^4}} \right|_{ - a\sqrt 2 /2}^0 = \frac{4}{3}\frac{1}{4}\frac{{{a^4}}}{4} = \frac{{{a^4}}}{{12}}.\]
+Meglepődve láthatjuk, hogy ez ugyanannyi, mint az előbbi eseté. Ez csak azért van így, mert négyzetet néztünk, téglalapra nem így lett volna. Egy négyzetet vajon $30^\circ$-kal elforgatva is ugyanezt kaptuk volna? És mi a helyzet tetszőleges szög esetére? Megannyi kínzó kérdés!
+
+\paragraph{Példa}
+Mekkora egy üreges négyzetes hasábra a másodrendű nyomaték, ha a külső oldalél $a_k$ hosszúságú, a belső üreg oldaléle pedig $a_b$?
+\paragraph{Megoldás}
+Felbonthatnánk az integrálást ismét 4 tartományra, és összeadhatnánk azok másodrendű nyomatékát, majd az integrálási határokat ügyesen kijelölve, vagy a tartományokat átdarabolva elvégezhetnénk az integrálást. Egyszerűbb azonban, ha a nagy négyzet másodrendű nyomatékából kivonjuk a kis négyzet másodrendű nyomatékát. Tehetjük mindezt azért, mert
+\[{I_{{\Omega _t}}} = {I_\Omega } + {I_{{\Omega _b}}} \Rightarrow \int_{{\Omega _t}}  \ldots   = \int_\Omega   \ldots   + \int_{{\Omega _b}}  \ldots ,\]
+ahol ${\Omega _t}$ a tömör, teljes négyzet tartománya, $\Omega$ az üreges négyzet tartománya, $\Omega_b$ pedig a belső, üreges rész tartománya. Így a keresett $I_\Omega$ értékére kapjuk, hogy
+\[{I_\Omega } = \frac{{a_k^4 - a_b^4}}{{12}}.\]
+
+\paragraph{Példa}
+Négyzet keresztmetszetű, $5{\text{ mm}}$ oldalélű vas ruhaakasztóként szolgál, hossza $5{\text cm}$. Mekkora lehet a végére akasztott legnagyobb tömegű kabát, hogy a lehajlása még ne érje el az $1{\text{ mm}}$-t? A vas Young-modulusza $100{\text{ GPa}}$, a négyzet másodrendű nyomatéka $I = {a^4}/12$, ahol $a$ a négyzet oldalának a hossza.
+\paragraph{Megoldás}
+\[\Delta y =  - \frac{F}{{EI}}\frac{{{l^3}}}{3} \Rightarrow F =  - \frac{{3EI\Delta y}}{{{l^3}}} =  - \frac{{3 \cdot 200 \cdot {{10}^9} \cdot \frac{1}{{12}}{{\left( {5 \cdot {{10}^{ - 3}}} \right)}^4} \cdot 1 \cdot {{10}^{ - 3}}}}{{{{\left( {5 \cdot {{10}^{ - 2}}} \right)}^3}}}{\text{ N}} =  - 250{\text{ N}}\]
+Vagyis kb.\ $25 {\text{ kg}}$-nyi súlyt akaszthatunk a fogas végére.
+\normalsize
+
+\section{Hidrosztatika}
+\footnotesize
+\paragraph{Példa}
+A Balaton partján felfújunk egy leeresztve $10 \text{ kg}$ tömegű gumicsónakot, aminek így a térfogata $0{,}7\text{ m}^3$ lesz (kezdeti térfogata elhanyagolható), benne a nyomás $110\text{ kPa}$, míg a légköri nyomás $100\text{ kPa}$. A levegő sűrűsége légköri nyomáson, a fújáskori hőmérsékleten $1{,}2\text{ kg}/\text{m}^3$ (a hőmérséklet a csónakon kívül és belül megegyezik).
+
+Mekkora a gumicsónak össztömege? Mekkora a súlya? Mennyivel kisebb tömegű az a csónak, aminek súlyának ez megfelel? Legfeljebb mekkora hasznos tömeget szállíthat a csónak a saját tömegén felül? A víz sűrűségét tekintsük $1000\text{ kg}/\text{m}^3$-nek, a nehézségi gyorsulás értékét $10\text{ m}/\text{s}^2$-nek!
+
+\paragraph{Megoldás}
+A csónak tömege a belefújt levegőével növekszik. A csónakon belüli és kívüli hőmérséklet azonos, így
+\[pV = nRT = \frac{m}{M}RT \Rightarrow \frac{p}{\rho } = {\text{állandó}}.\]
+Így a csónakon belüli sűrűség a benti és kinti nyomások arányával egyezik meg,
+\[{\rho _{{\text{bent}}}} = {\rho _{{\text{kint}}}} \cdot \frac{{110}}{{100}}.\]
+A felfújt csónak teljes tömege így
+\[{m_{{\text{teljes}}}} = {m_\text{csónak}} + {m_\text{levegő}} = \left( {10 + \underbrace {1{,}2 \cdot \frac{{110}}{{100}}}_{{\rho _{{\text{bent}}}}} \cdot \underbrace {0{,}7}_V} \right){\text{ kg}} = 10{,}924{\text{ kg}}.\]
+A csónak tömege tehát majdnem $9\%$-kal növekedett. A csónak súlya a kiszorított $0{,}7\text{ m}^3$ levegő súlyával csökken ahhoz képest, mintha nem lenne légkör,
+\[F = {m_\text{teljes}} \cdot g - V \cdot {\rho _\text{levegő}}g = \left( {{m_\text{teljes}} - V \cdot {\rho _\text{levegő}}} \right)g \approx \left( {10{,}924 - 0{,}7 \cdot 1{,}2} \right)10{\text{ N}} = 100{,}84{\text{ N}}.\]
+Ez csak közel $1\%$-kal nagyobb, mint a csónak eredeti súlya. A súly növekedését kifejezhetjük a többletnyomásból származó többletsúllyal is,
+\[F = m_\text{csónak}g + 1{,}2 \cdot \frac{{10}}{{100}}0{,}7 \cdot 10{\text{ N}} = \left( {100 + 0{,}84} \right){\text{ N}} = 100{,}84{\text{ N}}.\]
+A csónakot annyival érezzük könnyebnek a tömege alapján indokolt súlynál, mint amennyi a légkörből kiszorított levegő súlyának megfelelő tömeg,
+\[\Delta m = V \cdot {\rho _\text{levegő}} = {\text{0{,}84 kg}},\]
+vagyis ekkora tömegnek megfelelő súllyal érezzük a csónakot könnyebnek, ha a csónak tartásáról, azaz a súlyáról van szó. A gyorsításához továbbra is a teljes tömegét kell figyelembe venni. A csónakra ható felhajtóerő elméleti maximuma a kiszorított $0{,}7\text{ m}^3$ térfogatú víz súlya lehet,
+\[F = V \cdot \rho  \cdot g = 0,7 \cdot 1000 \cdot 10{\text{ N}} = 7000{\text{ N}}.\]
+Az ekkora súlyhoz tartozó tömeg $700\text{ kg}$, amelyből $10{,}924{\text{ kg}}$ a csónak saját, teljes tömege, így legfeljebb $\left( {700 - 10,924} \right){\text{ kg}} \approx 689{\text{ kg}}$ tömeget tud szállítani.
+
+\paragraph{Példa}
+Egy érzékeny kétkarú mérleg egyik serpenyőjébe egy nagy, vízzel félig telt főzőpoharat teszünk, majd másik oldalon súlyokkal kiegyensúlyozzuk. Mit mutat a mérleg, ha a főzőpohárban lévő vízbe -- a pohárhoz való hozzáérés nélkül -- lógatunk egy testet, aminek a sűrűsége a víznél
+\begin{enumerate}
+\item kisebb,
+\item megegyező,
+\item nagyobb?
+\end{enumerate}
+
+\paragraph{Megoldás}
+Ahelyett, hogy a pohár -- víz alkotta rendszert vizsgáljuk, és a rá ható erők eredőjét nézzük, tekintsük csak a poharat és a rá ható erőket! A pohár egyensúlyban van, így a rá ható erők összege 0. Hat rá a nehézségi erő, a folyadék valamilyen átlagos ${\mathbf{\sigma }} =  - p{\mathbf{ I}}$ nyomásából származó, valamilyen $A$ effektív felületen kifejtett erőből, illetve a mérleg serpenyője által kifejtett tartóerőből.
+\[F = mg + A \cdot p + {F_{{\text{tart}}}},\]
+amelyben
+\[p = {\rho _{{\text{viz}}}}gh.\]
+Ha most bármilyen sűrűségű testet a vízbe lógatunk, akkor a vízszint megemelkedik, miközben adott minden $h$ mélységben a nyomás továbbra is a fenti képlet szerint számolható. Így a pohár alján a nyomás is megnövekedik, ezért nagyobb ellenerőt kell kifejtenie a mérleg karjának, tehát a vizes poharas serpenyőt jelzi nehezebbnek.
+
+Ugyanerre jutunk, ha a pohár vízzel + test egyensúlyát nézzük. Ekkor azt jó figyelni, hogy a rendszer egyensúlyához a rá ható nehézségi erő ellensúlyozására nemcsak a serpenyő tartóerőerje járul hozzá, hanem a mi általunk kifejtett tartóerő (ami mint felfüggesztés húzza a testet). Amikor a test nem lóg bele a vízbe, mi kifejtünk valamekkora erőt. Amikor már belelóg, akkor mi kisebbet fejtünk ki, mint korábban. (Ha a test lebegni tud a vizen, akkor az általunk kifejtett akár 0-ig is csökkenhet.) Tekintve, hogy a nehézségi erő ellen ható tartóerőnk csökken, az erők egyensúlya csak úgy valósulhat meg, ha a tálca nagyobb erőt fejt ki, vagyis a mutató ismét kitért, a poharas serpenyőt jelzi nehezebbnek.
+
+\paragraph{Példa}
+Egy csonkakúp-alakú test a szimmetriatengelyével függőlegesen úgy úszik egy higanyt tartalmazó edényben, hogy térfogatának negyede merül a higanyba.
+\begin{enumerate}
+\item A magyar helyesírás szabályainak megfelele-e a "csonkakúp-alakú" kifejezés?
+\item Mekkora része merülne a higanyaba a testnek, ha annyi vizet töltenénk az  edénybe, hogy az elfedje a csonka kúpot?
+\end{enumerate}
+
+\paragraph{Megoldás}
+\begin{enumerate}
+\item Ha a Magyar Helyesírás Szabályai, 141.b) az irányadó, akkor igen. Eszerint:
+
+"Ha egy különírt szókapcsolat (pl. hajlított bútor) olyan utótagot kap (pl. gyár), amely az egész kapcsolathoz járul, az egyébként különírandó részt az új alakulatban egybeírjuk, és ehhez az utótagot (a szótagszámtól függetlenül) kötőjellel kapcsoljuk: hajlítottbútor-gyár. Hasonló esetek: hideg víz, de: hidegvíz-csap; házi feladat, de: házifeladat-készítés; légi fénykép, de: légifénykép-montázs; stb\ldots"
+
+Egy másik vélemény szerint nem, mert \ldots
+\item Számoljuk ki a sűrűségét az alapján, hogy negyedig merül el a higanyban. Ez biztos hasznos lesz.
+\[F = 0 = \underbrace {g{\rho _{Hg}}\frac{{{V_{{\text{csk}}}}}}{4}}_{{\text{felhatjóerő}}} - \underbrace {g{\rho _{{\text{csk}}}}{V_{{\text{csk}}}}}_{{\text{súlyerő}}} \Rightarrow {\rho _{{\text{csk}}}} = \frac{{{\rho _{Hg}}}}{4}\]
+Miután vizet töltünk rá, higany és víz veszi körül (nem keverednek), de csak valamilyen mértében van egyikben, és másikban elmerülve: legyen $\alpha$ mértékben elmerülve a higanyban! Amit tudunk még, hogy a kiszorított térfogatok összege $V$, és a rá ható erők eredője.
+\[F = 0 = \underbrace {g{\rho _{Hg}}\cdot{V_{{\text{csk}}}} \alpha }_{Hg{\text{ felhajtóerő}}} + \underbrace {g{\rho _{{\text{víz}}}}\cdot{V_{{\text{csk}}}} \left( {1 - \alpha } \right)}_{{\text{víz felhajtóerő}}} - \underbrace {g\frac{{{\rho _{Hg}}}}{4}{V_{{\text{csk}}}}}_{{\text{súlyerő}}}\]
+Ez egy egyenlet $\alpha$-ra, más ismeretlen nincs benne.
+
+\[\begin{gathered}
+  {\rho _{Hg}} \cdot \alpha  + {\rho _{{\text{viz}}}} - {\rho _{{\text{viz}}}}\alpha  - {\rho _{Hg}}/4 = 0 \hfill \\
+  \alpha  = \frac{{{\rho _{Hg}}/4 - {\rho _{{\text{viz}}}}}}{{{\rho _{Hg}} - {\rho _{{\text{viz}}}}}} \approx \frac{{14/4 - 1}}{{14 - 1}} \approx 0,2 \hfill \\ 
+\end{gathered} \]
+\end{enumerate}
+\normalsize
+\section{Felületi feszültség}
+\footnotesize
+\paragraph{Példa}
+Mennyi munkára van szükség ahhoz, hogy egy $2\text{ mm}$ sugarú higanycseppet (felületi feszültség $0{,}52\text{ N}/\text{m}$) két egyforma méretű higanycseppé vágjuk szét?
+
+\paragraph{Példa}
+A szappan-levegő felületi feszültsége $\alpha = 0{,}025\text{ N}/\text{m}$. Mennyivel nagyobb a nyomás egy $1\text{ mm}$-es szappanbuborékban, mint a körülötte lévő légköri levegőben? Mekkorára fújódna fel, ha a légköri nyomás megszűnne, de a buborék nem pukkadna ki?
+
+\paragraph{Példa}
+Két, közel azonos méretű szappanbuborékot fújunk fel egy Y alakú csővel, majd a buborékok közötti levegő áramlását a felfújást követően is biztosítjuk. Tegyük fel, hogy az egyik buborékból a másikba történő áramlás sebessége elég lassú és arányos a buborékokban mérhető nyomáskülönbséggel. Írjuk fel a szappanbuborék átmérőjének időbeli változására a differenciálegyenletet! A paraméterek függvényében mennyi idő szükséges, hogy az $\left( {{d_{{\text{nagyobb}}}} - {d_{{\text{kisebb}}}}} \right)/{d_{{\text{nagyobb}}}} = 0{,}5\%$-nyi átmérőbeli különbség $5\%$-ra nőjön, és mennyi további idő szükséges, hogy az $5\%$ egészen $50\%$-ra nőjön?
+\normalsize
 \end{document}
+
