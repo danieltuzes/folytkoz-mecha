@@ -105,37 +105,37 @@ Konzultációt az órák után a szobámban, a 4.71-ben tartok.
 Az anyagok tömegének kapcsán már az általános iskolában bevezetik a tömegsűrűséget. Segítségével kiszámolható különböző geometriájú alakzatok tömege. Később felmerülhet, hogy mi a teendő, hogyha nem térfogatban gondolkozunk, hanem felületben, pl.\ papírból építünk dobókockát, akkor annak mekkora a tömege? Mit lehet tenni, ha nem homogén az anyag sűrűsége, hanem adott függvény szerint változik? Értjük-e egyáltalán valójában, hogy mi az a sűrűség?
 
 A "sűrűségfüggvény" valójában nem is függvény, vagy legalábbis nem egyértelmű. Megadhatok ugyan egy 
-\[\rho \left( {\mathbf{r}} \right):{\mathbb{R}^3} \to \mathbb{R}\]
+\[\varrho \left( {\mathbf{r}} \right):{\mathbb{R}^3} \to \mathbb{R}\]
 függvényt, még definiálhatom is úgy, hogy 
-\[\rho \left( {\mathbf{r}} \right) = \mathop {\lim }\limits_{V \to 0} \frac{{{m_V}}}{V},\]
+\[\varrho \left( {\mathbf{r}} \right) = \mathop {\lim }\limits_{V \to 0} \frac{{{m_V}}}{V},\]
 ahol $V$ egy egyre kisebb térfogat, ami mindig tartalmazza az ${\mathbf{r}}$ pontot, ${{m_V}}$ pedig ennek a tömege, de ez nem lesz egy jó mennyiség. (Persze lehetek direkt gonosz is, és tarthatok $V$-vel úgy 0-hoz, hogy közben egyre vékonyabb és vékonyabb lapra számolom a térfogatot és tömeget, így $V$ végül nem egy ponthoz tart, hiába tart a mérete a 0-hoz.) A probléma ugyanis, hogy kiszámolhatom az adott anyag tömegét egy $V$ térfogatban a
-\[{m_V} = \int_V {\rho \left( {\mathbf{r}} \right){d^3}r} \]
+\[{m_V} = \int_V {\varrho \left( {\mathbf{r}} \right){d^3}r} \]
 képlet segítségével, de ha most a sűrűséget megváltoztatom egyetlen ${{\mathbf{r}}_0} \in V$ pontban úgy, hogy 
-\[\rho '\left( {\mathbf{r}} \right) = \left\{ \begin{array}{lr}
-  2\rho \left( {\mathbf{r}} \right)&{\text{ha }}{\mathbf{r}} = {{\mathbf{r}}_0} \in V \\
-  \rho \left( {\mathbf{r}} \right)&{\text{egyébként,}} \\ 
+\[\varrho '\left( {\mathbf{r}} \right) = \left\{ \begin{array}{lr}
+  2\varrho \left( {\mathbf{r}} \right)&{\text{ha }}{\mathbf{r}} = {{\mathbf{r}}_0} \in V \\
+  \varrho \left( {\mathbf{r}} \right)&{\text{egyébként,}} \\ 
 \end{array}  \right.\]
 akkor attól még
 \begin{equation} \label{eq:ugyanaz_a_tomeg}
-m{'_V} = \int_V {\rho '\left( {\mathbf{r}} \right){d^3}r}  = {m_V}
+m{'_V} = \int_V {\varrho '\left( {\mathbf{r}} \right){d^3}r}  = {m_V}
 \end{equation}
 marad. Igaz ez bármilyen $V$ térfogatra, még arra is, ami ${\mathbf{r}}$-re húzódik rá, hiszen abban az egyetlen pontban a tömeg 0, csak a sűrűség más. A sűrűség akkor tehát nem egyértelmű? Függvény értelmében nem, másképp szólva nem is függvény igazából. De ne lepődjünk meg. Általános iskolában a sűrűség egy konstans szám volt, később már függvénnyé avanzsált, felsőbb egyetemi szintem pedig ezen is tovább kell lépni, és valamiféle überfüggvény fogalomhoz kell eljutni. A helyes kifejezés, amit keresünk, az a disztribúció, avagy általánosított függvény. A tömegpont és ponttöltés környékén eddig előforduló Dirac-delta objektum sem függvény, hanem egy ahhoz valamilyen értelemben hasonlító matematikai fogalom, egy disztribúció. Ezek a mennyiségek nem "önmagukban", hanem az integráljaikon keresztül definiálhatóak. Javaslom \href{http://physics.bme.hu/sites/physics.bme.hu/files/users/BMETE15AF31_kov/2012Gnadig_II.pdf}{Gnädig Péter: Bevezetés a disztribúcióelméletbe és fizikai alkalmazásaiba} c.\ művét, amely jól bemutatja, érzékelteti és elmagyarázza a kérdéskört fizikusoknak.
 
 Tehát a sűrűséget azzal definiáljuk, hogy megadjuk pl.\ az integrálját:
-\[\int_V {{\rho _d}\left( {\mathbf{r}} \right){d^3}r}  = f\left( V \right).\]
+\[\int_V {{\varrho _d}\left( {\mathbf{r}} \right){d^3}r}  = f\left( V \right).\]
 A sűrűség pl.\ konstans, ha azt mondjuk, hogy
-\[\int_V {{\rho _d}\left( {\mathbf{r}} \right){d^3}r} \sim V,\]
+\[\int_V {{\varrho _d}\left( {\mathbf{r}} \right){d^3}r} \sim V,\]
 ahol a jobb oldali $V$ a térfogat nagysága, míg az integrálban egy tartmányt jelöl. Ekkor az együttható valamilyen $c$, amely éppen a hagyományos értelemben vett sűrűség. Ez azért igaz így itt, mert ebben az esetben a disztribúció "szépen" viselkedik (lásd: reguláris disztribúció). Ezekben az esetekben, amikor a disztribúció szépen viselkedik, a sűrűséghez, mint disztribúcióhoz mindig rendelhetünk egy függvényt, aminek az integráljaként kiszámolható a tömeg:
-\[\int_V {{\rho _d}\left( {\mathbf{r}} \right){d^3}r}  = \int_V {{\rho _f}\left( {\mathbf{r}} \right){d^3}r} ,\]
-ahol $\rho _f$ már egy rendes ${\mathbb{R}^3} \to \mathbb{R}$ függvény. Viszont egy disztribúcióhoz több függvény is rendelhető, ahogy azt \az{\eqref{eq:ugyanaz_a_tomeg}} példában láthattuk.
+\[\int_V {{\varrho _d}\left( {\mathbf{r}} \right){d^3}r}  = \int_V {{\varrho _f}\left( {\mathbf{r}} \right){d^3}r} ,\]
+ahol $\varrho _f$ már egy rendes ${\mathbb{R}^3} \to \mathbb{R}$ függvény. Viszont egy disztribúcióhoz több függvény is rendelhető, ahogy azt \az{\eqref{eq:ugyanaz_a_tomeg}} példában láthattuk.
 
 Nem ilyen a sűrűség pl.\ akkor, ha azt mondjuk, hogy a sűrűsége a testnek legyen egy ${{\mathbf{r}}_0}$-ra koncentrált Dirac-delta, $\delta_{{{\mathbf{r}}_0}} \left( {\mathbf{r}} \right)$:
 \[\int_V {{\delta _{{{\mathbf{r}}_0}}}\left( {\mathbf{r}} \right)} {d^3}{\mathbf{r}} = \left\{ \begin{array}{lr}
   m&{\text{ ha }}{{\mathbf{r}}_0} \in V \\ 
   0&{\text{ egyébként.}}
 \end{array} \right.\]
-A sűrűség lehet vonalmenti, felületi, vagy akár térfogati. Ha a sűrűséget függvénnyel adják meg, akkor viszont nem fordulhat az elő, hogy egy alacsonyabb dimenziós részében\footnote{$3D$-s sűrűség esetében felületen, vonalon, vagy pontban; $2D$-s sűrűség esetében vonalon, vagy pontban; $1D$-s sűrűség esetében egy pontban; precízen fogalmazva ezt úgy mondjuk, hogy 0 mértékű halmazon} azt megváltoztatva a vizsgált anyag tömege megváltozzon. Tehát a ${\rho _1}\left( {\mathbf{r}} \right) = c\cdot {{\mathbf{r}}^2}$ helyett használhatom a 
-\[{\rho _2}\left( {\mathbf{r}} \right) = \left\{ \begin{array}{lr}
+A sűrűség lehet vonalmenti, felületi, vagy akár térfogati. Ha a sűrűséget függvénnyel adják meg, akkor viszont nem fordulhat az elő, hogy egy alacsonyabb dimenziós részében\footnote{$3D$-s sűrűség esetében felületen, vonalon, vagy pontban; $2D$-s sűrűség esetében vonalon, vagy pontban; $1D$-s sűrűség esetében egy pontban; precízen fogalmazva ezt úgy mondjuk, hogy 0 mértékű halmazon} azt megváltoztatva a vizsgált anyag tömege megváltozzon. Tehát a ${\varrho _1}\left( {\mathbf{r}} \right) = c\cdot {{\mathbf{r}}^2}$ helyett használhatom a 
+\[{\varrho _2}\left( {\mathbf{r}} \right) = \left\{ \begin{array}{lr}
   0&{\text{ ha }}{{\mathbf{r}}^2} = 1 \\
   c \cdot {{\mathbf{r}}^2}&{\text{ egyébként}}
 \end{array} \right.\]
@@ -148,7 +148,7 @@ A (tömeg)sűrűség során egy skalár mennyiséggel dolgoztunk, az integrálá
 \subsection{Vektor mértékek, tenzor mértékek}
 Gyakran előfordul, hogy az integrálás során kapott mennyiség nem skalár, hanem pl.\ vektor vagy tenzor. Ilyen pl,
 \begin{itemize}
-\item ha kiszámoljuk, hogy egy adott tömegelrendezésben mekkora az erősűrűség, ami az egyes kicsi térfogatelemre hat. Ekkor kiintegrálva ezt egy térfogatra, megkapjuk, hogy összesen mekkora erő hat arra az adott térfogatra, pl.\ a gravitációs erősűrűség: $\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right){d^3}r}  = {\mathbf{F}}$, ahol ${\mathbf{f}} = \rho {\mathbf{g}}$, melyben $\rho$ a sűrűség, ${\mathbf{g}}$ pedig a gravitációs gyorsulás,
+\item ha kiszámoljuk, hogy egy adott tömegelrendezésben mekkora az erősűrűség, ami az egyes kicsi térfogatelemre hat. Ekkor kiintegrálva ezt egy térfogatra, megkapjuk, hogy összesen mekkora erő hat arra az adott térfogatra, pl.\ a gravitációs erősűrűség: $\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right){d^3}r}  = {\mathbf{F}}$, ahol ${\mathbf{f}} = \varrho {\mathbf{g}}$, melyben $\varrho$ a sűrűség, ${\mathbf{g}}$ pedig a gravitációs gyorsulás,
 \item a ${\mathbf{j}}$ áramsűrűség-mező, egy ${\mathbb{R}^3} \to {\mathbb{R}^3}$ függvény, amit ha egy $A$ felületre, ami $dA$ nagyságú, ${\mathbf{n}}$ normálisú infinitezimális felületelemekből áll össze, kiintegrálok, megadja az áram erősségét, azaz hogy a felületen időegység alatt hány töltés haladt át, $\int_A {\mathbf{j}} d{\mathbf{A}} = I = \frac{{\Delta Q}}{{\Delta t}}$, ahol $d{\mathbf{A}} = {\mathbf{n}}dA$,
 \item illetve a később bevezetett feszültségtenzor, amelyet egy bármilyen alakú felületre kiintegrálva megkapom az adott felületre ható erőt, ${\mathbf{F}} = \int_A {\hat \sigma d{\mathbf{A}}} $. Itt $\hat \sigma$ egy olyan függvény, ami a tér minden pontjához hozzárendel egy mátrixot, azaz ${\mathbb{R}^3} \to {\text{lin}}\left( {{\mathbb{R}^3} \to {\mathbb{R}^3}} \right)$.
 \end{itemize}
@@ -245,32 +245,32 @@ A Newton-törvényt alkalmazva egy pontrendszerre megkapjuk, hogy az ${\mathbf{N
 \begin{equation}
 {\mathbf{N}_k} = \sum\limits_i {{{\mathbf{r}}_i} \times {m_i}{{\mathbf{v}}_i}} 
 \end{equation}
-egyenlet definiál, csak külső forgatónyomaték hatására tud megváltozni. Sajnos azonban a konkrét értéke függ attól, hogy mi a $K$ vonatkoztatási rendszerünk. Míg a lendület (impulzus) nem változik akkor, ha egy egy vonatkoztatási rendszerről (VR) átülünk egy hozzá képest álló VR-be, az impulzusmomentumra ez nem igaz. Nézzük csak meg! Írjuk fel az impulzusmomentumot a ${{\mathbf{r}}_0}$-ban lévő és ${{\mathbf{v}}_0}$-lal haladó vonatkoztatási rendszerhez képest, ahol ${{\mathbf{r}}_i} = {{\mathbf{r}}_0} + {{\mathbf{\rho }}_i}$ és ekkor ${{\mathbf{v}}_i} = {{\mathbf{v}}_0} + {{\mathbf{\dot \rho }}_i}$!
+egyenlet definiál, csak külső forgatónyomaték hatására tud megváltozni. Sajnos azonban a konkrét értéke függ attól, hogy mi a $K$ vonatkoztatási rendszerünk. Míg a lendület (impulzus) nem változik akkor, ha egy egy vonatkoztatási rendszerről (VR) átülünk egy hozzá képest álló VR-be, az impulzusmomentumra ez nem igaz. Nézzük csak meg! Írjuk fel az impulzusmomentumot a ${{\mathbf{r}}_0}$-ban lévő és ${{\mathbf{v}}_0}$-lal haladó vonatkoztatási rendszerhez képest, ahol ${{\mathbf{r}}_i} = {{\mathbf{r}}_0} + {{\mathbf{\varrho }}_i}$ és ekkor ${{\mathbf{v}}_i} = {{\mathbf{v}}_0} + {{\mathbf{\dot \varrho }}_i}$!
 
-\[{{\mathbf{N}}_{K\left( {K'} \right)}} = \sum\limits_i {{m_i}\left( {{{\mathbf{r}}_0} \times {{\mathbf{v}}_0}} \right)}  + {{\mathbf{r}}_0} \times \left( {\frac{d}{{dt}}\sum\limits_i {{m_i}{{\mathbf{\rho }}_i}} } \right) + \left( {\sum\limits_i {{m_i}{{\mathbf{\rho }}_i}} } \right) \times {{\mathbf{v}}_0} + \sum\limits_i {{m_i}\left( {{{\mathbf{\rho }}_i} \times {{{\mathbf{\dot \rho }}}_i}} \right)} \]
+\[{{\mathbf{N}}_{K\left( {K'} \right)}} = \sum\limits_i {{m_i}\left( {{{\mathbf{r}}_0} \times {{\mathbf{v}}_0}} \right)}  + {{\mathbf{r}}_0} \times \left( {\frac{d}{{dt}}\sum\limits_i {{m_i}{{\mathbf{\varrho }}_i}} } \right) + \left( {\sum\limits_i {{m_i}{{\mathbf{\varrho }}_i}} } \right) \times {{\mathbf{v}}_0} + \sum\limits_i {{m_i}\left( {{{\mathbf{\varrho }}_i} \times {{{\mathbf{\dot \varrho }}}_i}} \right)} \]
 
-Tehát a vonatkoztatási rendszer változtatással egy összetett függvényt kapunk. Egyszerűsíti a helyzetet, ha ügyesen választjuk meg az új vonatkoztatási rendszert, és kinullázuk a középső két tagot. Ezt azzal tehetjük meg, ha az új vonatkoztatási rendszernek a TKP-ot választjuk, mert a ${\sum\limits_i {{m_i}{{\mathbf{\rho }}_i}} }$ tag éppen a TKP helyzete a TKP-i rendszerből nézve, ami 0. A másik tag pedig ennek időderiváltja, ami szintén 0. Amit kapunk:
-\[{{\mathbf{N}}_{K\left( {TKP} \right)}} = M \cdot \left( {{{\mathbf{r}}_0} \times {{\mathbf{v}}_0}} \right) + \sum\limits_i {{m_i}\left( {{{\mathbf{\rho }}_i} \times {{{\mathbf{\dot \rho }}}_i}} \right)}, \]
+Tehát a vonatkoztatási rendszer változtatással egy összetett függvényt kapunk. Egyszerűsíti a helyzetet, ha ügyesen választjuk meg az új vonatkoztatási rendszert, és kinullázuk a középső két tagot. Ezt azzal tehetjük meg, ha az új vonatkoztatási rendszernek a TKP-ot választjuk, mert a ${\sum\limits_i {{m_i}{{\mathbf{\varrho }}_i}} }$ tag éppen a TKP helyzete a TKP-i rendszerből nézve, ami 0. A másik tag pedig ennek időderiváltja, ami szintén 0. Amit kapunk:
+\[{{\mathbf{N}}_{K\left( {TKP} \right)}} = M \cdot \left( {{{\mathbf{r}}_0} \times {{\mathbf{v}}_0}} \right) + \sum\limits_i {{m_i}\left( {{{\mathbf{\varrho }}_i} \times {{{\mathbf{\dot \varrho }}}_i}} \right)}, \]
 amelyben a megjelenő $M$ a kis tömegegységek felösszegzése, azaz a teljes tömeg. Az első tag csak az eredeti koordinátarendszer választására jellemző érték, ami szintén 0, ha a ügyesen vettük fel. A második pedig csak a merev testünkre jellemző. Ezért ennek a neve saját impulzusmomentum. Ennek az értéke nem függ a vonatkoztatási rendszertől, hiszen éppen úgy definiáljuk, hogy ülünk át a TKP-i rendszerbe, és ami maradt, az a saját impulzusmomentum:
-\[{{\mathbf{N}}_S} = \sum\limits_i {{m_i}\left( {{{\mathbf{\rho }}_i} \times {{{\mathbf{\dot \rho }}}_i}} \right)} .\]
+\[{{\mathbf{N}}_S} = \sum\limits_i {{m_i}\left( {{{\mathbf{\varrho }}_i} \times {{{\mathbf{\dot \varrho }}}_i}} \right)} .\]
 
 \subsection{A tehetetlenségi nyomaték tenzor definíciója}
-Egy kiterjedt test általános mozgása a térben leírható úgy, mint egy (időfüggő) eltolás és forgatás transzformációja, ahol az új pont ${\mathbf{\rho }}'$ helyvektorát a kezdeti helyvektorból úgy kapjuk, hogy
-\[{\mathbf{\rho }}' = {{\mathbf{r}}_0} + {\mathbf{O\rho }},\]
+Egy kiterjedt test általános mozgása a térben leírható úgy, mint egy (időfüggő) eltolás és forgatás transzformációja, ahol az új pont ${\mathbf{\varrho }}'$ helyvektorát a kezdeti helyvektorból úgy kapjuk, hogy
+\[{\mathbf{\varrho }}' = {{\mathbf{r}}_0} + {\mathbf{O\varrho }},\]
 amelyben ${\mathbf{O}}$ egy ortogonális operátor. A helyvektor kis idő alatt megváltozására az igaz, hogy
-\[{\mathbf{\rho }}' = {{\mathbf{v}}_0} \cdot \Delta t + \left( {{\mathbf{I}} + \Delta {\mathbf{\varphi }} \times } \right){\mathbf{\rho }},\]
+\[{\mathbf{\varrho }}' = {{\mathbf{v}}_0} \cdot \Delta t + \left( {{\mathbf{I}} + \Delta {\mathbf{\varphi }} \times } \right){\mathbf{\varrho }},\]
 ahol az egységoperátor mellett megjelenő, szokatlan módon írt operátor, a ${\Delta {\mathbf{\varphi }} \times }$ egy olyan operátor, ami pont úgy viselkedik, mint egy vektorral való vektoriális szorzás. Kibontva a zárójelet:
 \[\begin{aligned}
-  {\mathbf{\rho }}' &  = {{\mathbf{v}}_0} \cdot \Delta t + {\mathbf{\rho }} + \Delta {\mathbf{\varphi }} \times {\mathbf{\rho }} \\ 
-  {\mathbf{\rho }}' - {\mathbf{\rho }} &  = {{\mathbf{v}}_0} \cdot \Delta t + \Delta {\mathbf{\varphi }} \times {\mathbf{\rho }} \\ 
-  {\mathbf{\dot \rho }} &  = {{\mathbf{v}}_0} + {\mathbf{\dot \varphi }} \times {\mathbf{\rho }} \\ 
-  {\mathbf{\dot \rho }} &  = {{\mathbf{v}}_0} + {\mathbf{\omega }} \times {\mathbf{\rho }}. \\ 
+  {\mathbf{\varrho }}' &  = {{\mathbf{v}}_0} \cdot \Delta t + {\mathbf{\varrho }} + \Delta {\mathbf{\varphi }} \times {\mathbf{\varrho }} \\ 
+  {\mathbf{\varrho }}' - {\mathbf{\varrho }} &  = {{\mathbf{v}}_0} \cdot \Delta t + \Delta {\mathbf{\varphi }} \times {\mathbf{\varrho }} \\ 
+  {\mathbf{\dot \varrho }} &  = {{\mathbf{v}}_0} + {\mathbf{\dot \varphi }} \times {\mathbf{\varrho }} \\ 
+  {\mathbf{\dot \varrho }} &  = {{\mathbf{v}}_0} + {\mathbf{\omega }} \times {\mathbf{\varrho }}. \\ 
 \end{aligned} \]
 
 Most üljünk át egy másik vonatkoztatási rendszerbe, amelyben ${{\mathbf{v}}_0} = 0$, tehát a mozgás leírható tisztán forgatással. Ez a pont nem feltétlen a TKP. Ekkor
-\[{\mathbf{N}} = \sum\limits_i {{m_i}\left( {{{\mathbf{\rho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)} \right)}  = \underbrace {\sum\limits_i {{m_i}\left( {{\mathbf{\rho }}_i^2{\mathbf{I}} - \left( {{{\mathbf{\rho }}_i} \circ {{\mathbf{\rho }}_i}} \right)} \right)} }_{\mathbf{\Theta }}{\mathbf{\omega }},\]
+\[{\mathbf{N}} = \sum\limits_i {{m_i}\left( {{{\mathbf{\varrho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)} \right)}  = \underbrace {\sum\limits_i {{m_i}\left( {{\mathbf{\varrho }}_i^2{\mathbf{I}} - \left( {{{\mathbf{\varrho }}_i} \circ {{\mathbf{\varrho }}_i}} \right)} \right)} }_{\mathbf{\Theta }}{\mathbf{\omega }},\]
 ahol bevezettük a tehetetlenségi nyomaték tenzort, amely
-\[{\mathbf{\Theta }} = \sum\limits_i {{m_i}\left( {{\mathbf{\rho }}_i^2{\mathbf{I}} - \left( {{{\mathbf{\rho }}_i} \circ {{\mathbf{\rho }}_i}} \right)} \right)}  = \sum\limits_i {{m_i}\left( {\begin{array}{*{20}{c}}
+\[{\mathbf{\Theta }} = \sum\limits_i {{m_i}\left( {{\mathbf{\varrho }}_i^2{\mathbf{I}} - \left( {{{\mathbf{\varrho }}_i} \circ {{\mathbf{\varrho }}_i}} \right)} \right)}  = \sum\limits_i {{m_i}\left( {\begin{array}{*{20}{c}}
   {y_i^2 + z_i^2}&{ - {x_i}{y_i}}&{ - {x_i}{z_i}} \\ 
   { - {x_i}{y_i}}&{x_i^2 + z_i^2}&{ - {y_i}{z_i}} \\ 
   { - {x_i}{z_i}}&{ - {y_i}{z_i}}&{x_i^2 + y_i^2} 
@@ -282,20 +282,20 @@ Látható, hogy ${\mathbf{\Theta }}$ teljesen szimmetrikus, így főtengelytrans
 
 \subsection{Kinetikus energia}
 \[\begin{aligned}
-  E =  & \sum\limits_i {\frac{1}{2}{m_i}{\mathbf{v}}_i^2} \quad {{\mathbf{v}}_i} = {{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\rho }}_i} \\ 
-  E =  & \sum\limits_i {\frac{1}{2}{m_i}\left( {{{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)\left( {{{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}  \\ 
-  E =  & \sum\limits_i {\frac{1}{2}{m_i}\left( {{\mathbf{v}}_0^2 + {{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right) + \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right) \cdot {{\mathbf{v}}_0} + {{\left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}^2}} \right)}  \\ 
-  E =  & \frac{1}{2}M{\mathbf{v}}_0^2 + \sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}  + \sum\limits_i {\frac{1}{2}{m_i}{{\left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}^2}}  \\ 
+  E =  & \sum\limits_i {\frac{1}{2}{m_i}{\mathbf{v}}_i^2} \quad {{\mathbf{v}}_i} = {{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\varrho }}_i} \\ 
+  E =  & \sum\limits_i {\frac{1}{2}{m_i}\left( {{{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)\left( {{{\mathbf{v}}_0} + {\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}  \\ 
+  E =  & \sum\limits_i {\frac{1}{2}{m_i}\left( {{\mathbf{v}}_0^2 + {{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right) + \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right) \cdot {{\mathbf{v}}_0} + {{\left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}^2}} \right)}  \\ 
+  E =  & \frac{1}{2}M{\mathbf{v}}_0^2 + \sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}  + \sum\limits_i {\frac{1}{2}{m_i}{{\left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}^2}}  \\ 
 \end{aligned} \]
 
 Az utolsó tag ismerős alakú lesz, ha mint vegyes szorzat tekintünk rá:
 \[\begin{aligned}
-  \sum\limits_i {{m_i}\underbrace {{{\left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}^2}}_{\left( {{\mathbf{a}} \times {\mathbf{b}}} \right) \cdot {\mathbf{c}}}}  =  & \frac{1}{2}\sum\limits_i {{m_i}} \left[ {{{\mathbf{\rho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)} \right] \cdot {\mathbf{\omega }} \\ 
-   =  & \frac{1}{2}\sum\limits_i {{m_i}} \left[ {{{\mathbf{\rho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)} \right] \cdot {\mathbf{\omega }} \\ 
+  \sum\limits_i {{m_i}\underbrace {{{\left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}^2}}_{\left( {{\mathbf{a}} \times {\mathbf{b}}} \right) \cdot {\mathbf{c}}}}  =  & \frac{1}{2}\sum\limits_i {{m_i}} \left[ {{{\mathbf{\varrho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)} \right] \cdot {\mathbf{\omega }} \\ 
+   =  & \frac{1}{2}\sum\limits_i {{m_i}} \left[ {{{\mathbf{\varrho }}_i} \times \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)} \right] \cdot {\mathbf{\omega }} \\ 
    =  & \frac{1}{2}\left( {{\mathbf{\Theta \omega }}} \right) \cdot {\mathbf{\omega }} = \frac{1}{2}{{\mathbf{\omega }}^T}{\mathbf{\Theta \omega }} \\ 
 \end{aligned},\]
 így a teljes energia egy tetszőleges vonatkoztatási rendszerből nézve:
-\[E = \frac{1}{2}M{\mathbf{v}}_0^2 + \sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}  + \frac{1}{2}{{\mathbf{\omega }}^T}{\mathbf{\Theta \omega }}.\]
+\[E = \frac{1}{2}M{\mathbf{v}}_0^2 + \sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}  + \frac{1}{2}{{\mathbf{\omega }}^T}{\mathbf{\Theta \omega }}.\]
 
 Ebből még nem látható, hogy a sebesség felbontása haladó és forgómozgás összegére miért előnyös.
 \subsubsection{Pillanatnyi forgástengely}
@@ -308,7 +308,7 @@ Ezt a pontot nem mindig könnyű megtalálni és kifejezni a helyvektorokat onna
 
 \subsubsection{TKP-i rendszer}
 Ha ${{\mathbf{v}}_0}$ értékének a TKP sebességét vesszük, és a kezdeti helyvektorokat a TKP-hoz képest adtuk meg, akkor ismét a középső tag lesz 0, de most azért, mert
-\[\sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\rho }}_i}} \right)}  = {{\mathbf{v}}_0} \cdot \left[ {{\mathbf{\omega }} \times \underbrace {\left( {\sum\limits_i {{m_i}{{\mathbf{\rho }}_i}} } \right)}_0} \right] = 0.\]
+\[\sum\limits_i {{m_i}{{\mathbf{v}}_0} \cdot \left( {{\mathbf{\omega }} \times {{\mathbf{\varrho }}_i}} \right)}  = {{\mathbf{v}}_0} \cdot \left[ {{\mathbf{\omega }} \times \underbrace {\left( {\sum\limits_i {{m_i}{{\mathbf{\varrho }}_i}} } \right)}_0} \right] = 0.\]
 
 Ekkor a teljes kinetikus energia
 \[E = \frac{1}{2}Mv_0^2 + \frac{1}{2}{{\mathbf{\omega }}^T}{\mathbf{\Theta \omega }},\]
@@ -377,7 +377,7 @@ A rúd elég vékony, a hossztengelye mentén egy szakasszal modellezhető ebben
   \frac{{\Delta l}}{l}E =  & \frac{F}{A} \\ 
   \varepsilon E =  & \sigma  \\ 
 \end{aligned}  \right.\]
-Előadáson szerepelt, hogy az anyagok Young-modulusza nagyságrendileg $E = 100{\text{ GPa}}$. Mennyivel lesz hosszabb egy $1{\text{ m}}$ hosszúságú, $1{\text{ mm}}$ átmérőjű bronz drót, amire földi körülmények között $1{\text{ kg}}$-nyi súlyt akasztunk, ha a Young-modulusza éppen $100{\text{ GPa}}$ és sűrűsége $\rho  = 8 \cdot {10^3}{\text{ kg/}}{{\text{m}}^{\text{3}}}$? Mekkora ekkor a relatív megnyúlása? Mekkora ekkor a drótban a feszültség? 
+Előadáson szerepelt, hogy az anyagok Young-modulusza nagyságrendileg $E = 100{\text{ GPa}}$. Mennyivel lesz hosszabb egy $1{\text{ m}}$ hosszúságú, $1{\text{ mm}}$ átmérőjű bronz drót, amire földi körülmények között $1{\text{ kg}}$-nyi súlyt akasztunk, ha a Young-modulusza éppen $100{\text{ GPa}}$ és sűrűsége $\varrho  = 8 \cdot {10^3}{\text{ kg/}}{{\text{m}}^{\text{3}}}$? Mekkora ekkor a relatív megnyúlása? Mekkora ekkor a drótban a feszültség? 
 
 Ha a bronz drótot saját súlyánál fogva lógatjuk fel, milyen hosszú és vastag drótot kell venni, hogy a relatív megnyúlása valahol már elérje az 1 ezreléket? Hol lesz ez a pont? Mekkora lesz ekkor a belső feszültség abban a pontban?
 
@@ -390,8 +390,8 @@ A drót vastagsága állandó, ezért $\sigma $ magasságfüggése csak az erő 
 
 \[\begin{aligned}
   0{,}001 = \varepsilon  = \frac{1}{E}\sigma  =  & \frac{1}{E}\frac{F}{A} \\ 
-   =  & \frac{1}{E}\frac{{\overbrace {\overbrace {A \cdot l}^V \rho }^m \cdot g}}{A} \\ 
-   =  & \frac{1}{E}\rho  \cdot l \cdot g \Rightarrow l = \frac{{\varepsilon E}}{{\rho g}} = \frac{{0,001 \cdot 100{\text{ GPa}}}}{{8 \cdot {{10}^3}{\text{ kg}}/{{\text{m}}^3} \cdot 10{\text{ m}}/{{\text{s}}^2}}} = 1{,}2{\text{ km.}} \\ 
+   =  & \frac{1}{E}\frac{{\overbrace {\overbrace {A \cdot l}^V \varrho }^m \cdot g}}{A} \\ 
+   =  & \frac{1}{E}\varrho  \cdot l \cdot g \Rightarrow l = \frac{{\varepsilon E}}{{\varrho g}} = \frac{{0,001 \cdot 100{\text{ GPa}}}}{{8 \cdot {{10}^3}{\text{ kg}}/{{\text{m}}^3} \cdot 10{\text{ m}}/{{\text{s}}^2}}} = 1{,}2{\text{ km.}} \\ 
 \end{aligned} \]
 
 \subsection{Disztorzió és deformációs gradiens}
@@ -1582,17 +1582,17 @@ amelyek közül a felületi erő arányos a kicsi felületi elemmel,
 a térfogati erő pedig a térfogat nagyságával,
 \[d{{\mathbf{F}}_t} \sim dV \Leftrightarrow d{{\mathbf{F}}_f} = {\mathbf{f}}\left( {\mathbf{r}} \right)dV \Rightarrow \int_V {d{{\mathbf{F}}_t}}  = \int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV},\]
 így \az{\eqref{eq:newton}}.\ egyenletet \az{\eqref{eq:erok_csop}}.\ egyenlet segítségével így írhatjuk:
-\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} ,\]
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} ,\]
 amelyben ${\mathbf{\ddot u\left({\mathbf{r}}\right)}}$ az elmozdulás-vektor második időderiváltja. Ez Gauss-Ostrogradsky-féle divergencia tétel segítségével
-\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} .\]
+\[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} .\]
 Mivel ez igaz minden térfogategységre, az integrálást elhagyhatjuk, és az összefüggés igaz magára az argumentumokra is,
 \begin{equation}
-{\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \rho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}.
+{\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}.
 \end{equation}
 
 \footnotesize
 \paragraph{Példa}
-\Aref{fig:kocka_atloval}.\ ábrán látható, konstans $\rho$ sűrűségű rugalmas kocka egyensúlyi állapotában a feszültségtenzor alakja 
+\Aref{fig:kocka_atloval}.\ ábrán látható, konstans $\varrho$ sűrűségű rugalmas kocka egyensúlyi állapotában a feszültségtenzor alakja 
 \[{\mathbf{\sigma }}\left( {\mathbf{r}} \right) = c \left( {\begin{array}{*{20}{c}}
   {{x}}&0&0 \\ 
   0&{{y}}&0 \\ 
@@ -1616,7 +1616,7 @@ A kocka minden pontjában a sűrűséggel arányos, a térben nem feltétlen hom
 \begin{enumerate}
 \item 
 Az egyensúly feltétele, hogy minden pontban az erők eredője 0. A kocka belsejében ez azt jelenti, hogy
-\[\nabla {\mathbf{\sigma }} + \rho {\mathbf{g}} = 0.\]
+\[\nabla {\mathbf{\sigma }} + \varrho {\mathbf{g}} = 0.\]
 Kiírva a feszültségtenzor divergenciájának a definícióját kapjuk, hogy
 \[\nabla {\mathbf{\sigma }} = \left( {\begin{array}{*{20}{c}}
   {{\partial _x}}&{{\partial _y}}&{{\partial _z}} 
@@ -1628,10 +1628,10 @@ Kiírva a feszültségtenzor divergenciájának a definícióját kapjuk, hogy
   1&1&1 
 \end{array}} \right).\]
 Visszahelyettesítve az előző egyenletbe:
-\[{\mathbf{g}} =  - c \cdot /\rho  \cdot \left( {\begin{array}{*{20}{c}}
+\[{\mathbf{g}} =  - c \cdot /\varrho  \cdot \left( {\begin{array}{*{20}{c}}
   1&1&1 
 \end{array}} \right).\] 
-Ez egy konstans, $F$-ből $D$-felé mutató tömegerő, nagysága $g =  - c/\rho  \cdot \sqrt 3 $.
+Ez egy konstans, $F$-ből $D$-felé mutató tömegerő, nagysága $g =  - c/\varrho  \cdot \sqrt 3 $.
 \item A kocka oldallapjaira ható erő a feszültségtenzorból számolható.
 \begin{enumerate}
 \item Az $ABFE$ oldallap normálisa ${{\mathbf{n}}_{ABFE}} = \left( {1,0,0} \right)$, a felületi erősűrűség 
@@ -1799,19 +1799,19 @@ Mekkora a gumicsónak össztömege? Mekkora a súlya? Mennyivel kisebb tömegű 
 
 \paragraph{Megoldás}
 A csónak tömege a belefújt levegőével növekszik. A csónakon belüli és kívüli hőmérséklet azonos, így
-\[pV = nRT = \frac{m}{M}RT \Rightarrow \frac{p}{\rho } = {\text{állandó}}.\]
+\[pV = nRT = \frac{m}{M}RT \Rightarrow \frac{p}{\varrho } = {\text{állandó}}.\]
 Így a csónakon belüli sűrűség a benti és kinti nyomások arányával egyezik meg,
-\[{\rho _{{\text{bent}}}} = {\rho _{{\text{kint}}}} \cdot \frac{{110}}{{100}}.\]
+\[{\varrho _{{\text{bent}}}} = {\varrho _{{\text{kint}}}} \cdot \frac{{110}}{{100}}.\]
 A felfújt csónak teljes tömege így
-\[{m_{{\text{teljes}}}} = {m_\text{csónak}} + {m_\text{levegő}} = \left( {10 + \underbrace {1{,}2 \cdot \frac{{110}}{{100}}}_{{\rho _{{\text{bent}}}}} \cdot \underbrace {0{,}7}_V} \right){\text{ kg}} = 10{,}924{\text{ kg}}.\]
+\[{m_{{\text{teljes}}}} = {m_\text{csónak}} + {m_\text{levegő}} = \left( {10 + \underbrace {1{,}2 \cdot \frac{{110}}{{100}}}_{{\varrho _{{\text{bent}}}}} \cdot \underbrace {0{,}7}_V} \right){\text{ kg}} = 10{,}924{\text{ kg}}.\]
 A csónak tömege tehát majdnem $9\%$-kal növekedett. A csónak súlya a kiszorított $0{,}7\text{ m}^3$ levegő súlyával csökken ahhoz képest, mintha nem lenne légkör,
-\[F = {m_\text{teljes}} \cdot g - V \cdot {\rho _\text{levegő}}g = \left( {{m_\text{teljes}} - V \cdot {\rho _\text{levegő}}} \right)g \approx \left( {10{,}924 - 0{,}7 \cdot 1{,}2} \right)10{\text{ N}} = 100{,}84{\text{ N}}.\]
+\[F = {m_\text{teljes}} \cdot g - V \cdot {\varrho _\text{levegő}}g = \left( {{m_\text{teljes}} - V \cdot {\varrho _\text{levegő}}} \right)g \approx \left( {10{,}924 - 0{,}7 \cdot 1{,}2} \right)10{\text{ N}} = 100{,}84{\text{ N}}.\]
 Ez csak közel $1\%$-kal nagyobb, mint a csónak eredeti súlya. A súly növekedését kifejezhetjük a többletnyomásból származó többletsúllyal is,
 \[F = m_\text{csónak}g + 1{,}2 \cdot \frac{{10}}{{100}}0{,}7 \cdot 10{\text{ N}} = \left( {100 + 0{,}84} \right){\text{ N}} = 100{,}84{\text{ N}}.\]
 A csónakot annyival érezzük könnyebnek a tömege alapján indokolt súlynál, mint amennyi a légkörből kiszorított levegő súlyának megfelelő tömeg,
-\[\Delta m = V \cdot {\rho _\text{levegő}} = {\text{0{,}84 kg}},\]
+\[\Delta m = V \cdot {\varrho _\text{levegő}} = {\text{0{,}84 kg}},\]
 vagyis ekkora tömegnek megfelelő súllyal érezzük a csónakot könnyebnek, ha a csónak tartásáról, azaz a súlyáról van szó. A gyorsításához továbbra is a teljes tömegét kell figyelembe venni. A csónakra ható felhajtóerő elméleti maximuma a kiszorított $0{,}7\text{ m}^3$ térfogatú víz súlya lehet,
-\[F = V \cdot \rho  \cdot g = 0,7 \cdot 1000 \cdot 10{\text{ N}} = 7000{\text{ N}}.\]
+\[F = V \cdot \varrho  \cdot g = 0,7 \cdot 1000 \cdot 10{\text{ N}} = 7000{\text{ N}}.\]
 Az ekkora súlyhoz tartozó tömeg $700\text{ kg}$, amelyből $10{,}924{\text{ kg}}$ a csónak saját, teljes tömege, így legfeljebb $\left( {700 - 10,924} \right){\text{ kg}} \approx 689{\text{ kg}}$ tömeget tud szállítani.
 
 \paragraph{Példa}
@@ -1826,7 +1826,7 @@ Egy érzékeny kétkarú mérleg egyik serpenyőjébe egy nagy, vízzel félig t
 Ahelyett, hogy a pohár -- víz alkotta rendszert vizsgáljuk, és a rá ható erők eredőjét nézzük, tekintsük csak a poharat és a rá ható erőket! A pohár egyensúlyban van, így a rá ható erők összege 0. Hat rá a nehézségi erő, a folyadék valamilyen átlagos ${\mathbf{\sigma }} =  - p{\mathbf{ I}}$ nyomásából származó, valamilyen $A$ effektív felületen kifejtett erőből, illetve a mérleg serpenyője által kifejtett tartóerőből.
 \[F = mg + A \cdot p + {F_{{\text{tart}}}},\]
 amelyben
-\[p = {\rho _{{\text{viz}}}}gh.\]
+\[p = {\varrho _{{\text{viz}}}}gh.\]
 Ha most bármilyen sűrűségű testet a vízbe lógatunk, akkor a vízszint megemelkedik, miközben adott minden $h$ mélységben a nyomás továbbra is a fenti képlet szerint számolható. Így a pohár alján a nyomás is megnövekedik, ezért nagyobb ellenerőt kell kifejtenie a mérleg karjának, tehát a vizes poharas serpenyőt jelzi nehezebbnek.
 
 Ugyanerre jutunk, ha a pohár vízzel + test egyensúlyát nézzük. Ekkor azt jó figyelni, hogy a rendszer egyensúlyához a rá ható nehézségi erő ellensúlyozására nemcsak a serpenyő tartóerőerje járul hozzá, hanem a mi általunk kifejtett tartóerő (ami mint felfüggesztés húzza a testet). Amikor a test nem lóg bele a vízbe, mi kifejtünk valamekkora erőt. Amikor már belelóg, akkor mi kisebbet fejtünk ki, mint korábban. (Ha a test lebegni tud a vizen, akkor az általunk kifejtett akár 0-ig is csökkenhet.) Tekintve, hogy a nehézségi erő ellen ható tartóerőnk csökken, az erők egyensúlya csak úgy valósulhat meg, ha a tálca nagyobb erőt fejt ki, vagyis a mutató ismét kitért, a poharas serpenyőt jelzi nehezebbnek.
@@ -1846,27 +1846,113 @@ Egy csonkakúp-alakú test a szimmetriatengelyével függőlegesen úgy úszik e
 
 Egy másik vélemény szerint nem, mert \ldots
 \item Számoljuk ki a sűrűségét az alapján, hogy negyedig merül el a higanyban. Ez biztos hasznos lesz.
-\[F = 0 = \underbrace {g{\rho _{Hg}}\frac{{{V_{{\text{csk}}}}}}{4}}_{{\text{felhatjóerő}}} - \underbrace {g{\rho _{{\text{csk}}}}{V_{{\text{csk}}}}}_{{\text{súlyerő}}} \Rightarrow {\rho _{{\text{csk}}}} = \frac{{{\rho _{Hg}}}}{4}\]
+\[F = 0 = \underbrace {g{\varrho _{Hg}}\frac{{{V_{{\text{csk}}}}}}{4}}_{{\text{felhatjóerő}}} - \underbrace {g{\varrho _{{\text{csk}}}}{V_{{\text{csk}}}}}_{{\text{súlyerő}}} \Rightarrow {\varrho _{{\text{csk}}}} = \frac{{{\varrho _{Hg}}}}{4}\]
 Miután vizet töltünk rá, higany és víz veszi körül (nem keverednek), de csak valamilyen mértében van egyikben, és másikban elmerülve: legyen $\alpha$ mértékben elmerülve a higanyban! Amit tudunk még, hogy a kiszorított térfogatok összege $V$, és a rá ható erők eredője.
-\[F = 0 = \underbrace {g{\rho _{Hg}}\cdot{V_{{\text{csk}}}} \alpha }_{Hg{\text{ felhajtóerő}}} + \underbrace {g{\rho _{{\text{víz}}}}\cdot{V_{{\text{csk}}}} \left( {1 - \alpha } \right)}_{{\text{víz felhajtóerő}}} - \underbrace {g\frac{{{\rho _{Hg}}}}{4}{V_{{\text{csk}}}}}_{{\text{súlyerő}}}\]
+\[F = 0 = \underbrace {g{\varrho _{Hg}}\cdot{V_{{\text{csk}}}} \alpha }_{Hg{\text{ felhajtóerő}}} + \underbrace {g{\varrho _{{\text{víz}}}}\cdot{V_{{\text{csk}}}} \left( {1 - \alpha } \right)}_{{\text{víz felhajtóerő}}} - \underbrace {g\frac{{{\varrho _{Hg}}}}{4}{V_{{\text{csk}}}}}_{{\text{súlyerő}}}\]
 Ez egy egyenlet $\alpha$-ra, más ismeretlen nincs benne.
 
 \[\begin{gathered}
-  {\rho _{Hg}} \cdot \alpha  + {\rho _{{\text{viz}}}} - {\rho _{{\text{viz}}}}\alpha  - {\rho _{Hg}}/4 = 0 \hfill \\
-  \alpha  = \frac{{{\rho _{Hg}}/4 - {\rho _{{\text{viz}}}}}}{{{\rho _{Hg}} - {\rho _{{\text{viz}}}}}} \approx \frac{{14/4 - 1}}{{14 - 1}} \approx 0,2 \hfill \\ 
+  {\varrho _{Hg}} \cdot \alpha  + {\varrho _{{\text{viz}}}} - {\varrho _{{\text{viz}}}}\alpha  - {\varrho _{Hg}}/4 = 0 \hfill \\
+  \alpha  = \frac{{{\varrho _{Hg}}/4 - {\varrho _{{\text{viz}}}}}}{{{\varrho _{Hg}} - {\varrho _{{\text{viz}}}}}} \approx \frac{{14/4 - 1}}{{14 - 1}} \approx 0,2 \hfill \\ 
 \end{gathered} \]
 \end{enumerate}
+
+\paragraph{Példa}
+Egy üvegkádra kerekeket szerelünk, vizet töltünk bele, egy lejtőre tesszük, és miután a lejtés irányába beirányítjuk, elengedjük.
+\begin{itemize}
+\item  Egyensúlyban mekkora szöget zár be a kádban a víz felszíne a kád oldalával, ha a lejtő nyílásszöge $\alpha$ és a súrlódástól eltekintünk?
+\item A kád fenekén hol mekkora a víztől származó nyomás, ha a kád vízszintes helyzetében a víz a kád oldalán $l$ magasságig ért?
+\end{itemize}
+
+\paragraph{Megoldás}
+A jelenség leírási egyszerű a káddal együtt mozgó koordináta-rendszerben. Ebben a rendszerben a kád és a vele együtt a folyadék is nyugalomban van. A folyadék felszíne a folyadékrészekre ható erők eredőjére merőleges, ugyanis az ekvipotenciális felületeken az adott pontban ható erő a felületre mindig merőleges. Gyorsuló rendszerben történő leírásnál a tényleges erőkön felül a tehetetlenségi erőket is figyelembe kell venni. A jelenséget úgy írjuk le, hogy az $m$ tömegű folyadékrészre a függőleges irányú $mg$ nehézségi erőn felül a lejtővel párhuzamos és az emelkedés felé mutató, $ma$ nagyságú tehetetlenségi erő is hat, amelyben a gyorsulást a nehézségi erő lejtő irányú komponense adja.
+
+\begin{figure}[htb] 
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\includegraphics[scale=1]{figs/uvegkad_a.eps}
+\caption{A lejtőn guruló üvegkád ${\mathbf{a}}$ gyorsulásának a nagysága $a = g \cdot \sin \left( \alpha \right)$, amit az álló vonatkoztatási rendszerből írhatunk fel, mint a nehézségi gyorsulás lejtő irányú vetülete. Inerciarendszerben nem hatnak tehetetlenségi erők.}
+\end{subfigure}
+\begin{subfigure}[b]{0.45\textwidth}
+\centering
+\includegraphics[scale=1]{figs/uvegkad_b.eps}
+\caption{A gyorsuló rendszerben ható erők (fekete), illetve a nehézségi erő felbontása (piros). A nehézségi erő lejtő irányú komponensét a tehetetlenségi erő kioltja, csak a nehézségi erő lejtőre merőleges komponense marad.}
+\end{subfigure}
+\label{fig:uvegkad}
+\end{figure}
+\FloatBarrier
+
+\begin{itemize}
+\item Felbontva a nehézségi erőt lejtő irányú, és arra merőleges komponensre, a lejtő irányú komponenst a tehetetlenségi erő épp kioltja. Tehát az eredő erő a gyorsuló vonatkoztatási rendszerben lejtőre merőleges irányú. A gravitációs és tehetetlenségi erőkhöz tartozó ekvipotenciálos felületek tehát a lejtővel párhuzamosak, így a folyadék felszíne is párhuzamos a lejtővel. 
+\item Egy kis $m$ tömegű folyadékrészre összesen a lejtőre merőleges irányú és $mg \cdot \cos \left( \alpha  \right)$ nagyságú erő hat. Ebből következően a nyomás az edény fenekén mindenhol állandó nagyságú és értéke $mgl \cdot \cos \left( \alpha  \right)$, vagyis $\cos \left( \alpha  \right)$ szorosa annak, mintha a kád nyugalomban állna egy vízszintes talajon.
+\end{itemize}
+
+\paragraph{Példa}
+Függőleges falú, vízzel töltött medencében kővel terhelt csónak úszik a vízen. Változik-e a medencében a víz szintjének a magassága, ha a köveket a csónakból a vízbe dobjuk?
+
+\paragraph{Megoldás}
+Legyen a medence aljának területe $A$, a vízszint magassága (mikor a terhelt csónak úszik rajta) $h_1$, a kövek vízbedobása után pedig $h_2$! Legyen az üres csónak súlya $G_1$, a köveké pedig $G$! A terhelt csónak által kiszorított víz térfogata $V_1$, az üres csónak által kiszorított víz térfogata $V_1$, a medencében lévő víz térfogata pedig $V$! Ekkor
+A kővel terhelt és nem terhelt csónak is úszik a víz felszínén, ezért
+\[{G_1} + G = {\varrho _{\text{víz}}}{V_1}g,\]
+illetve
+\[G = {\varrho _{\text{víz}}}{V_2}g.\]
+Ebből
+\[{V_1} - {V_2} = \frac{G}{{g{\varrho _{\text{víz}}}}} = \frac{{{\varrho _{\text{kő}}}{V_{\text{kő}}}}}{{{\varrho _{\text{víz}}}}}.\]
+A medence aljától a víz felszínéig tartó részének a térfogatára (ha a kő elsüllyed a vízben):
+\[\begin{aligned}
+  A{h_1} =  & V + {V_1}, \\ 
+  A{h_2} =  & V + {V_{{\text{kő}}}} + {V_2}, \\ 
+\end{aligned} \]
+amelyből
+\[A\left( {{h_1} - {h_2}} \right) = {V_1} - {V_2} - {V_{{\text{kő}}}} = {V_{{\text{kő}}}}\left( {\frac{{{\varrho _{{\text{kő}}}}}}{{{\varrho _{{\text{víz}}}}}} - 1} \right),\]
+így a magasságkülönbségre adódik, hogy
+\[{h_1} - {h_2} = \frac{1}{A}{V_{{\text{kő}}}}\left( {\frac{{{\varrho _{{\text{kő}}}} - {\varrho _{{\text{víz}}}}}}{{{\varrho _{{\text{víz}}}}}}} \right).\]
+Ha tehát a kő sűrűsége nagyobb, mint a vízé, akkor $h_1 > h_2$, vagyis a víz magassága a kövek bedobálásával csökken. (Ha a kő sűrűsége kisebb, mint a vízé, akkor a kő úszna a vízfelszínen, és nem süllyedne el, amit feltettünk. Végigszámolva ezt az esetet azt kapnánk, hogy a vízszint nem változna.)
 \normalsize
+
 \section{Felületi feszültség}
 \footnotesize
 \paragraph{Példa}
 Mennyi munkára van szükség ahhoz, hogy egy $2\text{ mm}$ sugarú higanycseppet (felületi feszültség $0{,}52\text{ N}/\text{m}$) két egyforma méretű higanycseppé vágjuk szét?
 
+\paragraph{Megoldás}
+A nagy higanycsepp indexe legyen az 1-es, a két kicsihez tartozó a 2-es. A két esetben a térfogat megegyezik.
+\[\begin{aligned}
+  {V_1} &  = {V_2} \\ 
+  \frac{4}{3}r_1^3\pi  &  = 2 \cdot \frac{4}{3}r_2^3\pi  \Rightarrow {r_2} = {2^{ - \frac{1}{3}}}{r_1} \\ 
+\end{aligned} \]
+A felületek nem egyeznek meg, a növekedést akarjuk kiszámolni.
+\[\begin{gathered}
+  {A_1} = 4r_1^2\pi  \hfill \\
+  {A_2} = 2 \cdot 4r_2^2\pi  = 2 \cdot 4 \cdot {\left( {{2^{ - \frac{1}{3}}}} \right)^2}r_1^2\pi  = {2^{\frac{1}{3}}}{A_1} \Rightarrow \Delta A = \left( {{2^{\frac{1}{3}}} - 1} \right)4r_1^2\pi  \hfill \\ 
+\end{gathered} \]
+Az energia-változást ebből már kifejezhetjük.
+\[W = \Delta A \cdot \alpha  = \left( {{2^{\frac{1}{3}}} - 1} \right)4r_1^2\pi  \cdot \alpha  = \left( {{2^{\frac{1}{3}}} - 1} \right)4 \cdot {2^2} \cdot {10^{ - 6}}\pi  \cdot 0{,}52{\text{ J}} \approx {\text{6{,}8}} \cdot {\text{1}}{{\text{0}}^{ - 6}}{\text{ J}}\]
 \paragraph{Példa}
-A szappan-levegő felületi feszültsége $\alpha = 0{,}025\text{ N}/\text{m}$. Mennyivel nagyobb a nyomás egy $1\text{ mm}$-es szappanbuborékban, mint a körülötte lévő légköri levegőben? Mekkorára fújódna fel, ha a légköri nyomás megszűnne, de a buborék nem pukkadna ki?
+A szappan-levegő felületi feszültsége $\alpha = 0{,}025\text{ N}/\text{m}$. 
+\begin{enumerate}
+\item  Milyen méretű buborék esetén lenne a nyomás kétszerese a légköri nyomásnak? 
+\item Hány százalékkal nagyobb a nyomás egy $1\text{ mm}$ átmérőjű szappanbuborékban, mint a körülötte lévő légköri levegőben, ahol a nyomás $10^5\text{ Pa}$?
+\item Mekkorára fújódna fel a buborék, ha a légköri nyomás megszűnne, de a buborék nem pukkadna ki?
+\end{enumerate}
 
-\paragraph{Példa}
-Két, közel azonos méretű szappanbuborékot fújunk fel egy Y alakú csővel, majd a buborékok közötti levegő áramlását a felfújást követően is biztosítjuk. Tegyük fel, hogy az egyik buborékból a másikba történő áramlás sebessége elég lassú és arányos a buborékokban mérhető nyomáskülönbséggel. Írjuk fel a szappanbuborék átmérőjének időbeli változására a differenciálegyenletet! A paraméterek függvényében mennyi idő szükséges, hogy az $\left( {{d_{{\text{nagyobb}}}} - {d_{{\text{kisebb}}}}} \right)/{d_{{\text{nagyobb}}}} = 0{,}5\%$-nyi átmérőbeli különbség $5\%$-ra nőjön, és mennyi további idő szükséges, hogy az $5\%$ egészen $50\%$-ra nőjön?
+\paragraph{Megoldás}
+A görbületi nyomás formulája
+\[{p_g} = \alpha \left( {\frac{1}{R} + \frac{1}{R}} \right).\]
+\begin{enumerate}
+\item A görbületi nyomás szolgáltasson egy extra légköri nyomásnyit!
+\[R = \frac{{2\alpha }}{p_g} = 2 \cdot \frac{{0{,}025}}{{{{10}^5}}}{\text{m}} = 5 \cdot {10^{ - 7}}{\text{ m}} = 500{\text{ nm}}\]
+Ez a fény hullámhosszának nagyságrendjébe esik.
+\item A többletnyomás a képletbe való behelyettesítéssel:
+\[{p_g} = 0{,}025\frac{2}{{{{10}^{ - 3}}/2}}{\text{Pa}} = 100{\text{ Pa}}.\]
+Ez a légköri nyomás $0{,}1\%$-a.
+\item Bal oldalt a légköri nyomás mellett, jobb oldalt a légköri nyomás nélkül a buborékban lévő levegőre vonatkoztatott értékek, 
+\[\begin{aligned}
+  {p_1}{V_1} &  = {p_2}{V_2} \\ 
+  \left( {{p_0} + \frac{{2\alpha }}{R}} \right)\frac{4}{3}{R^3}\pi  &  = \frac{{2\alpha }}{{R'}} \cdot \frac{4}{3}R{'^3}\pi  \Rightarrow R' = \sqrt {\frac{{{p_0}R}}{{2\alpha }} + 1}  \cdot R. \\ 
+\end{aligned} \]
+Behelyettesítés után adódik, hogy $R' = 44{,}7{\text{ mm}}$.
+\end{enumerate}
 \normalsize
 \end{document}
 

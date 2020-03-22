@@ -192,13 +192,12 @@ Milyen transzformációkat takarnak az egyes deformációs gradiensek? Mekkora f
 Egy állandó $\rho$ sűrűségű oszlop felső lapja a felfüggesztéshez van rögzítve, alsó síklapjára egy $G$ súlyú test van rögzítve, keresztmetszete minden magasságban kör. Milyen alakú legyen, hogy a nyomás minden keresztmetszetében állandó legyen?
 
 \subsection{Csöves 1}
-Mekkora a másodrendű nyomatéka egy tömör hengernek a hossztengelyére merőleges keresztmetszetében? Hogyan aránylik ez egy azonos nagyságú keresztmetszettel rendelkező üreges csőéhez képest, ugyanolyan irányú keresztmetszetben, ha a cső sugara kétszerese a tömör hengernek?
+Mekkora a másodrendű nyomatéka egy tömör hengernek a hossztengelyére merőleges keresztmetszetében? Hogyan aránylik ez egy azonos nagyságú keresztmetszettel rendelkező üreges csőéhez képest, ugyanolyan irányú keresztmetszetben, ha a cső külső sugara kétszerese a tömör hengernek?
 
 \subsection{Húzódzkodó}
 2 db négyszögletes profilú, $3\text{ cm}$ oldalélű, $x$ anyagvastagságú hasáb tart egy húzódzkodó keresztrudat a faltól $50\text{ cm}$ távolságban. Mekkora a négyszögletes rudak anyagvastagsága, ha Gyurma Gyuri a maga $80\text{ kg}$-os testtömegével a keresztrúdra ráfüggeszkedvén annak lehajlása $5\text{ mm}$?
 
-\iffalse
-\section{Folyadékok I}
+\section{Hidrosztatika és felületi feszültség}
 \subsection{Parafa-rugó}
 Egy vízzel telt edénybe $d$ átmérőjű, $\rho$ sűrűségű ($\rho<\rho_{\text{víz}}$) parafagolyót helyezünk, majd az edény aljához kötjük egy $D$ rugóállandójú rugóval. Mekkora a rugó megnyúlása, ha a golyó teljes egészében a folyadékban van?
 
@@ -206,7 +205,18 @@ Egy vízzel telt edénybe $d$ átmérőjű, $\rho$ sűrűségű ($\rho<\rho_{\te
 \subsection{Lapát}
 Egy lapát sűrűségét szeretnénk meghatározni azáltal, hogy tudjuk, hogy egyik végénél fogva, a vízbe ferdén belelógatva épp a lapát hosszának felénél van a vízszint. Ehhez azt a modellt használjuk, hogy a lapát és a víz sűrűsége állandó, alakja \sout{kecses} vékony rúd, amelynek a vastagsága elhanyagolható, továbbá a lapátot tartó kezünk gömbcsuklóként, egyetlen pontban tartja a lapátot.
 
+\subsection{Türelem}
+Két, közel azonos méretű szappanbuborék gömböt fújunk fel egy Y alakú csővel, majd a buborékok közötti levegő áramlását a felfújást követően is biztosítjuk. Tegyük fel, hogy az egyik buborékból a másikba történő anyagáramlás sebessége elég lassú és arányos a buborékokban mérhető nyomás különbségével, ${\dot m_1} = \beta  \cdot \left( {{p_2} - {p_1}} \right)$, a $T$ hőmérséklet állandó, a cső térfogata elhanyagolható a buborékokéhoz képest, valamint tekintsük a levegőt ideális gáznak! 
 
+\begin{enumerate}
+\item Írjuk fel a szappanbuborék átmérőjének időbeli változására a differenciál- és algebrai egyenletet úgy, hogy csak a szappanbuborékok sugara maradjon meg, mint időfüggő mennyiség!
+\item Legyen az egyenlő sugarú esetben a buborékok (instabil) egyensúlyi sugara $R$! Mutassuk meg, hogy amennyiben $R_1 = R + \varepsilon_1$ és $R_2 = R - \varepsilon_2$, ahol $\varepsilon_1$ és $\varepsilon_2$ elég kicsi, akkor arányuk 1!
+\item Írjuk fel a differenciálegyenletet az instabil egyensúlyi helyzet körül, $\varepsilon$-ban elsőrendig közelítve! Oldjuk meg a differenciálegyenletet! Ezzel a közelítéssel számolva mennyivel több időt kell várni, amíg $\varepsilon/R$ megnő $1$-ről $2\%$-ra, ahhoz képest, mintha $2$-ről $3\%$-ra növekedne?
+\item Extra gondolkodó 1 (házi feladatokon kívül): Mekkora lesz a nyomás a felfújt szappanbuborékban és mekkora lesz a sugara, ha az instabil egyensúlyi helyzethez tartozó sugár $R$, és eltekintünk a görbületi nyomás járulékától a külső nyomáshoz képest? Mennyivel változik meg ehhez képest a felfújt szappanbuborékhoz tartozó sugár első rendben, ha nem hanyagoljuk el a görbületi nyomást a külső nyomáshoz képest?
+\item Extra gondolkodó 2 (házi feladatokon kívül): hogyan csökken 0-ra a kisebbik gömb sugara? Vizsgáljuk meg azt a határesetet, amikor az egyik gömb már majdnem teljesen fel van fújva, a másik pedig már nagyon kicsi!
+\end{enumerate}
+
+\iffalse
 \section{Folyadékok II}
 \subsection{BernoUlli}
 Egy szögletes, alul vízszintes, oldalt függőleges szárú, U alakú, két végén nyitott csőben folyadék van (lásd \aref{fig:ucsoves}.\ ábrát). A cső vastagsága elhanyagolható a hosszához képest. A csövet az U egyik szára tengelyében állandó $\omega$ szögsebességgel forgatjuk. A forgástengelyhez közelebbik vízszint helyzetét jelöli $A$, a forgástengelytől távolabbikat $B$. Hogyan viszonyul a vízszint különbsége az $A$ és $B$ pontok között az $\omega$ szögsebesség függvényében?
