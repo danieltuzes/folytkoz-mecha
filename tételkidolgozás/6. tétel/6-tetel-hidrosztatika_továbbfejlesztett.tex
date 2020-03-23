@@ -36,7 +36,7 @@
 
 Mindeddig szilárd anyagok deformációjával és változásával foglalkoztunk, azonban a való életben nagyon sokszor kerülünk kapcsolatba folyadékokkal és gázokkal is. Fontos tudni hogyan hat a folyó vize a híd pilléreire, vagy épp a hajó testére, de már az is érdekes lehet, hogy a lufi oldalát hogyan nyomja a benne levő gáz.
 
-A szilárd anyagokat jellemeztük az ott bevezetett ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulásvektor-mezővel. Ez a folyadékoknál már nem egy célszerű leírási mód, hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását. Jobban érdekel minket a következő két dolog. A ${\mathbf{v}}\left( {{\mathbf{r}},t} \right)$ sebességtér és a $\rho \left( {{\mathbf{r}},t} \right)$ sűrűségmező. Mostantól erre a két mennyiségre figyeljünk.
+A szilárd anyagokat jellemeztük az ott bevezetett ${\mathbf{u}}\left( {\mathbf{r}} \right)$ elmozdulásvektor-mezővel. Ez a folyadékoknál már nem egy célszerű leírási mód, hiszen folyadékok vagy gázok áramlásánál nem tudunk olyan hatékonyan egy kitüntetett pontot vizsgálni, amihez képest vizsgáljuk a pontok elmozdulását. Jobban érdekel minket a következő két mennyiség. A ${\mathbf{v}}\left( {{\mathbf{r}},t} \right)$ sebességtér és a $\rho \left( {{\mathbf{r}},t} \right)$ sűrűségmező -- illetve a speciális alakú feszültségtenzor-tér, amelyet ebben a fejezetben vezetünk be. Mostantól erre a két mennyiségre figyelünk az elmozdulástér helyett. A sztatika általánosságban arra utal, hogy nem változnak a mennyiségek az időben, a parciális időderiváltak 0-k. Ez itt is igaz lesz, mert a sebesség, nyomás és sűrűségterét vizsgáljuk a közegünknek, nem pedig az elmozdulását az egyes anyagi rész(ecské)knek.
 
 \section{Pascal-törvény}
 
@@ -50,7 +50,7 @@ Kísérleti úton megmutatható, hogy a felületre ható erő nagysága -- amit 
   0&0&p 
 \end{array}} \right) =  - p\hat I,
 \end{equation}
-ahol a $p$ egy skaláris mennyiség, a neve \textbf{nyomás}. Ez Pascal törvénye. A $p$ utalhatna Pascal nevére is, de nem arra vonatkozik, hanem az angol \textit{pressure} vagy latin \textit{pressura} szavakra utal. A törvény szavakkal kifejezve azt mondja, hogy egy folyadék vagy gáz által egy kicsiny felületre kifejtett erő párhuzamos a felület normálisával és arányos a felület nagyságával, továbbá nem függ a felület irányától. Ez az állítás sztatikában érvényes, amikor a folyadék vagy gáz sebességtere a konstans 0.
+ahol a $p$ egy skaláris mennyiség, a neve \textbf{nyomás}. Ez Pascal törvénye. A $p$ utalhatna Pascal nevére is, de nem arra vonatkozik, hanem az angol \textit{pressure} vagy latin \textit{pressura} szavakra utal. A törvény szavakkal kifejezve azt mondja, hogy stacionárius esetben egy folyadék vagy gáz által egy kicsiny felületre kifejtett erő párhuzamos a felület normálisával és arányos a felület nagyságával, továbbá nem függ a felület irányától. Ez az állítás sztatikában érvényes, amikor a folyadék vagy gáz sebességtere a konstans 0.
 
 Ebből az is látszik, hogy a folyadék vagy gáz által kifejtett erő stacionárius esetben nem tartalmazhat nyíró komponenst.
 
@@ -72,7 +72,7 @@ Kiírva a divergencia tagjait, majd felhasználva a gradiens definícióját, ${
 \begin{equation} \label{eq:stacionarius}
  - {\text{grad}}\left( p \right) + {\mathbf{f}} = 0
 \end{equation}
-Ha az erősűrűséget a gravitációs erőtér adja, akkor ${\mathbf{f}} = \rho {\mathbf{g}}$. Ismeretes, hogy ${\mathbf{g}}$ előáll egy potenciál gradienseként, mert a gravitációs erőtér konzervatív, így ${\mathbf{f}}\left( {\mathbf{r}} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)$. Ezt visszaírva \aref{eq:stacionarius}.\ egyenletbe kapjuk, hogy
+Ha az erősűrűséget a gravitációs erőtér adja, akkor ${\mathbf{f}} = \rho {\mathbf{g}}$. Ismeretes, hogy ${\mathbf{g}}$ előáll egy potenciál gradienseként, mert a gravitációs erőtér konzervatív, így ${\mathbf{f}}\left( {\mathbf{r}} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)$. Ezt visszaírva \aref{eq:stacionarius}.\ egyenletbe, kifejezhetjük ${\text{grad}}\left( p \right)$-t is:
 \begin{gather} \label{eq:stac_pot}
   {\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) + \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right) = 0 \hfill \\
    \Updownarrow  \hfill \nonumber \\
@@ -106,7 +106,7 @@ ahol $p_{0}$ a $h=0$-ban mért nyomás. Ebből következik, hogy az egyensúlyba
 \footnotesize
 \paragraph{Kérdés:} a víz alatt úszik egy könnyűbúvár, a feje felett pedig lassan áthalad egy vitorláshajó. Hogyan változik a búvár által érzett nyomás? Nagyobb-e, avagy kisebb-e akkor, amikor a feje fölött van ahhoz képest, amikor már messze jár a hajó?
 
-\paragraph{Storytime} Pascal megélhetési költségeit pályázati forrásokból finanszírozta. Ez akkor azt jelentette, hogy a gazdagoknál (pl.\ királyánál) kellett pénzt kérni valami akkoriban dologra (pl.\ aranyat csinálni), vagy látványos bemutató csinálni udvari bohóc szerepében. Pascal egy hordót robbantott fel néhány liter folyadék (bor) használatával, csupán egy vékony cső segítségével, amelyet magasra felemelt, és úgy töltötte bele a folyadékot. A hordóban a nyomás nagyon megnőhet, mert nem a csőben lévő folyadék mennyiségétől, hanem a magasságától függ, hogy mekkora a hordóban a nyomás.
+\paragraph{Storytime} Pascal megélhetési költségeit pályázati forrásokból finanszírozta. Ez akkor azt jelentette, hogy a gazdagoknál (pl.\ királyánál) kellett pénzt kérni valami, akkoriban menőnek vagy hasznosnak gondolt dologra (pl.\ aranyat csinálni), vagy látványos bemutatót előadni udvari bohóc szerepében. (Ez ma sincs másképp, ha pályázati pénzre gondolunk.) Pascal egy hordót robbantott fel néhány liter folyadék (bor) használatával, csupán egy vékony cső segítségével. A vékony cső egyik végét beletette egy folyadékkal teli hordóba, a cső és hordó közötti rést tökéletesen betömítette, szigetelte, és a csövet függőlegesen tartva, több méter magasból lassan csorgatta a bort a csőbe. A hordóban a nyomás nagyon megnőhet, mert nem a csőben lévő folyadék mennyiségétől, hanem a magasságától függ, hogy mekkora benne a nyomás. Ha a cső elég magas volt, akkor a hordót szét is repeszthette a nagy nyomás.
 
 \paragraph{Demonstráció} Egy mérleg egyik serpenyőjében súlyok vannak, a másik pedig egy palacknak az alját képzi úgy, hogy egy fölé elhelyezett és a mérlegtől függetlenül rögzített palack-oldalfalhoz csak csekély súrlódással ér hozzá. Ilyen módon a palackba töltött víz a palack alján egy olyan lemezt nyom, amire a nyomóerőt a mérleg másik perselyében lévő súlyok egyensúlyozzák ki. A palack alja el tud mozdulni, amennyiben arra nagyobb erő hat, mint a persely másik oldalán, és az elmozduló palackalj miatt a palackból a víz kifolyik.
 

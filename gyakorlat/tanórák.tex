@@ -1791,6 +1791,18 @@ Vagyis kb.\ $25 {\text{ kg}}$-nyi súlyt akaszthatunk a fogas végére.
 \normalsize
 
 \section{Hidrosztatika}
+Olyan eseteket nézünk, ahol a közeg folyadék vagy gáz, és ezek sebesség-, nyomás- és sűrűségtere időben nem változik. Ekkor a feszültségtenzor csak az egységmátrixszal lehet arányos.
+
+A nyomás, sűrűség és erőpotenciál kapcsolatát a 
+\[{\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)\]
+összefüggés adja meg. Ha a sűrűség térben állandó és a potenciált az homogén gravitációs térből számoljuk, akkor a nyomás a mélységgel lineárisan nő és
+\[p = {p_0} + \rho gh.\]
+
+A felhajtóerő minden közegben lévő testre hat, és amennyiben a közeg a testet minden oldalról körülveszi, és ha a közeg sűrűsége a test méretének tartományában állandó, az értéke
+\[{{\mathbf{F}}_f} =  - {\rho _{{\text{közeg}}}}{\mathbf{g}}V.\]
+
+Ha a nyomás és a sűrűség egymással arányos (mint pl.\ ideális gázoknál), akkor homogén gravitációs térben a nyomás felfelé exponenciálisan csökken és
+\[\rho \left( z \right) = {\rho _0} \cdot {e^{\frac{{ - mgz}}{{{k_B}T}}}}.\]
 \footnotesize
 \paragraph{Példa}
 A Balaton partján felfújunk egy leeresztve $10 \text{ kg}$ tömegű gumicsónakot, aminek így a térfogata $0{,}7\text{ m}^3$ lesz (kezdeti térfogata elhanyagolható), benne a nyomás $110\text{ kPa}$, míg a légköri nyomás $100\text{ kPa}$. A levegő sűrűsége légköri nyomáson, a fújáskori hőmérsékleten $1{,}2\text{ kg}/\text{m}^3$ (a hőmérséklet a csónakon kívül és belül megegyezik).
@@ -1911,6 +1923,18 @@ Ha tehát a kő sűrűsége nagyobb, mint a vízé, akkor $h_1 > h_2$, vagyis a 
 \normalsize
 
 \section{Felületi feszültség}
+A felületi feszültség stacionárius fluidumokra (gázok és folyadékok) bevezetett fogalom, azonban kiterjeszthető szilárd anyagokra (amikben a feszültségtenzor nem az egységmátrixszal arányos, így nyírófeszültséget is tartalmazhatnak) és nemstacionárius esetekre is.
+
+Egy $l$ hosszúságú szakaszra a közeg határán
+\[F = 2\alpha  \cdot l\]
+nagyságú erő hat, és a felület csökkenésének irányába mutat.
+
+A felületi feszültség következményeként minden közeghatárhoz tartozik egy felületi energia, amely arányos a felület nagyságával és 
+\[E = \alpha A.\]
+
+Egy kellően kicsiny, $R_1$ és $R_2$ görbületi sugárral jellemzett konvex (nem nyeregponti) felület belső oldalán $p_g$ többletnyomás szükséges az egyensúlyhoz, ahol
+\[{p_g} = \alpha \left( {\frac{1}{{{R_1}}} + \frac{1}{{{R_2}}}} \right)\]
+a görbületi nyomás. Ha a felület gömbhéj, akkor $R_1 = R_2$.
 \footnotesize
 \paragraph{Példa}
 Mennyi munkára van szükség ahhoz, hogy egy $2\text{ mm}$ sugarú higanycseppet (felületi feszültség $0{,}52\text{ N}/\text{m}$) két egyforma méretű higanycseppé vágjuk szét?
