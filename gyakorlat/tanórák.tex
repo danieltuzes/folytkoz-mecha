@@ -32,7 +32,7 @@
 
 \begin{document}
 \title{Hőtan és folytonos közegek mechanikája\\(emelt szint)}
-\author{hotanef19va, gyakorlat,\\Anyagfizikai Tanszék, Tüzes Dániel}
+\author{hotanef19va, gyakorlati órák jegyzete\\Anyagfizikai Tanszék, Tüzes Dániel}
 \maketitle
 \tableofcontents
 \section*{Kötelező tájékoztatás az első órán}
@@ -1563,7 +1563,7 @@ Talán azért szokták először a nyújtás, majd a forgatást elvégezni, mert
 \normalsize
 
 
-\section{Rugalmas testek egyensúlya}
+\section{Folytonos közegek egyensúlya}
 Newton-tétele szerint egy pontszerű test gyorsulását a rá ható erők összessége adja meg. A tétel nagysága abban rejlik, hogy megadja, hogy az erők mitől függhetnek, több test esetén hogyan kezelendők, illetve hogyan összegezendők. A
 \begin{equation} \label{eq:newton}
 {\mathbf{F}} = m{\mathbf{a}}
@@ -1583,13 +1583,13 @@ a térfogati erő pedig a térfogat nagyságával,
 \[d{{\mathbf{F}}_t} \sim dV \Leftrightarrow d{{\mathbf{F}}_f} = {\mathbf{f}}\left( {\mathbf{r}} \right)dV \Rightarrow \int_V {d{{\mathbf{F}}_t}}  = \int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV},\]
 így \az{\eqref{eq:newton}}.\ egyenletet \az{\eqref{eq:erok_csop}}.\ egyenlet segítségével így írhatjuk:
 \[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_{\partial V} {\hat \sigma \left( {\mathbf{r}} \right)d{\mathbf{A}}}  = \int_V {\varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} ,\]
-amelyben ${\mathbf{\ddot u\left({\mathbf{r}}\right)}}$ az elmozdulás-vektor második időderiváltja. Ez Gauss-Ostrogradsky-féle divergencia tétel segítségével
+amelyben ${\mathbf{\ddot u\left({\mathbf{r}}\right)}}$ az elmozdulás-vektor második időderiváltja. Itt nem vezettük le, hogy a jobb oldal miért írható integrális alakban, azaz hogy miért lehet egyszerűen egy közös integrálba írni a sűrűséget az elmozdulástér második deriváltjával. Mindenesetre ez Gauss-Ostrogradsky-féle divergencia tétel segítségével
 \[\int_V {{\mathbf{f}}\left( {\mathbf{r}} \right)dV}  + \int_V {{\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right)dV}  = \int_V {\varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}dV} .\]
 Mivel ez igaz minden térfogategységre, az integrálást elhagyhatjuk, és az összefüggés igaz magára az argumentumokra is,
 \begin{equation}
 {\mathbf{f}}\left( {\mathbf{r}} \right) + {\text{div}}\left( {\hat \sigma \left( {\mathbf{r}} \right)} \right) = \varrho \left( {\mathbf{r}} \right){\mathbf{\ddot u\left({\mathbf{r}}\right)}}.
 \end{equation}
-
+Ha a folytonos közeg egyensúlyban van, a jobb oldal 0.
 \footnotesize
 \paragraph{Példa}
 \Aref{fig:kocka_atloval}.\ ábrán látható, konstans $\varrho$ sűrűségű rugalmas kocka egyensúlyi állapotában a feszültségtenzor alakja 
@@ -1791,7 +1791,7 @@ Vagyis kb.\ $25 {\text{ kg}}$-nyi súlyt akaszthatunk a fogas végére.
 \normalsize
 
 \section{Hidrosztatika}
-Olyan eseteket nézünk, ahol a közeg folyadék vagy gáz, és ezek sebesség-, nyomás- és sűrűségtere időben nem változik. Ekkor a feszültségtenzor csak az egységmátrixszal lehet arányos.
+Olyan eseteket nézünk, ahol a közeg folyadék vagy gáz, és a sebességtér konstans 0. Ekkor a feszültségtenzor csak az egységmátrixszal lehet arányos.
 
 A nyomás, sűrűség és erőpotenciál kapcsolatát a 
 \[{\text{grad}}\left( {p\left( {\mathbf{r}} \right)} \right) =  - \rho \left( {\mathbf{r}} \right) \cdot {\text{grad}}\left( {\phi \left( {\mathbf{r}} \right)} \right)\]
@@ -1923,7 +1923,7 @@ Ha tehát a kő sűrűsége nagyobb, mint a vízé, akkor $h_1 > h_2$, vagyis a 
 \normalsize
 
 \section{Felületi feszültség}
-A felületi feszültség stacionárius fluidumokra (gázok és folyadékok) bevezetett fogalom, azonban kiterjeszthető szilárd anyagokra (amikben a feszültségtenzor nem az egységmátrixszal arányos, így nyírófeszültséget is tartalmazhatnak) és nemstacionárius esetekre is.
+A felületi feszültség nyugvó gáz és folyadék, illetve szilárd anyagra bevezetett fogalom, ahol két különféle halmazállapotú anyag (akár azonos halmazállapotból véve) közötti határfelületet vizsgáljuk. Általában nem vizsgálunk szilárd anyag-szilárd anyag határfelületet, mert közöttük a feszültségtenzor nyíró komponenst is tartalmazhat, tehát azok az egységmátrixnak nem skalárszorosai, így esetükben nyomásról nem beszélhetünk.
 
 Egy $l$ hosszúságú szakaszra a közeg határán
 \[F = 2\alpha  \cdot l\]
