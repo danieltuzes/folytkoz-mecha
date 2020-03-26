@@ -947,7 +947,7 @@ A definíció értelmében a determináns mindig 1, így a térfogat (vagy $2D$-
 Egy egytengelyű, egyszerű nyírás felírható úgy, mint egy megfelelő tengelyek menti nyújtás (ami egy tiszta nyírás), majd egy forgatás egymásutánja. (Lásd: \ref{sec:polaris_dekomp}.)
 
 \paragraph{Tiszta nyírás} \label{sec:tiszta_nyiras}
-A tiszta nyírás olyan nyújtás, ahol a térfogatváltozás 0, és a deformációs gradiens szimmetrikus, tehát a megfelelő koordinátarendszerben a deformációs gradiens diagonális, és ${\lambda _1}{\lambda _2}{\lambda _3} = 1$. Egy tiszta nyírást szemléltet \az{\ref{fig:tiszta_nyiras}}.\ ábra. A deformációs gradiensre példa lehet a 
+A tiszta nyírás olyan nyújtás, ahol a térfogatváltozás 0, és a deformációs gradiens szimmetrikus, tehát a megfelelő koordinátarendszerben a deformációs gradiens diagonális, és ${\lambda _1}{\lambda _2}{\lambda _3} = 1$. A tiszta szó arra utal, hogy mentes a forgatástól a transzformáció, azaz ha egy nyújtás és forgatás egymásutánjaként akarjuk megadni a transzformációt, akkor a forgatás az egységoperátor lesz. Ha csak infinitezimális transzformációkat tekintünk, akkor egy szigorúbb definícióját is tekinthetjük a nyírásnak, miszerint tiszta nyírás azt jelenti, hogy a disztrozió az egyik, kétdeimenziós alterén csak offdiagonális és egyenlő értékeket tartalmaz, a másik, egydimenziós altéren az identitás (a megfelelő diagonális eleme az 1). Egy véges, tiszta nyírást szemléltet \az{\ref{fig:tiszta_nyiras}}.\ ábra. A deformációs gradiensre példa lehet a 
 \[{\mathbf{F}} = {{\mathbf{O}}_{z,45^\circ }}\left( {\begin{array}{*{20}{c}}
   {1,25}&0 \\ 
   0&{0,8} 
@@ -955,7 +955,17 @@ A tiszta nyírás olyan nyújtás, ahol a térfogatváltozás 0, és a deformác
   {1,025}&{0,225} \\ 
   {0,225}&{1,025} 
 \end{array}} \right),\]
-amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix, de leolvasható a $45^\circ$-os koordináták melletti értéke is. Egy egytengelyű, egyszerű nyírás csak egy forgatással együtt írható le tiszta nyújtással, ekkor viszont a nyújtás épp egy tiszta nyírás. (Lásd: \ref{sec:polaris_dekomp}.) A főátló értékei nem feltétlenül azonosak.
+amelyben ${\mathbf{F}}$ a rajzolt koordinátarendszerben meghatározott mátrix, de leolvasható a $45^\circ$-os koordináták melletti értéke is. Ha a transzformáció kicsi, akkor elsőrendű közelítésben
+\[{\mathbf{F}} = \left( {\begin{array}{*{20}{c}}
+  1&d \\ 
+  d&1 
+\end{array}} \right) \Rightarrow {{\mathbf{\beta }}^T} = \left( {\begin{array}{*{20}{c}}
+  0&d \\ 
+  d&0 
+\end{array}} \right),\]
+ahol $d$ a transzformáció paramétere, ami kicsi. Ekkor szigorúbb értelemben véve tiszta nyírásról van szó. Tiszta egyrészt azért, mert nincs benne forgatás, illetve tiszta a szigorú értelemben véve is, mert csak nyíró komponensek vannak benne. (A harmadik dimenzióban ${F_{33}} = 1 \Rightarrow {\beta _{33}} = 0$.)
+
+Egy egytengelyű, egyszerű nyírás csak egy forgatással együtt írható le tiszta nyújtással, ekkor viszont a nyújtás épp egy tiszta nyírás. (Lásd: \ref{sec:polaris_dekomp}.) A főátló értékei nem feltétlenül azonosak.
 
 \begin{figure}[htb] 
 \begin{subfigure}[b]{0.45\textwidth}
@@ -1013,9 +1023,6 @@ amelyet fel is rajzolhatunk:
 \end{figure}
 \FloatBarrier
 \normalsize
-
-\paragraph{Infinitezimális nyírás}
-Infinitezimális nyírások során a megfelelő koordinátarendszerben a ${\mathbf{\beta }}$ vagy ${\mathbf{F}}$ főátlón kívüli nem $0$ elem értékét vesszük infinitezimálisan kicsinek. Az egytengelyű, egyszerű nyírásnál az ${\mathbf{F}}$ főátlójában eleve $1$-esek voltak, tiszta nyírásnál pedig azért lesznek szintén $1$-esek, mert az $1$-hez képest másodrendben kicsi tagok jelennének csak meg, amit elhanyagolunk.
 
 \subsubsection{Homokóra nyújtás}
 Jobb kifejezés hiányában van ez a cím, lehetne még ferdítés. Ekkor a nyújtás mértéke lineárisan függ az egyik tengelytől, és arra merőleges. \Aref{fig:homokora_nyujtas_szamolos}.\ ábra egy ilyet szemléltet (a könnyebb ábrázolásért egy eltolással együtt), ahol a legkisebb $y$ értékű részét a térnek $0{,}75$ szorosára nyújtjuk, a legnagyobb $y$ értékű részt pedig $1{,}25$-szörösére nyújtottuk, a kettő között pedig lineáris az átmenet.
