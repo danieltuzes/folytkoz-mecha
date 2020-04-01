@@ -1,0 +1,835 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}	% ugye senki nem akar latin-2 karakterkódolást ma már?
+\usepackage[magyar]{babel}
+\usepackage{lmodern}
+
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\DeclareGraphicsExtensions{.pdf,.eps,.png,.jpg,.mps}
+
+\usepackage{graphicx}
+
+
+\usepackage{amsmath}
+%\usepackage{mathrsfs}	% ez meg minek kellett?
+% todo:
+%	hivatkozások elkészítése a magyar babel csomaggal
+%	felesleges egyenletszámozás törlése
+%	vektorok és operátorok következetes jelölése (ha lehet, vektort ne húzzuk alá gépelt jegyzetben, hanem legyen vastag)
+%	függvények dőltségének megszüntetése, pl sin, div, Sp (lehetne inkább Tr)
+%	mértékegységek és mérőszámok helyes írása: mérőszám, szóköz és mértékegység egyenes betűvel, $5\text{ m}$
+%	a tizedesjegy nem elválasztójel matematikában, $\pi \approx 3{,}14159$
+%	inline egyenletben frac helyett / jelölés előnyben részesítése
+
+\date{}
+\begin{document}
+
+\title{Folytonos közegek mechanikája}
+\author{Készítette: Seller Károly, 2015} %belepiszkált: Tüzes Dani
+\maketitle
+
+\section{tétel - Egyszerű deformációk, nyújtás, nyírás}
+Szilárd anyagok deformációjánál három meglehetősen különböző viselkedési formát figyelhetünk meg. Vegyünk egy acélrudat, erre $F$ erővel hatva a drót megnyúlik, a terhelés változtatásával látjuk, hogy ez a megnyúlás arányos a nyújtó erővel. Az húzóerő megszüntetésével a drót visszanyeri eredeti alakját, azt mondhatjuk tehát, hogy a folyamat reverzibilis. Különböző műanyagokat, például damilt nyújtva azt vehetjük észre, hogy a megnyúlás és az erő kapcsolata nem lineáris, azonban a folyamat még mindig reverzibilis. Irreverzibilis jelenséget mutat például a rézdrót. Ezt megnyújtva az erő-megnyúlás grafikon képe nem lineáris, sőt a terhelés levételével nem áll vissza az eredeti hossz, marad egy maradandó alakváltozás. Egy másik érdekes jelenség az alakítási keményedés. Egyes anyagok deformációval keményebbé tehetők. Ezeknek nyilvánvalóan nem lineáris az $F-\Delta l$ grafikonjuk. Ilyen anyag például az előbb említett réz is, ami azonban melegítéssel ismét puhává tehető.
+
+Egyszerű deformációk vizsgálatával azt kapjuk, hogy a $F$ nyújtó erő arányos a test keresztmetszetével, és a $\Delta l$ megnyúlása arányos a nyugalmi hosszal. Vezessünk be két új mértékegységet ezek felhasználásával.
+\begin{equation}
+\varepsilon=\frac{\Delta l}{l}
+\end{equation}
+\begin{equation}
+\sigma=\frac{F}{A}
+\end{equation}
+Az $\varepsilon$-t deformációnak, a $\sigma$-t feszültségnek nevezzük. Az előbbinek láthatóan nincs mértékegysége, míg az utóbbinak van: $\frac{N}{m^2}=Pa$. Látható, hogy az $F-\Delta l$ grafikon alakja megegyezik a $\sigma-\varepsilon$ grafikon alakjával.
+
+
+Egyszerű deformációknál láttuk, hogy a feszültség, és a deformáció egyenesen arányos egymással. Az arányossági tényezőt $E$-vel jelöljük, ez a Young-modulus. $\sigma=E\varepsilon$. Mértékegysége érthetően Pascal, értéke anyagfüggő, de nagyságrendileg a 100 GPa-os tartományba esik. Az a feszültségérték, ameddig reverzibilisen elmehetünk, 100 MPa körül van. Ebből az előbbi képlet szerint kifejezhető a deformáció. Azt kapjuk, hogy a $\varepsilon$ értéke aránylag kicsi, $10^{-3}$. Ez persze nem igaz minden anyagra, guminál például ez az érték $1$ is lehet.
+
+Haránt-összehúzódásnak nevezzük azt a jelenséget, amikor egy tengely mentén egy testet megnyújtva lecsökken a nyújtás tengelyére merőlegesen vett keresztmetszet. Intuitívan érezhető, hogy ha a hossz megnő, akkor a keresztmetszet lecsökken.
+\begin{equation}
+-\nu\frac{\Delta l}{l}=\frac{\Delta d}{d}
+\end{equation} 
+$\nu$ arányossági tényezőt Poisson-számnak nevezik, értéke $\nu\approx 0,3$.
+Vizsgáljunk egy négyzet alapú hasábot, aminek hossza $l$, fedőlapjainak oldalai $d$ hosszúak. Számoljuk ki a térfogatváltozást $\Delta l$ hosszváltozás esetén.
+\begin{equation}
+\frac{\Delta V}{V}=\frac{(l+\Delta l)(d+\Delta d)^2-ld^2}{ld^2}
+\end{equation} 
+A négyzetes tagot kifejtve, és a $\Delta d^2$ tagot elhanyagolva (hiszen ez 3 nagyságrenddel kisebb, mint a többi tag), egyszerű egyenlethez jutunk.
+\begin{equation}
+\frac{\Delta V}{V}=2\frac{\Delta d}{d}+\frac{\Delta l}{l}
+\end{equation}
+Felhasználva az eddig összefüggéseinket $\sigma$ és $\varepsilon$ között, az egyenletet átalakíthatjuk a végső formájába.
+\begin{equation}
+\frac{\Delta V}{V}=\frac{1-2\nu}{E}\sigma
+\end{equation}
+A testet három irányból összenyomva (6)-ot a következő alakba lehet átírni:
+\begin{equation}
+\frac{\Delta V}{V}=-3\frac{1-2\nu}{E}p
+\end{equation}
+Láthatjuk, hogy ez egy összefüggést határoz meg a nyomás és a relatív térfogatváltozás között. A $3\frac{1-2\nu}{E}$ együtthatót kompresszibilitásnak nevezzük (reciproka a kompresszió modulus). Ez szintén anyagi állandó, hiszen mind $\nu$, mind $E$ állandó. Egy anyagot egyensúlyinak nevezünk, ha a kompresszibilitása pozitív érték, azaz ha összenyomjuk, akkor a térfogata lecsökken. (Termodinamika: $\kappa_T=-\frac{1}{V}\frac{\partial V}{\partial p}$)
+
+Egy testre az egyik felület normálisára merőleges erővel hatunk. Ekkor nyírásól beszélünk. Tiszta nyírás estén a térfogat nem változik. A folyamatot lehet jellemezni a nyírási szöggel $\gamma$, és az előbbiekhez hasonlóan bevezethetünk egy nyomás dimenziójú mennyiséget, hiszen $F\sim A$.
+\begin{equation}
+\tau=\frac{F}{A}=\mu\gamma
+\end{equation}
+Ahol $\mu$ a nyírási modulus, $Pa$ dimenziójú állandó.
+
+\section{tétel - A deformációs tenzor}
+Egy tetszőleges alakú test deformációjánál definiálhatunk egy vektorteret, ami a test egyes pontjainak elmozdulását határozza meg a deformáció során. Legyen ez $\underline{u}(\underline{r})$. Válasszuk ki a vizsgált test egy $\underline{r}$ pontját, és egy ettől $\delta\underline{r}$ távolságra levő pontot. A deformáció után ezek elmozdulnak az $\underline{u}(\underline{r})$ vektormezőnek megfelelően. Az elmozdult pontok közötti távolság legyen $\delta \underline{r}'$.
+\begin{equation}
+\delta \underline{r}'=\underline{r}+\delta\underline{r}+\underline{u}(\underline{r}+\delta\underline{r})-\underline{r}-\underline{u}(\underline{r})=\delta\underline{r}+\underline{u}(\underline{r}+\delta\underline{r})-\underline{u}(\underline{r})
+\end{equation}
+A deformáció ($\varepsilon$) pont azt adja meg, hogy mennyire változott meg két pont távolsága az erőhatás során.
+\begin{equation}
+\varepsilon=\frac{\Delta l}{l}=\frac{|\delta\underline{r}'|-|\delta\underline{r}|}{|\delta\underline{r}|}
+\end{equation}
+Egy skalármező deriváltját a következőképpen értelmeztük: két végtelen közeli pontjában vett függvényérték különbsége egyenlő a skalármező gradiensének és a pontok távolságának szorzatával. Mivel $\underline{u}(\underline{r})$ nem skalármező, ezért a fenti definíciót komponensenként írhatjuk fel. Mivel nem tettük fel, hogy $\delta\underline{r}$ infinitezimális, ezért az egyenlőség nem teljesen igaz, de jó közelítés.
+\begin{equation}
+u_i(\underline{r}+\delta\underline{r})-u_i(\underline{r})\approx\frac{\partial u_i}{\partial r_j}\Delta r_j
+\end{equation}
+Az eredményben fellépő első tagot disztorziónak nevezzük. Látható, hogy ez egy kétindexes mennyiség, azaz egy mátrix.
+\begin{equation}
+\beta_{ij}=\frac{\partial u_i}{\partial r_j}
+\end{equation}
+(10)-be behelyettesítve a (9)-ből kapott eredményeket a disztorzió tenzor segítségével, a deformációra a következőt kapjuk.
+\begin{equation}
+\varepsilon=\frac{\sqrt{(\delta r_i+\beta_{ij}\delta r_j)^2}-|\delta\underline{r}|}{|\delta\underline{r}|}
+\end{equation}
+A négyzetre-emelést elvégezve három tagot kapunk, ebből $\beta_{ij}\delta r_j\beta_{ik}\delta r_k$ elhanyagolható.
+\begin{equation}
+\varepsilon=\frac{\sqrt{|\delta\underline{r}|^2+2\delta r_i\beta_{ij}\delta r_j}-|\delta\underline{r}|}{|\delta\underline{r}|}=\sqrt{1+2\frac{\delta r_i\beta_{ij}\delta r_j}{|\delta\underline{r}|^2}}-1
+\end{equation}
+Látható, hogy az egyenlet leegyszerűsített alakjában $\beta$ tenzornak csak a szimmetrikus része jelenik meg, mivel $r_i\beta_{ij}r_j$ a szimmetrikus részt jelöli ki csak. Felhasználva, hogy $\sqrt{1+x}\approx 1+\frac{x}{2}$, fejtsük sorba elsőrendű tagig a gyökös tagot.
+\begin{equation}
+\varepsilon=\frac{\delta r_i}{|\delta\underline{r}|}\beta_{ij}\frac{\delta r_j}{|\delta\underline{r}|}
+\end{equation}
+Látszik, hogy ez vektoros felírásban a $\beta$ tenzort szorozzuk balról és jobbról is egy $\delta\underline{r}$ irányú egységvektorral. Tehát $\varepsilon=\underline{n}\beta\underline{n}$. Láttuk tehát, hogy egy adott irányban a deformáció mértéke csak a disztorzió tenzor szimmetrikus elemeitől függ. Felírhatjuk általánosságban tehát a deformációs tenzort, ami szintén a $\beta$ szimmetrikus részének felel meg.
+\begin{equation}
+\varepsilon_{ij}=\frac{1}{2}(\beta_{ij}+\beta_{ji})
+\end{equation}
+Vegyünk most egy kockát, aminek a deformáció előtti élei $\Delta x$, $\Delta y$ és $\Delta z$ , azután pedig ezek értékeit a vesszős párjaik adják meg. (11) miatt felírhatjuk a vesszős komponenseket, mint az eredeti hossz, és a disztorzió és az eredeti hossz szorzatának az összegét. Azaz: $\Delta \underline{x}^{i}=\beta \Delta \underline{x}^{(i)}+\Delta \underline{x}^{(i)}$. Nézzük meg most, hogy hogyan néznek ki az egyes tagok komponensekre bontva!
+\begin{equation}
+\Delta\underline{x}'=\left[(1+\beta_{11})\Delta x, \beta_{21}\Delta x, \beta_{31}\Delta x)\right]
+\end{equation}
+\begin{equation}
+\Delta\underline{y}'=\left[\beta_{12}\Delta y, (1+\beta_{22})\Delta y, \beta_{32}\Delta y)\right]
+\end{equation}
+\begin{equation}
+\Delta\underline{z}'=\left[\beta_{13}\Delta x, \beta_{23}\Delta x, (1+\beta_{33})\Delta x)\right]
+\end{equation}
+Ezeket láthatóan egy mátrixba lehet rendezni, és kiemelhetünk mindegyikből rendre $\Delta x$-et, $\Delta y$-t és $\Delta z$-t.
+\begin{equation}
+\Delta V'=\begin{vmatrix}
+1+\beta_{11} & \beta_{12} & \beta_{13} \\
+\beta_{21} & 1+\beta_{22} & \beta_{23} \\
+\beta_{31} & \beta_{23} & 1+\beta_{33}
+\end{vmatrix}\Delta x\Delta y\Delta z
+\end{equation}
+A determinánst kiszámolva, és a $\beta^2$-es, és $\beta^3$-ös tagokat elhanyagolva egyszerűen annyit kapunk, hogy $\Delta V'=(1+\beta_{11}+\beta_{22}+\beta_{33})\Delta V$ Innen tehát:
+\begin{equation}
+\frac{\Delta V'-\Delta V}{\Delta V}=Sp(\beta)=Sp(\varepsilon)
+\end{equation}
+A deformációtenzor diagonális elemeinek összege megadja a relatív térfogatváltozást kis deformációk esetén. Az $\varepsilon$ nem diagonális elemei pedig a tiszta nyíráshoz tartoznak.
+\section{tétel - Feszültségtenzor, kontinuumok mozgásegyenlete}
+Vegyünk egy testet, és helyezzük külső erőtérbe. Vizsgáljuk meg ennek a testnek egy alrendszerére ható erőket. Ez két forrásból ered, a külső erőtérből, valamint az alrendszerre ható belső erők, amiket a molekulák, atomok közötti kölcsönhatások okoznak az alrendszer határán. Mivel a belső erők atomi szintűek, ezért néhány atomnyi távolságnál messzebb már elhanyagolható a hatásuk, közelítésképpen vegyük csak az alrendszer felületének két oldalán elhelyezkedő atomok egymásra gyakorolt hatását.
+Legyen $\underline{f}$ a külső erősűrűség, és $V'$ a vizsgált pontrendszer térfogata. Ekkor $F$ teljes erő, ami az alrendszerre hat:
+\begin{equation}
+\underline{F}=\int_{V'}\underline{f}dV+\underline{F}_b
+\end{equation}
+$F_b$ meghatározásához használjuk ki, hogy a belső kölcsönhatások csak a felületen érdekesek. Ezért feltehetjük, hogy $\delta \underline{F}_b \sim \delta \underline{A}$, ahol $\delta \underline{A}$ a vizsgált pontrendszer felületének egy darabja, $\delta \underline{F}_b$ pedig az erre a darabra ható erő. Az arányossági tényezőnek tenzornak kell lennie, hiszen mindkét oldalt vektorok állnak. 
+\begin{equation}
+\Delta\underline{F}_b=\sigma\Delta\underline{A}
+\end{equation}
+Ebből már könnyen megkaphatjuk a a kimondott egyenlet integrális formáját:
+\begin{equation}
+\underline{F}=\int_{V'}\underline{f}dV+\oint_{\partial V'}\sigma d\underline{F}
+\end{equation}
+Newton II. törvényének megfelelően a testre ható összes erő eredője megegyezik a test tömegének és gyorsulásának szorzatával. Legyen most a test $\varrho$ sűrűségű, $V$ térfogatú, és $\underline{a}$ legyen a deformáció jellemzésére használt $\underline{u}$ második időderiváltja.
+\begin{equation}
+\underline{F}=\frac{d^2}{dt^2}(\varrho\underline{u}V)
+\end{equation}
+Ez csak közelítés, hiszen a sűrűség, és a térfogat is változhat az idő függvényében. Ezért ezt csak kicsi deformációk esetén alkalmazhatjuk. Szilárd testeknél ezért ez közelítőleg igaz, de folyadékoknál vagy gázoknál nem.
+\begin{equation}
+\underline{F}\approx\int_V\varrho\frac{\partial^2\underline{u}}{\partial t^2}dV
+\end{equation}
+Ezt visszahelyettesítve (24)-be:
+\begin{equation}
+\int_V\varrho\ddot{\underline{u}}dV=\int_V\underline{f}dV+\oint_{\partial V}\sigma d\underline{F}
+\end{equation}
+Ez az egyenlet még nem lehet teljes, hiszen nem számoltunk forgatónyomatékkal ahogy az impulzusmomentummal sem. Az impulzusmomentum-tétel szerint $\dot{\underline{N}}=\underline{M}$, azaz az impulzusmomentum megváltozása megegyezik a forgatónyomatékkal. Ez teljesül, ha $\sigma$ szimmetrikus tenzor. Belső forgatónyomatékok csak speciális esetekben lépnek fel; általános esetben $\sigma$ sem szimmetrikus, ezzel a kontinuumelmélet foglalkozik.
+Nézzük ismét (27)-es egyenletet. Mivel tetszőleges térfogatra igaznak kell lennie az integrálnak, a Gauss tétellel átalakíthatjuk a körintegrált.
+\begin{equation}
+\int_V\varrho\ddot{\underline{u}}dV=\int_V\underline{f}dV+\int_{V}div(\sigma) dV
+\end{equation}
+Az integrandusoknak meg kell egyezniük, ezért az integrálokat elhagyhatjuk, a kontinuumok mozgásegyenletének differenciális alakja pedig a következő alakot ölti:
+\begin{equation}
+\varrho\ddot{\underline{u}}=\underline{f}+div(\sigma)
+\end{equation}
+\section{tétel - Általánosított Hooke-törvény, izotrop anyagok}
+Már láttuk, hogy a kontinuumok mozgásegyenletét a következőképpen lehet felírni:
+\begin{equation}
+\varrho\ddot{\underline{u}}=\underline{f}+div(\sigma)
+\end{equation}
+Kérdés, hogy hogyan kaphatjuk meg az egyenletben megjelenő feszültségtenzort. Érthető módon anyagfüggőnek kell lennie. Ahogy az egyszerű deformációknál már láttuk, $\sigma$ és $\varepsilon$ között van egy összefüggés, amit ott a Young-modulus határozott meg $(\sigma=\varepsilon E)$. Feltételezhetjük, hogy szilárd anyagoknál a feszültségtenzor is csak a deformációs tenzortól függ. (Folyadékoknál csak $\dot{\varepsilon}$-tól fog függeni, speciális anyagoknál mindkettőtől, ilyen a kátrány.) Ahogy azt az egyszerű esetben, itt is feltételezhetünk egy lineáris összefüggést, azonban kérdés, hogy mi lesz az arányossági tényező. Mivel mindkét oldalon mátrixok vannak, az arányossági tényezőnek 4-dimenziós tenzornak kell lennie. Jelöljük ezt az együtthatót $C$-vel, neve a rugalmas állandó.
+\begin{equation}
+\sigma_{ij}=C_{ijkl}\varepsilon_{kl}
+\end{equation}
+Ezt nevezik az általánosított Hooke törvénynek. Vizsgáljuk meg egy kicsit részletesebben a rugalmas állandót! Mivel mind $\sigma$, mind $\varepsilon$ szimmetrikus, ezért szükségszerűen $C_{ijkl}$-ben az $i-j$ és a $k-l$ indexek felcserélhetőek. Egyszerűsítsük a helyzetet; $\varepsilon$ tenzorból csináljunk vektort, $C$ négydimenziós tenzorból pedig kétdimenziós mátrixot! Ezt könnyen megtehetjük: vegyük $\varepsilon$ szimmetrikus komponenseit, és készítsünk belőle egy 6-dimenziós vektort. Ezt a következőképpen tehetjük meg:
+\begin{equation}
+\varepsilon=\begin{pmatrix}
+\varepsilon_{11} & \varepsilon_{12} & \varepsilon_{13} \\
+\varepsilon_{12} & \varepsilon_{22} & \varepsilon_{23} \\
+\varepsilon_{13} & \varepsilon_{23} & \varepsilon_{33} \\
+\end{pmatrix}=
+\begin{pmatrix}
+\varepsilon_{11} \\
+\varepsilon_{22} \\
+\varepsilon_{33} \\
+\varepsilon_{12} \\
+\varepsilon_{13} \\
+\varepsilon_{23} \\
+\end{pmatrix}
+\end{equation}
+Ezt megtehetjük, hiszen a szimmetrikus komponensek egyértelműen meghatározzál a mátrixot. Ekkor $C$ 6x6-os mátrixba megy át. További szimmetria meghatározásához vizsgáljuk meg részletesebben a $\sigma=E\varepsilon$ egyenletet.
+\begin{equation}
+F=\frac{EA}{l}\Delta l
+\end{equation}
+Az $F=D\Delta l$ egyenletet ismerve látszik, hogy itt $\frac{EA}{l}$ valamiféle rugóállandóhoz hasonló dolgot jelöl. Mivel a rugalmas energia $W=\frac{1}{2}D\Delta l^2$, és az energiasűrűség ennek a hányadosa a térfogattal, ezért megkaphatjuk a rugalmas közeg energiasűrűségét a következőképpen:
+\begin{equation}
+w=\frac{1}{2}E\varepsilon^2=\frac{\sigma\varepsilon}{2}
+\end{equation}
+Ezt indexesen felírva:
+\begin{equation}
+w=\frac{1}{2}\sigma_{ij}\varepsilon_{ij}=\frac{1}{2}\varepsilon_{ij}C_{ijkl}\varepsilon_{kl}
+\end{equation}
+Innen már látható, hogy nemcsak az $i-j$ és $k-l$ indexek felcserélhetőek, hanem az $ij-kl$ indexpárokra is szimmetrikus a tenzor. A korábban bevezetett 6-dimenziós $C$ mátrix tehát szimmetrikus kell hogy legyen. Ebből az következik, hogy a legáltalánosabb anyagra a mátrixnak 21 független eleme lehet. Ezt a számot plusz szimmetriákkal csökkenteni lehet. Így például egy szabályos kocka-rácsos kristálynak magas szimmetriái vannak. Vegyünk egy olyan anyagot, ami minden irányból egyformán néz ki. Ezt izotrop anyagnak nevezzük. Ilyen anyag a valóságban nincsen, de például a polikristályos anyagok makroszkopikus szemszögből izotropnak vehetőek.
+Izotrop anyagnak neveztük azt a közeget, ami minden irányból ugyanúgy néz ki. Ez matematikai értelemben azt jelenti, hogy a mátrixnak koordináta-rendszerre invariánsnak kell lennie. Kérdés, hogy mik azok a matematikai fogalmak, amik egy mátrix másik koordináta-rendszerbe való átvitelekor megmaradnak. Ilyenek spur, meg a sajátértékek. Már láttuk, hogy a deformációs tenzor spurja a relatív térfogatváltozást adja meg. Az energiasűrűség (34) szerint négyzetesen függ a $\varepsilon$-tól. Mivel $\varepsilon_{ii}$ alatt értjük a mátrix spurját, ezért a négyzetes tag $\varepsilon_{ii}^2$ lehet. De ugyanúgy felírhatjuk $\varepsilon_{ij}\varepsilon_{ji}$-t is, az indexek összeejtésével ez is a deformáció négyzetét adja meg, de a kettő nem ugyanaz. Ezért az izotrop anyag energiasűrűségét a kettő lineárkombinációjaként adhatjuk meg.
+\begin{equation}
+w_{izotrop}=\mu\varepsilon_{ij}\varepsilon_{ji}+\frac{1}{2}\lambda\varepsilon_{ii}^2
+\end{equation}
+$\mu$ és $\lambda$ állandó együtthatók, az $\frac{1}{2}$ pedig csak szokásból van beírva a második tagba, fizikai jelentése nincs.
+Felírhatjuk az energiasűrűség $\varepsilon_{kl}$-el vett deriváltját. Ez $\sigma_{kl}$-t fogja megadni.
+\begin{equation}
+\sigma_{kl}=\frac{d w}{d\varepsilon_{kl}}=2\mu\varepsilon_{kl}+\lambda(\delta_{kl}\varepsilon_{ii})
+\end{equation} 
+Ebben a felírásban már csak kettő paraméter maradt, azaz a legáltalánosabb 21 paraméterről a legszabályosabb 2 paraméterre vittük le a rendszert.
+Vizsgáljuk a továbbiakban a (37)-es egyenletet. Tudjuk, hogy a deformációs tenzor spurja megadja a relatív térfogatváltozást. Ha tehát tiszta nyírást vizsgálunk, akkor $\varepsilon$ spurjának 0-t kell adnia, hiszen ott a térfogat nem változik. Írjuk át az egyenletünket a következőképpen:
+\begin{equation}
+\sigma_{ij}=2\mu(\varepsilon_{ij}-\frac{1}{3}\delta_{ij}Sp\varepsilon)+(\frac{2\mu}{3}+\lambda)\delta_{ij}Sp\varepsilon
+\end{equation}
+Ez ekvivalens (37)-el, de itt az egyenlet szét van szedve két tagra, az egyik tisztán csak az $\varepsilon$ spurját tartalmazza, a másik pedig a tenzor spurmentes részét. Látható, hogy $\varepsilon_{ij}-\frac{1}{3}\delta_{ij}Sp\varepsilon$ nem más, mint a mátrix diagonálelemjeinek és a spur harmadának a különbsége; az így kapott mátrix spurja 0 lesz. Ha tehát egy folyamat során változik a test térfogata, akkor az ezt a tagot nem érinti, a második tagot viszont annál inkább. Tulajdonképpen $(\frac{2\mu}{3}+\lambda)\delta_{ij}Sp\varepsilon$ felelős egyedül a térfogatváltozásért. Ezért ennek külön nevet adtak, ez a kompresszió-modulus ($\kappa$), $\mu$ pedig a nyírási modulus.
+\begin{equation}
+\kappa=\frac{2\mu}{3}+\lambda
+\end{equation}
+Alakítsuk át ismét a (37)-es egyenletet. Ezúttal fejezzük ki $\varepsilon_{ij}$-t.
+\begin{equation}
+\varepsilon_{ij}=\frac{1}{2\mu}(\sigma_{ij}-\lambda\varepsilon_{ll}\delta_{ij})
+\end{equation}
+Ez még nem lesz jó nekünk, mivel még maradt a jobb oldalon is $\varepsilon$-os tag. Próbáljuk meg kifejezni $\varepsilon$ spurját $\sigma$ segítségével.
+\begin{equation}
+\sigma_{ll}=(2\mu+3\lambda)\varepsilon_{ll}
+\end{equation}
+Ebből egyszerűen kifejezve $\varepsilon_{ll}$-t, behelyettesíthetünk (40)-be.
+\begin{equation}
+\varepsilon_{ij}=\frac{1}{2\mu}(\sigma_{ij}-\frac{\lambda}{2\mu+3\lambda}\sigma_{ll}\delta_{ij})
+\end{equation}
+Ebben az esetben már $\varepsilon$ ki van fejezve tisztán $\sigma$-val. Nézzünk meg ezért egy egyszerű példát, az egytengelyű nyújtást. Megfelelő koordináta-rendszerben miden mátrix diagonális alakba hozható. Az egytengelyű nyújtás azt jelenti, hogy a testet egy megfelelő, kitüntetett irányba húzzuk csak. Ez az irány legyen az egyik sajátvektor iránya. Ebben az esetben a test csak arrafelé nyúlik meg, nem lesznek más irányú deformációi. Ez a feszültségtenzor szemszögéből nézve azt jelenti, hogy a sajátérték bázisán nézve csak egy eleme van, ami nem 0 (azaz csak az egyik sajátértéke nem 0). Legyen $\sigma_{11}$=$\sigma_0$ érték, a többi elem pedig 0. Ekkor (42)-be behelyettesítve megkapjuk a teljes $\varepsilon$ mátrixot egytengelyű nyújtás esetében.
+\begin{equation}
+\varepsilon=\begin{pmatrix}
+\frac{1}{2\mu}(1-\frac{\lambda}{2\mu+3\lambda})\sigma_0 & 0 & 0 \\
+0 & -\frac{1}{2\mu}\frac{\lambda}{2\mu+3\lambda}\sigma_0 & 0 \\
+0 & 0 & -\frac{1}{2\mu}\frac{\lambda}{2\mu+3\lambda}\sigma_0 
+\end{pmatrix}
+\end{equation}
+Ebből már egyszerűen kifejezhetjük a Young-modulust, és a Poisson-számot is. Mivel $\sigma=E\varepsilon$, és $\sigma$-nak csak egy komponense van, $E$ megkapható, mint $\sigma_0$ és $\varepsilon_{11}$ hányadosa. A szépség kedvéért fejezzük ki $\frac{1}{E}$-t, mert ez jobban látszik az eddigi felírásokból.
+\begin{equation}
+\frac{1}{E}=\frac{1}{2\mu}(1-\frac{\lambda}{2\mu+3\lambda})
+\end{equation}
+A Poisson-szám pedig a haránt-összehúzódásos gondolatmenetből kapható meg. Azt mondtuk az 1. tételben, hogy $\nu$ kisebb, mint 0,5. Megmutatjuk, hogy ez valóban teljesül.
+\begin{equation}
+-\nu=\frac{\frac{\Delta d}{d}}{\frac{\Delta l}{l}}=\frac{\varepsilon_{22}}{\varepsilon_{11}}=\frac{\lambda}{2\mu+2\lambda}\leq 0,5
+\end{equation}
+Valóban látszik, sikerült igazolnunk ezt a feltevést.
+(29)-ben már láttuk, hogy egy rendszer mozgásegyenletét hogyan lehet megadni általános esetben szilárd anyagokra. Nézzük most meg ezt izotrop esetben. Használjuk ki (16)-ot, valamint fejezzük ki (40)-ből $\sigma$-t:
+\begin{equation}
+\sigma  = 2\mu \varepsilon  + \lambda I \cdot {\text{Sp}}\left( \varepsilon  \right),
+\end{equation}
+amelyben $I$ az egységmátrixot jelenti.
+\begin{equation}
+\varepsilon_{ij}=\frac{1}{2}\left(\frac{\partial u_i}{\partial r_j}+\frac{\partial u_j}{\partial r_i}\right)
+\end{equation}
+Írjuk fel ezeknek a segítségével a mozgásegyenletet!
+\begin{equation}
+\varrho\frac{\partial^2u_i}{\partial t^2}=f_i+\frac{\partial}{\partial r_j}\sigma_{ij}=
+f_i+\mu\frac{\partial}{\partial r_j}\left(\frac{\partial u_i}{\partial r_j}+\frac{\partial u_j}{\partial r_i}\right)+\lambda\frac{\partial}{\partial r_i}\left(\frac{\partial u_j}{\partial r_j}\right)
+\end{equation}
+A parciális deriváltakat összevonva leegyszerűsödik az egyenlet egy Laplace-ra és egy divergencia gradiensére.
+\begin{equation}
+\varrho\frac{\partial^2\underline{u}}{\partial t^2}=\underline{f}+\mu\Delta\underline{u}+(\lambda+\mu)grad(div\underline{u})
+\end{equation}
+Mivel $div\underline{u}$ igazából nem más, mint $\varepsilon$ spurja, azaz a relatív térfogatváltozás, az egyenletben ennek a gradiense szerepel, ez tulajdonképpen a térfogatváltozás sebessége.
+\section{tétel - Csavarás, elhajlások}
+A csavarási torzió vizsgálatához vegyünk egy $l$ magas, $R$ sugarú hengert, aminek alját rögzítjük. Csavarjuk el a tetejét $\varphi$ szöggel. Mivel a henger alja rögzítve volt, az eredetileg egymás felett lévő pontok már nem lesznek egy függőleges vonalban, hanem egymással összekötve őket, a függőlegessel $\gamma$ szöget fognak bezárni. Tegyük fel, hogy ismerjük a következő összefüggést ezen szögek között:
+\begin{equation}
+\gamma(r)=\varphi\frac{r}{l}
+\end{equation}
+Megfigyelésből azt mondhatjuk, hogy ez egy tiszta nyírás, azaz térfogatváltozás nélküli deformáció. (8) szerint ekkor $\tau=\mu\gamma$, ebbe behelyettesítve:
+\begin{equation}
+\tau=\mu\frac{\varphi}{l}r
+\end{equation}
+Írjuk fel a testre ható forgatónyomatékot. $M=F*r$ alakban keressük a megoldást, azaz azonos távolságokban a tengelytől a járulék ugyanakkora. Osszuk fel a henger keresztmetszetét koncentrikus körgyűrűkre. Ezek területe $2\pi r\Delta r$, ha $\Delta r \rightarrow 0$. Ezektől a gyűrűktől származó forgatónyomatékokat szummázzuk a teljes körlapra. Amennyiben a $\Delta r \rightarrow 0$ feltétel teljesül, a szumma integrálba megy át.
+\begin{equation}
+M=\int_{0}^{R}\tau(r)r2\pi rdr=\int_{0}^{R}\mu\frac{\varphi}{l}2r^3\pi dr=\frac{2\pi\mu}{l}\frac{R^4}{4}\varphi
+\end{equation}
+Ebből több érdekes dolgot is megfigyelhetünk. Először is, hogy $M\sim\varphi$. A forgatónyomaték továbbá fordítottan arányos a henger hosszával, és egyenes arányos a sugár negyedik hatványával. Ez azt jelenti, hogy egy nagyon hosszú, és vékony szálat véve a forgatónyomaték értéke nagyon kicsi lesz, azaz a szál kis erő hatására is könnyen elfordul. Ez az alapja a torziós szálak működösének. 
+Következő lépésben két különböző elhajlással foglalkozunk. Elsőként vegyünk egy $l$ hosszúságú, $a*b$ keresztmetszetű téglatestet, amit az egyik fedőlapjánál fogva a falhoz rögzítettünk. A test a gravitációs vonzás miatt lehajlik, minél távolabb nézzük a faltól, annál inkább. Az egyensúly beállta után a testnek van egy tartománya, ami nem nyúlt meg, ezt neutrális tartománynak nevezik. Tegyük fel, hogy ehhez a neutrális tartományhoz tudunk illeszteni egy érintő kört, aminek sugara $R$, és az illeszkedési szöge $\Delta \varphi$. Mivel ezt a zónát direkt úgy választottuk, ahol nincs deformáció, ezért érthető, hogy a neutrális tartományon haladva $\varepsilon$ értéke 0 lesz. Mivel feltettük, hogy egy körívre illeszkednek a tartomány pontjai, ezért ez azt jelenti, hogy a kör középpontját origónak tekintve $\varepsilon(R)=0$. De mi a helyzet, ha ettől $\xi$ sugárirányú távolsággal kijjebb vagy beljebb nézzük?
+\begin{equation}
+\varepsilon(\xi)=\frac{\Delta\varphi(R+\xi)-\Delta\varphi R}{\Delta\varphi R}=\frac{\xi}{R}
+\end{equation}
+Ebből már egyszerűen meghatározhatjuk a $\sigma$ feszültséget is, hiszen az ennek a Young-modulussal vett szorzata. Nézzük meg most a testben ható erőket. Mivel nyugalomban van, Newton II.-nek megfelelően az eredő erőnek 0-t kell adnia. Ez azt jelenti, hogy a vízszintes és a függőleges komponensek is kiejtik egymást. Egyszerűbb látni a függőleges erőket, hiszen azok a gravitációs erőből erednek, és ezt kell ellensúlyoznia a testnek. Külső erőknek nincs horizontális komponensük, tehát ezek csak a testben fellépő belső erők. Könnyű látni, hogy a neutrális zóna definíciójából, hogy az efölötti tartomány, és az azalatti tartományra ható erők pont ellentétes irányúak, hiszen az egyik megnyúlik, míg a másik összenyomódik az elhajlás következtében. Tehát pontosan úgy kell megválasztani ezt a tartományt, hogy az eredő erő vízszintes komponensei 0-t adjanak. Ezt matematikailag a következőképpen fogalmazhatjuk meg:
+\begin{equation}
+F=\int\sigma dA=0
+\end{equation}
+Ebből már rögtön látszik, hogy ez csak akkor teljesülhet, ha a semleges tartomány pontosan középen helyezkedik el.
+Mivel kiterjedt merev testről van szó, az egyensúlyhoz nemcsak az erők eredőjének eltűnése kell, hanem a forgatónyomatékoknak is ki kell esniük. Pontosan ehhez tudjuk felhasználni a függőleges erőket. Legyen a fedőlap vízszintes oldala $a$ hosszú, és $b$ magas, ekkor a forgatónyomaték a neutrális zónától $\xi$ távolságban megkapható, mint egy, a fedőlapra vett integrál.
+\begin{equation}
+M=\int\sigma\xi dA
+\end{equation}
+Ebbe helyettesítsük be az (53)-ból számolható $\sigma$-t, és $dA$-t írjuk át! $dA=ad\xi$, hiszen $a$ konstans a folyamat során, a neutrális felülettől $\xi$ távolságban az erők megegyeznek. A felületi integrál ennek a segítségével egyszerűen átírható egy vonalintegrállá, ami ez esetben $-\frac{b}{2}$-től $\frac{b}{2}$-ig tart.
+\begin{equation}
+M=\int_{-\frac{b}{2}}^{\frac{b}{2}}\xi E\frac{\xi}{R}a d\xi=\frac{E}{R}I
+\end{equation}
+Definiáltunk egy új mértéket, a hajlítási nyomatékot, ami a fenti egyenletből láthatóan kapható. Általános esetben ez nehezen kiszámítható lehet, hiszen a test keresztmetszete nem feltétlenül téglalap. A hajlítási nyomaték tehát:
+\begin{equation}
+I=\int\xi^2ad\xi
+\end{equation}
+Jelen esetben (56)-ot egyszerűen ki tudjuk számolni. $a$ kiemelhető az integrandusból, és $I$ értékére egyszerűen a következőt kapjuk:
+\begin{equation}
+I=\frac{ab^3}{12}
+\end{equation}
+Ez a téglalap hajlítási nyomatéka. Fontos megjegyezni, hogy ez $a-b$-ben nem szimmetrikus mennyiség, tehát nem mindegy, hogy a téglatestet melyik oldalával ragasztjuk a falhoz.
+Nézzük most a külső erők forgatónyomatékát! Ezt egyszerűen felírhatjuk, felhasználva, hogy összességében a forgatónyomatékok eredője 0.
+\begin{equation}
+\frac{E}{R}I-F(l-x)=0
+\end{equation}
+Mielőtt ezt meg tudnánk oldani, meg kellene határozni a neutrális zóna alakját. A feladat elején feltettük, hogy ehhez húzhatunk egy érintő kört, ami követi az alakját. Legyen ennek a körnek a középpontja $x_0$-ban, legyen a sugara továbbra is $R$. Válasszuk úgy a koordináta-rendszert, hogy $x=0$ egyenes legyen a fal, amihez a testet rögzítettük, és $y=0$ pedig a kör középpontjának a síkja. Ebből egyszerűen felírva a kör egyenlete:
+\begin{equation}
+y=\pm\sqrt{R^2-(x-x_0)^2}
+\end{equation}
+A következő lépésben ezt kétszer lederiváljuk $x$ szerint. Ennek az oka mindjárt világos lesz.
+\begin{equation}
+\frac{d^2y}{dx^2}=\pm\frac{1}{\sqrt{R^2-(x-x_0)^2}}+\frac{x-x_0}{(...)}
+\end{equation}
+A második tag nevezője már nem is érdekel minket, hiszen mi csak $x_0$ közelében akarunk vizsgálódni, ekkor a második tag szépen ki is esik, az első tag pedig egyszerűen $\frac{1}{R}$ lesz. Ebből tehát azt kaptuk, hogy az $y(x)$ függvény második deriváltja körülbelül megegyezik a kör sugarának reciprokával, ami viszont pont megjelent az (59). egyenletben. Még egy kérdés, ami fent maradt, a $\pm$ miatt két megoldásunk is van, de melyiket kell választani? A válasz egyszerű, hiszen a sugár reciproka mindig pozitív mennyiség, ezért a deriváltnak is pozitív eredményt kell adnia, tehát azt az előjelet úgy választjuk mindig, hogy $\pm\frac{d^2y}{dx^2}>0$.
+Tegyük most fel, hogy $y(x)$ egy harmadfokú polinommal megadható, ekkor ennek második deriváltja egyszerűen előállítható.
+\begin{equation}
+y(x)=a+bx+cx^2+dx^3 \rightarrow \frac{d^2y}{dx^2}=2c+6dx
+\end{equation}
+Most már nyugodtan behelyettesíthetünk (59)-be. Észrevehetjük, hogy $a, b$ paramétereket ebből még nem tudjuk meghatározni. Ezeket peremfeltételek segítségével tudjuk megadni.
+\begin{equation}
+EI(2c+6dx)=-F(l-x)
+\end{equation}
+Ebből:
+\begin{equation}
+c=-\frac{Fl}{2EI}, d=\frac{F}{6EI}
+\end{equation}
+Peremfeltételeink a következők voltak. A testet úgy ragasztottuk a falhoz, hogy $y(0)=0$ legyen, és a kezdeti meredeksége szintén 0, azaz $\frac{dy}{dx}(0)=0$. Ezekből rögtön látszik, hogy $a$ és $b$ is 0. Tehát az eredményünk:
+\begin{equation}
+y(x)=\frac{Fx^2}{2EI}\left(\frac{x}{3}-l\right)
+\end{equation}
+Ebbe behelyettesítve $x=l$-t rögtön látszik, hogy $y(l)<0$ tehát a test vége lefele mozdul el, tehát jól választottuk meg az előjelet.
+Vizsgáljunk most egy harmadik összeállítást. Legyen egy rudunk, amit az $y(x)=0$ síkon fekszik, és ennek a két végére hassunk $F$ erővel befelé. Ebben az esetben is fel tudunk írni (59)-hez hasonló egyenletet, hiszen itt is egyensúlyi állapotokról beszélünk.
+\begin{equation}
+\frac{E}{R}I-Fy=0
+\end{equation}
+Felhasználva (61) eredményét, egy differenciálegyenlethez jutunk.
+\begin{equation}
+-EI\frac{d^2y}{dx^2}=Fy
+\end{equation}
+Ennek a megoldása nagyon egyszerű, $y(x)=y_0sin(\lambda x+\varphi)$.
+\begin{equation}
+EIy_0\lambda^2sin(\lambda x+\varphi)=Fy_0sin(\lambda x+\varphi)
+\end{equation}
+Ebből azt kapjuk, hogy $y(x)$ megoldás, ha $\lambda^2=\frac{F}{EI}$. A szabad paraméterek meghatározásához ismét a peremfeltételeket használjuk ki. $y(0)=y(l)=0$. Ebből a két paraméter értéke:
+\begin{equation}
+\varphi=0;\lambda l=n\pi
+\end{equation}
+A másodikból kifejezve $\lambda$-t, és visszahelyettesítve a korábbi egyenletbe, az $F$ erőre egy összefüggést kapunk.
+\begin{equation}
+F_{krit}=\left(\frac{\pi}{l}\right)^2EI
+\end{equation}
+Ezt nevezik kritikus erőnek. Ennél kisebb erőre a test csak összenyomódik, ennél nagyobb erőre a rúd kihajlik.
+\section{tétel - Hidrosztatika}
+Szilárd anyagoknál a deformációra bevezetett $\underline{u}(\underline{r})$ vektortér már nem célszerű megközelítése a folyadékok áramlásának. Ennek oka, hogy szilárd anyagoknál volt egy kitüntetett pontunk, amihez lépest vizsgáltuk az anyagi pontok elmozdulását. Folyadékok vagy gázok folyamatos áramlásánál ezeket már nem célszerű nézni. Ehelyett a $\underline{v}(\underline{r},t)$ sebességtér, $\varrho(\underline{r},t)$ sűrűségmező lesz a fontos. Ez utóbbi gázok esetén lényegesen meg tud változni, folyadékoknál ez közelítőleg konstans.
+Vegyünk egy $\Delta A$ felületet, az erre ható erő a folyadék nyomásából ered, tehát $\Delta F=-p\Delta A$. Mivel $F=\sigma A$, ezért jelen esetben a feszültségtenzornak csak diagonál-komponensei lesznek, és ezek mind $-p$-vel lesznek egyenlőek.
+\begin{equation}
+\sigma=\begin{pmatrix}
+-p & 0 & 0 \\
+0 & -p & 0 \\
+0 & 0 & -p 
+\end{pmatrix}
+\end{equation}
+A mátrix ilyen alakja fizikailag azt jelenti, hogy a folyadékban nincsenek kitüntetett irányok, valamint azt, hogy statikus esetben nem tudnak nyíróerők kialakulni. A feszültségtenzor ilyen alakjának meghatározását Pascal-törvénynek is nevezik.
+A mozgásegyenletet írjuk fel statikus folyadékokra. Ekkor $\rho\ddot{u}=0$, hiszen nincs mozgás. Továbbá kifejezhető a $\sigma$ divergenciája, mint a nyomás negatív gradiense.
+\begin{equation}
+0=\underline{f}+div\sigma=\underline{f}-grad(p)
+\end{equation} 
+Legyen $\underline{f}$ erősűrűség-vektor egy skalármező gradiense, ezt megtehetjük, hiszen $f=-grad(\varrho\phi)$. Összenyomhatatlan folyadékról beszélünk, ha $\varrho$ nem tud megváltozni, ekkor ezt nyugodtan kiemelhetjük, illetve bevihetjük a gradiensbe. Az egyenletet átalakítva egy deriválttá a Pascal-törvény legfontosabb következményét kapjuk:
+\begin{equation}
+p+\varrho\phi=const.
+\end{equation}
+Ez azt jelenti, hogy az azonos nyomású, és az azonos potenciálú helyeknek meg kell egyezniük. Emiatt vízszintes a folyadék, és ezért gömbszerű az óceán felszíne.
+Legyen például ez a potenciál $gh$, azaz gravitációs az erőtér. $g$-t állandónak tekintve meghatározhatjuk $h$ magasságban a nyomást, ha $p_0$ a földfelszínen mért nyomás.
+\begin{equation}
+p=p_0+\varrho g h
+\end{equation}
+Arkhimédész mutatta meg, hogy ha egy testet folyadékba merítünk, akkor a súlya lecsökken, és pontosan annyival, mint amennyi vizet kiszorított. Róla nevezték el a felhajtóerőre vonatkozó Arkhimédész-törvényt. Legyen egy tartályunk tele folyadékkal. Ebben vegyünk egy kis, $a*a$ alapterületű, $b$ magas téglatestet. Legyen ez $h$-val a vízfelszín alatt. (74) szerint felírhatjuk az erre ható erőket. A testre minden irányból hatnak erők, de a vízszintesek kiejtik egymást. A két fedőlapra ható erők egymással ellentétes előjelűek, de az értékük is már.
+\begin{equation}
+F_f=-p(z=h)a^2+p(z=h+b)a^2=-\varrho ga^2h+\varrho ga^2(h+b)=\varrho gV
+\end{equation}
+Itt lényeges, hogy a $\varrho$ a folyadék sűrűsége. Láttuk tehát, hogy a felhajtóerő arányos a test térfogatával, és a folyadék sűrűségével.
+Bonyolítsuk annyival a helyzetet, hogy vigyünk be egy centrifugális erőt is az erősűrűségbe. Azaz vizsgáljuk meg, hogyan viselkedik a forgó folyadék. Ebben az esetben az egyenlet a következő alakot ölti:
+\begin{equation}
+-grad(p)-grad(\varrho|\underline{g}|z)+grad(\frac{1}{2}\varrho\omega^2(x^2+y^2))
+\end{equation}
+Ezeket egy deriválttá rendezve, és mindkét oldalt integrálva megkapjuk, hogy milyen összefüggések vannak $x-y-z$ közöt, azaz megkapjuk, hogy milyen alakot vesz fel a forgó folyadék.
+
+\begin{equation}
+\varrho gz=\frac{1}{2}\varrho\omega^2(x^2+y^2)
+\end{equation}
+Ez egy forgási paraboloid egyenlete. Azaz $z$ tengely körül folyadékot keringetve annak felszíne ilyen alakra áll be.
+Eddig azzal foglalkoztunk, hogy mi van azzal a gázzal vagy folyadékkal, amiben a sűrűség állandó. Ha ez nem igaz, akkor találnunk kéne egy összefüggést a nyomás és a sűrűség között. Vegyünk most egy gázt, erre felírható az ideális gáz állapotegyenlete, azaz $pV=\frac{m}{M}rT$. Ez az egyenlet összefüggést ad $p-\varrho$ között, de azzal a hátránnyal, hogy egy újabb változót kell bevezetnünk, a hőmérsékletet. Az ezekre vonatkozó hővezetési egyenletek viszont nagyon bonyolultak. Közelítsünk a problémához izotermikus úton, ekkor egyértelmű lineáris összefüggést kapunk $p-\varrho$ között.
+\begin{equation}
+\varrho=\frac{M}{RT}p
+\end{equation}
+Ezt behelyettesítve (72)-be egy differenciálegyenlethez jutunk p(z)-re. Itt csak a $z$ komponens érdekel minket, hiszen $\underline{g}$-nek csak ilyen komponense van. A differenciálegyenlet szerint:
+\begin{equation}
+\frac{dp}{dz}=-\frac{M}{RT}gp
+\end{equation}
+Ennek megoldása rögtön látszik:
+\begin{equation}
+p(z)=p_0e^{-\frac{Mg}{RT}z}
+\end{equation}
+Ezt az összefüggést nevezik barometrikus magasságformulának. Nézzük meg, hogy mit is kaptunk! Két fontos dolgot kell látnunk: a nyomás a magasság függvényében exponenciálisan csökken, és ez függ a moláris tömegtől. Az egyenletet még enyhén átalakíthatjuk a következőképpen: az exponenst szorozzuk be $\frac{N_A}{N_A}=1$-el. Mivel $k_B=\frac{R}{N_A}$, és $\frac{M}{N_A}=m$, ezért:
+\begin{equation}
+p(z)=p_0e^{-\frac{mgz}{k_bT}}
+\end{equation}
+Mivel $\varrho\sim p$ ezért ugyanezt az egyenletet felírhatjuk sűrűségre is.
+\begin{equation}
+\varrho(z)=\varrho_0e^{-\frac{mgz}{k_bT}}
+\end{equation}
+Azaz, minél magasabban vagyunk, annál kisebb a levegő sűrűsége. A (81) és (82)-ben megjelenő exponenciális tagot Boltzman-faktornak nevezzük.
+\section{ tétel - Felületi feszültésg, görbületi nyomás}
+Végezzünk el egy kísérletet: vegyünk egy fémkeretet, aminek az egyik oldala mozgatható. A keretbe feszítsünk egy hártyát. Azt tapasztaljuk, hogy a hártya össze akarja húzni a keretet, azaz a legkisebb felületre törekszik. Ha viszont a mozgatható oldalra egy erőmérőt akasztunk, azt tapasztalhatjuk, hogy a hártya által kifejtett erő független attól, hogy mekkora a felszíne. A keret méreteinek növelésével azt a következtetést lehet levonni, hogy $F\sim l$, ahol l a keret mozgatható oldalának szélessége. Az arányossági tényezőt felületi feszültségnek nevezzük, és $\alpha$-val jelöljük. Mértékegysége $\frac{N}{m}$. Mivel a hártyának két oldala is van, ezért az egyenletbe szokás egy 2-es szorzót is definiálni.
+\begin{equation}
+F=2\alpha l
+\end{equation}
+A felületi feszültség pontosabb definiálásához nézzük meg, hogy mennyi munkát kell végezni ahhoz, hogy a mozgatható oldalt $\Delta x$ távolsággal arrébb húzzuk.
+\begin{equation}
+\Delta W=2\alpha l\Delta x=\alpha\Delta A
+\end{equation}
+Ebből tehát $\alpha$-t kifejezve a definíciónk: felületi feszültség megmutatja, hogy mennyi munkát kell végeznünk a felület nagyságának megváltoztatásához.
+Nemcsak keretekben befogott hártyánál alkalmazhatjuk a felületi feszültséget, hanem más mindennapi helyzetekben is találkozunk vele. Vegyünk egy üveglapot, és erre tegyünk egy csepp vizet. Ha nem lenne felületi feszültség, azt várnánk, hogy a víz szétfolyók az üveg felszínén, de nem ez történik. A csepp megőrzi alakját. Legyen $\beta$ a csepp üveglappal való érintkezési szöge. Mivel a csepp nyugalomban van, ezért a vízszintes erőknek ki kell egyenlíteniük egymást. De milyen erők lépnek is itt fel? Összesen három olyan erőt lehet felírni, aminek van vízszintes komponense: ezek a víz-üveg, az üveg-levegő, és a levegő-víz határon fellépő feszültségekből származó erők. Tehát az erők egyensúlyát azok $\alpha$ együtthatóival írhatjuk fel.
+\begin{equation}
+\alpha_{uveg-levego}+\alpha_{levego-viz}\cos\beta=\alpha_{viz-uveg}
+\end{equation}
+Az egyenletben a $\beta$-n kívül minden állandó, tehát fejezzük ki ezt!
+\begin{equation}
+\cos\beta=\frac{\alpha_{viz-uveg}-\alpha_{uveg-levego}}{\alpha_{levego-viz}}
+\end{equation}
+Azonban itt felléphet egy kis probléma. A baloldal értéke a cosinus miatt csak $[-1,1]$ között mozoghat. De nincsen semmilyen megkötés arra, hogy a jobboldal is kövesse ezt a szabályt. Tehát lehetséges, hogy (86)-nak nincs megoldása $\beta$-ra. Az ilyen esetet úgy nevezik, hogy az adott folyadék egy adott közegre nézve nem nedvesít. Erre egyszerű példa a toll; levegővel ez nem, de papírral már nedvesít. Fontos megjegyezni, hogy $\alpha$ értéke nagyban függ a hőmérséklettől. Ezt Eötvös-törvények nevezik, az arány $\alpha\sim\frac{1}{T}$.
+A görbületi nyomás értelmezéséhez vegyünk egy formátlan testnek egy kis téglalap alakú darabját. Legyen ennek a darabnak a két-két oldala $\Delta s_1$, $\Delta s_2$ hosszú, ezek görbületi sugara $R_1$, $R_2$, valamint az érintkezés szöge $2\varphi$ mindkét esetben. A felületi feszültség miatt a fellépő erőket felírhatjuk a felület sarkainál. Mivel a választott felületünk szimmetrikus, az egyik irányú komponensek kiejtik egymást. Az első oldalra ható erőt tehát a következőképpen lehet felírni. Feltéve, hogy $\varphi$ kicsi, $\sin\varphi\sim\varphi$.
+\begin{equation}
+F_1=2\alpha\Delta s_2\sin\varphi=2\alpha\Delta s_2\frac{\Delta s_1}{2R_1}
+\end{equation}
+Hasonló módon lehet felírni a másik oldalra ható $F_2$ erőt. A kapott eredményben megjelenő $\Delta s_1\Delta s_2$ felülettel leosztva megkapjuk a görbületi nyomást.
+\begin{equation}
+p_g=\alpha\left(\frac{1}{R_1}+\frac{1}{R_2}\right)
+\end{equation}
+Nézzük meg, hogy mit kaptunk. A görbületi nyomás annál kisebb, minél nagyobbak a görbületi sugarak, ez azt jelenti például, hogy egy lufit felfújni egyre könnyebb lesz. Matematikai érdekességként megemlíthető, hogy egy másodrendű felületet leírhatunk egy 2x2-es mátrixszal. Ennek a mátrixnak a sajátbázisán vett reprezentációjában az átlóban természetesen a sajátértékek állnak, amik megegyeznek $R_1$, és $R_2$-vel.
+Nézzünk meg egy, a felületi feszültséghez kapcsolódó jelenséget, a kapillaritást. Egy csövet folyadékba (pl. víz) helyezve azt az érdekességet látjuk, hogy a csőben lévő vízszint nem teljesen egyezik meg a tartálybeli vízszinttel. A jelenség magyarázatát vezessük vissza az energiaminimum elvére. Minden rendszer arra törekszik, hogy az energiáját a lehető legalacsonyabb szinten tartsa, ebből következik, hogy a nyugalmi állapot olyan, hogy abból mindkét irányba kimozdítva a rendszert az energiája annak nő. Jelen esetben három energiával kell számolnunk. Legyen a vízoszlop magassága a külső vízfelszín felett $h$. Ekkor e helyzeti energiája $\phi=mg\frac{h}{2}$ hiszen a tömegközéppont pontosan a magasság felénél van. Számolnunk kell még kétféle felületi feszültséggel: az egyik, ami az üveg-levegő határon lép fel, a másik, ami a víz-üveg határon. Érezhető, hogy amennyiben a víz-üveg felület nő, a rendszer energiája is nő, viszont ha az üveg-levegő határ nő, akkor az energiája lecsökken. Írjuk fel tehát az energiát, mint $h$ függvényét!
+\begin{equation}
+W(h)=\frac{h}{2}g\varrho r^2\pi h-\alpha_{uveg-levego}2\pi rh+\alpha_{uveg-viz}2\pi rh
+\end{equation}
+Az egyensúlyi helyzetnek a fentiek miatt ott kell lennie, ahol ennek a deriváltja 0. Mivel maximális energiaszint ebben az esetben nincsen, hiszen $h$ végtelenig nőhet, megbizonyosodhatunk róla, hogy az első deriváltbeli zérus érték csakis minimumhoz tartozhat.
+\begin{equation}
+\frac{dW}{dh}=g\varrho rh+2(\alpha_{uveg-levego}-\alpha_{uveg-viz})=0
+\end{equation}
+Ebből egyszerűen kifejezzük $h$-t:
+\begin{equation}
+h=\frac{2(\alpha_{uveg-levego}-\alpha_{uveg-viz})}{g\varrho r}
+\end{equation}
+Mint azt már a vízcseppnél is tapasztaltuk, nincs semmilyen megkötés arra, hogy a felületi feszültségek hogyan aránylanak egymáshoz, ezért adott esetben $h$ értéke lehet negatív is. Ez azt jelenti, hogy a csőben a folyadék szintje nem magasabban, hanem alacsonyabban lesz, mint kint. Ilyen anyag például a higany. (91) eredményének legfontosabb része a $h\sim\frac{1}{r}$ arány megjelenése. Ez tetszhet nekünk, hiszen tapasztaljuk, hogy a kapillaritás jelensége annál szembetűnőbb, minél kisebb a cső sugara, míg vastag csövekben szinte teljesen elhanyagolható.
+A fenti számolásban elnéztünk attól, hogy a folyadék a csőben nem vízszintesen fog megállni, hanem "felkúszik" a cső falára. Legyen a folyadékfelszín alakja gömb, ennek sugara $R$, valamint a nyílásszög síkban véve legyen $\pi-2\beta$. Geometriából kijön, hogy $R=\frac{r}{\cos\beta}$. (85)-öt kihasználva átírjuk (91)-et.
+\begin{equation}
+h=\frac{2\alpha_{viz-levego}\cos\beta}{g\varrho r}=\frac{2\alpha_{viz-levego}}{g\varrho R}
+\end{equation}
+Érdekes, hogy az eredmény szerint $h$ nem függ mástól, csak a levegő-víz feszültségtől.
+\section{tétel - Ideális folyadékok áramlása, Bernoulli törvény}
+A hidrosztatika elején megbeszéltük, hogy a a szilárd testekkel ellentétben itt már nem $\underline{u}(\underline{r})$ lesz a meghatározó mennyiség, hanem $\underline{v}(\underline{r},t)$, $\varrho(\underline{r},t)$, és $p(\underline{r},t)$. Az anyagmegmaradás miatt $\varrho$ és $\underline{v}$ nem függetlenek egymástól. Egy $F$ felületen egységnyi idő alatt beáramló anyagmennyiség meg kell, hogy egyezzen a felületen belül lévő anyag koncentrációjának megváltozásával, azaz:
+\begin{equation}
+\frac{d}{dt}\int_V\varrho(\underline{r},t)dV+\oint_{\partial V}\varrho\underline{v}(\underline{r},t)d\underline{f}=0
+\end{equation}
+Ez a kontinuitási egyenlet anyagra. Ugyanígy fel lehet írni a töltésmegmaradás törvényét is, ott $\varrho$ a töltéssűrűséget, $\underline{v}$ pedig az áramsűrűség-vektort jelölné. Megszokott módon Gauss-törvény segítségével átírható az egyenlet a differenciális alakjába:
+\begin{equation}
+\frac{\partial\varrho}{\partial t}+div(\varrho\underline{v})=0
+\end{equation}
+Rögtön látható, hogy ennek az egyenletnek triviális megoldása a $\varrho=const$. Az ilyen folyadékot összenyomhatatlannak nevezzük. Valóságban ilyen nincsen, de általában elég jó közelítéssel a folyadékok ilyen.
+Stacionárius áramlásnak nevezzük azt az esetet, amikor a felsorolt fizikai mennyiségek csak a hely függvényei, időben állandóak. Ekkor (94) egyszerűen
+\begin{equation}
+div(\varrho\underline{v})=0
+\end{equation}
+alakot ölti. Fontos megjegyezni, hogy itt nincs kikötve, hogy a folyadék összenyomhatatlan!
+A stacionárius áramlást legegyszerűbben áramlási vonalakkal lehet szemléltetni. Ez egy olyan vektortér, ami a tér minden pontjához hozzárendeli az ottani sebességvektort. Az áramvonalak úgy helyezkednek el, hogy minden pontbeli érintőjük megegyezik a sebesség irányával.
+A kontinuitási törvénynek van egy érdekes következménye összenyomhatatlan folyadékra. Vegyünk egy áramlási csövet, aminek átmérője változik, mondjuk csökken. Mivel a folyadék térfogata nem tud megváltozni, ezért szükségszerűen minél kisebb átmérőjű a cső, annál gyorsabban kell haladnia a folyadéknak. Vegyünk fel két metszetet a csőben, és ezeknél határozzuk meg $\varrho$, $A$, és $v$ értékét. Mivel
+\begin{equation}
+\oint_A\varrho\underline{v}d\underline{f}=0
+\end{equation}
+ezért egyszerűen:
+\begin{equation}
+\varrho_1v_1A_1=\varrho_2v_2A_2
+\end{equation}
+Amennyiben a folyadékunk összenyomhatatlan, akkor a sűrűség állandóságát is meg kell kötnünk, így a következő egyszerű törvényt kaptuk:
+\begin{equation}
+vA=const.
+\end{equation}
+Ennek szép reprezentációja a csapból kifolyó víz. A vízsugár egyre keskenyebb lesz, hiszen egyre gyorsabban folyik.
+(29)-ben láttuk, hogy egy szilárd testre hogyan lehet felírni a mozgásegyenletet. Ez láthatóan nem lesz jó egyelőre a folyadékok esetében, hiszen itt nem definiáltuk $\underline{u}$-t. Viszont $\underline{v}$ direkt úgy vezettük be, mint ennek a deriváltját. Legyen tehát $\dot{\underline{u}}=\underline{v}$, amiből $\underline{a}=\frac{d}{dt}\underline{v}(\underline{r(t)},t)$. A sebesség ilyen jellegű deriváltját anyagi deriváltnak nevezik.
+\begin{equation}
+a_i=\frac{\partial}{\partial x}v_i\frac{dx}{dt}+\frac{\partial}{\partial y}v_i\frac{dy}{dt}+\frac{\partial}{\partial z}v_i\frac{dz}{dt}+\frac{\partial}{\partial t}v_i
+\end{equation}
+Mivel $\frac{dx_i}{dt}=v_i$ ezért az anyagi derivált eredménye:
+\begin{equation}
+\underline{a}=(\underline{v}\nabla)\underline{v}+\frac{\partial\underline{v}}{\partial t}
+\end{equation}
+Ezt behelyettesítve a mozgásegyenletbe egy nem lineáris egyenletet kapunk $\underline{v}$-re.
+\begin{equation}
+\varrho\left[(\underline{v}\nabla)\underline{v}+\frac{\partial\underline{v}}{\partial t}\right]=\underline{f}+div\sigma
+\end{equation}
+Az egyenlet láthatóan csak a $(\underline{v}\nabla)\underline{v}$ nem lineáris tagban különbözik a szilárd anyagokra felírt mozgásegyenlettől. De ha belegondolunk, ez a tag $v^2$-tel arányos, és mivel $v$ szilárd testeknél kicsi, ott ez elhanyagolhatóvá válik, így vissza is kaphatjuk az eredeti egyenletünket.
+Stacionárius áramlásokat nézve az időderivált tag 0. Hidrosztatikában tapasztaltuk, hogy $\sigma$ (71) alakú. Azonban áramlásoknál ezt nem tehetjük fel, itt a feszültségtenzornak nem csak ezen elemei lesznek, hanem a következő általános alakban lehet felírni:
+\begin{equation}
+\sigma=-pI+\sigma'
+\end{equation}
+Ideális folyadéknak nevezzük azt, ahol ez a $\sigma'$ tag eltűnik. Ez fizikailag azt jelenti, hogy a folyadéknak nincs belső súrlódása (viszkozitása). Ez egzaktul 0 szuperfolyékony anyagoknál, de jó közelítéssel 0 valódi áramlásoknál a felületektől távol. A szuperfolyékony halmazállapot nagyon alacsony hőmérsékleten fellépő klasszikus fizikával nem magyarázható folyamat. Elsőként héliummal állítottál elő, a kísérletben porózus anyagban lévő folyékony héliumot hűtöttek le alacsony hőmérsékletekre, miközben a rendszert egy torziós szálon rezgették. Azt tapasztalták, hogy egy adott hőmérséklet alatt a torziós szál kitérései megváltoztak, mintha a forgó tömeg lecsökkent volna. Valóban ez is történt, a szuperfolyékony állapotú hélium már nem súrlódott a porózus anyaggal, tehát nem volt hatással a torziós szálra.
+Visszatérve tehát a stacionárius áramlásokra, legyen a folyadékunk ideális, ekkor (101) alakja:
+\begin{equation}
+\varrho\left[(\underline{v}\nabla)\underline{v}\right]=\underline{f}-grad(p)
+\end{equation}
+A mozgásegyenletünket még nem tudjuk megoldani, mivel hiányzik még egy egyenlet, a $p(\varrho)$ összefüggés. Szilárd testeknél $div\underline{u}$ megegyezett a relatív térfogatváltozással. Összenyomhatatlan folyadékoknál ez nyilván 0, ezért $div(\underline{v})=0$. Mivel $p$ és $\varrho$ között van egy összefüggésünk, a kontinuitási egyenlet, ezért $p(\varrho)$ csak olyan lehet, hogy kielégítse a $div(\underline{v})=0$ egyenletet. Ez a meggondolás analógiára ad lehetőséget a mechanikával. Mechanikai rendszereknél a kényszererők nagysága mindig akkora, hogy éppen kioltsa a vele szemben fellépő erőt. Összenyomhatatlan folyadéknál pedig a nyomás mindig akkora, hogy a folyadék összenyomhatatlan maradjon. Tehát jelen esetben a nyomás játssza a kényszererők szerepét.
+ 
+A folytatásban térjünk vissza az áramlási csőhöz. Az előző példával ellentétben itt határozzuk meg a két felületen fellépő nyomást is. A munkatétel értelmében a mozgási energia megváltozása megegyezik a rendszeren végzett munkával. A rendszert $\Delta t$ időtartamig vizsgálva írjuk fel a munkatételt.
+\begin{equation}
+\frac{1}{2}\Delta mv_2^2-\frac{1}{2}\Delta mv_1^2=p_1A_1v_1\Delta t-p_2A_2v_2\Delta t-\Delta m(U_2-U_1)+\Delta W_b
+\end{equation}
+Itt $U$ a helyzeti energia munkája, $\Delta W_b$ pedig a belső erők munkája. Osszuk le mindkét oldalt $\Delta m$-el.
+\begin{equation}
+\frac{v_2^2}{2}-\frac{v_1^2}{2}=\frac{p_1A_1v_1\Delta t}{\Delta m}-\frac{p_2A_2v_2\Delta t}{\Delta m}+U_1-U_2+\Delta\frac{W_b}{\Delta m}
+\end{equation}
+Észrevehetjük, hogy a jobboldalon szereplő első két tag nem más, mint a nyomás és a sűrűség hányadosa. Az utolsó tag az egységnyi tömeg által végzett belső erők munkáját jelenti. Összenyomhatatlan folyadékok esetén a fellépő belső erők csak kényszererők, ezért összmunkájuk 0. Az átalakított egyenletből tehát:
+\begin{equation}
+\frac{v^2}{2}+\frac{p}{\varrho}+U=const.
+\end{equation}
+Ez a Bernoulli törvény.
+Nézzük most meg a Bernoulli törvény egy speciális alakját. Termodinamikából tudjuk, hogy $DQ=dE+DW_b$. Ezt leosztva egységnyi tömeggel kifejezhetjük a (105)-ben megjelent $\frac{\Delta W_b}{\Delta m}$ tagot.Tegyük még fel, hogy a folyamat adiabatikus, tehát nincs hőcsere.
+\begin{equation}
+\frac{\Delta W_b}{\Delta m}=-\frac{dE_b}{\Delta m}
+\end{equation}
+Mivel $E_b=c_VmT$, és az állapotegyenletből $\frac{p}{\varrho}\frac{M}{R}=T$, felírhatjuk $E_b$-t, mint $\frac{p}{\varrho}$ függvényét.
+\begin{equation}
+E_b=\frac{1}{\kappa-1}\frac{p}{\varrho}
+\end{equation}
+Ahol $\kappa=\frac{c_p}{c_v}$. Ezt behelyettesítve (105)-be megkapjuk a Bernoulli egyenletet adiabatikus esetben ideális közegre.
+\begin{equation}
+\frac{v^2}{2}+\frac{\kappa}{\kappa-1}\frac{p}{\varrho}+U=const.
+\end{equation}
+A továbbiakban próbáljuk meghatározni, hogy milyen sebességgel áramlik a közeg, és ez hogyan függ az eddigi fizikai mennyiségektől. Ezekhez a következő, korábban már meghatározott egyenleteket használjuk fel:
+\begin{equation}
+\varrho vA=const.
+\end{equation}
+\begin{equation}
+\frac{v^2}{2}+\frac{\kappa}{\kappa-1}\frac{p}{\varrho}=const.
+\end{equation}
+\begin{equation}
+pV^{\kappa}=const.
+\end{equation}
+Ebből:
+\begin{equation}
+\frac{p}{\varrho^{\kappa}}=const.=\lambda
+\end{equation}
+Első lépésben vegyük (110) teljes differenciálját. Ennek 0-t kell adnia, hiszen a jobboldalt konstans érték volt, aminek deriváltja 0. A teljes differenciált végül osszuk le $\varrho vA$-val.
+\begin{equation}
+\frac{d\varrho}{\varrho}+\frac{dv}{v}+\frac{dA}{A}=0
+\end{equation}
+Második lépésben vegyük hasonló módon (111) teljes differenciálját!
+\begin{equation}
+(dv)v+\frac{\kappa}{\kappa-1}\frac{dp}{\varrho}-\frac{\kappa}{\kappa-1}\frac{1}{\varrho^2}pd\varrho
+\end{equation}
+Majd fejezzük ki (113)-ból $p$-t és képezzük a teljes deriváltját.
+\begin{equation}
+dp=\lambda\kappa\varrho^{\kappa-1}d\varrho=\kappa\frac{p}{\varrho}d\varrho
+\end{equation}
+Osszunk le $d\varrho$-val, így a baloldal mértékegysége $\frac{N/m^2}{kg/m^3}$ lesz, ami nem más, mint $\frac{m^2}{s^2}$. Azaz ez a mennyiség valamilyen $c$ sebességnek a négyzete.
+\begin{equation}
+c^2=\frac{dp}{d\varrho}=\kappa\frac{p}{\varrho}
+\end{equation}
+Ezt az eredményt próbáljuk meg beírni (115)-be.
+\begin{equation}
+(dv)v+\frac{\kappa}{\kappa-1}\frac{1}{\varrho}c^2d\varrho-\frac{\kappa}{\kappa-1}\frac{1}{\varrho}\frac{c^2}{\kappa}d\varrho
+\end{equation}
+Ebből egy kis egyenletrendezéssel:
+\begin{equation}
+(dv)v+\frac{d\varrho}{\varrho}c^2=0
+\end{equation}
+Felhasználva (114)-et, $\frac{d\varrho}{\varrho}$ tagot ki tudjuk fejezni $A$-val és $v$-vel.
+\begin{equation}
+(dv)v-\left(\frac{dA}{A}+\frac{dv}{v}\right)c^2=0
+\end{equation}
+Ebből:
+\begin{equation}
+\frac{dv}{v}\left(1-\frac{v^2}{c^2}\right)=-\frac{dA}{A}
+\end{equation}
+Vizsgáljuk meg részletesebben ezt az egyenletet! Legyen $v<c$, és legyen $dv>0$. Ekkor $dA<0$, azaz ha egy áramlási csőben csökkentjük a keresztmetszetet, akkor az közeg sebessége nő, feltéve, ha ez a sebesség kisebb, mint a $c$ hangsebesség. Viszont, ha $v>c$, akkor az áramlási sebesség akkor fog nőni, ha a keresztmetszet is nő! Ez egy igen érdekes következmény, amin a fúvókák működése is alapszik.
+Végül nézzük meg, hogy mit mondhatunk egy áramlás örvényességéről. (103) alapján felírhatjuk a mozgásegyenletet stacionárius áramlásra. Legyen $\underline{f}=-\varrho grad\phi$ gravitációs potenciál. Felhasználva, hogy
+\begin{equation}
+(v\nabla)v=\nabla\left(\frac{v^2}{2}\right)-v\times(\nabla\times v)
+\end{equation}
+felírhatjuk a mozgásegyenletünket egy új alakban.
+\begin{equation}
+grad\frac{v^2}{2}-v\times(\nabla\times v)=-\frac{1}{\varrho}grad(p)-grad\phi
+\end{equation}
+Láthatjuk hogy amennyiben a második tag 0, visszakapjuk a Bernoulli törvényt. A második tag elhanyagolása azt jelenti, hogy az áramlásban nincsenek záródó áramlási vonalak, azaz matematikailag az áramlás rotációmentes (örvénymentes). Az is látszik az egyenletből, hogy egy áramlás örvényességét nem lehet megváltoztatni, ha egyszer benne volt, akkor az benne is marad. Végül pedig mivel azt láttuk, hogy a Bernoulli-egyenletet csak ezen tag elhanyagolásával kaphattuk meg, következik, hogy ezt csak örvénymentes áramlásoknál lehet felírni.
+\pagebreak
+\section{tétel - Súrlódó folyadék, feszültségtenzor}
+Korábban már láttuk, hogy szilárd anyagoknál a feszültségtenzor a deformációtól függ. Említettük, hogy folyadékoknál ez nem lesz igaz, ugyanis ott nem $\varepsilon$-tól, hanem annak a deriváltjától fog függeni. Nézzük meg ezt az állítást.
+Vegyünk egy kétdimenziós példát: egy kádban folyadék van, amin úszik egy test. A ráható erőt $F=\eta\frac{vA}{l}$ alakban írhatjuk fel, ahol $l$ a víz mélysége, $v$ pedig a test sebessége. A nyírófeszültséget azonban nem $\eta\frac{v}{l}$ fogja megadni, azaz $\tau\neq\frac{F}{A}$ jelen esetben!
+\begin{equation}
+\tau=\eta\frac{dv_x}{dy}=\eta\dot{\varepsilon}_{12}
+\end{equation}
+Azaz a nyírófeszültség nem a sebességtől, hanem annak a deriváltjától függ (Newton). Vegyük észre, hogy a $\frac{dv_x}{dy}$ pont $\dot{\varepsilon}_{12}$. Tehát valóban, a feszültségtenzor ez esetben már az $\varepsilon$ deriváltjától függ.
+Szilárd anyagoknál feltehettük, hogy $\sigma(\varepsilon)$ összefüggés lineáris. Folyadékoknál ezt már nem tehetjük meg ilyen egyszerűen. Amennyiben $\sigma'(\dot{\varepsilon})$ lineáris, Newtoni folyadékról beszélünk, ha azonban nem az, akkor nem-newtoni folyadékról beszélünk. Ilyen például a gumiabroncs; hőmérséklet függvényében folyadék és szilárd halmazállapotú is lehet. Az átmenetet a két állapot között üvegesedési hőmérsékletnek nevezik.
+(37) szerint izotrop szilárd anyagra felírt Hooke törvény így néz ki:
+\begin{equation}
+\sigma_{ij}=2\mu\varepsilon_{ij}+\lambda\delta_{ij}\varepsilon_{ll}
+\end{equation}
+Ugyanezt felírhatjuk izotrop folyadékra is, alakilag ugyanúgy kell kinéznie, azaz:
+\begin{equation}
+\sigma'_{ij}=2\eta\dot{\varepsilon}_{ij}+\eta'\delta_{ij}\dot{\varepsilon}_{ll}
+\end{equation}
+Hasonlóan (16)-hoz, felírhatjuk $\dot{\varepsilon}$-ot, mint egy tenzor szimmetrikus részét:
+\begin{equation}
+\dot{\varepsilon}_{ij}=\frac{1}{2}\left(\frac{\partial v_i}{\partial r_j}+\frac{\partial v_j}{\partial r_i}\right)
+\end{equation}
+Ebből rögtön látszik, hogy $\dot{\varepsilon}_{ll}=div(\underline{v})$.
+Ezeket visszaírva (126)-ba:
+\begin{equation}
+\sigma'_{ij}=\eta\left(\frac{\partial v_i}{\partial r_j}+\frac{\partial v_j}{\partial r_i}\right)+\eta'\delta_{ij}div(\underline{v})
+\end{equation}
+Képezzük mindkét oldal divergenciáját ($\frac{\partial}{\partial r_i}$)!
+\begin{equation}
+\frac{\partial}{\partial r_i}\sigma'_{ij}=\eta\frac{\partial^2v_i}{\partial r_i\partial r_j}+\eta\frac{\partial^2 v_j}{\partial^2 r_i}+\eta'\frac{\partial}{\partial r_j}(div\underline{v})
+\end{equation}
+A kapott eredményt rendezzük, és helyettesítsünk vissza a mozgásegyenletünkbe.
+\begin{equation}
+\varrho\frac{\partial\underline{v}}{\partial t}+\varrho(\underline{v}\nabla)\underline{v}=-grad(p)+\eta\Delta\underline{v}+(\eta+\eta')grad(div(\underline{v}))+\underline{f}
+\end{equation}
+A folyadékok és gázok mozgásegyenletének ilyen alakját Navier-Stokes tételnek hívják.
+Írjuk fel, hogy milyen alakú lesz a Navier-Stokes egyenlet egy csőben történő stacionárius áramlás esetén. Mivel az áramlás stacionárius, a sebesség csak a helytől függ, időderiváltja kiesik. Folyadékoknál továbbá elhanyagolhatjuk az utolsó tagot is, valamint a $(v\nabla)v$-t is.
+\begin{equation}
+0=-grad(p)+\eta\Delta\underline{v}
+\end{equation}
+Ebből következik (129) alapján, hogy $div\sigma=0$, azaz $\oint\sigma d\underline{f}=0$. Vegyünk egy $l$ hosszú, $R$ sugarú csövet, amiben egy $r<R$ sugarú hengert vizsgálunk. Legyen a cső elején $p_1$, a cső végén $p_2$ a nyomás. A fellépő nyíróerőket (124) alapján felírhatjuk:
+\begin{equation}
+F=\eta A\frac{dv_x}{dr}=2\pi\eta rl\frac{dv_x}{dr}
+\end{equation}
+Hiszen a rendszer hengerszimmetrikus, így nincsenek benne kitüntetett irányok, azaz a derivált értéke csak a tengelytől mért távolságtól függ, valamint a sebességnek csak $x$ irányú komponense van.
+(104)-hez hasonlóan felírhatjuk a munkatételt. Ezúttal baloldal 0 lesz, hiszen a mozgási energia a henger mindkét oldalán megegyezik, mivel az áramlás stacionárius, valamint le is oszthatunk a hosszal, és tömeggel, hiszen az minden tagban szerepelni fog.
+\begin{equation}
+2\pi\eta rl\frac{d v_x}{dr}+p_1r^2\pi-p_2r^2\pi=0
+\end{equation}
+Az egyenletet átalakítva, és a két oldalt integrálva megkapjuk a sebességet a tengelytől való távolság függvényében.
+\begin{equation}
+v_x(r)=\frac{(p_2-p_1)}{4\eta l}r^2+c
+\end{equation}
+A fellépő konstanst a szokásos módon határfeltétellel kiküszöbölhetjük: legyen például $v_x(R)=0$, ami durva felületű csöveknél jó közelítés. Ebben az esetben (134) alakja:
+\begin{equation}
+v_x(r)=\frac{(p_1-p_2)}{4\eta l}(R^2-r^2)
+\end{equation}
+Az eredményt továbbgondolhatjuk a következő módon. A kontinuitási egyenletből tudjuk, hogy adott felületeken átáramló anyagmennyiségnek egységnyi idők alatt állandóknak kell lennie egy csőben. Bevezethetünk egy $\underline{J}$ vektort, ami az áramsűrűséget jelenti (hasonlatosan az elektrodinamikához). Legyen $\underline{J}$ a sűrűség, és a sebesség szorzataként definiálva. Ekkor egy adott felületen átáramló anyagmennyiséget $\underline{J}$ integráljaként kaphatjuk meg.
+\begin{equation}
+\dot{\Phi}=\int\varrho\frac{(p_1-p_2)}{4\eta l}(R^2-r^2)d\underline{f}=\int_{0}^{R}\varrho\frac{(p_1-p_2)}{4\eta l}(R^2-r^2)2\pi rdr
+\end{equation}
+Az integrál elvégzésével megkapjuk, hogy az átáramló anyagmennyiség hogyan függ a cső paramétereitől.
+\begin{equation}
+\dot{\Phi}=\frac{\varrho\pi}{8\eta l}(p_1-p_2)R^4
+\end{equation}
+Azaz arányos a sugár negyedik hatványával, és csak egyenesen arányos a nyomáskülönbséggel.
+Tegyük fel, hogy egy áramlásnál ismerjük a végtelenben mért áramlási sebességet, legyen ez $v_{\infty}$. A mozgásegyenlet szerint:
+\begin{equation}
+\varrho\left[\frac{\partial v}{\partial t}+(v\nabla)v\right]=-grad(p)+\eta\Delta v
+\end{equation}
+Látható, hogy baloldalt található egy, a sebesség négyzetével arányos tag, míg jobboldalt egy a sebességet lineárisan tartalmazó tag. $\varrho(v\nabla)v\sim\varrho\frac{v_{\infty}^2}{l}$ míg $\eta\Delta v\sim\eta\frac{v_{\infty}}{l^2}$. Vezessünk be egy mértékegység nélküli arányszámot, ami ezeknek a hányadosa. Ezt Reynolds-számnak hívják, és megmutatja, hogy egy áramlás turbulens-e.
+\begin{equation}
+\mathcal{R}=\frac{\varrho}{\eta}v_{\infty}l
+\end{equation}
+Az egyenletben megjelenő $\frac{\eta}{\varrho}$ tagot kinematikai viszkozitásnak nevezik, és $\nu$-vel jelölik. Amennyiben $\mathcal{R}$ kicsi,a $(v\nabla)v$ tag elhanyagolhatóvá válik, ha nagy, akkor ezt nem tehetjük meg. Ha az $\mathcal{R}$ értéke egy bizonyos küszöb felett van, akkor az áramlás turbulens lesz. A Reynolds-szám jelentősége a hasonlósági áramlásoknál jelenik meg. Amennyiben két probléma $\mathcal{R}$-je ugyanaz, a kettő könnyen átszámolható egymásba. Ezen alapszik a kicsinyített változatú kísérlet.
+\pagebreak
+\section{tétel - Hang terjedése gázokban, hullámegyenlet}
+A hangot nyomáshullámként értelmezhetjük, amint egy gázban vagy folyadékban halad. Ezért tehát egy összenyomhatatlan gázt, vagy folyadékot véve érthető, hogy ebben a hang terjedési sebessége végtelen lenne. Ez nyilvánvalóan nem lehet, ezért a hang terjedésénél nem feltételezhetjük, hogy a közeg összenyomhatatlan. A probléma tárgyalásához írjuk fel a mozgásegyenletet és a kontinuitási egyenletet.
+\begin{equation}
+\varrho\frac{\partial v}{\partial t}+\varrho(v\nabla)v=-grad(p)
+\end{equation}
+A mozgásegyenletben most hanyagoljuk el a súrlódási erőket.
+\begin{equation}
+\frac{\partial\varrho}{\partial t}+div(\varrho v)=0
+\end{equation}
+A két egyenlet triviális megoldása rögtön látszik, hiszen a $v=0$, $\varrho=\varrho_0$, és $p=p_0$ kielégíti őket. Azaz egy konstans nyomású, és sűrűségű álló közeg jó megoldás. Tegyük most fel, hogy $v=0+v$, $\varrho=\varrho_0+\delta\varrho$, $p=p_0+\delta p$ is jó. Tegyük most be ezeket (140), illetve (141)-be és hanyagoljuk el azokat a tagokat, amikben $\delta\delta$ van.
+\begin{equation}
+\varrho_0\frac{\partial v}{\partial t}=-grad(\delta p)
+\end{equation}
+\begin{equation}
+\frac{\partial\delta\varrho}{\partial t}+\varrho_0div(v)=0
+\end{equation}
+Tételezzük fel, hogy létezik egy $p(\varrho)$ összefüggés, amit ismerünk. Ekkor:
+\begin{equation}
+p(\varrho)=p(\varrho_0)+\left.\frac{dp}{d\varrho}\right|_{\varrho_0}\delta\varrho=p_0+c^2\delta\varrho
+\end{equation}
+Ezt visszahelyettesítve (142)-be:
+\begin{equation}
+\varrho_0\frac{\partial v}{\partial t}=-c^2grad(\delta\varrho)
+\end{equation}
+Vegyük (143) időderiváltját, és (142) divergenciáját!
+\begin{equation}
+\frac{\partial^2\delta\varrho}{\partial t^2}+\varrho_0div\left(\frac{\partial v}{\partial t}\right)=0
+\end{equation}
+\begin{equation}
+\varrho_0div\left(\frac{\partial v}{\partial t}\right)=-c^2\Delta\delta\varrho
+\end{equation}
+(147) eredményét helyettesítsük be (146)-ba:
+\begin{equation}
+\frac{\partial^2\delta\varrho}{\partial t^2}-c^2\Delta\delta\varrho=0
+\end{equation}
+Ezt az egyenletet nevezzük hullámegyenletnek. Általánosságban hullámegyenlet tetszőleges $\Phi$ terjedő mennyiségre felírható hasonló alakban.
+\begin{equation}
+\frac{\partial^2\Phi}{\partial t^2}-c^2\Delta\Phi=0
+\end{equation}
+Korábban megemlítettük, hogy egy áramlás örvényessége megmarad, ezt most könnyen bizonyítani is tudjuk. Képezzük (142) rotációját. Felhasználva, hogy egy gradienstér rotációja 0, a következőt kapjuk.
+\begin{equation}
+\varrho_0\frac{\partial}{\partial t}(rot(v))=0
+\end{equation}
+Ebből látszik, hogy a sebességtér rotációja időben állandó értéket vesz fel, azaz az áramlás örvényessége időben állandó.
+Felmerülhet a kérdés, hogy hogyan tudjuk kiszámolni a hangsebességet egy közegben. Itt kétféle közelítést alkalmazhatunk. Először is feltesszük, hogy $\delta\varrho=\delta\varrho_0\sin(\omega t+kr)$ megoldás. Ebben az esetben a hullámegyenlet megoldásával látszik, hogy $\omega=c|k|$-nek teljesülnie kell. Tehát szét kell bontanunk a feladatot kis és nagyfrekvenciás hullámokra. Kis frekvenciás hullámoknál az ideális gáz állapotegyenletéből kapott $\frac{p}{\varrho}=\frac{R}{M}T$ értékkel számolunk. Itt az volt a feltételünk, hogy a folyamat lassú legyen, hogy $T$ állandósága megmaradjon. Ezt azzal ki is elégítettük, hogy csak kisfrekvenciáknál nézzük ezt az esetet. Ekkor tehát $c^2=\frac{R}{M}T$.
+Nagyfrekvencia esetén feltételezhetjük, hogy a folyamat adiabatikus, azaz olyan gyorsan végbemegy, hogy nincs idő a hőcserére. Ekkor az adiabata egyenletéből kapott összefüggéssel számolhatunk: $\frac{p}{\varrho^{\kappa}}$. Ebből $c^2=\kappa\frac{R}{M}T$. Látható, hogy a kettő közelítés között nagy különbség nincs, hiszen $\kappa=\frac{c_p}{c_v}$.
+Vegyünk egy sík hanghullámot, és bizonyítsuk be, hogy ez longitudinális.
+\begin{equation}
+\delta\varrho=\delta\varrho_0\sin(\omega t+\underline{k}\underline{r})
+\end{equation}
+\begin{equation}
+\underline{v}=\underline{v}_0\sin(\omega t+\underline{k}\underline{r})
+\end{equation}
+Ezeket helyettesítsük be (147)-be!
+\begin{equation}
+\varrho_0\omega\underline{v}_0\cos(\omega t+\underline{k}\underline{r})=-c^2\underline{k}\delta\varrho_0\cos(\omega t+\underline{k}\underline{r})
+\end{equation}
+Láthatjuk, hogy mindkét oldal egy vektormennyiség, tehát nagyságuknak és irányuknak is meg kell egyezniük. Mivel baloldal irányát $\underline{v}_0$ határozza meg, jobb oldal irányát pedig $\underline{k}$, ezeknek párhuzamosnak kell lenniük. Ez viszont azt jelenti, hogy a hullám terjedési sebessége párhuzamos a terjedés irányával, azaz a hullám longitudinális.
+
+\section{tétel - Rugalmas hullámok terjedése}
+A hullámegyenlethez tartozó síkhullám-megoldások bázist alkotnak a megoldások terén. De egy egyszerű megoldáshoz nem kell ennyire belemélyedni a matematikába, létezik egy ennél egyszerűbb általános megoldás is. A hullámegyenlet:
+\begin{equation}
+\frac{\partial^2\delta\varrho}{\partial t^2}-c^2\Delta\delta\varrho=0
+\end{equation}
+Ennek egydimenziós változatában a Laplace-operátor átalakul egyváltozós második deriválttá. Haladjon a hullám $x$ irányba, ekkor $f(x\pm ct)$ is megoldás, azaz $(x\pm ct)$ tetszőleges, kétszer deriválható függvénye kielégíti a hullámegyenletet. Ennek fizikai jelentése nagyon egyszerű: egy hullámcsomagunk, ami $x$ irányban $c$ sebességgel terjed az adott közegben. Ezt legegyszerűbben egy kötélen lehet megmutatni. Legyen a kötél mindkét vége rögzített, és indítsunk el egy hullámot az egyik végén. Ez az alak a kötélen végigfut, majd a végéről visszapattan. Peremfeltételként meg kell adnunk, hogy a másik végén  a függvényértéknek 0-nak kell lennie, hiszen az is rögzített vég. Mi történik ekkor a visszaverődés után? A hullám ellentétes oldalon verődik vissza, azaz ha a hullámot felfelé indítottuk, a visszaverődő hullám lent fog jönni. Ezt egyszerűen úgy lehet szemléltetni, hogy a kötelet virtuálisan "kiegészítjük" egy ugyanolyan hosszú kötéllel a második vég után. Mindkét végen elindítunk egy ugyanolyan hullámot, ugyanabban az időpontban azzal a különbséggel, hogy az egyik felfelé, a másikat lefelé, azaz a két hullámot ellentétes fázisban indítjuk el. A második rögzített vég közelében a hullám ellentétes fázisban találkozik egymással. Ellentétes fázisok összege mindig 0-t fog adni, tehát a második rögzített végen ki is elégítettük a feltételt. Úgy értelmezzük, hogy a hullámok terjednek tovább, azaz a valódi hullám terjed tovább a virtuális kötélen, és a virtuális hullám pedig belép a valós részre, azért tehát a zártvégi visszaverődés eredménye egy ellentétes fázisú hullám.
+Nyíltvégi visszaverődésnél valami nagyon hasonló történik. Különbség csak annyi, hogy itt nem a függvényértéknek, hanem a függvény deriváltjának kell 0-t adnia a végpontban. Ezt az előző analógiával úgy mutatjuk meg, hogy itt nem ellentétes, hanem azonos fázisú hullámokat indítunk el, ez kielégíti a deriváltfeltételt. 
+Az előbb megmutattuk, hogy $f(x\pm ct)$ megoldja a hullámegyenletet, valamint azt is láttuk korábban, hogy a síkhullám-megoldás alakja $\delta\varrho=\delta\varrho_0\sin(\omega t-kr)$. Vigyük ezt át egy dimenzióba, és írjuk fel $f(x\pm ct)$ két függvényt ezek segítségével.
+\begin{equation}
+\delta\varrho_1=\delta\varrho_0\sin(\omega t-kx)
+\end{equation}
+\begin{equation}
+\delta\varrho_2=\delta\varrho_0\sin(\omega t+kx)
+\end{equation}
+Ha van két megoldásunk, akkor azok összegének is megoldást kell adnia, azaz $\delta\varrho_1+\delta\varrho_2$ is kielégíti a hullámegyenletet.
+\begin{equation}
+\delta\varrho_1+\delta\varrho_2=2\delta\varrho_0\sin(\omega t)\cos(kx)
+\end{equation}
+Ez egy állóhullám egyenlete. A szinuszos tag csak az időt tartalmazza, ez felel a harmonikus rezgőmozgásért, a második, koszinuszos tag pedig az amplitúdó változásait írja le. Mivel állóhullámról beszélünk, ezért megkövetelhetjük, hogy $\delta\varrho(t,0)=0$ és $\delta\varrho(t,L)=0$. Ebből következik, hogy $kL=n\pi$, azaz nem választhatunk akármekkora hullámszámot egy adott hosszúságú kötélen, csak bizonyos értékeket: $k=\frac{n\pi}{L}$.
+A hullámok terjedésének érdekes tulajdonsága a diszperzió, azaz a hangsebesség frekvenciától való függése. Ugyanezt a jelenséget megfigyelhetjük fényhullámoknál is, a prizma működése ezen az elven működik. Hasonlóan az előző példához, adjunk össze két megoldást. Ezúttal a kettő frekvenciája, illetve hullámhossza ne egyezzen meg. Ekkor:
+\begin{equation}
+A\sin(\omega_1t+k_1x)+A\sin(\omega_2t+k_2x)
+\end{equation}
+Ennek eredménye a $\sin(\alpha)+\sin(\beta)=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$ trigonometrikus azonosság alapján:
+\begin{equation}
+2A\sin\left[\left(\frac{\omega_1+\omega_2}{2}\right)t+\left(\frac{k_q+k_2}{2}\right)x\right]\cos\left[\left(\frac{\omega_1-\omega_2}{2}\right)t+\left(\frac{k_q-k_2}{2}\right)x\right]
+\end{equation}
+Amennyiben $\omega$-k és $k$-k kicsiben különböznek egymástól, az eredményben az amplitúdó lassan tolódik arrébb. Bevezethetünk az ilyen hullámokra két különböző terjedési sebességet is. Legyen csoportsebesség $c_{cs}$, és fázissebesség $c_f$. Ezeket a szinusz illetve a koszinusz argumentumából kaphatjuk meg.
+\begin{equation}
+c_{cs}=\frac{\omega_1-\omega_2}{k_1-k_2}\approx\frac{d\omega}{dk}
+\end{equation}
+\begin{equation}
+c_f=\frac{\omega}{k}
+\end{equation}
+Felmerül a kérdés, hogy lehet-e a fázissebesség gyorsabb, mint a csoportsebesség. A válasz igen, lehet. Ebből következik, hogy létezik fénysebességnél nagyobb sebesség. A fénykvantumok csoportsebessége adja meg az ismert fénysebesség $c$ értékét, de a kvantumon belül a rezgések terjedhetnek gyorsabban, mint a fény. Ez nem is mond ellent a relativitáselméletnek, hiszen a fény által hordozott információ nem a fázisban, hanem a hullámcsomagban van, és ez nem is terjed gyorsabban, mint a határsebesség.
+Eddig azzal foglalkoztunk, hogy hogyan terjed a hanghullám folyadékban illetve gázban. Térjünk most át arra, hogy mi a helyzet a szilárd anyagban. Mint azt már (49)-ben láttuk, izotrop anyagokra felírt mozgásegyenlet a következő alakú. (Ismét hanyagoljuk el a külső erőket.)
+\begin{equation}
+\varrho\frac{\partial^2\underline{u}}{\partial t^2}=\mu\Delta\underline{u}+(\lambda+\mu)grad(div\underline{u})
+\end{equation}
+Vegyük ennek először a divergenciáját (163), majd a rotációját (164).
+\begin{equation}
+\varrho\frac{\partial^2}{\partial t^2}div(\underline{u})=(\lambda+2\mu)\Delta(div\underline{u})
+\end{equation}
+\begin{equation}
+\varrho\frac{\partial^2}{\partial t^2}rot(\underline{u})=\mu\Delta(rot\underline{u})
+\end{equation}
+A (149) hullámegyenletet figyelembe véve észrevehetjük, hogy a fentiek is ugyanilyen alakúak. Ezért a Laplace-operátoros tag együtthatójának $c^2$-et kell adnia. Két különböző sebességértéket kaptunk, legyenek ezek rendre $c_L$ és $c_T$, mindjárt meglátjuk, hogy miért így hívjuk őket.
+\begin{equation}
+c_L^2=\frac{\lambda+2\mu}{\varrho}
+\end{equation}
+\begin{equation}
+c_T^2=\frac{\mu}{\varrho}
+\end{equation}
+Legyen a hullámunk $\underline{u}=\underline{u}_0e^{i(\omega t+kr)}$ alakú. Ennek divergenciája (167), rotációja (168).
+\begin{equation}
+div(\underline{u})=i(\underline{u}_0\underline{k})e^{i(\omega t+kr)}
+\end{equation}
+\begin{equation}
+rot(\underline{u})=i(\underline{u}_0\times\underline{k})e^{i(\omega t+kr)}
+\end{equation}
+Tudjuk, hogy a transzverzális módus divergenciája 0, valamint, hogy a longitudinális módus rotációja 0. Az előző két egyenlet felhasználásával tehát: (167) 0-t ad akkor, ha $\underline{u}_0\bot\underline{k}$, tehát ez a transzverzális módus, valamint (168) 0-t ad, ha $\underline{u}_0\parallel\underline{k}$, tehát ez a longitudinális módus. Így tehát (165) a longitudinális hullám terjedési sebessége, míg (166) a transzverzális hullámé.
+Megfigyelhetjük, hogy ha egy szilárd anyagban hangot indítunk, azt a testtől távol is halljuk, azaz a hang a testből továbbterjed a levegőbe is. Ennek feltétele, hogy a feszültségtenzornak folytonosan kell átalakulnia a közeghatáron. Ez hasonló az elektromágnesességben megfigyelhető közeghatári folytonos $\underline{B}$, $\underline{H}$... átalakulással.
+\pagebreak
+\section{tétel - Véges tömegű rugó rezgései}
+Legyen egy véges $m$ tömeggel rendelkező rugónk, aminek a végére egy $M$ tömegű testet akasztunk. Tekintsük a rugót folytonos, szilárd közegnek. A rugó csak függőleges irányban tud megnyúlni, így ez egy egydimenziós rendszer, az $\underline{u}$ deformációnak csak $x$ komponense van, ebből következik, hogy a $\sigma$ tenzornak is csak egy nem 0 komponense van.
+Legyen tehát $\underline{u}=(u(x,t),0,0)$. Szabjuk meg azt a határfeltételt, hogy $u(t,0)=0$, azaz, hogy a felfüggesztés ne mozogjon. Írjuk fel a mozgásegyenletet. Tegyük fel, hogy nincsenek külső erők, és használjuk ki, hogy $div\sigma=Ediv\varepsilon$, ez komponensekre bontva: $E\frac{\partial^2u}{\partial x^2}$.
+\begin{equation}
+\varrho\frac{\partial^2 u}{\partial t^2}=E\frac{\partial^2u}{\partial x^2}
+\end{equation}
+A hullámegyenletre ránézve láthatjuk, hogy ez is az. Tehát $c^2=\frac{E}{\varrho}$. Mivel $F=\sigma A$, Newton II. törvényéből az
+\begin{equation}
+M\frac{\partial^2u(t,L)}{\partial t^2}=-AE\left.\frac{\partial u}{\partial x}\right|_L
+\end{equation}
+egyenletet kapjuk a rugó végének mozgására. Ez egy parciális differenciálegyenlet $u$-ra, amit meg tudunk oldani, hiszen a várt megoldás harmonikusan rezgő állóhullám lesz. Legyen tehát $u$ (157)-hez hasonlatos.
+\begin{equation}
+\underline{u}=\underline{u}_0sin(\omega t)sin(kx)
+\end{equation}
+Ezt behelyettesíthetjük (169)-be. Azt kapjuk, hogy ez jó megoldás, ha $\omega^2=\frac{E}{\varrho}k^2$. Valamint határfeltételünket is kielégíti, hiszen $u(t,0)$-ban az egyenlet azonosan 0-t ad. Írjuk be most ezt (170)-be!
+\begin{equation}
+\omega^2Mu_0sin(\omega t)sin(kL)=AEu_0ksin(\omega t)sin(kL)
+\end{equation}
+Felhasználva, hogy $\omega^2=\frac{E}{\varrho}k^2$, a következő egyenletet kapjuk $k$-ra.
+\begin{equation}
+\frac{M}{m}(kL)=ctg(kL)
+\end{equation}
+Az ábrázolás egyszerűsége kedvéért legyen $kL=x$ új jelölés. Ekkor $\frac{M}{m}x=ctg(x)$ egyenletet grafikusan egyszerűen meg tudjuk oldani. Láthatjuk, hogy végtelen sok megoldás van $kL$-re. Azonban a súrlódás következtében valójában csak a legkisebb frekvenciájú rezgés marad meg, tehát csak az első metszéspont érdekel minket. Amennyiben $M>>m$, a lineáris egyenes meredeksége nagyon nagy, ezért a kotangens függvényt kis $x$ értékben fogja metszeni. Ha $x$ kicsi, akkor $ctg(x)$-et sorba fejthetjük.
+\begin{equation}
+ctg(x)\approx\frac{1}{x}-\frac{x}{3}
+\end{equation}
+Ezt behelyettesítve (173)-ba $x^2$-et ki tudjuk fejezni. Visszahelyettesítve $x=kL$-t:
+\begin{equation}
+k^2L^2=\frac{1}{\frac{M}{m}+\frac{1}{3}}
+\end{equation}
+Felhasználva, hogy $\omega^2=\frac{E}{\varrho}k^2$, $LA\varrho=m$, valamint $\frac{EA}{L}=D$:
+\begin{equation}
+\omega^2=\frac{EA}{LA\varrho}\frac{1}{L}\frac{1}{\frac{M}{m}+\frac{m}{3}}=\frac{D}{M+\frac{m}{3}}
+\end{equation}
+Ezzel sikerült meghatároznunk a rugón kialakuló rezgések frekvenciáját $M \gg m$ esetben.
+Amennyiben lett volna gravitációs erőtér, $\underline{f}$ tagot nem hagytuk volna el. Ez a megoldás alakját nem változtatta volna, csak az egyensúlyi helyzet tolódott volna el.
+\end{document}
