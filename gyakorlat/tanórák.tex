@@ -18,6 +18,7 @@
 \usepackage{epstopdf}
 \usepackage{xcolor}
 \usepackage[hidelinks,unicode]{hyperref}
+\usepackage{siunitx}
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
@@ -38,8 +39,23 @@
 \section*{Kötelező tájékoztatás az első órán}
 A \href{https://www.elte.hu/file/ELTE_SZMSZ_II.pdf}{HKR} tartalmazza, hogy mik a feltételei annak, hogy valaki a kurzusra érdemjegyet kapjon, az oktatónak pedig további információkkal kell szolgálnia az első órán. Az első előadáson elhangzott kötelező tájékoztató, amely az \href{http://ispanovity.web.elte.hu/teaching/}{előadó honlapjáról} is elérhető.
 
-\subsection{Koronavírusos betegséggel kapcsolatos kiegészítés}
-2020.\ március 11-én a kormány vészhelyzetet hirdetett ki, amely miatt a korábban rögzített és alább részletezett kurzusteljesítési feltételeken módosítani kell.
+\subsection{Koronavírusos betegséggel kapcsolatos kiegészítések}
+\paragraph{Még újabb kiegészítés 2020. 04. 6-án}
+Az egyetemünk által kiadott legújabb tájékoztatóban leírtak szerint életbe léptetett ideiglenes Tanulmányi és Vizsgaszabályzattal összhangban megváltoztatjuk a kurzusteljesítési feltételeket.
+
+Eredetileg a félévben 13 alkalommal került volna a gyakorlat megtartásra, azonban a rektori szünet miatt ebből egy elmaradt, így a 12 alkalommal összesen 11 házifeladat-sort terveztünk kiadni. Ebből az 5. hetit már be kellett adni, és az elkövetkező csütörtökre kell beadni a 6-at. A hátralévő házi feladatok ZH-helyettesítő alternatívára avanzsálnak elő. Ez azt jelenti, hogy amennyiben az épületlátogatási tilalom miatt a félév végéig nem lehetséges ZH-t íratni, akkor a gyakorlatra kapott összes pont kizárólag házi feladatokból fog számítódni. Ebben az esetben a már megíratott házi feladatsorok súlya nem változik, azonban a hátralevőké úgy növekszik meg, hogy fedezze a ZH-ra adható pontokat is.
+\begin{itemize}
+\item Az eddigi beadott házi feladatokból $5/11 \cdot  20$ pont szerezhető. A 3. heti házi feladatsor alaposabban lett ellenőrizve, az nagyobb súllyal számít bele ezekbe a pontokba.
+\item A hátralévő (6-kal együtt) házi feladatokból $6/11 \cdot 20 + 2 * 15$ pont szerezhető. A hátralevő feladatsorok közül néhány alaposabban lesz ellenőrizve, ezek nagyobb súllyal fognak a pontoknak ebbe a részébe beleszámítani.
+\end{itemize}
+
+Megváltozik a minimálisan gyűjtendő pontok száma is.
+\begin{itemize}
+\item A hátralévő 6. és 7. feladatsor a folytonos közegekhez tartozik. Az ezekre szerezhető pontok 1/3-át el kell érni, és
+\item A 8-11 feladatsorok (4 db) pontjaiból szintén el kell érni azok 1/3-át.
+\end{itemize}
+    
+\paragraph{2020.\ március 11-én} a kormány vészhelyzetet hirdetett ki, amely miatt a korábban rögzített és alább részletezett kurzusteljesítési feltételeken módosítani kell.
 
 A hirdetmény értelmében határozatlan időre intézménylátogatási tilalom lép életbe az egyetemen. A március 12-ei és 13-ai órák elmaradnak, és ez érinti ezt a kurzust is, az órák száma 1-gyel csökken. A tavaszi szünet március 16-tal kezdődő héten lesz megtartva. A szünet után távoktatást indít az egyetem. Javasolt, hogy a tilalom ideje alatt meg se próbáljanak a hallgatók belépni az egyetemre, ami feltehetőleg zárva is lesz. Továbbra is lesznek tanórák, amelyek azonban nem a tanteremben lesznek megtartva, hanem a tananyag az eddig megszokott módon online kerül feltöltésre. Ez az órák menetét lényegében nem befolyásolja. A tavaszi szünetet követően, amennyiben a tilalom továbbra is tartani fog, a tilalom miatt mulasztott órák nem számítanak bele a HKR szerinti $1/3$-os korlátba.
 
@@ -1993,6 +2009,42 @@ Ez a légköri nyomás $0{,}1\%$-a.
 \end{aligned} \]
 Behelyettesítés után adódik, hogy $R' = 44{,}7{\text{ mm}}$.
 \end{enumerate}
+\normalsize
+
+\section{Bernoulli-törvény}
+Ha egy közeg stacionárius áramlása közben nincs hőcsere, akkor felhasználva az energia- és anyagmegmaradási tételt, kapjuk, hogy az áramlásra merőleges minden keresztmetszet mentén
+\begin{equation} \label{eq:bernulli}
+\frac{{{v^2}}}{2} + \frac{p}{\varrho } + u + {e_b} = {\text{állandó}},
+\end{equation}
+ahol $v$ a sebesség, $p$ a nyomás, $\varrho$ a sűrűség, $u$ a fajlagos potenciális energia és $e_b$ a (termodinamikai) belső energia, ami összenyomhatatlan folyadékra állandó. Ideális gázokra
+\[\frac{{{v^2}}}{2} + \frac{p}{\varrho }\frac{\kappa }{{\kappa  - 1}} + u = {\text{állandó.}}\]
+
+\footnotesize
+\paragraph{Példa}
+Vízszintes áramlási cső $q_1$ és $q_2$ keresztmetszetű részeibe iktatott folyadék manométerekben a szintkülönbség $h$, ahogy azt \aref{fig:bernoulli}.\ ábrán láthatjuk. Fejezzük a másodpercenként átáramló víz mennyiségét $h$ függvényében! (Az áramlás súrlódásmentesnek és stacionáriusan tekinthetjük.) Az általános képleten túl helyettesítsünk is be konkrét számértékekkel, $q_1 = \SI{5}{cm^2}$, $q_2 = \SI{3}{cm^2}$, $h={\hat x}\,\si{cm}$
+
+\begin{figure}[htb] 
+\centering    
+\includegraphics[scale=1]{figs/bernoulli_pelda.eps}
+\caption{Nyomáskülönbség stacionárius áramlás esetén.}
+\label{fig:bernoulli}
+\end{figure}
+\FloatBarrier
+
+\paragraph{Megoldás}
+
+A Bernulli-tétel szerint az 1-es és 2-es keresztmetszet mentén \atold(\ref{eq:bernulli})+as{} mennyiség állandó, így 
+\[\frac{{{p_1}}}{\varrho } + \frac{1}{2}v_1^2 = \frac{{{p_2}}}{\varrho } + \frac{1}{2}v_2^2.\]
+A víz jó közelítéssel összenyomhatatlan is, így 
+\[{q_1}{v_1} = {q_2}{v_2}.\]
+A $h$ magasságkülönbség okozta sztatikus nyomáskülönbség
+\[{p_1} - {p_2} = \varrho gh.\]
+A három egyenletből kifejezve $v_1$-et, eliminálva $p_1$ és $p_2$-t, kapjuk, hogy 
+\[{v_1} = {q_2}\sqrt {\frac{{2gh}}{{q_1^2 - q_2^2}}}.\]
+Ebből az időegység alatt átáramló térfogat
+\[\frac{{dV}}{{dt}} = {q_1}{v_1} = {q_1}{q_2}\sqrt {\frac{{2gh}}{{q_1^2 - q_2^2}}} .\]
+Behelyettesítve a számadatokkal, 
+\[\frac{{dV}}{{dt}} = 166\sqrt {\hat x}\,\si{cm^3/s} = 0{,}166\sqrt{{\hat x}}\,\si{liter/s}.\]
 \normalsize
 \end{document}
 

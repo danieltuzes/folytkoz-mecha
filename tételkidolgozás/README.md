@@ -1,0 +1,2 @@
+# Mik vannak itt?
+Kétféle tételkidolgozás-sorozat található itt. Az egyiket diákok készítétték (amelyek közül a 6-ost és 7-est ellenőriztem), illetve Seller Károly jegyzetét. Jó volna a kettőt összegyúrni és kiegészíteni.
