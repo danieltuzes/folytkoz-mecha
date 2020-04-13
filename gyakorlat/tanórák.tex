@@ -18,7 +18,7 @@
 \usepackage{epstopdf}
 \usepackage{xcolor}
 \usepackage[hidelinks,unicode]{hyperref}
-\usepackage{siunitx}
+\usepackage[locale=FR, exponent-product = \cdot]{siunitx}
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
@@ -1935,7 +1935,7 @@ A jelenség leírási egyszerű a káddal együtt mozgó koordináta-rendszerben
 Függőleges falú, vízzel töltött medencében kővel terhelt csónak úszik a vízen. Változik-e a medencében a víz szintjének a magassága, ha a köveket a csónakból a vízbe dobjuk?
 
 \paragraph{Megoldás}
-Legyen a medence aljának területe $A$, a vízszint magassága (mikor a terhelt csónak úszik rajta) $h_1$, a kövek vízbedobása után pedig $h_2$! Legyen az üres csónak súlya $G_1$, a köveké pedig $G$! A terhelt csónak által kiszorított víz térfogata $V_1$, az üres csónak által kiszorított víz térfogata $V_1$, a medencében lévő víz térfogata pedig $V$! Ekkor
+Legyen a medence aljának területe $A$, a vízszint magassága (mikor a terhelt csónak úszik rajta) $h_1$, a kövek vízbedobása után pedig $h_2$! Legyen az üres csónak súlya $G_1$, a köveké pedig $G$! A terhelt csónak által kiszorított víz térfogata $V_1$, az üres csónak által kiszorított víz térfogata $V_2$, a medencében lévő víz térfogata pedig $V$! Ekkor
 A kővel terhelt és nem terhelt csónak is úszik a víz felszínén, ezért
 \[{G_1} + G = {\varrho _{\text{víz}}}{V_1}g,\]
 illetve
@@ -2012,7 +2012,7 @@ Behelyettesítés után adódik, hogy $R' = 44{,}7{\text{ mm}}$.
 \normalsize
 
 \section{Bernoulli-törvény}
-Ha egy közeg stacionárius áramlása közben nincs hőcsere, akkor felhasználva az energia- és anyagmegmaradási tételt, kapjuk, hogy az áramlásra merőleges minden keresztmetszet mentén
+Ha egy közeg stacionárius áramlása közben nincs hőcsere és súrlódás, akkor felhasználva az energia- és anyagmegmaradási tételt, kapjuk, hogy az áramlásra merőleges minden keresztmetszet mentén
 \begin{equation} \label{eq:bernulli}
 \frac{{{v^2}}}{2} + \frac{p}{\varrho } + u + {e_b} = {\text{állandó}},
 \end{equation}
@@ -2046,5 +2046,73 @@ Ebből az időegység alatt átáramló térfogat
 Behelyettesítve a számadatokkal, 
 \[\frac{{dV}}{{dt}} = 166\sqrt {\hat x}\,\si{cm^3/s} = 0{,}166\sqrt{{\hat x}}\,\si{liter/s}.\]
 \normalsize
+
+\section{Gázok állapotegyenlete}
+\subsection{Ideális gázok}
+Ideális gázok állapotegyenlete
+\begin{equation} \label{eq:idealisGaz}
+pV = nRT,
+\end{equation}
+amelyben feltettük, hogy
+\begin{itemize}
+\item a gázrészecskék egymással csak kontakt-kölcsönhatásban vannak, azaz merev golyókként és pillanatszerűen ütköznek, egyébként nincsenek kölcsönhatásban,
+\item az ütközések tökéletesen rugalmasak, azaz a mozgási energia megmarad (nincs afféle extra hő fogalom, amivé a kinetikus energia átalakulhatna)
+\item a gázrészecskék ritkán helyezkednek el,
+\item a gázrészecskék térfogata elenyésző az őket bezáró dobozhoz képest.
+\end{itemize}
+Ezekből következik, hogy
+\begin{itemize}
+\item a gázrészecskék egyenletesen töltik ki a teret,
+\item két ütközés között eltelt időben a gázrészecskék szabadon repülnek,
+\item az, hogy egy gázrészecske az $n$.\ és $n+1$.\ ütközésben az $i$.\ gázrészecskék ütközzön, független $n$-től és értéke állandó,
+\item az ütköző gázrészecskék sebességének irányában nincs korreláció.
+\end{itemize}
+\subsection{Reális gázok}
+\subsubsection{van der Waals}
+Reális gázok tulajdonságait első körben jól leírhatjuk az ideális gázokéval, ugyanis az eredmények a paraméterek egy széles tartományában a valósággal jó egyezőséget mutatnak. Azonban van lehetőség arra, hogy ezen a közelítésen túllépjünk, új jelenséget írjunk le, miközben az eredményeink még pontosabbak, de a formulák továbbra is kezelhetők maradnak. Az ún.\ van der Waals-gázoknál az ideális gázok tulajdonságain felül, illetve helyettük feltesszük, hogy
+\begin{enumerate}
+\item egy adott, $d$ távolságig a gázrészecskék állandó nagyságú vonzó kölcsönhatást fejtenek ki egymásra,
+\item a gázrészecskék összesített térfogata nem elhanyagolható az őket bezáró doboz térfogatához képest.
+\end{enumerate}
+
+Az 1.\ pont miatt egy felületre ható erő az a $d$ távolságon belül lévő részecske-párok számával arányosan csökken, a részecskepárok száma pedig arányos a gázok tömeg-, vagy anyagsűrűségével, így az ideális gázokéhoz képest a nyomásban egy korrekciós tag jelenik meg, amelyre
+\[{p_{{\text{korr}}}} \sim d \cdot {\left( {n/V} \right)^2}.\]
+
+A 2.\ pont értelmében a végtelenül összenyomott gáz térfogata nem 0 lesz, hanem véges, ami arányos a gázrészecskék számával (anyagmennyiségével), így a gázrészekéket körülvevő szabad tér térfogatára egy korrekciós tag jelenik meg, amelyre
+\[{V_{{\text{korr}}}} \sim -n.\]
+
+Az előbbi két pontot összetéve, reális gázokra kapjuk, hogy
+\begin{equation} \label{eq:vanderWaals}
+\left[ {p + a{{\left( {\frac{n}{V}} \right)}^2}} \right]\left( {V - nb} \right) = nRT.
+\end{equation}
+
+Látható, hogy $a=0$ és $b=0$ esetén visszakapjuk az ideális gázok állapotegyenletét. Ha megnézzük, hogy ez a reális gázok mely közelítései esetén érvényesek, láthatjuk, hogy pont akkor, ha a reális gázunk ideális gázként viselkedik. Tehát a reális gázok állapotegyenlete nem felülírja az ideális gázokét, hanem kiterjeszti olyan tartományra, ahol eddig még nem vizsgálódtunk.
+\paragraph{Példa} Mekkora hőmérsékletre kell felmelegíteni a \SI{27}{\degreeCelsius}-os, \SI{25}{liter} térfogatú, egy mólos gázt, hogy \SI{50}{liter} térfogatúra táguljon? Legyen a nyomás állandó, és a van der Waals gáz paraméterei $a=\SI{4e7}{N.cm^4/mol^2}$, $b=\SI{40}{cm^3/mol}$. Mekkora volna az eltérés, ha ideálisnak tekintenénk a gázt? Az állapotjelzők milyen nagyságrendű értékeinél lesz az eltérés számottevő?
+\paragraph{Megoldás}~
+\Atold(\ref{eq:vanderWaals})+as{} egyenletet a $p$ nyomásra rendezve
+\[{p_1} = {p_2} = \frac{{nR{T_1}}}{{{V_1} - {n_1}b}} - a{\left( {\frac{{{n_1}}}{{{V_1}}}} \right)^2} = \frac{{nR{T_2}}}{{{V_2} - {n_2}b}} - a{\left( {\frac{{{n_2}}}{{{V_2}}}} \right)^2},\]
+amelyből kifejezhető $T_2$:
+\[{T_2} = {T_1}\frac{{{v_2} - b}}{{{v_1} - b}} - \frac{a}{R}\left( {\frac{1}{{v_1^2}} - \frac{1}{{v_2^2}}} \right)\left( {{v_2} - b} \right)\quad \quad v = V/n.\]
+Behelyettesítve a konkrét számadatokkal $T_2 \approx \SI{597.6}{K}$, míg ideális gázzal számolva ez az érték $T_{2,\text{id}} \approx \SI{600}{K}$ volna, az eltérés kisebb, mint fél százalék. (Persze nem mindegy, az eltérést mihez képest nézzük. Hőmérsékletnél nem mindig szerencsés az abszolút skálához mérni, jobb az eltérést a hőmérséklet-különbséghez viszonyítani, de így is kisebb lesz az eltérés, mint 1\%.)
+
+Az eltérés akkor lényeges, amikor a térfogat $nb$ nagyságrendű, vagy a nyomás $a/v^2$ nagyságrendű. A cseppfolyósodási, ill.\ a kritikus pont körül mindig ez a helyzet.
+
+\subsubsection{A viriál-sorfejtés}
+Reális gázok általános állapotegyenletét az ún.\ viriál-sorfejtés adja meg, amely szerint
+\begin{equation} \label{eq:virial}
+p\left( {T,v} \right) = \frac{{RT}}{v}\sum\limits_{i = 0}^\infty  {\frac{{{B_{i + 1}}\left( T \right)}}{{{v^i}}}} \quad \quad v = V/n,
+\end{equation}
+ahol bevezettük a $v = V/n$ fajlagos térfogatot, illetve ${B_{i + 1}}\left( T \right)$ az \textit{i}.\ viriál együtthatót. Vegyük észre, hogy \atold(\ref{eq:vanderWaals})+as{} egyenletben szintén előjön a fajlagos térfogat.
+
+\paragraph{Példa} Határozzuk meg az ideális és a van der Waals gázok viriál-együtthatóit, valamint azt a hőmérsékletet, ahol $B_2$ eltűnik!
+\paragraph{Megoldás}
+\begin{enumerate}
+\item van der Waals és ideális gázra $B_1 = 1$, azaz hőmérséklettől független.
+\item Ideális gázra a 2.\ és magasabb rendű viriál-tagok együtthatói mind 0-k, van der Waals gázra ${B_2}\left( T \right) = b - a/\left( {RT} \right)$.
+\item Ha $i>2$, akkor ideális gázra az együttható 0, van der Waals gázra ${B_i}\left( T \right) = {b^{i - 1}}$.
+\end{enumerate}
+A második tag akkor tűnik el, amikor
+\[{B_2}\left( T \right) = b - a/\left( {R{T_{{\text{Boyle}}}}} \right) = 0 \Rightarrow {T_{{\text{Boyle}}}} = \frac{1}{R}\frac{a}{b} = \frac{{27}}{8}{T_c},\]
+ahol a kritikus hőmérséklet a kritikus ponthoz tartozó hőmérséklet (előadásról).
 \end{document}
 

@@ -18,6 +18,7 @@
 \usepackage{subcaption}
 \usepackage{epstopdf}
 \usepackage{xcolor}
+\usepackage[locale=FR, exponent-product = \cdot]{siunitx}
 \usepackage[hidelinks,unicode]{hyperref}
 \hypersetup{
     colorlinks,
@@ -197,7 +198,7 @@ Egy állandó $\varrho$ sűrűségű, hossztengelyére forgásszimmetrikus test 
 Mekkora a másodrendű nyomatéka egy tömör hengernek a hossztengelyére merőleges keresztmetszetében? Hogyan aránylik ez egy azonos nagyságú keresztmetszettel rendelkező üreges csőéhez képest, ugyanolyan irányú keresztmetszetben, ha a cső külső sugara kétszerese a tömör hengernek?
 
 \subsection{Húzódzkodó}
-2 db négyzetes profilú, $3\text{ cm}$ oldalélű, valamilyen anyagvastagságú hasáb tart egy húzódzkodó keresztrudat a faltól $50\text{ cm}$ távolságban. Mekkora a négyszögletes vas rudak anyagvastagsága, ha Gyurma Gyuri a maga $80\text{ kg}$-os testtömegével a keresztrúdra ráfüggeszkedvén annak lehajlása $5\text{ mm}$? A vas Young-modulusza $200\text{ GPa}$.
+2 db négyzetes profilú, \SI{3}{cm} oldalélű, valamilyen anyagvastagságú hasáb tart egy húzódzkodó keresztrudat a faltól \SI{50}{cm} távolságban. Mekkora a négyszögletes vas rudak anyagvastagsága, ha Gyurma Gyuri a maga \SI{80}{kg}-os testtömegével a keresztrúdra ráfüggeszkedvén annak lehajlása \SI{5}{mm}? A vas Young-modulusza \SI{200}{GPa}.
 
 \section{Hidrosztatika és felületi feszültség}
 \subsection{Parafa-rugó}
@@ -240,4 +241,25 @@ Egy U alakú, $d$ átmérőjű, kör keresztmetszetű nyitott csőben folyadék 
 \end{figure}
 \FloatBarrier
 
+\section{Gázok állapotegyenlete}
+\subsection{Ideális példa}
+A $V$ térfogatú tartályban $T$ hőmérsékleten összekeverünk $m_1$, $m_2$, \ldots tömegű és rendre $M_1$, $M_2$, \ldots moláris tömegű ideális gázokat. Mutassuk meg, hogy a rendszer állapotegyenlete
+\[pV = \frac{m}{M}RT\]
+alakú, ahol $m$ a teljes tömeg, $M$ pedig egy effektív moláris tömeg! Fejezzük ki $M$ értékét! A levegőt ideális gázok ilyesfajta keverékének tekintve mennyi $M_{\text{levegő}}$ értéke?
+
+\subsection{Csak a fele}
+\SI{4}{mol}
+ anyagmennyiségű van der Waals gázt tárolunk egy \SI{5}{literes}
+  tartályban \SI{1}{MPa} nyomáson. A gáz anyagi paraméterei 
+  $a=\SI{4e7}{N.cm^4/mol^2}$, 
+  $b=\SI{40}{cm^3/mol}$. Mekkora lesz a gáz nyomása, ha a tömegének a felét lassan kiengedjük a tartályból, miközben a hőmérsékletét állandó értéken tartjuk? Mi lett volna az eredmény ideális gáz esetén?
+  
+\subsection{Kritikus példa}
+Adjuk meg a van der Waals-gáz kritikus pontját meghatározó nyomás, térfogat- és hőmérsékletértékeket! Írjuk fel az általapotegyenletet úgy, hogy az $a$, $b$, $m$, $n$ és $M$ paraméterek helyett az állapotjelzők kritikus ponthoz tartozó értékeit, azaz $p_c$, $T_c$ és $V_c$ használjuk!
+
+\subsection{Extra gáz}
+Hogyan olvashatóak le az $a$ és $n \cdot b$ paraméterek a van der Waals gázok nyomás-térfogat diagramjáról, ha sok, különféle hőmérsékletre meg vannak adva az izotermák?
+
+\paragraph{Extra feladat a házi feladatokon túl}
+Hogyan változnak az izotermák az $a$ és $b$ paraméterek függvényében? Írjunk szkriptet, ami előállítja a van der Waals gáz izotermáit, és a különféle paraméterek mellett készített diagramokat animált gifbe összeillesztve készítsünk animációt, midőn $a$ felmegy 0-ról $p \cdot V^2/n^2$-ig, majd $b$ 0-ról $V/n$-ig, majd $a$ lemegy 0-ba, végül $b$ is lemegy $0$-ba! (A tartományok csak tippek, lehet, hogy más értékek mellett látványosabb az animáció.)
 \end{document}
