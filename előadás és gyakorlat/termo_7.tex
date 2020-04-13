@@ -1,0 +1,81 @@
+\section{I.\ főtétel alkalmazásai}
+\emph{Gay-Lussac-kísérlet ideális és vdW-gázzal; Joule--Thomson-kísérlet; Entalpia fogalma; JT-együttható; Inverziós hőmérséklet}
+
+Az alábbiakban két kísérlettel, a Gay-Lussac- és Joule--Thomson-kísérletekkel és azok érdekes következményeivel fogunk megismerkedni.
+ 
+Képzeljünk el két ugyanakkora térfogatú (legyen $V_1$) tartályt, melyek egy csappal vannak összekötve, ez a rendszer pedig egy nagy hőszigetelő tartályba van belehelyezve. Kezdetben az egyik tartályban gáz, a másikban vákuum van, körülöttük pedig a hőszigetelést vízzel oldjuk meg. Később megnyituk a csapot, majd megnézzük, hogy mit történik; ez a kísérleti összeállítása a \emph{Gay-Lussac-kísérletnek} (1807). Szokás még \emph{Joule-expanzióként} is hivatkozni rá, ugyanis sokkal később, 1845-ben Joule is foglalkozott a jelenséggel. Ha ideális gázzal dolgozunk, akkor a belső energia:
+\begin{align}
+    U_{\tn{id.g.}}(V,T) = \frac f2 nRT = nC_VT.
+\end{align}
+Jelöljük $1$-es indexszel a kiindulási állapot, és $2$-es indexszel a végállapot mennyiségeit. Ha a csapot kinyitjuk, akkor értelemszerűen $V_2 = 2V_1$ lesz. Mivel a tartály hőszigetelve van, ezért:
+\begin{align}
+    U_1(V_1,T_1) = U_2(V_2,T_2),
+\end{align}
+továbbá a belső energia nem függ a térfogattól, ezért a hőmérséklet nem változik a csap kinyitásakor, $T_1=T_2$. Ez egyébként egy nem kvázisztatikus, irreverzibilis folyamat.
+
+Vizsgáljuk meg ugyanezt a kísérleti összeállítást van der Waals-gázzal is, melynek belső energiája:
+\begin{align}
+    U_{\tn{vdW}}(V,T) = \frac f2 nRT - a\frac{n^2}{V} = nC_VT-a\frac{n^2}{V},
+\end{align}
+ahol felhasználtuk, hogy:
+\begin{align}
+    C_V^{\tn{vdW}} = \rec n\pd UT\bigg|_V = C_V^{\tn{id.g.}}.
+\end{align}
+A hőtartály miatt itt is a belső energia nem változik meg a csap kinyitásakor:
+\begin{align}
+    U_1(V_1,T_1){=}U_2(2V_1,T_2),\quad nC_VT_1 {-} a\frac{n^2}{V_1} = nC_VT_2{-}a\frac{n^2}{2V_1}\Rightarrow \Delta T=T_1{-}T_2 = \rec {C_V} \frac{an}{2V_1},
+\end{align}
+ami minden esetben pozitív, azaz reális gáz esetén a csap kinyitásakor a gáz lehűl.
+
+Másik érdekes jelenség, ami kapcsán a már korábban bevezetett \emph{entalpia} fogalmával ismerkedhetünk meg jobban a \emph{Joule--Thomson\footnote{Ő ugyanúgy Lord Kelvin, csak a másik nevével hivatkoznak rá.}-kísérlet} (1853). Most is van két hőszigetelt tartályunk, melyek egy fojtással vannak összekötve. Ennek lényege, hogy rajta nyomásesés történik, így az egyik tartályban kisebb a nyomás, mint a másikban. Jelöljük ezeket $\pres_1$ és $\pres_2$-vel, és legyen $\pres_2<\pres_1$. A nagyobb nyomású tartályból $V_1$, $n$, $\pres_1$, $T_1$ paraméterű gázt nyomunk át lassan, kvázisztatikusan (de irreverzibilis a folyamat) a kisebb nyomású tartályba, ahol a részecskék $V_2$, $n$, $\pres_2$, $T_2$ paraméterekkel rendelkező térrészt töltenek ki ($n$ megegyezik a két oldalon az anyagmegmaradás miatt). A $\pres_1$ és $\pres_2$ nyomásokat dugattyúk segítségével végig állandón tartjuk. A hőszigetelés miatt $Q=0$ a folyamat során, így a munkavégzés teljesen a belső energia megváltozására fordítódik:
+\begin{align}
+    \Delta U = W\Rightarrow U_2-U_1 = \pres_1 V_1-\pres_2 V_2 \Rightarrow U_1+\pres_1 V_1 = U_2+\pres_2 V_2 \Rightarrow H_1=H_2,
+\end{align}
+ahol bevezettük a $H=U+pV$ \emph{entalpiát}\footnote{\,Emlékezzünk vissza, hogy a mólhők kiszámolhatóak, mint:
+$$C_V = \rec n\pd UT\bigg|_V,\quad C_\pres = \rec n\pd HT\bigg|_\pres.$$}. Ez a folyamat tehát \emph{izentalpikus}.
+
+Definiáljuk a \emph{Joule--Thomson-együtthatót}, mint:
+\begin{align}\label{eq:JT_coeff}
+    \mu_{\tn{J-T}}:=\pd T\pres\bigg|_H,
+\end{align}
+ami kifejtve:
+\begin{align}
+     \mu_{\tn{J-T}} = -\frac{\dfrac{\partial H}{\partial\pres}\bigg|_T}{\dfrac{\partial H}{\partial T}\bigg|_\pres}=-\rec{nC_\pres}\pd H\pres\bigg|_T = -\rec{nC_\pres}\Big(V-T\underbrace{\pd VT\bigg|_\pres}_{=V\beta}\Big)=\frac{V}{nC_\pres}\z{T\beta-1}.
+\end{align}
+Ez igaz minden gázra (nem csak ideálisra). A levezetés során felhasználtuk először a hármasszabályt, $C_\pres$ definícióját, illetve hogy:
+\begin{align}
+    \pd H\pres\bigg|_T = V-T\pd VT\bigg|_\pres=V(1-T\beta),
+\end{align}
+ennek bizonyítására még visszatérünk, a (\ref{eq:JT_Maxwell}). egyenlet ad majd rá választ. 
+
+Tudjuk, hogy \emph{ideális gáz} esetén:
+\begin{align}
+    \beta = \rec T \follows \mu_{\tn{J-T}} = 0,
+\end{align}
+azaz az ideális gáz belső energiája csak a hőmérséklettől függ, a nyomástól illetve a térfogattól nem.
+
+Valódi gázokon elvégzett kísérlet szerint azonban más a helyzet. Létezik egy ún. \emph{inverziós hőmérséklet}, aminél ha kezdetben magasabb a hőmérséklet, akkor az átnyomás után a gáz felmelegszik ($\mu_{\tn{J-T}}<0$), azonban ha az inverziós hőmérséklet alatt vagyunk kezdetben, akkor a gáz az átnyomás hatására lehűl ($\mu_{\tn{J-T}}>0$).
+Van der Waals-gázra belátható\footnote{\,A Joule--Thomson-együttható:
+$$\mu_{\tn{J-T}} = -\rec{nC_\pres}\z{V-T\pd VT\bigg|_\pres},$$
+amiből a $\pd VT\big|_\pres$ deriváltat kell meghatároznunk van der Waals-gázra:
+$$V\beta = \pd VT\bigg|_\pres = \frac{1}{\dfrac{\partial T}{\partial V}\Big|_\pres}=\frac{1}{\pd{}{V}\z{\frac{(\pres+\frac{an^2}{V^2})(V-nb)}{nR}}\Big|_\pres}=\frac{nR}{\pres + \frac{an^2}{V^3}(2bn-V)}.$$ Tudjuk, hogy a van der Waals-gáz állapotegyenletéből ki kellene még fejezni a térfogatot, hogy az inverziós hőmérsékletet egzaktul megkaphassunk, azonban az állapotegyenlet $V$-ben harmadfokú, ráadásul az előbb kiszámolt derivált is bonoylult alakú, így közelítésekkel kell élnünk, így kapjuk a (\ref{eq:JT_vdW}). egyenletet. eredményül. Megjegyezzük, hogy valójában a mérések alapján az inverziós hőmérséklet a nyomásnak is a függvénye, ezt ez a közelítő számolás nem adta vissza.}, hogy a Joule--Thomson-együttható:
+\begin{align}\label{eq:JT_vdW}
+    \mu_{\tn{J-T}} \approx \rec{C_\pres}\z{\frac{2a}{RT}-b},
+\end{align}
+amiből az inverziós hőmérséklet:
+\begin{align}
+    T_i=\frac {2a}{Rb} = \frac{27}{4}\underbrace{\frac{8}{27}\frac{a}{Rb}}_{=T_c} = 6{,}75T_c,\quad\tn{ahol $T_c$ a vdW-gáz kritikus hőmérséklete.}
+\end{align}
+Néhány gáz Joule--Thomson-együtthatóját tartalmazza \aref{tab:JT_coeff}. táblázat.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|} \hline
+Anyag & $\mu_{\tn{J-T}}$ [$\frac{\tn K}{\tn{bar}}$] \\ \hline\hline
+CO$_2$ & 1{,}1\\ \hline
+levegő & 0{,}22\\ \hline
+He & -0{,}04\\ \hline
+\end{tabular}
+\caption{Néhány reális gáz Joule--Thomson-együtthatója.}
+\label{tab:JT_coeff}
+\end{table}
+Érdekességképpen megjegyezzük, hogy a hűtők is ennek az inverziós hőmérsékletnek a felhasználásával működnek. A nitrogéngáz inverziós hőmérséklete $T_i = 850$K, míg a héliumé $T_i = 35$K.

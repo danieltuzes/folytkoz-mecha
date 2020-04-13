@@ -1,0 +1,87 @@
+\section{Összetett rendszerek egyensúlya}
+\emph{Zárt rendszerek: hő- és térfogatcsere; Belső változó fogalma; Egyensúly feltétele; Energia reprezentáció; Kapcsolat hőtartállyal; Állandó nyomás ill. állandó nyomás és hőmérséklet esete}
+
+Kísérleti tapasztalat, hogy ha két test termodinamikai kölcsönhatásba kerül, akkor az egyensúly beállta során a hőmérsékletük kiegyenlítődik. Hasonlóan a nyomás és koncentráció is kiegyenlítődik egyensúly esetén. Vizsgáljuk meg ezeket, hogy hogyan alakul ki az \emph{összetett rendszerek egyensúlya}.
+
+Ehhez legyen két hőtartályunk, melyek egy fallal vannak elválasztva egymástól. Az első hőtartály belső energiája, térfogata és anyagmennyisége legyen rendre $U_1$, $V_1$, $n_1$, míg a másodiké $U_2$, $V_2$, $n_2$. Mivel a rendszer zárt, hőszigetelt, ezért:
+\begin{align}
+	U = U_1+U_2 = \tn{konst.},\quad V = V_1+V_2 = \tn{konst.},\quad n = n_1+n_2 =\tn{konst.}
+\end{align}
+Először rögzítsük az első rendszer \emph{térfogatát} és \emph{anyagmennyiségét}, azonban engedjük meg, hogy a két tartályt elválasztó falon keresztül \emph{hő áramolhasson át}. Azt vizsgáljuk, hogy milyen feltétel mellett alakul ekkor ki egyensúly. A teljes rendszer entrópiája megegyezik az alrendszerek (tartályok) entrópiájának összegével:
+\begin{align}
+	S = S_1+S_2\follows S(U,V,n,U_1,V_1,n_1)=S_1(U_1,V_1,n_1)+S_2(U{-}U_1,V{-}V_1,n{-}n_1),
+\end{align}
+ahol az $U_1$ változhat, melyet \emph{belső szabadsági foknak} nevezünk. Mivel a két részrendszerben lévő mikroállapotok egymástól függetlenek, az összes lehetségesen megvalósuló mikroállapotok száma (\ref{eq:mikroallapotok}). összefüggés szerint a két hőtartálybeli mikroállapotainak szorzata. A rendszer akkor van egyensúlyban, ha a mikroállapotok száma a legnagyobb, viszont mivel a Boltzmann-entrópia definíciója értelmében\footnote{\,Emlékezzünk vissza, hogy a Boltzmann-entrópia:
+$$ S=k_B\ln\Omega.$$} az a mikroállapotok logaritmusával arányos, akkor van egyensúly, ha az entrópia maximális (ami egybecseng a termodinamika II. főtételével), azaz az összentrópia $U_1$ szerinti deriváltja el kell tünjön. Egyensúlyban tehát:
+\begin{align}
+\begin{split}
+	\pd{S}{U_1}\bigg|_{U,V,n} &= \pd{S_1}{U_1}\bigg|_{U,V,n}\hspace{-3mm}(U_1,V_1,n_1)+\pd{S_2}{U_1}\bigg|_{U,V,n}\hspace{-3mm}(\underbrace{U{-}U_1}_{=U_2},V{-}V_1,n{-}n_1)\cdot \underbrace{\pd{U_2}{U_1}\bigg|_{U,V,n}}_{=-1} =\\
+	&= \rec{T_1}-\rec{T_2} = 0\follows T_1=T_2,
+\end{split}
+\end{align}
+azaz egyensúlyban a hőmérsékletek kiegyenlítődnek, ahogy azt vártuk is. Itt megjegyezzük (amit később még részletesen tárgyalunk), hogy mivel az entrópiának maximuma van, ezért az $U_1$ szerinti második deriváltja negatív kell legyen.
+
+Az előbb azt az esetet vizsgáltuk, amikor a hőtartályok közötti falon hő tudott átáramolni. Most a fal legyen egy dugattyú, azaz az \emph{energiaáramláson} túl engedjük meg, hogy a \emph{térfogatuk} is változzon. Ekkor egyensúly esetén az $U_1$ és $V_1$ belső változók szerinti deriváltaknak is el kell tünniük, azaz:
+\begin{align}
+\begin{split}
+	\pd{S}{U_1}\bigg|_{U,V,n} &= 0 \follows T_1=T_2,\\
+	\pd{S}{V_1}\bigg|_{U,V,n} &= 0 \follows \frac{\pres_1}{T_1}=\frac{\pres_2}{T_2}\follows \pres_1=\pres_2,
+\end{split}
+\end{align} 
+azaz ahogy vártuk ilyenkor a nyomások is kiegyenlítődnek egyensúlyban. Ha a rendszernek lennének egyéb belső szabadsági fokai, az előbbi gondolatmenetet minden esetben el tudnánk végezni. Így például ha a \emph{részecskeáramlást} is megengednénk (azaz nem lenne fal), akkor a \emph{kémiai potenciálok} is kiegyenlítődnének (mivel intenzív mennyiség, ezért ezt is várjuk).
+
+Most vizsgáljuk meg azt a \emph{hipotetikus esetet}, amikor \emph{entrópia} tud áramlani a két tartály között (ilyen rendszer egyébként nincs!). Legyen ekkor:
+\begin{align}
+\begin{split}
+	S&=S_1+S_2=\tn{konst.},\quad V_1=\tn{konst.},\quad V_2=\tn{konst.},\quad V=V_1+V_2,\\
+	n_1&=\tn{konst.},\quad n_2=\tn{konst.},\quad n = n_1+n_2.
+\end{split}
+\end{align}
+Ekkor ha a belső energiának keressünk meg az entrópia szerinti szélsőértékét az energiaminimumot kapjuk meg:
+\begin{align}
+	U(S,V,n,S_1,V_1,n_1) &= U_1(S_1,V_1,n_1){+}U_2(S{-}S_1,V{-}V_1,n{-}n_1),\tn{ melynek  minimuma:}\\
+\begin{split}
+	\pd{U}{S_1}\bigg|_{S,V,n}\hspace{-3mm}(S,V,n) &= \pd{U_1}{S_1}\bigg|_{S,V,n}\hspace{-3mm}(S_1,V_1,n_1)+\pd{U_2}{S_1}\bigg|_{S,V,n}\hspace{-3mm}(\underbrace{S{-}S_1}_{=S_2},V{-}V_1,n{-}n_1)\cdot \underbrace{\pd{S_2}{S_1}\bigg|_{S}}_{=-1} =\\
+	&= T_1-T_2 = 0 \follows T_1=T_2,
+\end{split}
+\end{align}
+hiszen $\pd US\big|_{V,n}=T$. Azaz energiaminimum van, ha a hőmérsékletet megegyeznek, ez az egyensúlyi állapot. De fontos, hogy ilyen rendszer nincs, ez csak egy matematikai módszer volt, ebből a tényleges minimális energiát nem tudjuk kiszámolni.
+
+Vizsgáljuk meg most, hogy mi történik, ha egy \emph{összetett rendszert} és egy \emph{hőtartályt} helyezünk kapcsolatba egymással, azaz megengedjük, hogy a kettő között hő áramolhasson át. Jelölje a továbbiakban az összetett rendszert $r$, a hőtartályt pedig $t$, a mennyiségek indexei ezekre utalnak majd. Az termodinamika II. főtétele miatt (ami megegyezik az energiaminimummal) az $S=S_r+S_t = \tn{konst.}$ entrópia maximalizálódik. Legyen az összetett rendszer belső energiája $U_r(S,S_r,X_i)$, ahol $X_i$-vel jelöltük általánosan a változóit, illetve a hőtartály belső energiája csak a teljes rendszer összentrópiájától függ, azaz $U_t(S)$. A teljes belső energia ekkor:
+\begin{align}
+	U_{\tn{ö}}(S,S_r,X_i) = U_r(S_r,X_i) + U_t(S{-}S_r),
+\end{align}
+amelynek az $S_r$ szerinti mimimumát keressük:
+\begin{align}
+	\pd{U_{\tn{ö}}}{S_r}\bigg|_S=\pd{U_r}{S_r}\bigg|_S(S_r,X_i) - \pd{U_t}{S_r}\bigg|_S(S{-}S_r) = T_r-T_0 = 0\follows T_r=T_0,
+\end{align}
+ahol $T_0$-val jelöltük a hőtartály hőmérsékletét. Ahogy vártuk is, a rendszer felveszi a hőtartály hőmérsékletét. Mivel az összetett rendszer hőmérséklete függ annak entrópiájától illetve a változóitól, ezért ezek és a hőtartály hőmérséklete között kapcsolatot lehet teremteni, azaz megadható egy $S_r(T_0,X_i)$ függvény is. Ezzel együtt a teljes belső energia:
+\begin{align}
+\begin{split}
+	U_{\tn{ö}} (S,S_r,X_i) &= U_r(S_r,X_i) + U_t(S{-}S_r) = U_r\big(S_r(T_0,X_i)\big) + U_t\big(S{-}S_r(T_0,X_i)\big) =\\
+	&= U_r(T_0,X_i) +U_t\big(S{-}S_r(T_0,X_i)\big).
+\end{split}
+\end{align}
+Ennek az állapotjelzők szerint minimuma van, ha $\pd {U_{\tn{ö}}}{X_i}=0$, melyből következik, hogy:
+\begin{align}
+	\pd{U_r}{X_i}-\pd{U_t}{S_r}\big(S-S_r(T_0,X_i)\big)\cdot \pd{S_r}{X_i}(T_0,X_i) = \pd{U_r}{X_i}-T_0\pd{S_r}{X_i}=0,
+\end{align}
+azaz
+\begin{align}
+	\pd{}{X_i}(\underbrace{U_r-T_0S_r}_{=F_r})=0,
+\end{align}
+vagyis egyensúlyban a szabadenergiának van minimuma. Most a hőtartállyal való kapcsolatot vettük vigyelemben. További néhány lehetőséget \aref{tab:egyensuly}. táblázatban foglalunk össze.
+\begin{table}[h!]
+\centering
+\begin{adjustbox}{width=1.15\textwidth, center=\textwidth}
+\begin{tabular}{|c||c|c|} \hline
+zárt rendszer & $U_{\tn{min}}\Leftrightarrow S_{\tn{max}}$ & termodinamikai potenciál\\ \hline\hline
+termosztát/hőtartály ($T_0$) & $F=U-T_0S$ minimális & $F=-\pres V+\mu n$\\ \hline
+állandó nyomás ($\pres_0$) & $H=U+\pres_0 V$ minimális & $H=TS+\mu n$ \\ \hline
+állandó nyomás és hőmérséklet ($\pres_0,T_0$) & $G=U-T_0S+\pres_0V$ minimális & $G=\mu n$\\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Különböző típusú zárt rendszerek esetében minimalizálódó termodinamikai potenciál.}
+\label{tab:egyensuly}
+\end{table}
+Azaz ahogy már korábban is felhívtuk rá a figyelmet mindig a konkrét problémától függ, hogy melyik termodinamikai potenciált használjuk.
