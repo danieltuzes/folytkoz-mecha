@@ -1,11 +1,11 @@
-\section{A termodinamika I.~főtétele}
-\emph{Hő fogalma és kialakulása; Munka és hő ekvivalenciája; Belső energia; Joule-kísérlet; I. főtétel; Energiamegmaradás elve; Kvázisztatikus ill. adiabatikus folyamatok; Ideális gáz és vdW-gáz belső energiája.}
+\section{A termodinamika I.~főtétele}~
+\emph{Hő fogalma és kialakulása; Munka és hő ekvivalenciája; Belső energia; Joule-kísérlet; I. főtétel; Energiamegmaradás elve; Kvázisztatikus ill.\ adiabatikus folyamatok; Ideális gáz és vdW-gáz belső energiája.}
 
 Sokszor használtuk már eddig is a \emph{hő} fogalmát, azonban nem olyan egyszerű megfogalmazni, hogy mi is az pontosan. Régen még csak az sem volt egyértelmű, hatalmas viták voltak róla, hogy ez anyag (hőmennyiség) vagy inkább mozgás-e (munkavégzés).
 
 Ennek eldöntésére Joule\footnote{\,James Prescott Joule, 1818-1889.} végzett el kísérletet, azonban előbb tekintsük át a történeti előzményeket. 1738-ban ahogy már részleteztük, Bernoulli publikálta a kinetikus gázelméletet. 1763-ban Watt\footnote{\,James Watt, 1736-1819.} elkészítette az első gőzgépet, ezzel megindult a hő gyakorlati felhasználása anélkül, hogy tudták is volna valójában, hogy mi az. 1783-ban Lavoisier\footnote{\,Antoine Lavoisier, 1743-1794.} és Black\footnote{\,Joseph Black, 1728-1799.} felállították a hőanyag elméletüket. Az 1790-es években Thompson\footnote{\,Benjamin Thompson, 1753-1814.} előállt azzal a gondolattal, miszerint ,,a hő mozgás'', azaz munkavégzéssel is lehet hőt termelni. 1824-ben használta először Clément\footnote{\,Nicolas Clément, 1779-1841.} a kalória fogalmát (1 cal az a hőanyag, ami 1g víz 1$^\circ$C-kal való felmelegítéséhez szükséges, $1\tn{ cal} = 4{,}184$J). Végezetül következett Joule kísérlete 1842-ben: hőszigetelt, a környezettől elzárt, vízzel teli tartályban lapátokkal ellátott függőleges rudat hajtott meg egy súly segítségével (a súly rögzítése egy csigán volt átvetve, a vége pedig a rúdra ráerősítve, így a gravitációs tér a súlyt a föld felé vonzotta, a rúd pedig forgásba jött). A súly helyzeti energiája a lapátok mozgási energiájává alakult, ami a vízzel való súrlódáson keresztül felmelegítette azt. A \emph{hő} tehát az \emph{energiaáramlás során átadott energia} a kísérlet alapján. Munkát végezhetünk például súrlódással, közegellenállással vagy összenyomással is.
 
-A kísérletben ha a tartály \emph{hőszigelelt}, bárhogy is végezzük el a kísérletet, de a súlyok kezdő- és végpontja ugyanaz, akkor a munkavégzés is megegyezik, azaz a $W_{AB}$ $A$ és $B$ pontok közötti munkavégzés nem függ az úttól. Jelölje $U$ a rendszer belső energiáját. Ekkor a $B$ pontban lévő súly esetén a rendszer belső energiája egyértelműen kifejezhető az $A$ pontban lévő súly melletti belső energiával mint:
+A kísérletben ha a tartály \emph{hőszigetelt}, bárhogy is végezzük el a kísérletet, de a súlyok kezdő- és végpontja ugyanaz, akkor a munkavégzés is megegyezik, azaz a $W_{AB}$ $A$ és $B$ pontok közötti munkavégzés nem függ az úttól. Jelölje $U$ a rendszer belső energiáját. Ekkor a $B$ pontban lévő súly esetén a rendszer belső energiája egyértelműen kifejezhető az $A$ pontban lévő súly melletti belső energiával mint:
 \begin{align}
     U_B = U_A + W_{AB},\quad \tn{vagy más jelöléssel}\quad U(B) = U(A) + W_{AB}.
 \end{align}
@@ -35,7 +35,7 @@ azonban fontos, hogy ez csak \emph{kvázisztatikus} folyamatokra igaz, hiszen a 
     \end{pmatrix} = \oint \bm\nabla U \m d\bm r,
 \end{align}
 ahol $\bm r=(\pres,V)$ és $\m d\bm r = (\m d\pres, \m dV)$.
-Ha nincs a rendszer hőszigetelve, akkor ha $U(B)~{-}~U(A)$ mennyiség állandó, viszont a $\pres-v$ digramon más úton jutunk el $A$-ból $B$-be, akkor $W_1\neq W_2$, ahol az indexek az utak különbözőségére utalnak. Ebből következik, hogy:
+Ha nincs a rendszer hőszigetelve, akkor ha $U(B)~{-}~U(A)$ mennyiség állandó, viszont a $\pres-v$ diagramon más úton jutunk el $A$-ból $B$-be, akkor $W_1\neq W_2$, ahol az indexek az utak különbözőségére utalnak. Ebből következik, hogy:
 \begin{align}
     U(B)-U(A) = W_1+Q_1 = W_2+Q_2,
 \end{align}
@@ -67,10 +67,11 @@ ha pedig a belső energia más változókkal adott, akkor az állapotegyenletet 
     U_{\tn{id.g}}(V,T) = \frac f2 nRT,\quad U_{\tn{id.g}}(\pres,T) = \frac f2 nRT,\quad  U_{\tn{id.g}}(\pres,V) = \frac f2 \pres V.
 \end{align}
 %\newgeometry{includefoot,left=2cm,right=2cm,bottom=1cm,top=2cm}
-Belátható\footnote{\,Tekintsünk egy zárt hengert, ami van der Waals-típusú reális gázzal van kitöltve. A dugattyút mozgatva a gázon végzett munka ekkor tisztán a belső energia megváltozására fordítódik. A részecskék molekuláris kölcsönhatásokból eredő belső energia járuléka ekkor ha a $bn$ minimális térfogatról $V$ térfogatra növeljük :$$U_{\tn{kh.}} = \int_{bn}^V p_{\tn{k.h.}}\m dV' = \int_{bn}^V \frac{an^2}{{V'}^2}\m dV' = -\frac{an^2}{V}+\frac{an}{b}.$$
+Belátható\footnote{\,Tekintsünk egy zárt hengert, ami van der Waals-típusú reális gázzal van kitöltve. A dugattyút mozgatva a gázon végzett munka ekkor tisztán a belső energia megváltozására fordítódik. A részecskék molekuláris kölcsönhatásokból eredő belső energia járuléka ekkor ha a $bn$ minimális térfogatról $V$ térfogatra növeljük:
+\[U_{\tn{kh.}} = \int_{bn}^V p_{\tn{k.h.}}\m dV' = \int_{bn}^V \frac{an^2}{{V'}^2}\m dV' = -\frac{an^2}{V}+\frac{an}{b}.\]
 A gáz teljes energiája ekkor a kinetikus illetve potenciális tagokkal együtt:
-$$U = U_{\tn{id.g.}} + U_{\tn{k.h.}} = \frac f2 nRT -\frac{an^2}{V}+\frac{an}{b}.$$
-Felhasználjuk azonban még, hogy a belső energia nullpontját a molekulák közötti kölcsönhatás rövid hatótávolságát kuhasználva úgy rögzítjük, hogy a $V\to\infty$ határesetben a van der Waals-gáz belső energiája az ideális gázéba menjen át, így végezetül a van der Waals-gáz belső energiája:
+\[U = U_{\tn{id.g.}} + U_{\tn{k.h.}} = \frac f2 nRT -\frac{an^2}{V}+\frac{an}{b}.\]
+Felhasználjuk azonban még, hogy a belső energia nullpontját a molekulák közötti kölcsönhatás rövid hatótávolságát kihasználva úgy rögzítjük, hogy a $V\to\infty$ határesetben a van der Waals-gáz belső energiája az ideális gázéba menjen át, így végezetül a van der Waals-gáz belső energiája:
 \begin{align}
     U_{\tn{vdW}}(V,T) = \frac f2 nRT - a\frac{n^2}{V}.
 \end{align}}, hogy a van der Waals-gáz belső energiája:

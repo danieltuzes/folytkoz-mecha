@@ -7,21 +7,22 @@ Kísérleti tapasztalat, hogy ha fémrudat melegítünk, akkor annak a hossza me
     l = l_0(1+\alpha' T),
 \end{align}
 ahol $\alpha'$ a \emph{lineáris hőtágulási együttható}. Némely esetben azonban a hossz és  a hőmérséklet között teljesen bonyolult kapcsolat is lehet\footnote{\,Gondoljunk csak például a vízre, melynek a sűrűsége 4$^\circ$C körül a legnagyobb, ezért szoktak elfagyni a vízvezetékek, ha nem zárják el azt télre. Másik érdekes anyag a gumi. Kipróbálhatjuk, hogy befőttesgumit berakunk a fagyasztóba. Azt fogjuk tapasztalni, hogy a fagyasztóból kivett befőttesgumi összemegy.}, ekkor az $l(T)$ görbe érintőjét tudjuk csak meghatározni, ahogy az \aref{fig:termo_2_2}. ábrán is látható.
-\begin{figure}[!h]
+\begin{figure}[htb]
     \centering
-    \begin{subfigure}[t]{0.45\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{termo_2/termo_2_1}
             \newsubcap{Hőtágulás lineáris hőtágulási együtthatóval.}
             \label{fig:termo_2_1}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.45\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
             \centering
             \includegraphics[width=\textwidth]{termo_2/termo_2_2}
             \newsubcap{Hőtágulás bonyolult alakú hőtágulási együtthatóval, amikor csak az adott hőmérséklethez tartozó érintőből határozható meg a hőtágulási együttható.}
             \label{fig:termo_2_2}
     \end{subfigure}
     \end{figure}
+    \FloatBarrier
 Az állandó nyomáson vett lineáris hőtágulási együttható általános esetben definíció szerint:
 \begin{align}
     \alpha = \rec l \pd{l}{T}\bigg|_\pres,
@@ -54,7 +55,7 @@ A folytonos közegek mechanikájának tárgyalása során is találkoztunk már 
     \kappa = -\rec V \pd{V}{\pres}\bigg|_T,
 \end{align}
 ahol a negatív előjel azért szerepel a definícióban, mert a derivált minden esetben negatív kell legyen, hiszen különben a rendszer instabil lenne (külső nyomás hatására kitágulna). \Aref{fig:termo_2_4}. ábrán látható néhány példa állandó hőmérsékleten vett kompresszibilitásra, ha az összefüggés lineáris. 
-\begin{figure}[!h]
+\begin{figure}[htb]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
             \centering
@@ -69,6 +70,7 @@ ahol a negatív előjel azért szerepel a definícióban, mert a derivált minde
             \label{fig:termo_2_4}
     \end{subfigure}
     \end{figure}
+    \FloatBarrier
 Ideális gáz esetén:
 \begin{align}
     V = \frac{nRT}{\pres} \follows \kappa_{\tn{id.g.}} = -\rec V \pd{V}{\pres}\bigg|_T = -\rec V \z{-\frac{nRT}{\pres^2}}= \rec \pres.
@@ -105,7 +107,7 @@ ami igaz minden anyagra (behelyettesítéssel leellenőrizhetjük például az i
 összefüggést szokás \emph{hármasszabálynak} hívni.
 
 Tekintsünk most egy általános $f(x,y)$ kétváltozós függvényt, lásd \aref{fig:termo_2_6}. ábrát.
-\begin{figure}[!h]
+\begin{figure}[htb]
     \centering
     \begin{subfigure}[]{0.45\textwidth}
             \centering
@@ -120,6 +122,7 @@ Tekintsünk most egy általános $f(x,y)$ kétváltozós függvényt, lásd \are
             \label{fig:termo_2_6}
     \end{subfigure}
 \end{figure}
+\FloatBarrier
 Ekkor az $f(x{+}\Delta x{,}y{+}\Delta y)$ kifejezést Taylor-sorba fejthetjük:
 \begin{align}
     f(x{+}\Delta x,y{+}\Delta y)\approx f(x,y) + \bm\nabla f \Delta \bm r{+}\mathcal O(\Delta \bm r^2),\quad \tn{ahol}\quad \bm\nabla f \Delta \bm r = \pd fx\Delta x+\pd fy \Delta y.

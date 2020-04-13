@@ -1,12 +1,11 @@
 \section{Termodinamikai potenciálok}
 \emph{Kémiai potenciál; Termodinamikai potenciál és fundamentális egyenlet fogalma; Legendre-transzformáció; Termodinamikai potenciálok: szabadenergia, entalpia, szabadentalpia, nagykanonikus potenciál; A potenciálokra vonatkozó differenciális egyenletek}
 
-Láttuk már, hogy reverzibilis termodinamikai folyamatokra a termodinamika I. és II. főtételének egyesített alakja:
+Láttuk már, hogy reverzibilis termodinamikai folyamatokra a termodinamika I.\ és II.\ főtételének egyesített alakja:
 \begin{align}
 	\m dU(S,V) = T\m dS-\pres\m dV,
 \end{align}
-amely azonban csak állandó részecskeszám mellett igaz. Ezt általánosítva a \emph{belső energia} már az \emph{entrópia, térfogat} és \emph{részecskeszám} függvénye lesz. Ezeket a mennyiségeket, amelyek egy folyamat során állandóan vannak tartva a belső energia \emph{természetes változóinak} nevezzük. Vegyük észre, hogy a belső energia csak \emph{extenzív mennyiségek} függvénye.
-Írjuk fel ekkor ennek a teljes deriváltját:
+amely azonban csak állandó részecskeszám mellett igaz. Ezt általánosítva a \emph{belső energia} már az \emph{entrópia, térfogat} és \emph{részecskeszám} függvénye lesz. Ezeket a mennyiségeket, amelyek egy folyamat során állandóan vannak tartva, a belső energia \emph{természetes változóinak} nevezzük. Vegyük észre, hogy a belső energia csak \emph{extenzív mennyiségek} függvénye. Írjuk fel ekkor ennek a teljes deriváltját:
 \begin{align}
 	\m dU(S,V,n) = \pd US\bigg|_{V,n}\m dS + \pd UV\bigg|_{S,n}\m dV + \pd Un\bigg|_{S,V}\m dn,
 \end{align}
@@ -14,7 +13,7 @@ amiből láthatjuk, hogy:
 \begin{align}
 	T=\pd US\bigg|_{V,n},\quad \pres = -\pd UV\bigg|_{S,n},\quad \mu:=\pd Un\bigg|_{S,V},
 \end{align}
-ahol beazonosítottuk a deriváltak eredményeként a hőmérsékletet és a nyomást, illetve bevezettük a $\mu$-vel jelölt \emph{kémiai potenciált}, ami megadja, hogy mennyivel nő meg a rendszer energiája, ha belerakunk $1$ mol anyagot. Általános esetben a rendszer több anyagból is állhat, ezek mennyiségét jelöljük $n_1,n_2,\dots n_N$-nel, illetve lehetnek még egyéb ún. \emph{általánosított erők} is (jelölje őket $x_i$), melytől a belső energia függ\footnote{\,Ilyen például ha van külső mágneses tér, akkor a belső energiához még egy $+\mu_0\bm H \m d \bm M$ tag is megjelenik, ahol $\mu_0 = 4\pi \cdot 10^{-7}\frac{Vs}{Am}$ a vákuum permeabilitása, $\bm H$ a mágneses tér, $\bm M$ pedig a mágnesezettség.}, így általánosan:
+ahol beazonosítottuk a deriváltak eredményeként a hőmérsékletet és a nyomást, illetve bevezettük a $\mu$-vel jelölt \emph{kémiai potenciált}, ami megadja, hogy mennyivel nő meg a rendszer energiája, ha belerakunk $1$ mol anyagot. Általános esetben a rendszer több anyagból is állhat, ezek mennyiségét jelöljük $n_1,n_2,\dots n_N$-nel, illetve lehetnek még egyéb ún.\ \emph{általánosított erők} is (jelölje őket $x_i$), melytől a belső energia függ\footnote{\,Ilyen például ha van külső mágneses tér, akkor a belső energiához még egy $+\mu_0\bm H \m d \bm M$ tag is megjelenik, ahol $\mu_0 = 4\pi \cdot 10^{-7}\frac{Vs}{Am}$ a vákuum permeabilitása, $\bm H$ a mágneses tér, $\bm M$ pedig a mágnesezettség.}, így általánosan:
 \begin{align}
 	\m dU = T\m dS-\pres \m dV + \sum_{i=1}^N \mu_i \m dn_i + \sum_{j=1}^k X_i \m dx_i,
 \end{align} 
@@ -23,7 +22,7 @@ azonban a továbbiakban megmaradunk az egykomponensű anyagok tárgyalásánál,
 	\m dU = T\m dS-\pres \m dV + \mu \m dn.
 \end{align}
 Láthatjuk, hogy a (\ref{eq:U}) egyenlet különböző tagjaiban a mennyiségek páronként jelennek meg, ezeket \emph{konjugált pároknak} nevezzük. Vegyük észre, hogy minden pár egyik tagja intenzív, a másik pedig extenzív állapotjelző; a konjugált párokat \aref{tab:konj}. táblázatban foglaljuk össze.
-\begin{table}[h!]
+\begin{table}[htb]
 \centering
 \begin{tabular}{|c|c|} \hline
 intenzív állapotjelző & extenzív állapotjelző\\ \hline\hline
@@ -35,7 +34,7 @@ $\mu$ (kémiai potenciál) & $n$ (anyagmennyiség) \\ \hline
 \label{tab:konj}
 \end{table}
 A belső energiát azért fontos a természetes változóival kifejezni, mert ekkor parciális deriválások segítségével a rendszer \emph{összes termodinamikai tulajdonságát} származtatni tudjuk. A belső energia kifejezhető a természetes változói segítségével, melyet \emph{fundamentális egyenletnek} nevezünk. Az \emph{ideális gáz fundamentális egyenlete}:
-\begin{align}
+\begin{align} \label{eq:U_fund}
 	U(S,V,n) = A e^{\frac{2S}{fnR}}V^{-\frac 2f}n^{\frac{f+2}{f}},
 \end{align}
 ahol $A$ konstans. Ebből például a belső energia szokásos alakja származtatható, mint:
@@ -77,13 +76,13 @@ azaz $-g(u)$ az $f(x)$ Legendre-transzformáltja\footnote{\,Az \emph{inverz Lege
 \begin{align}
 	f(x) = \big(g(u)-g'(u)u \big)\Big|_{u(x)} =  g(u(x)) + xu,
 \end{align}
-ami a (\ref{eq:Legendre1})-(\ref{eq:Legendre2}). összefüggések alapján pont a $g(u)$ transzformáltja, azaz a Legendre-transzformációt kétszer egymás után hattatva az eredeti függvényt nyerjük vissza. Szokás az $f$ és $g$ függvényt Legendre-transzformált pároknak is nevezni. A Legendre-transzformációt több változóban is elvégezhetjük, a deriválások szerepét a gradiens veszi át, ezen kívül azonban lényegi különbség a levezetés során nincs. A későbbi tanulmányaitok során gyakran használt Hamilton\footnotemark-függvény is a Lagrange\footnotemark-függvény Legendre-transzformáltja lesz.}.
+ami \atold(\ref{eq:Legendre1})+as{} és \atold(\ref{eq:Legendre2})+as{} összefüggések alapján pont a $g(u)$ transzformáltja, azaz a Legendre-transzformációt kétszer egymás után hattatva az eredeti függvényt nyerjük vissza. Szokás az $f$ és $g$ függvényt Legendre-transzformált pároknak is nevezni. A Legendre-transzformációt több változóban is elvégezhetjük, a deriválások szerepét a gradiens veszi át, ezen kívül azonban lényegi különbség a levezetés során nincs. A későbbi tanulmányaitok során gyakran használt Hamilton\footnotemark-függvény is a Lagrange\footnotemark-függvény Legendre-transzformáltja lesz.}.
 \addtocounter{footnote}{-1}
 \footnotetext{\,William Rowan Hamilton, 1805-1865.}
 \stepcounter{footnote}
 \footnotetext{\,Joseph-Louis Lagrange, 1736-1813.}
 
-Most hogy ismerjük a Legendre-transzformációt egy változóban, alkalmazni tudjuk a belső energiára\footnote{\,Habár a belső energia három változós függvény, a Legendre-transzformációt csak egy változóban végezzük el, ezért használhatjuk az előbbi egy változós függvény esetén használt levezetést, mindössze a deriválás most parciális deriválás lesz.}. Legendre-transzformáljunk az \emph{entrópiában}:
+Most, hogy ismerjük a Legendre-transzformációt egy változóban, alkalmazni tudjuk a belső energiára\footnote{\,Habár a belső energia három változós függvény, a Legendre-transzformációt csak egy változóban végezzük el, ezért használhatjuk az előbbi egy változós függvény esetén használt levezetést, mindössze a deriválás most parciális deriválás lesz.}. Legendre-transzformáljunk az \emph{entrópiában}:
 \begin{align}
 	U(S,V,n)\follows T = \pd US\bigg|_{V,n} \follows F(T,V,n):= U - \pd US\bigg|_{V,n}\hspace{-2mm}\cdot S = U-TS.
 \end{align}
@@ -130,4 +129,4 @@ nagykanonikus (Landau-) potenciál & $\Phi$ & $V,T,\mu$ & $\Phi = F{-}\mu N=U{-}
 \caption{A leggyakoribb termodinamikai potenciálok, azok természetes változói és differenciális egyenletük.}
 \label{tab:termo_pot}
 \end{table}
-Még egyszer hangsúlyozzuk, hogy mindig a konkrét problémától függ, hogy melyik termodinamikai potenciált használjuk a gyakorlatban: a folyamatra a termodinamikai potenciál természetes változói kell adottak legyenek (így pl. adott hőmérséklet, nyomás és anyagmennyiség mellett a Gibbs-potenciált használnánk).
+Még egyszer hangsúlyozzuk, hogy mindig a konkrét problémától függ, hogy melyik termodinamikai potenciált használjuk a gyakorlatban: a folyamatra a termodinamikai potenciál természetes változói kell adottak legyenek (így pl.\ adott hőmérséklet, nyomás és anyagmennyiség mellett a Gibbs-potenciált használnánk).

@@ -11,7 +11,7 @@ A Lennard--Jones-potenciál alakját láthatjuk \aref{fig:termo_4_4}. ábrán. I
     V_{\tn{min}} = nb,
 \end{align}
 ahol $n$ az anyagmennyiség, $b$ pedig anyagi állandó.
-\begin{figure}[!h]
+\begin{figure}[htb]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
             \centering
@@ -45,7 +45,7 @@ Igyekezzünk ezt megbecsülni! Ehhez tekintsünk egy egyszerűsített modellt, a
     0,&\tn{egyébként}.
     \end{cases}
 \end{align}
-\begin{figure}[!h]
+\begin{figure}[htb]
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
             \centering
@@ -64,7 +64,7 @@ Hogyan változik meg a nyomás ennek a kölcsönhatásnak a következtében? Egy
 \begin{align}
     N_{\tn{pár}} \approx \overbrace{\rho\underbrace{Ad}_{=V}}^{\substack{\tn{részecskék}\\\tn{száma}}}\cdot\overbrace{\rho d^3}^{\substack{\tn{1 részecskére}\\\tn{jutó $d$}\\\tn{sugarú gömb}}},\quad \tn{ahol }\rho=\frac NV\tn{ a részecskesűrűség}.
 \end{align}
-\begin{figure}
+\begin{figure}[htb]
     \centering
     \includegraphics{termo_4/termo_4_6.eps}
     \caption{Rövid távú kölcsönhatás, mely a gázrészecskék $d$ sugarú környezetében hat.}
@@ -79,7 +79,7 @@ ahol $a$ anyagi állandó, a negatív előjel pedig azért jelenik meg, mert a n
     \pres = \frac{nRT}{V-nb}-a\z{\frac nV}^2 \follows \sz{\pres+a\z{\frac nV}^2}(V-nb) = nRT,
 \end{align}
 ez a \emph{van der Waals-gáz állapotegyenlete}, van der Waals érte Nobel-díjat kapott 1910-ben\footnote{\,Az állapotegyenlet kölcsönható rendszerek statisztikus fizikai számolásával is meghatározható, ugyanerre az eredményre jutunk elsőrendben.}. Az állapotegyenlet görbéi a $\pres-V$ síkon már nem hiperbolák, hanem bonyolult harmadfokú kifejezések. Kiszámolható az izoterm kompresszibilitás\footnote{\,Nem kell tudni, de $$\kappa_{vdW} = -\rec V \rec{\frac{2an^2}{V^3}-\frac{nRT}{(V-nb)^2}}$$.}, ami egy adott tartományon negatív is lehet, így ott a gáz instabillá válna, tehát ez egy tiltott tartomány, az izotermák (azonos hőmérsékletű görbe) ezt a tartományt ,,átugorják''. Keressük meg a kritikus pontot, ahol az $\pres-V$ grafikon egy izotermájának inflexiós pontja van, ahogy ez \aref{fig:termo_4_7}. ábrán is látható.
-\begin{figure}
+\begin{figure}[htb]
     \centering
     \includegraphics{termo_4/termo_4_7.eps}
     \caption{Van der Waals-gáz a $\pres-V$ diagramon. Látható rajta a kritikus pont, illetve a tiltott tartomány.}
@@ -92,7 +92,7 @@ $$\frac{2nRT_c}{(V_c-bn)^3}-\frac{6an^2}{V_c^4}=0.$$ Ebből a két egyenletből 
     V_c = 3bn,\quad p_c = \frac{8}{27}\frac{a}{Rb},\quad T_c = \frac{1}{27}\frac{a}{b^2}.
 \end{align}
 \Aref{tab:vdW}. táblázatban felsoroltunk néhány tipikus értéket az anyagi állandókra és a kritikus értékekre:
-\begin{table}[h!]
+\begin{table}[htb]
 \centering
 \begin{tabular}{|c|c|c|c|c|} \hline
 Gáz & $a$ [$l^2\cdot$bar/mol$^2$] & $b$ [$l$/mol] & $T_c$ [K] & $p_c$ [bar]\\ \hline\hline
