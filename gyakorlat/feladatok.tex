@@ -30,6 +30,9 @@
 \usepackage{cleveref}
 
 
+\newcommand{\mom}{\mathbf p}	%impulzus
+\newcommand{\prob}{\mathtt p}	%valószínűség
+\newcommand{\pres}{\mathsf p}	%nyomás
 
 
 \begin{document}
@@ -262,4 +265,35 @@ Hogyan olvashatóak le az $a$ és $n \cdot b$ paraméterek a van der Waals gázo
 
 \paragraph{Extra feladat a házi feladatokon túl}
 Hogyan változnak az izotermák az $a$ és $b$ paraméterek függvényében? Írjunk szkriptet, ami előállítja a van der Waals gáz izotermáit, és a különféle paraméterek mellett készített diagramokat animált gifbe összeillesztve készítsünk animációt, midőn $a$ felmegy 0-ról $p \cdot V^2/n^2$-ig, majd $b$ 0-ról $V/n$-ig, majd $a$ lemegy 0-ba, végül $b$ is lemegy $0$-ba! (A tartományok csak tippek, lehet, hogy más értékek mellett látványosabb az animáció.)
+
+\section{Termodinamika I}
+\subsection{Kvázisztatikus, nyomás}
+Ideális gáz $\pres_1$ nyomású, $V_1$ térfogatú állapotából, szabad adiabatikus tágulás során a $\pres_2$ nyomású és $V_2 > V_1$  térfogatú állapotba jut. Ezután állandó nyomáson, kvázisztatikusan $V_1$  térfogatúra nyomjuk össze, majd ugyancsak kvázisztatikusan addig melegítjük, amíg a nyomása ismét $\pres_1$ nem lesz. Nyílt- vagy körfolyamatról van-e szó? Rajzoljunk ábrasorozatot az egyes állapotokhoz tartozó mennyiségeket is jelölve! Határozzuk meg a folyamat során leadott hőmennyiséget! Mely egyenleteken és hogyan kell módosítani, ha nem ideális gázunk van?
+\subsection{Durrants be!}
+A $V$ térfogatú hőszigetelt szobácska nem hermetikusan zárt, a külső nyomás $\pres$. Mennyi hő szükséges, hogy a szobában lévő levegő hőmérsékletét $T_1$-ről $T_2$-re emeljük? Tekintsük a levegőt ideális gáznak!
+\subsection{Minden út \textit{B}-be vezet}
+\Atold\ref{fig:figizoterma_adiabata_AB}+as{} ábra egy ideális gáz állapotváltozásait mutatja. Mekkora a belős energia különbsége az $A$ és $B$ pontok között? Határozzuk meg a munkavégzést, ill.\ a felvett hőt az $A1B$, az $A2B$ és a $A3B$ kvázisztatikus folyamatokra! Adott a $C_v$ hőkapacitás és az $n$ anyagmennyiség.
+
+\begin{figure}[htb] 
+\centering   
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[scale=1]{figs/izoterma_adiabata_AB.eps}
+\subcaption{Ideális gáz állapotváltoztatásai, amely során $A$-ból $B$-be jutunk el izobár, izoterm, izochor vagy adiabatikus módokon.}
+\label{fig:figizoterma_adiabata_AB}
+\end{subfigure} \hspace{2em}
+\begin{subfigure}[b]{0.45\textwidth}
+\includegraphics[scale=1]{figs/egy_ketto.eps}
+\subcaption{Ideális gáz állapotváltozása, ami a $\pres - V$ síkon egyenes. Nem tartalmaz nevezetes részfolyamatot.\\}
+\label{fig:egy_ketto}
+\end{subfigure}
+\end{figure}
+\FloatBarrier
+
+\subsection{Hosszú lesz}
+Egy mólnyi ideális gázt \aref{fig:egy_ketto}.\ ábrán látható úton viszünk át kvázisztatikusan az 1-es állapotból a 2-es állapotba.
+\begin{enumerate}
+\item A folyamat mely részén lesz hőfelvétel és mely részén lesz hőleadás?
+\item Határozzuk meg a gáz mólhőjét a folyamat során, ha ismert az állandó térfogat mellett mért mólhő! Lehet-e a folyamat során 0 a mólhő? Lehet-e végtelen?
+\end{enumerate}
+
 \end{document}
