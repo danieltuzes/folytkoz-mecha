@@ -216,7 +216,7 @@ Két, közel azonos méretű szappanbuborék gömböt fújunk fel egy Y alakú c
 
 \begin{enumerate}
 \item Írjuk fel a szappanbuborék átmérőjének időbeli változására a differenciál- és algebrai egyenletet úgy, hogy csak a szappanbuborékok sugara maradjon meg, mint időfüggő mennyiség!
-\item Legyen az egyenlő sugarú esetben a buborékok (instabil) egyensúlyi sugara $R$! Mutassuk meg, hogy amennyiben $R_1 = R + \varepsilon_1$ és $R_2 = R - \varepsilon_2$, ahol $\varepsilon_1$ és $\varepsilon_2$ elég kicsi, akkor arányuk 1!
+\item Legyen az egyenlő sugarú esetben a buborékok (instabil) egyensúlyi sugara $R$! Mutassuk meg, hogy amennyiben $R_1 = R + \varepsilon_1$ és $R_2 = R - \varepsilon_2$, ahol $\varepsilon_1$ és $\varepsilon_2$ elég kicsi, akkor $\varepsilon_1/\varepsilon_2=1$!
 \item Írjuk fel a differenciálegyenletet az instabil egyensúlyi helyzet körül, $\varepsilon$-ban elsőrendig közelítve! Oldjuk meg a differenciálegyenletet! Ezzel a közelítéssel számolva mennyivel több időt kell várni, amíg $\varepsilon/R$ megnő $1$-ről $2\%$-ra, ahhoz képest, mintha $2$-ről $3\%$-ra növekedne?
 \item Extra gondolkodó 1 (házi feladatokon kívül): Mekkora lesz a nyomás a felfújt szappanbuborékban és mekkora lesz a sugara, ha az instabil egyensúlyi helyzethez tartozó sugár $R$, és eltekintünk a görbületi nyomás járulékától a külső nyomáshoz képest? Mennyivel változik meg ehhez képest a felfújt szappanbuborékhoz tartozó sugár első rendben, ha nem hanyagoljuk el a görbületi nyomást a külső nyomáshoz képest?
 \item Extra gondolkodó 2 (házi feladatokon kívül): hogyan csökken 0-ra a kisebbik gömb sugara? Vizsgáljuk meg azt a határesetet, amikor az egyik gömb már majdnem teljesen fel van fújva, a másik pedig már nagyon kicsi!
@@ -258,7 +258,7 @@ alakú, ahol $m$ a teljes tömeg, $M$ pedig egy effektív moláris tömeg! Fejez
   $b=\SI{40}{cm^3/mol}$. Mekkora lesz a gáz nyomása, ha a tömegének a felét lassan kiengedjük a tartályból, miközben a hőmérsékletét állandó értéken tartjuk? Mi lett volna az eredmény ideális gáz esetén?
   
 \subsection{Kritikus példa}
-Adjuk meg a van der Waals-gáz kritikus pontját meghatározó nyomás, térfogat- és hőmérsékletértékeket! Írjuk fel az általapotegyenletet úgy, hogy az $a$, $b$, $m$, $n$ és $M$ paraméterek helyett az állapotjelzők kritikus ponthoz tartozó értékeit, azaz $\pres_\text c$, $T_\text c$ és $V_\text c$ használjuk!
+Számoljuk ki a van der Waals-gáz kritikus pontját meghatározó nyomás, térfogat- és hőmérsékletértékeket az állapotegyenletéből! Írjuk fel az állapotegyenletet úgy, hogy az $a$, $b$, $m$, $n$ és $M$ paraméterek helyett az állapotjelzők kritikus ponthoz tartozó értékeit, azaz $\pres_\text c$, $T_\text c$ és $V_\text c$ használjuk!
 
 \subsection{Extra gáz}
 Hogyan olvashatóak le az $a$ és $n \cdot b$ paraméterek a van der Waals gázok nyomás-térfogat diagramjáról, ha sok, különféle hőmérsékletre meg vannak adva az izotermák?
@@ -271,7 +271,7 @@ Hogyan változnak az izotermák az $a$ és $b$ paraméterek függvényében? Ír
 Ideális gáz $\pres_1$ nyomású, $V_1$ térfogatú állapotából, szabad adiabatikus tágulás során a $\pres_2$ nyomású és $V_2 > V_1$  térfogatú állapotba jut. Ezután állandó nyomáson, kvázisztatikusan $V_1$  térfogatúra nyomjuk össze, majd ugyancsak kvázisztatikusan addig melegítjük, amíg a nyomása ismét $\pres_1$ nem lesz. Nyílt- vagy körfolyamatról van-e szó? Rajzoljunk ábrasorozatot az egyes állapotokhoz tartozó mennyiségeket is jelölve! Határozzuk meg a folyamat során leadott hőmennyiséget! Mely egyenleteken és hogyan kell módosítani, ha nem ideális gázunk van?
 \subsection{Durrants be!}
 A $V$ térfogatú hőszigetelt szobácska nem hermetikusan zárt, a külső nyomás $\pres$. Mennyi hő szükséges, hogy a szobában lévő levegő hőmérsékletét $T_1$-ről $T_2$-re emeljük? Tekintsük a levegőt ideális gáznak!
-\subsection{Minden út \textit{B}-be vezet}
+\subsection{Minden út \textit{B}-be vezet} % elmfiz 2: 13.10; KöMaL P. 4160.
 \Atold\ref{fig:figizoterma_adiabata_AB}+as{} ábra egy ideális gáz állapotváltozásait mutatja. Mekkora a belős energia különbsége az $A$ és $B$ pontok között? Határozzuk meg a munkavégzést, ill.\ a felvett hőt az $A1B$, az $A2B$ és a $A3B$ kvázisztatikus folyamatokra! Adott a $C_v$ hőkapacitás és az $n$ anyagmennyiség.
 
 \begin{figure}[htb] 
@@ -296,4 +296,31 @@ Egy mólnyi ideális gázt \aref{fig:egy_ketto}.\ ábrán látható úton viszü
 \item Határozzuk meg a gáz mólhőjét a folyamat során, ha ismert az állandó térfogat mellett mért mólhő! Lehet-e a folyamat során 0 a mólhő? Lehet-e végtelen?
 \end{enumerate}
 
+\section{Termodinamika II}
+Tekintettel a május 7-ei oktatási szünetre, ezeket a házikat csak május 14-ig kell beadni, azonban már \textbf{délelőtt 10 órára be kell érkeznie}, hogy az utolsó órán lehessen a megoldásokról kérdezni.
+\subsection{Kikondenzálódott} % elmfiz 2; 13.14
+Kondenzált anyagok egy modelljében a nyomásra és a belső energiára a következő összefüggést adják meg valamilyen $V<V_0$ térfogatra $\alpha$, $\chi$, $V_0$ és $C_V$ anyagi paraméterek mellett:
+\[\pres = \frac{1}{\chi }\left( {1 + \alpha T - \frac{V}{{{V_0}}}} \right)\qquad U = {C_V}T + \frac{{{V_0}}}{{2\chi }}{\left( {1 - \frac{V}{{{V_0}}}} \right)^2}.\]
+\begin{enumerate}
+\item Mi $\alpha$ szemléletes jelentése? Vizsgáljuk meg $d\pres$ mennyiséget állandó nyomás mellett!
+\item Mik az izotermák egyenletei? Rajzold le őket néhány különböző $T$-re!
+\item Mennyi hőt vesz fel a rendszer, ha állandó $\pres$ nyomáson $V_1$-ről $V_2$ térfogatúra tágul? Adjuk meg $Q$-t, mint $V_2 - V_1$ (és az anyagi paraméterek) függvénye! \footnotesize Tippért nézz a példa végére.\normalsize
+\item Fejezzük ki $C_\pres$-t, az állandó nyomáson mérhető hőkapacitást az állandó térfogaton mérhető hőkapacitással és a hőmérséklettel!
+\item Milyen anyagi állandók esetén lesz a $C_\pres - C_V$ különbség elhanyagolhatóan kicsi?
+\item Határozzuk meg az adiabaták egyenletét! \footnotesize Tippért nézz a példa végére.\normalsize% elmfiz 2; 13.20
+\item Rajzoljuk fel a Carnot-körfolyamat $\pres - V$ diagramját, adjuk meg a görbék egyenletét az anyagi paraméterek, valamint  $T_1$ és $T_3$, továbbá $V_1$ és $V_2$ függvényében, ahol $T_1>T_3$, a körfolyamat során mérhető legnagyobb és legkisebb hőmérséklet értékek, $V_1$ a $T_1$ hőmérséklet tartozó legkisebb térfogat, és $V_2$ pedig a legnagyobb! 
+\item Mutassuk meg, hogy egy izotermán felvett hő kifejezhető csupán a hőmérséklettel és a térfogatváltozással! \footnotesize Tippért nézz a példa végére.\normalsize
+\item Mutassuk meg, hogy a rendszeren végzett Carnot-körfolyamat hatásfoka a legnagyobb és legkisebb hőmérséklettől ugyanúgy függ, mint ideális gázra!% elmfiz 2; 13.25
+\item Az előző pont szerint felírtuk a $Q_{1 \to 2}$ hőfelvételt, amit egy izotermán számoltunk ki, ezért $U$-k különbségéből először kiesett a hőmérsékletfüggés, de a nyomáson (állapotegyenlet) keresztül újra bejött a hőmérsékletfüggés. Az előző pont(ok) számolását felhasználva írjuk fel egy izotermán a $\delta Q$ elemi hőfelvételt, azaz ha a 2-es és 1-es állapot nagyon közeli!
+
+Írjuk fel most úgy is, hogy nem tartjuk állandó értéken a hőmérsékletet, hanem letérhetünk az izotermáról, és így nem 2-es állapotba, hanem egy $1^*$ állapotba kerülünk, ahol a hőmérséklet $dT$-vel, a nyomás $d\pres$-vel, a térfogat pedig $dV$-vel odébb van! Ez megadja $\delta Q$ értékét általános elemi állapotváltozás során. Alakítsuk úgy az eredményt, hogy  a hőmérsékletet és térfogatot használjuk csak!
+\item Írjuk fel az elemi redukált hőt, azaz $\delta Q /T$-t, majd ennek integrálásával határozzuk meg az $S\left( {T,V} \right)$ entrópiafüggvényt, majd elimináljuk $T$-t a belső energia segítségével, hogy megkapjuk az entrópiát, mint az $S\left( {U,V} \right)$ függvényt! % elmfiz 2; 14.4
+\end{enumerate}
+\footnotesize Tippek, amiket csak akkor olvass, ha nem jutottál előre.
+\begin{itemize}
+\item Tipp3: írd fel a termodinamika I.\ főtételét, használd ki, hogy az elvégzett munkát ki tudod számolni, és hogy a belső energiaváltozást is meg tudod határozni. Az állapotegyenlet segítségével a $\pres$ és $V$-t egyszerre tudod eliminálni $Q$-ból, ha szeretnéd. Az itt keresett hőkapacitás pedig $\delta Q/dT$ állandó nyomás mellett.
+\item Tipp6: A belső energia teljes differenciálját írd fel, és használd ki, hogy 0 a felvett hő! A kapott egyenletben a változók szeparálhatók, ha az állapotegyenlet segítségével eliminálod $\pres$-t.
+\item Tipp7: írd fel a felvett hőt a termodinamika I.\ főtétele segítségével, majd hozd egyszerűbb alakra. Ekkor megszűnik a közvetlen $V$ függése a felvett hőnek.
+\end{itemize}
+ \normalsize 
 \end{document}
